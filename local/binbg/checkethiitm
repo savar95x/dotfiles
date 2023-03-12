@@ -1,0 +1,2 @@
+#!/bin/sh
+[ "$(ip link | grep '^[0-9]: e')" ] && (ping -c1 netaccess.iitm.ac.in && notify-send "Ethernet" "IITM LAN is WORKING." && ((ping -c1 suckless.org || ping -c1 gentoo.org || ping -c1 gnu.org) && notify-send "Ethernet" "Internet accessible." || notify-send "Ethernet" "Internet inaccessible. Please authorize a new key key from https://netaccess.iitm.ac.in") || notify-send "Ethernet" "IITM LAN is DOWN. Please try again later.") || notify-send "Ethernet" "Adapter not detected."

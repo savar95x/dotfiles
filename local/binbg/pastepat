@@ -1,0 +1,3 @@
+#!/bin/sh
+xdotool type "$(cat $HOME/.local/share/.private/pat)
+"

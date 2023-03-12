@@ -1,0 +1,168 @@
+# example sxhkdrc for use with dk
+#########################################################
+
+# launcher
+super + space
+	rofi -show drun
+
+# terminal
+super + Return
+	st2
+
+# term apps
+super + m
+	st2 -e ncmpcpp
+
+super + n
+	st2 -e notes
+
+super + shift + n
+	st2 -e newsboat
+
+super + e
+	st2 -e neomutt
+
+super + r
+	st2 -e lf
+
+super + g
+	st2 -e gotop
+
+# browser
+super + w
+  vimb
+super + shift + w
+  firefox
+
+# eww
+super + a
+  [ "$(eww state | grep ^COVER)" ] && $HOME/.config/eww/bin/launcher close || $HOME/.config/eww/bin/launcher open
+  
+super + shift + a
+  $HOME/.config/dk/scripts/scratch.sh
+
+# cursor
+super + c
+  pgrep xbanish && pkill xbanish || xbanish -t 1
+
+super + x
+  dkcmd win full
+
+super + b
+  polybar-msg cmd toggle
+
+# scripts
+super + s
+  $HOME/.local/binbg/dmlscripts
+
+super + p
+  $HOME/.local/binbg/dmpowermenu
+
+# screenshot and selection capture
+{_,super + }@Print
+	scrot {_,-s}
+
+# mpv control (mainly for lofi_music)
+super + shift + ctrl + {p,Up,Down}
+	playerctl -p mpv {play-pause,volume 0.05+,volume 0.05-}
+
+# msplit
+super + {h,l}
+  dkcmd set msplit={-0.05,+0.05}
+
+# dedicated volume keys
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+  pamixer {-i,-d} 2 --allow-boost --set-limit 140
+XF86AudioMute
+  [ "$(pamixer --get-mute)" = "true" ] && pamixer -u || pamixer -m
+
+# dedicated backlight keys
+#{XF86MonBrightnessUp,XF86MonBrightnessDown}
+#	xbacklight {+10,-10}
+
+# super volume keys
+super + {Insert,Delete}
+	pamixer {-i,-d} 2
+
+# reload sxhkd
+super + ctrl + x
+	pkill -USR1 -x sxhkd
+
+
+
+# quit dk
+super + ctrl + q
+	dkcmd exit
+
+# reload dkrc
+super + shift + r
+	$HOME/.config/dk/dkrc
+
+# restart dk
+super + ctrl + shift + r
+	dkcmd restart
+
+# focus next or previous window
+super + {j,k}
+	dkcmd win focus {next,prev}
+
+# close window, swap tiled window in/out of master, cycle tiled windows in place
+super + {q,space,Tab}
+	dkcmd win {kill,swap,cycle}
+
+# toggle fullscreen and fake fullscreen (enable manipulating fullscreen window)
+{_,super + }F11
+	dkcmd win {full,fakefull}
+
+# toggle floating or sticky
+super + shift + {space,s}
+	dkcmd win {float,stick}
+
+# move window, signed (+/-) for relative changes
+super + shift + {h,j,k,l}
+	dkcmd win resize {x=-20,y=+20,y=-20,x=+20}
+
+# resize window, signed (+/-) for relative changes
+super + ctrl + {h,j,k,l}
+	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
+
+# move the active window up/down the stack
+#super + {Up,Down}
+#	dkcmd win mvstack {up,down}
+
+# move the mouse cursor because ... it's fun
+super + {Left,Down,Up,Right}
+  xdotool mousemove_relative -- {-20 0,0 20,0 -20,20 0}
+#super + ctrl + shift + {Return,Left,Down,Up,Right}
+#  xdotool click {2,1,3,200 200 4,200 200 5}
+super + ctrl + shift + {Left,Right}
+  xdotool click {1,3}
+
+# view, send, or follow to a workspace (by number)
+super + {_,shift + ,ctrl + }{1-9,0}
+	dkcmd ws {view,send,follow} {1-9,10}
+
+# view, send, or follow to the next, previous, last active,
+# next non-empty, or prev non-empty workspace
+super + {_,shift + ,ctrl + }{bracketleft,bracketright,BackSpace}
+	dkcmd ws {view,send,follow} {prevne,nextne,last}
+
+# view, send, or follow to the next, previous, or last active monitor
+super + {_,shift + ,ctrl + }{comma,period,backslash}
+	dkcmd mon {view,send,follow} {prev,next,last}
+
+# change active workspace layout
+super + shift + ctrl + {t,r,m,g,s,w,f,u}
+	dkcmd set layout {tile,rtile,mono,grid,spiral,dwindle,none,tstack}
+
+# change number of windows in master or first stack
+super + {_,shift + }{i,d}
+	dkcmd set {master,stack} {+1,-1}
+
+# change gap width
+super + {equal,minus}
+	dkcmd set gap {+5,-5}
+
+# change border widths
+super + ctrl + {_,shift + }{equal,minus}
+	dkcmd set border {width,outer_width} {+1,-1}

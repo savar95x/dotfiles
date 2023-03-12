@@ -1,0 +1,31 @@
+#!/bin/sh
+notify_playing() {
+    ffmpeg -loglevel panic -y -i "$HOME/mus/$(mpc current -f %file%)" -an -c:v copy /tmp/ncmpcpp.jpg &&
+    convert /tmp/ncmpcpp.jpg -resize 100x100 /tmp/ncmpcpp.jpg ||
+    rm -f /tmp/ncmpcpp.jpg
+
+    # --hint=string:x-dunst-stack-tag:test 
+    notify-send -i /tmp/ncmpcpp.jpg "Now Playing  " "<i>$(mpc current -f %artist%)</i>\n<i>$(mpc current -f %title%)</i>"
+}
+
+update_eww_music_full() {
+    ffmpegthumbnailer -q 10 -c png -s 250x250 -i "$HOME/mus/$(mpc current -f %file%)" -o "$HOME/.config/eww/imgs/art.png" 
+    $HOME/.config/eww/bin/music_update full
+}
+
+while true; do
+  lastsong="$(mpc current)"
+  laststate="$(mpc status %state%)"
+  event="$(mpc idle)"
+  [ "$event" ] && (
+    [ "$(mpc current)" = "$lastsong" ] && (
+      $HOME/.config/eww/bin/music_update update_player
+    )
+    [ "$(mpc current)" != "$lastsong" ] && (
+      state="$(mpc status %state%)"
+      [ ! "${state##playing}" ] && notify_playing
+      [ ! "${state##paused}" ] && notify-send "Music Stopped  "
+      update_eww_music_full
+    )
+  )
+done

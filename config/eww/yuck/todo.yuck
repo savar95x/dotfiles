@@ -1,0 +1,47 @@
+; variables
+(defpoll TODO1 :interval "1s" `echo $(todo | grep "^1 " | cut -d' ' -f2-)`)
+(defpoll TODO2 :interval "1s" `echo $(todo | grep "^2 " | cut -d' ' -f2-)`)
+(defpoll TODO3 :interval "1s" `echo $(todo | grep "^3 " | cut -d' ' -f2-)`)
+(defpoll TODO4 :interval "1s" `echo $(todo | grep "^4 " | cut -d' ' -f2-)`)
+(defpoll TODO5 :interval "1s" `echo $(todo | grep "^5 " | cut -d' ' -f2-)`)
+(defpoll TODO6 :interval "1s" `echo $(todo | grep "^6 " | cut -d' ' -f2-)`)
+
+(defpoll TODO_CHECK1 :interval "1800s" `$HOME/.config/eww/bin/todo echo_icon 1`)
+(defpoll TODO_CHECK2 :interval "1800s" `$HOME/.config/eww/bin/todo echo_icon 2`)
+(defpoll TODO_CHECK3 :interval "1800s" `$HOME/.config/eww/bin/todo echo_icon 3`)
+(defpoll TODO_CHECK4 :interval "1800s" `$HOME/.config/eww/bin/todo echo_icon 4`)
+(defpoll TODO_CHECK5 :interval "1800s" `$HOME/.config/eww/bin/todo echo_icon 5`)
+(defpoll TODO_CHECK6 :interval "1800s" `$HOME/.config/eww/bin/todo echo_icon 6`)
+
+; widgets
+(defwidget todo_string []
+  	(box :class "genwin" :orientation "h" 
+        (box :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" :spacing 0
+			      (box :orientation "h" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false" 
+			          (label :halign "start" :valign "center" :class "todo_header" :text "Todolist")
+				        (button :class "todo_reload" :onclick "todo sort && eww close todo && eww open todo" "󰑓"))
+			          (box :orientation "v" :class "list" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false" 
+			          (box :orientation "h" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false" 
+				            (button :class "todo_check" :onclick "$HOME/.config/eww/bin/todo update1" TODO_CHECK1)
+			              (label :halign "start" :valign "center" :class "todo1" :text TODO1))
+			          (box :orientation "h" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false" 
+				            (button :class "todo_check" :onclick "$HOME/.config/eww/bin/todo update2" TODO_CHECK2)
+			              (label :halign "start" :valign "center" :class "todo2" :text TODO2))
+			          (box :orientation "h" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false" 
+				            (button :class "todo_check" :onclick "$HOME/.config/eww/bin/todo update3" TODO_CHECK3)
+			              (label :halign "start" :valign "center" :class "todo3" :text TODO3))
+			          (box :orientation "h" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false" 
+				            (button :class "todo_check" :onclick "$HOME/.config/eww/bin/todo update4" TODO_CHECK4)
+			              (label :halign "start" :valign "center" :class "todo4" :text TODO4))
+			          (box :orientation "h" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false" 
+				            (button :class "todo_check" :onclick "$HOME/.config/eww/bin/todo update5" TODO_CHECK5)
+			              (label :halign "start" :valign "center" :class "todo4" :text TODO5))
+            )
+        )
+    )
+)
+
+; windows
+(defwindow todo :monitor 0 :stacking "bg" :class "todo_window" :windowtype "utility" :wm-ignore false :focusable false
+                 :geometry (geometry :x "159" :y "-104" :width "440" :height "286" :anchor "center center")
+    (todo_string))

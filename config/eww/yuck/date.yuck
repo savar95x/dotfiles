@@ -1,0 +1,30 @@
+; variables
+(defpoll DATE_DATE :interval "1800s" `echo "$(date "+%d %b %Y, %a")"`)
+(defpoll TIME_HOUR :interval "1800s" `echo $(date "+%H")`)
+(defpoll TIME_MINUTE :interval "60s" `echo $(date "+%M")`)
+
+; widgets
+(defwidget time_str []
+  	(box :class "genwin" :orientation "h" :space-evenly "false"
+		    (label :halign "center" :valign "center" :class "time_hour" :text TIME_HOUR)
+		    (label :halign "center" :valign "center" :class "time_colon" :text ":")
+		    (label :halign "center" :valign "center" :class "time_minute" :text TIME_MINUTE)
+    )
+)
+
+(defwidget date_str []
+  	(box :class "genwin" :orientation "h" :space-evenly "false"
+			   (label :halign "start" :valign "center" :class "date_icon" :text " ")
+			   (label :halign "start" :valign "center" :class "date_string" :text DATE_DATE)
+    )
+)
+
+; windows
+; time and date width TRUE
+(defwindow time :monitor 0 :stacking "bg" :windowtype "utility" :wm-ignore true :focusable false
+                 :geometry (geometry :x "81" :y "-146" :width "219px" :height "98" :anchor "center center")
+    (time_str))
+
+(defwindow date :monitor 0 :stacking "bg" :windowtype "utility" :wm-ignore false :focusable false
+                 :geometry (geometry :x "510" :y "-49" :width "243px" :height "74" :anchor "center center")
+    (date_str))

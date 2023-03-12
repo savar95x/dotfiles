@@ -1,0 +1,41 @@
+#!/bin/sh
+# works only with youtube links
+podcasts="$HOME/.config/bookmarks/podcasts"
+podcast_fullname=$(sed '/^#/d' < $podcasts | cut -d'@' -f2 | fzf)
+podcasts_db_dir="$HOME/.local/share/bookmarks.db/podcasts.db"
+podcasts_dl_dir="$HOME/pods"
+
+[ "$podcast_fullname" ] && (
+  [ ! "${podcast_fullname%%--edit--}" ] && nvim $podcasts || (
+    selected_podcast=$(grep "$podcast_fullname" < $podcasts)
+    podcast_link=$(echo $selected_podcast | cut -d'@' -f3)
+    podcast_name=$(echo $selected_podcast | cut -d'@' -f1)
+
+    mkdir -p $podcasts_db_dir/$podcast_name &&
+    yt-dlp -j --flat-playlist "$podcast_link" | sed '/"title": "\[Private video\]"/d' > $podcasts_db_dir/$podcast_name/json &&
+    jq -r '.id' $podcasts_db_dir/$podcast_name/json | sed 's_^_https://youtu.be/_' > $podcasts_db_dir/$podcast_name/episodes_link &&
+    jq -r '.title' $podcasts_db_dir/$podcast_name/json | sed 's_^_> _' > $podcasts_db_dir/$podcast_name/episodes_name &&
+    jq -r '.duration_string' $podcasts_db_dir/$podcast_name/json > $podcasts_db_dir/$podcast_name/episodes_duration &&
+    sed -e 's/^/ (/' -i $podcasts_db_dir/$podcast_name/episodes_duration &&
+    sed -e 's/$/)/' -i $podcasts_db_dir/$podcast_name/episodes_duration &&
+
+    selected_episode=$(paste $podcasts_db_dir/$podcast_name/episodes_link $podcasts_db_dir/$podcast_name/episodes_name $podcasts_db_dir/$podcast_name/episodes_duration | fzf)
+
+    [ "$selected_episode" ] && (
+      episode_name=$(echo $selected_episode | cut -d'>' -f2)
+      episode_url=$(echo $selected_episode | cut -d'>' -f1)
+
+      format=$(echo "video\naudio" | fzf)
+      [ "$format" ] && (
+      [ ! "${format%%video}" ] && (
+            yt-dlp -f "bestvideo[height<=1080]+bestaudio" "$episode_url" -o "$podcasts_dl_dir/$podcast_name/%(title)s - video.%(ext)s" &&
+            lf $podcasts_dl_dir/$podcast_name
+
+          [ ! "${format%%audio}" ] &&
+            yt-dlp -f "bestaudio" "$episode_url" -o "$podcasts_dl_dir/$podcast_name/%(title)s - audio.%(ext)s"
+            lf $podcasts_dl_dir/$podcast_name
+        )
+      )
+    )
+  )
+)

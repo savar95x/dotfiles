@@ -1,0 +1,21 @@
+#!/bin/bash
+update_player() {
+    # updates play/pause button
+    eww update STATUS="$([ \"$(mpc status %state%)\" = \"playing\" ] && echo '󰏥 ' || echo '󰐌 ')"
+}
+update_art() {
+    # updates albumart+player
+    # todo: figure out a way to update albumart only
+    eww close music_art
+    eww open music_art
+    eww update CURRENT=0.1
+}
+update_info() {
+    # updates music_info
+    eww update SONG="$(mpc current -f %title%)" & eww update ARTIST="$(mpc current -f %artist%)"
+}
+[ "$1" = "update_info" ] && update_info
+[ "$1" = "update_art" ] && update_art
+[ "$1" = "update_player" ] && update_player
+[ "$1" = "full" ] && update_art & update_info
+#update_music_info & eew close music_art && eww open music_art 

@@ -1,0 +1,18 @@
+; variables
+(defpoll QUOTE_STRINGG :interval "7200s" `$HOME/.config/eww/bin/quote rand_str`)
+
+; widgets
+(defwidget quote_string []
+  	(box :class "genwin" :orientation "h" :space-evenly "false"
+        (box :orientation "h" :space-evenly "false"
+			      (label :halign "start" :valign "center" :class "quote_icon" :text "󱀡 ")
+			      (label :halign "start" :valign "center" :class "quote" :text QUOTE_STRINGG)
+        )
+    )
+)
+
+; windows
+; quote width and height TRUE
+(defwindow quote :monitor 0 :stacking "bg" :windowtype "utility" :wm-ignore false :focusable false
+                 :geometry (geometry :x "0" :y "212" :width "758px" :height "70px" :anchor "center center")
+    (quote_string))

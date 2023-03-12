@@ -1,0 +1,8 @@
+#!/bin/sh
+browser=firefox
+terminal=st
+selection=$(sed '/^#/d' < $HOME/.config/bookmarks/playlists | rofi -dmenu -p playlists)
+
+[ "$selection" ] && (
+  [ ! "${selection%%--edit--}" ] && $terminal -e nvim $HOME/.config/bookmarks/playlists || $browser --new-window https://www.youtube.com/playlist?list=$(printf "$selection" | cut -d'@' -f3)
+)
