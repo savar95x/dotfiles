@@ -7,6 +7,7 @@ logfile="$HOME/.dkrc.log"
 [ -d "$HOME/.local/share/xorg" ] && logfile="$HOME/.local/share/xorg/dkrc.log"
 : > "$logfile"
 
+$HOME/.config/dk/autostart.sh
 
 # (re)load sxhkd for keybinds
 if hash sxhkd >/dev/null 2>&1; then
@@ -14,46 +15,11 @@ if hash sxhkd >/dev/null 2>&1; then
 	sxhkd -c "$HOME/.config/dk/sxhkdrc" &
 fi
 
-if hash picom >/dev/null 2>&1; then
-	pkill picom
-	picom --config "$HOME/.local/share/themes/newtheme/config/picom.conf" &
-  # 	$HOME/.local/src/picom-pijulius/build/src/picom --config $HOME/.config/picom.conf.pijulius -b --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 350 &
-#    $HOME/.local/src/picom-pijulius/build/src/picom --config $HOME/.config/picom.conf.pijulius
-  #  $HOME/.local/src/picom-ftlabs/build/src/picom --config $HOME/.config/picom.conf.ftlabs
-fi
-
 if hash polybar >/dev/null 2>&1; then
 	pkill polybar
 	polybar win11 &
 fi
 
-if hash xbanish >/dev/null 2>&1; then
-	pkill xbanish
-	xbanish &
-fi
-
-if hash eww >/dev/null 2>&1; then
-	pkill eww
-	eww daemon && $HOME/.config/eww/bin/launcher open &
-fi
-
-if hash redshift >/dev/null 2>&1; then
-	pkill redshift
-  redshift -P -O 6500
-	redshift &
-fi
-
-### quality of life ###
-xwallpaper --tile $HOME/pix/walls/misc/openbox-paper-tile.png
-xset r rate 215 50
-xrdb -load $HOME/.config/x11/xresources
-setxkbmap -option caps:swapescape 
-
-# audio dameon
-pgrep pipewire || setsid -f pipewire &
-pgrep pipewire && pgrep pipewire-pulse || setsid -f pipewire-pulse &
-pgrep pipewire && pgrep pipewire-pulse && pgrep mpd || setsid -f mpd &
-pgrep pipewire && pgrep pipewire-pulse && pgrep mpd && pgrep mpd_notify || setsid -f $HOME/.local/binbg/mpd_notify & # currently depends on mpc (for notify and cli), mpDris (for playerctl support), and playerctl (for global audio control)
 
 # adjust border widths based on the DPI of the monitor
 ##px=$(xrandr | grep ' connected' | tail -n1 | grep -o '[0-9]\+x[0-9]\+' | cut -d'x' -f2)
@@ -81,7 +47,7 @@ pgrep pipewire && pgrep pipewire-pulse && pgrep mpd && pgrep mpd_notify || setsi
 
 	# default workspace '_' values used when allocating new workspaces
 	# can be applied to all existing workspaces when passed 'apply' after ws=_
-	dkcmd set ws=_ apply layout=tile master=1 stack=0 msplit=0.5 ssplit=0.5 pad left=30 right=30 top=10 bottom=6 gap=20
+	dkcmd set ws=_ apply layout=tile master=1 stack=0 msplit=0.5 ssplit=0.5 pad left=3 right=3 top=3 bottom=3 gap=20
 
 	# use grid layout, padding, and gaps on workspace 10
 	dkcmd set ws=9 layout=grid pad left=200 right=200 top=100 bottom=100 gap=20
@@ -149,7 +115,7 @@ pgrep pipewire && pgrep pipewire-pulse && pgrep mpd && pgrep mpd_notify || setsi
 	# alternative
 	# enable split borders and colours, width is overall width, outer_width consumes some of width.
 	# outer_width must be less than width, outer_width of 0 will be single borders
-	dkcmd set border width=35 outer_width=34 \
+	dkcmd set border width=31 outer_width=30 \
 		colour \
 		focus='#2a2a2a' \
 		unfocus='#181818' \
@@ -164,10 +130,9 @@ pgrep pipewire && pgrep pipewire-pulse && pgrep mpd && pgrep mpd_notify || setsi
 
 	# rule class, instance, and title regexes (*ALWAYS* CASE INSENSITIVE)
 
-	dkcmd rule class="^(floating|java-lang-Thread)$" float=true
-	dkcmd rule class="^(eww-music_art|eww-music_info|eww-quote|eww-todo|eww-music_art|eww-date|eww-time|eww-bg)$" ws=8 float=true
+#	dkcmd rule class="^(floating|java-lang-Thread)$" float=true
+#	dkcmd rule class="^(eww-music_art|eww-music_info|eww-quote|eww-todo|eww-music_art|eww-date|eww-time|eww-bg)$" ws=8 float=true
 	## open window(s) on a specific workspace (assigned monitor)
-	#dkcmd rule class="^gimp$" ws=2
 #
 	## open window(s) on a monitor by number or name (active workspace on monitor)
 	#dkcmd rule class="^chromium$" mon="HDMI-A-0"

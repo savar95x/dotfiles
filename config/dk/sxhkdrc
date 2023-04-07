@@ -7,32 +7,32 @@ super + space
 
 # terminal
 super + Return
-	st2
+	st
 
 # term apps
 super + m
-	st2 -e ncmpcpp
+	st -e ncmpcpp
 
 super + n
-	st2 -e notes
+	st -e notes
 
 super + shift + n
-	st2 -e newsboat
+	st -e newsboat
 
 super + e
-	st2 -e neomutt
+	st -e neomutt
 
 super + r
-	st2 -e lf
+	st -e lf
 
 super + g
-	st2 -e gotop
+	st -e gotop
 
 # browser
 super + w
   vimb
 super + shift + w
-  firefox
+  firefox --purgecaches
 
 # eww
 super + a
@@ -72,9 +72,9 @@ super + {h,l}
 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
-  pamixer {-i,-d} 2 --allow-boost --set-limit 140
+  $HOME/.local/bin/sb_audio {inc,dec} 2
 XF86AudioMute
-  [ "$(pamixer --get-mute)" = "true" ] && pamixer -u || pamixer -m
+  $HOME/.local/bin/sb_audio toggle
 
 # dedicated backlight keys
 #{XF86MonBrightnessUp,XF86MonBrightnessDown}
