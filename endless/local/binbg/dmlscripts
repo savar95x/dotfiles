@@ -1,0 +1,4 @@
+#!/bin/sh
+# This directory has all the scripts except the stout ones. Those are supposed to be in ~/.local/bin/ directory
+script=$(ls --ignore="dmlscripts" --ignore="dmpass" $HOME/.local/binbg | dmenu -p "scripts:")
+[ "$script" ] && $HOME/.local/binbg/$script

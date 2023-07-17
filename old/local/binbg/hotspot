@@ -1,0 +1,10 @@
+#!/bin/sh
+
+DPASS_DIR=/home/savar/.local/binbg/dpass
+initSoftAP_DIR=$HOME/.local/bin/stdout/initSoftAP
+hotspot_interface=wlan0
+internet_interface=eth0
+
+# you might want to pass "net.ifnames=0" to GRUB_CMDLINE_LINUX_DEFAULT for traditional interface nomenclature
+
+SUDO_ASKPASS=$DPASS_DIR sudo -A setsid -f $initSoftAP $hotspot_interface $internet_interface

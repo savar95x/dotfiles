@@ -1,0 +1,3 @@
+#!/bin/sh
+scriptname=checkethiitm
+[ "$(ip link | grep '^[0-9]: e')" ] && (ping -c1 netaccess.iitm.ac.in && notify-send "$scriptname" "IITM LAN is WORKING." && ((ping -c1 suckless.org || ping -c1 gentoo.org || ping -c1 gnu.org) && notify-send "$scriptname" "Internet accessible." || notify-send "$scriptname" "Internet inaccessible. Please authorize a new key from https://netaccess.iitm.ac.in") || notify-send "$scriptname" "IITM LAN is DOWN. Please try again later.") || notify-send "$scriptname" "Ethernet adapter not detected."

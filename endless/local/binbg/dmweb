@@ -1,0 +1,16 @@
+#!/bin/sh
+browser="firefox --new-window"
+selection="$(echo 'bookmarks\nsites\nurl\ngoogle' | dmenu -p 'open in browser:')"
+
+if [ "$selection" =  "bookmarks" ]; then
+	url="$(sed '/^#/d' < ${XDG_DOCUMENTS_DIR:-$HOME/dox}/web/bookmarks | dmenu -l 5 -p 'bookmarks:' | cut -d'(' -f2- | sed 's/.$//' )"
+elif [ "$selection" =  "sites" ]; then
+	url="$(sed '/^#/d' < ${XDG_DOCUMENTS_DIR:-$HOME/dox}/web/sites | dmenu -p 'sites:')"
+elif [ "$selection" =  "url" ]; then
+	url="$(dmenu -p 'enter a url:' <&-)"
+elif [ "$selection" =  "google" ]; then
+	text="$(dmenu -p 'enter something:' <&-)"
+	[ "$text" ] && url="https://www.google.com/search?q=$text"
+fi
+
+[ "$url" ] && $browser "$url"

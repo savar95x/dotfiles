@@ -1,0 +1,56 @@
+# Settings on startup
+set statusbar-home-tilde true
+set window-title-home-tilde true
+set selection-clipboard clipboard
+set font "monospace 10"
+set adjust-open width
+map <C-Tab> toggle_statusbar
+set guioptions ""
+
+set adjust-open "best-fit"
+
+# Mountain
+
+# Light/Default mode settings:
+# 
+#
+set notification-error-bg       "#CF6A4C" # Red
+set notification-error-fg       "#e8e8d3" # Foreground
+set notification-warning-bg     "#e78a4e" # Orange
+set notification-warning-fg     "#1c1c1c" # Selection
+set notification-bg             "#151515" # Background
+set notification-fg             "#e8e8d3" # Foreground
+
+set completion-bg               "#151515" # Background
+set completion-fg               "#525252" # Comment
+set completion-group-bg         "#151515" # Background
+set completion-group-fg         "#525252" # Comment
+set completion-highlight-bg     "#1c1c1c" # Selection
+set completion-highlight-fg     "#e8e8d3" # Foreground
+
+set index-bg                    "#151515" # Background
+set index-fg                    "#e8e8d3" # Foreground
+set index-active-bg             "#1c1c1c" # Current Line
+set index-active-fg             "#e8e8d3" # Foreground
+set inputbar-bg                 "#151515" # Background
+set inputbar-fg                 "#e8e8d3" # Foreground
+set statusbar-bg                "#151515" # Background
+set statusbar-fg                "#e8e8d3" # Foreground
+
+set highlight-color             "#99ad6a" # Orange
+set highlight-active-color      "#f0a0c0" # Pink
+
+set default-bg                  "#151515" # Background
+set default-fg                  "#e8e8d3" # Foreground
+
+set render-loading              true
+set render-loading-fg           "#151515" # Background
+set render-loading-bg           "#e8e8d3" # Foreground
+
+# Recolor mode settings
+#
+#
+set recolor-lightcolor          "#151515" # Background
+set recolor-darkcolor           "#e8e8d3" # Foreground
+
+set recolor true # dark mode by default

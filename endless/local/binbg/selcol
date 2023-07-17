@@ -1,0 +1,6 @@
+#!/bin/sh
+hex="$(xcolor | tr '[:lower:]' '[:upper:]')"
+[ "$hex" ] && (
+convert -size 35x35 xc:$hex /tmp/xcolor.png
+echo "$hex" | xclip -r -sel clipboard && notify-send -i /tmp/xcolor.png "selcol" "$hex"
+)

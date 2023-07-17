@@ -1,0 +1,9 @@
+#!/bin/sh
+selection="$(echo 'fullscreen\ncustom' | dmenu -p "selection")"
+[ "$selection" ] && name="$(echo untitled | dmenu -p 'name')" && name=${name%.png}
+[ "$name" ] && time=$(echo 1 | dmenu -p 'specify delay (in integral seconds)')
+[ "$time" ] && (
+  [ ! "${selection##custom}" ] && scrot -s -d $time "$HOME/pix/screenshots/$name.png" && notify-send -i $HOME/pix/screenshots/$name.png "dmscrot" "$name.png saved."
+  [ ! "${selection##fullscreen}" ] && scrot -d $time "$HOME/pix/screenshots/$name.png" && notify-send -i $HOME/pix/screenshots/$name.png "dmscrot" "$name.png saved."
+  )
+exit

@@ -1,2 +1,5 @@
 ## My dotfiles
-<img src=assets/rice5-output.png />
+Each directory represents a different rice.
+### TODO
+write an install script<br>
+replace directory-rices with branches

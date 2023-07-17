@@ -1,0 +1,71 @@
+# settings
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 20
+#set icons
+set period 1
+set previewer '~/.config/lf/previewer'
+set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
+set autoquit true
+#set drawbox true
+
+# cmds/functions
+cmd open ${{
+    case $(file --mime-type "$(readlink -f $f)" -b) in
+	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
+	image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
+        text/*|application/json|inode/x-empty) nvim $fx;;
+	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
+	image/svg+xml) display -- $f ;;
+	image/*) setsid -f sxiv -ab $f 2>/dev/null ;;
+	audio/*) mpv --audio-display=no $f ;;
+	video/*|application/vnd.rn-realmedia) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+	application/pdf|application/vnd.djvu|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+	application/pgp-encrypted) $EDITOR $fx ;;
+	application/vnd.openxmlformats-officedocument.wordprocessingml.document|application/vnd.oasis.opendocument.text) setsid -f lowriter $fx >/dev/null 2>&1 ;;
+	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet|application/octet-stream|application/vnd.oasis.opendocument.spreadsheet|application/vnd.oasis.opendocument.spreadsheet-template) setsid -f localc $fx >/dev/null 2>&1 ;;
+	application/vnd.openxmlformats-officedocument.presentationml.presentation|application/vnd.oasis.opendocument.presentation-template|application/vnd.oasis.opendocument.presentation|application/vnd.ms-powerpoint) setsid -f loimpress $fx >/dev/null 2>&1 ;;
+	application/vnd.oasis.opendocument.graphics|application/vnd.oasis.opendocument.graphics-template) setsid -f lodraw $fx >/dev/null 2>&1 ;;
+	application/vnd.oasis.opendocument.formula) setsid -f lomath $fx >/dev/null 2>&1 ;;
+	application/vnd.oasis.opendocument.database) setsid -f lobase $fx >/dev/null 2>&1 ;;
+        *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
+    esac
+}}
+
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+cmd openwith ${{setsid -f $(echo $* | tr ' ' '\ ') "$fx"}}
+cmd rmdir $rmdir "$fx"
+cmd touch $touch "$(echo $* | tr ' ' '\ ')"
+cmd setwal ${{xwallpaper --zoom "$fx"}}
+cmd runscript ${{"$fx"}}
+cmd mkexecutable ${{chmod +x "$fx"}}
+cmd mvtotrash ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	clear; echo "Move to Trash?"
+  read ans
+  trash="$HOME/.local/share/Trash"
+  mkdir -p $trash
+	[ $ans = "y" ] &&
+	  for x in $fx; do
+		  eval mv -i \"$x\" $trash
+	  done
+	[ $ans = "Y" ] &&
+	  for x in $fx; do
+		  eval mv -i \"$x\" $trash
+	  done
+}}
+
+# keybindings
+map <c-n> push :mkdir<space>
+map <c-t> push :touch<space>
+map o push :openwith<space>
+map R rmdir
+map x mvtotrash
+
+map zw setwal
+map zx runscript
+map zX mkexecutable
+
+map ZZ quit
+map . set hidden!

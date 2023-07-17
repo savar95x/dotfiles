@@ -1,0 +1,2 @@
+#!/bin/bash
+dmenu -nf "#1C2021" -p "$1" <&-

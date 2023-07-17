@@ -1,0 +1,7 @@
+#!/bin/sh
+cmd=$(echo "lock\nreboot\nshutdown" | dmenu -p "menu")
+[ $cmd ] && (
+[ ! ${cmd##lock} ] && xsecurelock
+[ ! ${cmd##reboot} ] && SUDO_ASKPASS=$HOME/.local/binbg/dmpass sudo -A reboot
+[ ! ${cmd##reboot} ] && SUDO_ASKPASS=$HOME/.local/binbg/dmpass sudo -A shutdown now
+)

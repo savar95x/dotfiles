@@ -1,0 +1,8 @@
+#!/bin/sh
+# depends on simple-mtpfs, rofi
+scriptname="dmountcell"
+filemanager="st -e lf"
+celldir="$HOME/mnt/cell"
+cells="$(simple-mtpfs -l)"
+[ "$cells" ] && cell=$(echo $cells | dmenu -l $(echo $cells | wc -l) -p "select cell:" | cut -d':' -f1) || notify-send "$scriptname" "no cell detected"
+[ "$cell" ] && simple-mtpfs --device $cell $celldir && notify-send "$scriptname" "cell $cell selected\nopening in file manager" && $filemanager $celldir && umount $celldir && notify-send "$scriptname" "cell unmounted" || notify-send "$scriptname" "cell not mounted"

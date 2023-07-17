@@ -1,0 +1,6 @@
+#!/bin/sh
+xdotool type "$(cat $HOME/.local/share/.private/github_username)
+"
+sleep 1s
+xdotool type "$(cat $HOME/.local/share/.private/pat)
+"

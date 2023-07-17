@@ -1,0 +1,35 @@
+# Settings
+# Directories #
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory  = ~/.local/share/lyrics
+mpd_music_dir     = ~/mus
+
+lyrics_fetchers = musixmatch
+
+# Window #
+song_window_title_format = "music"
+
+# Progress bar #
+progressbar_look = "▂▂▂"
+progressbar_color = "black"
+progressbar_elapsed_color = "yellow"
+
+### Behaviour ###
+# execute_on_song_change = "sh ~/.config/ncmpcpp/mpd-notification"
+message_delay_time = 1
+playlist_disable_highlight_delay = 2
+autocenter_mode = "yes"
+centered_cursor = "yes"
+ignore_leading_the = "yes"
+allow_for_physical_item_deletion = "no"
+startup_screen = "playlist"
+fetch_lyrics_for_current_song_in_background = yes
+lines_scrolled = 1
+
+### Visualizer ###
+visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_output_name = "mpd_visualizer"
+visualizer_in_stereo = "yes"
+visualizer_sync_interval = 30
+visualizer_look = 
+visualizer_type = "ellipse"
