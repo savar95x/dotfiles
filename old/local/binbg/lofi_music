@@ -1,3 +1,0 @@
-#!/bin/sh
-stream="https://www.youtube.com/watch?v=jfKfPfyJRdk"
-exec mpv --no-video --title="mpv_lofi" "$stream" >/dev/null

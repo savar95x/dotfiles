@@ -1,7 +1,0 @@
-#!/bin/sh
-# depends on simple-mtpfs, rofi/dmenu
-TERMINAL=st
-FILEMANAGER=lf
-celldir=$HOME/mnt/cell
-cell=$(simple-mtpfs -l | rofi -dmenu -p "select cell:" | cut -d':' -f1)
-[ "$cell" ] && simple-mtpfs --device $cell $celldir && $TERMINAL -e $FILEMANAGER $celldir && umount $celldir

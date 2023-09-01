@@ -1,3 +1,0 @@
-#!/bin/sh
-url="$(rofi -dmenu)"
-[ "url" ] && (firefox https://www.google.com/search?q=$url)

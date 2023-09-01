@@ -1,8 +1,0 @@
-#!/bin/sh
-TERMINAL=st2
-BROWSER=vimb
-selection=$(cat $HOME/docs/sites $HOME/.config/bookmarks/quicksites | sed '/^#/d' | rofi -dmenu -p quicksites)
-
-[ "$selection" ] && (
-  [ ! "${selection%%--edit--}" ] && $TERMINAL -e nvim $HOME/.config/bookmarks/quicksites || $BROWSER "$selection"
-)

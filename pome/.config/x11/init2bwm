@@ -1,0 +1,3 @@
+#!/bin/sh
+setsid -f $HOME/.config/2bwm/autostart.sh &
+exec 2bwm

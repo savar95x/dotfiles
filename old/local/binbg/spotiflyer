@@ -1,3 +1,0 @@
-#!/bin/sh
-java -jar $HOME/.local/share/spotiflyer/SpotiFlyer-linux-x64-3.6.3.jar
-rm -rf $HOME/.java

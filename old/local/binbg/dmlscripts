@@ -1,4 +1,0 @@
-#!/bin/sh
-# This directory has all the scripts except the stout ones. Those are supposed to be in ~/.local/bin/ directory
-script=$(ls --ignore="dmlscripts" --ignore="dpass" $HOME/.local/binbg | rofi -dmenu -p scripts)
-[ "$script" ] && $HOME/.local/binbg/$script

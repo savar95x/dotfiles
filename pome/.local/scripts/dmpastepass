@@ -1,0 +1,2 @@
+#!/bin/sh
+pass=$(pass ls | dmenu)

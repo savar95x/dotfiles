@@ -1,6 +1,0 @@
-#!/bin/sh
-cmd=$(echo "lock\nreboot\nshutdown" | rofi -dmenu -p "menu")
-[ $cmd ] && (
-[ ! ${cmd##lock} ] && slock
-[ ${cmd##lock} ] && echo "power menu - $cmd ## this script is a wip ##" && notify-send "power menu - $cmd" "this script is a wip"
-)
