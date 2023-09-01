@@ -1,14 +1,9 @@
 ## My dotfiles
-Each directory represents a different rice.
+My 2bwm rice. I call it "pome.".
+#### ps
+if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in [my junkyard](https://github.com/savar95x/junkyard).
 
 ## Preview
-#### Endless
-<img src=.assets/endless.png />
-
-#### dkwm
-<img src=.assets/dkwm.png />
-
-#### 2bwm
 <img src=.assets/pome.png />
 
 ### TODO
