@@ -5,10 +5,14 @@ ps:
 if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in my [junkyard](https://github.com/savar95x/junkyard).
 
 ## Installation
+
+#### NOTE: This highly experimental, proceed on your own risk
+
 You could just copy paste the .config and .local directories, but I recommend, and personally use, gnu stow.<br>
 If you choose to use gnu stow, clone the repo at a neat place, for example, ~/.local/repos/
 
 ### Manual
+
 
 ```bash
 # installing 2bwm
