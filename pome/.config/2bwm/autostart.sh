@@ -4,6 +4,11 @@ if hash picom >/dev/null 2>&1; then
 	setsid -f picom --config $HOME/.config/2bwm/picom.conf &
 fi
 
+if hash polybar >/dev/null 2>&1; then
+	pkill polybar
+	setsid -f polybar &
+fi
+
 if hash xbanish >/dev/null 2>&1; then
 	pkill xbanish
 	setsid -f xbanish -t 1 &
@@ -24,4 +29,4 @@ xrdb -load $HOME/.config/x11/xresources
 setxkbmap -option caps:swapescape 
 
 # audio dameon
-#$HOME/.config/2bwm/audio_server.sh &
+$HOME/.config/2bwm/audio_server.sh &

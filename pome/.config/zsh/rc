@@ -95,4 +95,4 @@ bindkey -M visual '^[[P' vi-delete
 #yarsi
 #nerdfetch
 #bunnyfetch
-fetch2
+tuxfetch
