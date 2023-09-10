@@ -6,7 +6,10 @@ fi
 
 if hash polybar >/dev/null 2>&1; then
 	pkill polybar
-	setsid -f polybar &
+	setsid -f polybar date &
+	setsid -f polybar power &
+	setsid -f polybar battery &
+	setsid -f polybar tags &
 fi
 
 if hash xbanish >/dev/null 2>&1; then
