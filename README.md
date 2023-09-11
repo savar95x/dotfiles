@@ -8,7 +8,7 @@ My build of 2bwm (the one in the screenshots), can be found over [here](https://
 <img src=.assets/pome/new.png />
 <img src=.assets/pome/old.png />
 
-[comment]: My rice on 2bwm using gruvbox. Simple, calm and comfy. I call it "pome".
+[comment]: <> My rice on 2bwm using gruvbox. Simple, calm and comfy. I call it "pome".
 
 ps:
 if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in my [junkyard](https://github.com/savar95x/junkyard).
@@ -39,4 +39,3 @@ stow -t $HOME pome/ # symlink the configs to $HOME/.config/
 
 ### TODO
 write an install script<br>
-replace directory-rices with branches
