@@ -1,4 +1,7 @@
-## My dotfiles
+## Pome.
+<img src=.assets/pome/old.png />
+<img src=.assets/pome/new.png />
+
 My rice on 2bwm using gruvbox. Simple, calm and comfy. I call it "pome".
 
 ps:
@@ -27,9 +30,6 @@ cd ./dotfiles
 mv $HOME/.config $HOME/.config.bak # backing up
 stow -t $HOME pome/ # symlink the configs to $HOME/.config/
 ```
-
-## Preview
-<img src=.assets/pome.png />
 
 ### TODO
 write an install script<br>
