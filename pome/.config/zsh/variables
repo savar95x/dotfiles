@@ -5,6 +5,7 @@ export EDITOR="nvim"
 #export VISUAL="$TERMINAL -e $EDITOR"
 export BROWSER="firefox"
 export PAGER="bat"
+export MYMENU="rofi -dmenu"
 
 # xdg
 export XDG_CONFIG_HOME=$HOME/.config

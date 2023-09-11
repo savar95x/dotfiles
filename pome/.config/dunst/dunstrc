@@ -30,10 +30,10 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = bottom-right
+    origin = top-right
 
     # Offset from the origin
-    offset = 15x75
+    offset = 15x15
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -95,7 +95,7 @@
     frame_width = 10
 
     # Defines color of the frame around the notification window.
-    frame_color = "#424242"
+    frame_color = "#393939"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -313,21 +313,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#1C2021"
+    background = "#282828"
     foreground = "#BDAE93"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#1C2021"
+    background = "#282828"
     foreground = "#BDAE93"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#1C2021"
+    background = "#282828"
     foreground = "#DDC7A1"
     frame_color = "#d27e7a"
     timeout = 0
