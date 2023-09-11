@@ -1,8 +1,13 @@
-## Pome.
-<img src=.assets/pome/old.png />
-<img src=.assets/pome/new.png />
 
-My rice on 2bwm using gruvbox. Simple, calm and comfy. I call it "pome".
+## Pome.
+### Details
+This repo contains all my important system configuration files, mainly as a backup but also for anyone who wants to steal my configs.
+It contains files corresponding to my rice which I call "pome", made on the 2 border window manager ([2bwm](https://github.com/venam/2bwm)). Simple, calm and comfy.
+My build of 2bwm (the one in the screenshots), can be found over [here](https://github.com/savar95x/2bwm).
+<img src=.assets/pome/new.png />
+<img src=.assets/pome/old.png />
+
+[comment]: My rice on 2bwm using gruvbox. Simple, calm and comfy. I call it "pome".
 
 ps:
 if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in my [junkyard](https://github.com/savar95x/junkyard).
