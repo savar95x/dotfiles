@@ -31,7 +31,7 @@ alias sst="cd $HOME/.local/repos/savar95x/st && ls"
 
 # actions
 alias beep="mpv --no-video $HOME/vids/misc/beep.webm >/dev/null"
-alias audio_server="setsid -f $HOME/.config/dwm/audio_server.sh"
+alias audio_server="setsid -f $HOME/.config/2bwm/audio_server.sh"
 alias startxdwm="XINITRC='$HOME/.config/x11/initdwm' startx"
 alias startxawesome="XINITRC='$HOME/.config/x11/initawesome' startx"
 alias startxdk="XINITRC='$HOME/.config/x11/initdk' startx"
