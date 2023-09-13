@@ -161,9 +161,9 @@ reset='[0m'
 
 ## USER VARIABLES -- YOU CAN CHANGE THESE
 
-lc="${reset}${magenta}"  # labels
-nc="${reset}${yellow}"   # user
-hn="${reset}${blue}"     # hostname
+lc="${reset}${cyan}"  # labels
+nc="${reset}${magenta}"   # user
+hn="${reset}${magenta}"     # hostname
 ic="${reset}${white}"           # info
 c0="${reset}${grey}"            # first color
 c1="${reset}${white}"           # second color
@@ -178,12 +178,12 @@ palette="[7m$c11 $c11 $c12 $c12 $c3 $c3 $c4 $c4 $c5 $c5 $c6 $c6 [m"
 
 cat <<EOF
 
-${c0}      ___         ${nc}${USER}${red}@${reset}${hn}${host}${reset} 
-${c0}     (${c1}.. ${c0}\    ${lc}    os        ${ic}${os}${reset}
-${c0}     (${c2}<> ${c0}|    ${lc}    kernel    ${ic}${kernel}${reset}
-${c0}    /${c1}/  \\ ${c0}\\   ${lc}    wm        ${ic}${RAM}${memstat}${reset}
-${c0}   ( ${c1}|  | ${c0}/|  ${lc}    packages  ${ic}${packages}${reset}
-${c2}  _${c0}/\\ ${c1}__)${c0}/${c2}_${c0})${reset}
- ${c2} \/${c0}-____${c2}\/${c6}       ${palette}
+${c0}        ___         ${nc}${USER}${white}@${reset}${hn}${host}${reset} 
+${c0}       (${c1}.. ${c0}|    ${lc}    os        ${ic}${os}${reset}
+${c0}       (${c2}<> ${c0}|    ${lc}    kernel    ${ic}${kernel}${reset}
+${c0}      /${c1}/  \\ ${c0}\\   ${lc}    shell     ${ic}${shell}${reset}
+${c0}     ( ${c1}|  | ${c0}/|  ${lc}    wm        ${ic}${RAM}${memstat}${reset}
+${c2}    _${c0}/\\ ${c1}__)${c0}/${c2}_${c0})${reset}
+ ${c2}   \/${c0}-____${c2}\/${c6}       ${palette}
 
 EOF

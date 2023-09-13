@@ -1,21 +1,21 @@
 #!/bin/sh
 browser="firefox --new-window"
-selection="$(echo 'bookmarks\nsites\nurl\ngoogle\nyoutube\nspotify' | dmenu -p 'open in browser:')"
+selection="$(echo 'bookmarks\nsites\nurl\ngoogle\nyoutube\nspotify' | ${MYMENU:-dmenu} -p 'browser:')"
 
 if [ "$selection" =  "bookmarks" ]; then
-	url="$(sed '/^#/d' < ${XDG_DOCUMENTS_DIR:-$HOME/dox}/web/bookmarks | dmenu -l 5 -p 'bookmarks:' | cut -d'(' -f2- | sed 's/.$//' )"
+	url="$(sed '/^#/d' < ${XDG_DOCUMENTS_DIR:-$HOME/dox}/web/bookmarks | ${MYMENU:-dmenu} -l 5 -p 'bookmarks:' | cut -d'(' -f2- | sed 's/.$//' )"
 elif [ "$selection" =  "sites" ]; then
-	url="$(sed '/^#/d' < ${XDG_DOCUMENTS_DIR:-$HOME/dox}/web/sites | dmenu -p 'sites:')"
+	url="$(sed '/^#/d' < ${XDG_DOCUMENTS_DIR:-$HOME/dox}/web/sites | ${MYMENU:-dmenu} -p 'sites:')"
 elif [ "$selection" =  "url" ]; then
-	url="$(dmenu -p 'enter a url:' <&-)"
+	url="$(${MYMENU:-dmenu} -p 'url:' <&-)"
 elif [ "$selection" =  "google" ]; then
-	text="$(dmenu -p 'enter something:' <&-)"
+	text="$(${MYMENU:-dmenu} -p 'query:' <&-)"
 	[ "$text" ] && url="https://www.google.com/search?q=$text"
 elif [ "$selection" =  "youtube" ]; then
-	text="$(dmenu -p 'enter something:' <&-)"
+	text="$(${MYMENU:-dmenu} -p 'query:' <&-)"
 	[ "$text" ] && url="https://www.youtube.com/results?search_query=$text"
 elif [ "$selection" =  "spotify" ]; then
-	text="$(dmenu -p 'enter something:' <&-)"
+	text="$(${MYMENU:-dmenu} -p 'query:' <&-)"
 	[ "$text" ] && url="https://open.spotify.com/search/$text"
 fi
 
