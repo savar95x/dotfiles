@@ -1,0 +1,35 @@
+#!/bin/sh
+# run by polybar/dwmblocks every 60 seconds
+([ "$1" = "help" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]) && echo "Usage: sb_battery COMMAND\nCOMMAND:\nperc : shows the percentage\nnotify : sends a notification regarding the current battery info\nicon : echoes a battery icon based on the current battery status\nhelp | -h | --help : prints out this help message"
+perc=$(cat /sys/class/power_supply/BAT0/capacity)
+state="$(cat /sys/class/power_supply/BAT0/status)"
+icon=""
+
+# make $perc two digit when single digit
+[ $(echo $perc | wc -m) = 2 ] && perc=0$perc 
+
+# set icon according to battery level
+[ "${state##Discharging}" ] || 
+  if [ $perc -lt 16 ] && [ $perc -gt -1 ]; then
+    icon="󱢠" #
+  elif [ $perc -lt 31 ] && [ $perc -gt 15 ]; then
+    icon="󰋔" #
+  elif [ $perc -lt 51 ] && [ $perc -gt 30 ]; then
+    icon="󰛞" #
+  elif [ $perc -lt 76 ] && [ $perc -gt 50 ]; then
+    icon="󰛞" #
+  elif [ $perc -lt 102 ] && [ $perc -gt 75 ]; then
+    icon="󰣐" #
+  fi
+[ "${state##Charging}" ] || icon="󰻹" #
+
+[ "$1" = "" ] && echo "Please give an argument\nUse --help for the available arguments"
+[ "$1" = "icon" ] && echo "$icon"
+[ "$1" = "icon_polybar" ] &&  echo "%{F#af5154}$icon%{F-}"
+[ "$1" = "perc" ] && (
+    echo "$perc"
+    # notify
+    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && notify-send -u critical -t 30000 "Battery Level Critical  " "<i>Consider connecting to a power supply.</i>" &
+    [ $perc -gt 95 ] && [ "$state" = "Charging" ] && notify-send -u normal -t 30000 "Battery Sufficiently Charged  " "Please disconnect the power supply." &
+)
+[ "$1" = "notify" ] && notify-send "Battery Info $icon" "$perc% / $state"

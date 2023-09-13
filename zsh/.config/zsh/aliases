@@ -18,7 +18,7 @@ alias scim="/usr/bin/sc-im"
 
 # directories
 alias sc="cd $HOME/.local/bin && ls"
-alias scs="cd $HOME/.local/binbg && ls"
+alias scs="cd $HOME/.local/scripts && ls"
 alias src="cd $HOME/.local/src && ls"
 alias repos="cd $HOME/.local/repos && ls"
 alias dotfiles="cd $HOME/.local/repos/savar95x/dotfiles && ls"
