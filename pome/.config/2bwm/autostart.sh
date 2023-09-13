@@ -11,6 +11,7 @@ if hash polybar >/dev/null 2>&1; then
 	setsid -f polybar battery &
 	setsid -f polybar tags &
 	setsid -f polybar search &
+	#setsid -f polybar weather &
 	#sleep 1 && setsid -f polybar dummy &
 	sleep 1 && setsid -f polybar dummy && sleep 1 && polybar-msg -p $(xdotool search --name dummy getwindowpid) cmd toggle &
 fi
