@@ -38,7 +38,7 @@ cd ../
 git clone https://github.com/savar95x/dotfiles.git
 cd ./dotfiles
 mv $HOME/.config $HOME/.config.bak # backing up
-stow -t $HOME pome/ # symlink the configs to $HOME/.config/
+stow -t $HOME */ # symlink the configs to $HOME/.config/
 ```
 
 ### TODO
