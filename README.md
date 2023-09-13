@@ -5,8 +5,10 @@ This repo contains all my important system configuration files, mainly as a back
 It contains files corresponding to my rice which I call "pome", made on the 2 border window manager ([2bwm](https://github.com/venam/2bwm)). Simple, calm and comfy.
 My build of 2bwm (the one in the screenshots), can be found over [here](https://github.com/savar95x/2bwm).
 ### Preview
+<img src=.assets/pome/new3.png />
+<img src=.assets/pome/new4.png />
 <img src=.assets/pome/new2.png />
-The bar needs some refinement
+Don't mind the bar, this is an old screenshot
 <img src=.assets/pome/new1.png />
 <img src=.assets/pome/old.png />
 
