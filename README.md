@@ -21,7 +21,7 @@ if you're looking for configs of my older rices (endless on dwm, dkwm), they'd b
 
 #### NOTE: This highly experimental, proceed at your own risk
 
-You could just copy paste the .config and .local directories, but I recommend, and personally use, gnu stow.<br>
+You could just copy paste the .config and .local directories manually, but I recommend, and personally use, gnu stow.<br>
 If you choose to use gnu stow, clone the repo at a neat place, for example, ~/.local/repos/
 
 ### Manual
@@ -43,3 +43,8 @@ stow -t $HOME */ # symlink the configs to $HOME/.config/
 
 ### TODO
 write an install script<br>
+
+### Thanks
+- voldemort(pentest2k) from discord or [KT-Chovy](https://reddit.com/u/KT-Chovy) for bearing every small improvement I made with the rice
+- [Elkowar](https://github.com/elkowar/) for making me believe gruvebox can be aesthetic as well
+- [adi1090x](https://github.com/adi1090x/) for his rofi configs
