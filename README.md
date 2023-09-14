@@ -66,6 +66,7 @@ cd 2bwm/
 make
 sudo make install
 ```
+
 installing st
 ```bash
 cd $HOME/.local/repos/savar95x
@@ -84,8 +85,15 @@ mv $HOME/.config $HOME/.config.bak # backing up
 stow -t $HOME */ # symlink the configs to $HOME/.config/
 ```
 
+also, you should link the `~/.config/zsh/rc`, `~/.config/zsh/profile` and `~/.config/x11/init2bwm` to home as:
+```bash
+ln -s $HOME/.config/zsh/rc $HOME/.zshrc
+ln -s $HOME/.config/x11/init2bwm $HOME/.xinitrc
+ln -s $HOME/.config/zsh/profile $HOME/.zprofile
+```
+
 ### TODO
-write an install script<br>
+write an install script
 
 ### Thanks
 - voldemort(pentest2k) from discord or [KT-Chovy](https://reddit.com/u/KT-Chovy) for bearing every small improvement I made with the rice
