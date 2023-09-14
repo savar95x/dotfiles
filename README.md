@@ -17,6 +17,26 @@ Don't mind the bar, this is an old screenshot
 ps:
 if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in my [junkyard](https://github.com/savar95x/junkyard).
 
+### Default Keybindings
+
+These are the basic keybindings. Read through the `config.h` in my `2bwm` repo for more shortcuts.
+
+|        Keybind            |                 Function                   |
+| ------------------------- | ------------------------------------------ |
+| `MOD + Enter`             | Launch terminal (alacritty)                |
+| `MOD + Q`                 | Close window                               |
+| `MOD + {H,J,K,L}`         | Move the window to {Left, Down, Up, Right} |
+| `MOD + Shift + {H,J,K,L}` | Resize the window                          |
+| `MOD + X`                 | Maximize a window                          |
+| `MOD + Shift + X`         | Fullscreen a window                        |
+| `MOD + P`                 | Open app launcher                          |
+| `MOD + Shift + BackSpace` | Open powermenu                             |
+| `MOD + R`                 | Open lf (terminal file manager)            |
+| `MOD + A`                 | Makes the active window unkillable         |
+| `MOD + F`                 | Makes the active window focused            |
+
+Note: `MOD` is the windows key
+
 ## Installation
 
 #### NOTE: This highly experimental, proceed at your own risk
@@ -24,19 +44,42 @@ if you're looking for configs of my older rices (endless on dwm, dkwm), they'd b
 You could just copy paste the .config and .local directories manually, but I recommend, and personally use, gnu stow.<br>
 If you choose to use gnu stow, clone the repo at a neat place, for example, ~/.local/repos/
 
-### Manual
-
-
+### Programs
 ```bash
-# installing 2bwm
+startx xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd ncmpcpp picom xbanish redshift polybar rofi firefox 
+```
+also, all the x11 depedencies, and the ones required for compiling st and 2bwm, that you'll have to figure out yourself from the error messages, as it is distro dependent
+
+### Manual
+this will store everything in $HOME/.local/repos/
+
+making that direcotory
+```bash
+mkdir -p $HOME/.local/repos/savar95x
+```
+
+installing 2bwm
+```bash
+cd $HOME/.local/repos/savar95x
 git clone https://github.com/savar95x/2bwm.git
-cd ./2bwm
+cd 2bwm/
 make
 sudo make install
-cd ../
-# placing configuration files
+```
+installing st
+```bash
+cd $HOME/.local/repos/savar95x
+git clone https://github.com/savar95x/st.git
+cd st/
+make
+sudo make install
+```
+
+backing up ~/.config copying my dotfiles instead
+```bash
+cd $HOME/.local/repos/savar95x
 git clone https://github.com/savar95x/dotfiles.git
-cd ./dotfiles
+cd dotfiles/
 mv $HOME/.config $HOME/.config.bak # backing up
 stow -t $HOME */ # symlink the configs to $HOME/.config/
 ```
