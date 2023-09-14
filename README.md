@@ -52,7 +52,7 @@ startx xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd ncmpcpp p
 Also, all the x11 depedencies, and the ones required for compiling st and 2bwm, that you'll have to figure out yourself from the error messages, as it is distro dependent
 
 ### Manual
-This will store everything in $HOME/.local/repos/
+This will store everything in $HOME/.local/repos/savar95x
 
 - Making that direcotory
 ```bash
