@@ -21,19 +21,20 @@ if you're looking for configs of my older rices (endless on dwm, dkwm), they'd b
 
 These are the basic keybindings. Read through the `config.h` in my `2bwm` repo for more shortcuts.
 
-|        Keybind            |                 Function                   |
-| ------------------------- | ------------------------------------------ |
-| `MOD + Enter`             | Launch terminal (alacritty)                |
-| `MOD + Q`                 | Close window                               |
-| `MOD + {H,J,K,L}`         | Move the window to {Left, Down, Up, Right} |
-| `MOD + Shift + {H,J,K,L}` | Resize the window                          |
-| `MOD + X`                 | Maximize a window                          |
-| `MOD + Shift + X`         | Fullscreen a window                        |
-| `MOD + P`                 | Open app launcher                          |
-| `MOD + Shift + BackSpace` | Open powermenu                             |
-| `MOD + R`                 | Open lf (terminal file manager)            |
-| `MOD + A`                 | Makes the active window unkillable         |
-| `MOD + F`                 | Makes the active window focused            |
+|        Keybind            |                 Function                                     |
+| ------------------------- | ------------------------------------------------------------ |
+| `MOD + Enter`             | Launch terminal (alacritty)                                  |
+| `MOD + Q`                 | Close window                                                 |
+| `MOD + {H,J,K,L}`         | Move the window to {Left, Down, Up, Right}                   |
+| `MOD + Shift + {H,J,K,L}` | Resize the window                                            |
+| `MOD + X`                 | Maximize a window                                            |
+| `MOD + Shift + X`         | Fullscreen a window                                          |
+| `MOD + P`                 | Open app launcher                                            |
+| `MOD + S`                 | List out the useful scripts in ~/.local/scipts/ in rofi      |
+| `MOD + Shift + BackSpace` | Open powermenu                                               |
+| `MOD + R`                 | Open lf (terminal file manager)                              |
+| `MOD + A`                 | Makes the active window unkillable                           |
+| `MOD + F`                 | Makes the active window focused                              |
 
 Note: `MOD` is the windows key
 
@@ -48,7 +49,7 @@ If you choose to use gnu stow, clone the repo at a neat place, for example, ~/.l
 ```bash
 startx xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd ncmpcpp picom xbanish redshift polybar rofi firefox 
 ```
-also, all the x11 depedencies, and the ones required for compiling st and 2bwm, that you'll have to figure out yourself from the error messages, as it is distro dependent
+Also, all the x11 depedencies, and the ones required for compiling st and 2bwm, that you'll have to figure out yourself from the error messages, as it is distro dependent
 
 ### Manual
 This will store everything in $HOME/.local/repos/
