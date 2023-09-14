@@ -47,7 +47,7 @@ If you choose to use gnu stow, clone the repo at a neat place, for example, ~/.l
 
 ### Programs
 ```bash
-startx xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd ncmpcpp picom xbanish redshift polybar rofi firefox 
+startx xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd ncmpcpp picom xbanish redshift polybar rofi firefox mpv gotop
 ```
 Also, all the x11 depedencies, and the ones required for compiling st and 2bwm, that you'll have to figure out yourself from the error messages, as it is distro dependent
 
@@ -95,8 +95,15 @@ ln -s $HOME/.config/zsh/profile $HOME/.zprofile
 
 <br>Now your setup should more or less work, once you type startx (or startx2bwm) from the linux console. If it does not, please raise an issue.
 
+#### More Dependencies
+For my scripts to work properly, you'll be needing the following programs:
+```bash
+ImageMagick xcolor simple-mtpfs xsecurelock xdotool
+```
+Raise an issue if something doesn't work.
+
 ### TODO
-write an install script
+- Write an install script.
 
 ### Thanks
 - voldemort(pentest2k) from discord or [KT-Chovy](https://reddit.com/u/KT-Chovy) for bearing every small improvement I made with the rice
