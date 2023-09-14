@@ -40,7 +40,7 @@ Note: `MOD` is the windows key
 
 ## Installation
 
-#### NOTE: This highly experimental, proceed at your own risk
+NOTE: This highly experimental, proceed at your own risk
 
 You could just copy paste the .config and .local directories manually, but I recommend, and personally use, gnu stow.<br>
 If you choose to use gnu stow, clone the repo at a neat place, for example, ~/.local/repos/
