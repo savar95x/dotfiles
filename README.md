@@ -75,7 +75,7 @@ make
 sudo make install
 ```
 
-backing up ~/.config copying my dotfiles instead
+backing up ~/.config and copying my dotfiles instead
 ```bash
 cd $HOME/.local/repos/savar95x
 git clone https://github.com/savar95x/dotfiles.git
