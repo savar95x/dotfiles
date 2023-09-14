@@ -100,5 +100,5 @@ write an install script
 
 ### Thanks
 - voldemort(pentest2k) from discord or [KT-Chovy](https://reddit.com/u/KT-Chovy) for bearing every small improvement I made with the rice
-- [Elkowar](https://github.com/elkowar/) for making me believe gruvebox can be aesthetic as well
+- [Elkowar](https://github.com/elkowar/) for making me believe gruvbox can be aesthetic as well
 - [adi1090x](https://github.com/adi1090x/) for his rofi configs
