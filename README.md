@@ -51,14 +51,14 @@ startx xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd ncmpcpp p
 also, all the x11 depedencies, and the ones required for compiling st and 2bwm, that you'll have to figure out yourself from the error messages, as it is distro dependent
 
 ### Manual
-this will store everything in $HOME/.local/repos/
+This will store everything in $HOME/.local/repos/
 
-making that direcotory
+- Making that direcotory
 ```bash
 mkdir -p $HOME/.local/repos/savar95x
 ```
 
-installing 2bwm
+- Installing 2bwm
 ```bash
 cd $HOME/.local/repos/savar95x
 git clone https://github.com/savar95x/2bwm.git
@@ -67,7 +67,7 @@ make
 sudo make install
 ```
 
-installing st
+- Installing st
 ```bash
 cd $HOME/.local/repos/savar95x
 git clone https://github.com/savar95x/st.git
@@ -76,7 +76,7 @@ make
 sudo make install
 ```
 
-backing up ~/.config and copying my dotfiles instead
+- Backing up ~/.config and copying my dotfiles instead
 ```bash
 cd $HOME/.local/repos/savar95x
 git clone https://github.com/savar95x/dotfiles.git
@@ -85,12 +85,14 @@ mv $HOME/.config $HOME/.config.bak # backing up
 stow -t $HOME */ # symlink the configs to $HOME/.config/
 ```
 
-also, you should link the `~/.config/zsh/rc`, `~/.config/zsh/profile` and `~/.config/x11/init2bwm` to home as:
+- Also, you should link the `~/.config/zsh/rc`, `~/.config/zsh/profile` and `~/.config/x11/init2bwm` to home as:
 ```bash
 ln -s $HOME/.config/zsh/rc $HOME/.zshrc
 ln -s $HOME/.config/x11/init2bwm $HOME/.xinitrc
 ln -s $HOME/.config/zsh/profile $HOME/.zprofile
 ```
+
+<br>Now your setup should more or less work, once you type startx (or startx2bwm) from the linux console. If it does not, please raise an issue.
 
 ### TODO
 write an install script
