@@ -23,7 +23,7 @@ These are the basic keybindings. Read through the `config.h` in my `2bwm` repo f
 
 |        Keybind            |                 Function                                     |
 | ------------------------- | ------------------------------------------------------------ |
-| `MOD + Enter`             | Launch terminal (alacritty)                                  |
+| `MOD + Enter`             | Launch terminal (st)                                  |
 | `MOD + Q`                 | Close window                                                 |
 | `MOD + {H,J,K,L}`         | Move the window to {Left, Down, Up, Right}                   |
 | `MOD + Shift + {H,J,K,L}` | Resize the window                                            |
