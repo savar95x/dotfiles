@@ -1,3 +1,4 @@
 #!/bin/sh
 setsid -f $HOME/.config/2bwm/autostart.sh &
+setsid -f $HOME/.config/2bwm/audio_server.sh &
 exec 2bwm

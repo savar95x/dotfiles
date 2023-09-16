@@ -25,11 +25,9 @@ icon=""
 
 [ "$1" = "" ] && echo "Please give an argument\nUse --help for the available arguments"
 [ "$1" = "icon" ] && echo "$icon"
-[ "$1" = "icon_polybar" ] &&  echo "%{F#af5154}$icon%{F-}"
-[ "$1" = "perc" ] && (
-    echo "$perc"
-    # notify
-    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && notify-send -u critical -t 30000 "Battery Level Critical  " "<i>Consider connecting to a power supply.</i>" &
-    [ $perc -gt 95 ] && [ "$state" = "Charging" ] && notify-send -u normal -t 30000 "Battery Sufficiently Charged  " "Please disconnect the power supply." &
+[ "$1" = "perc" ] && echo "$perc"
+[ "$1" = "notify_critical" ] && (
+    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && notify-send -u critical -t 30000 "Battery Level Critical  " "<i>Consider connecting to a power supply.</i>"
+    [ $perc -gt 95 ] && [ "$state" = "Charging" ] && notify-send -u normal -t 30000 "Battery Sufficiently Charged  " "Please disconnect the power supply."
 )
 [ "$1" = "notify" ] && notify-send "Battery Info $icon" "$perc% / $state"

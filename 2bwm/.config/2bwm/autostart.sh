@@ -36,4 +36,4 @@ xrdb -load $HOME/.config/x11/xresources
 setxkbmap -option caps:swapescape 
 
 # audio dameon
-$HOME/.config/2bwm/audio_server.sh &
+#$HOME/.config/2bwm/audio_server.sh &
