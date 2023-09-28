@@ -11,17 +11,17 @@ icon=""
 # set icon according to battery level
 [ "${state##Discharging}" ] || 
   if [ $perc -lt 16 ] && [ $perc -gt -1 ]; then
-    icon="󱢠" #
+    icon="" #󱢠
   elif [ $perc -lt 31 ] && [ $perc -gt 15 ]; then
-    icon="󰋔" #
+    icon="" #󰋔
   elif [ $perc -lt 51 ] && [ $perc -gt 30 ]; then
-    icon="󰛞" #
-  elif [ $perc -lt 61 ] && [ $perc -gt 50 ]; then
-    icon="󰛞" #
-  elif [ $perc -lt 102 ] && [ $perc -gt 60 ]; then
-    icon="󰣐" #
+    icon="" #󰛞
+  elif [ $perc -lt 76 ] && [ $perc -gt 50 ]; then
+    icon="" #󰛞
+  elif [ $perc -lt 102 ] && [ $perc -gt 75 ]; then
+    icon="" #󰣐
   fi
-[ "${state##Charging}" ] || icon="󰻹" #
+[ "${state##Charging}" ] || icon="" #󰻹
 
 [ "$1" = "" ] && echo "Please give an argument\nUse --help for the available arguments"
 [ "$1" = "icon" ] && echo "$icon"
