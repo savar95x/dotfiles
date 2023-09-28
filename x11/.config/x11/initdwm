@@ -1,0 +1,4 @@
+#!/bin/sh
+setsid -f $HOME/.config/dwm/autostart.sh &
+setsid -f $HOME/.config/dwm/audio_server.sh &
+exec dwm
