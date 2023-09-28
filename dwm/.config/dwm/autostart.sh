@@ -25,7 +25,7 @@ if hash redshift >/dev/null 2>&1; then
 fi
 
 ### quality of life ###
-xwallpaper --zoom ~/pix/walls/gruvbox/gruvbox_astro.jpg
+xwallpaper --zoom ~/.config/dwm/walls/gruvbox_astro.jpg
 #xwallpaper --zoom ~/pix/walls/gruvbox/flower-1.jpg
 xset r rate 215 40
 xrdb -load $HOME/.config/x11/xresources
