@@ -1,7 +1,7 @@
 #!/bin/sh
 if hash picom >/dev/null 2>&1; then
 	pkill picom
-	setsid -f picom &
+	setsid -f picom --config $HOME/.config/dwm/picom.conf &
 	#--config "$HOME/.local/share/themes/gruv/config/picom.conf" &
 	#$HOME/.local/src/picom-pijulius/build/src/picom --config $HOME/.config/picom.conf.pijulius -b --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 350 &
 	#$HOME/.local/src/picom-pijulius/build/src/picom --config $HOME/.config/picom.conf.pijulius
