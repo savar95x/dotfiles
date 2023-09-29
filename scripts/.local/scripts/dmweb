@@ -1,5 +1,6 @@
 #!/bin/sh
 browser="firefox --new-window"
+#browser="$HOME/downloads/pulse/pulse-browser/pulse-browser-bin"
 selection="$(echo 'bookmarks\nsites\nurl\ngoogle\nyoutube\nspotify' | ${MYMENU:-dmenu} -p 'browser:')"
 
 if [ "$selection" =  "bookmarks" ]; then
