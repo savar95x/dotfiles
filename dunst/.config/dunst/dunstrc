@@ -30,10 +30,10 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = top-center
 
     # Offset from the origin
-    offset = 15x40
+    offset = 0x40
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -167,7 +167,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = right
+    alignment = center
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -206,7 +206,7 @@
     # icon_theme = "Adwaita, breeze"
 
     # Align icons left/right/top/off
-    icon_position = right
+    icon_position = center
 
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,

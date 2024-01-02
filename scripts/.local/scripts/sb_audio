@@ -22,3 +22,4 @@ elif [ "$1" = "icon" ]; then
 elif [ "$1" = "notify" ]; then
 	notify-send "sb_audio" "volume $(pamixer --get-volume-human)"
 fi
+exit

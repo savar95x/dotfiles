@@ -4,28 +4,22 @@ if hash picom >/dev/null 2>&1; then
 	setsid -f picom --config $HOME/.config/2bwm/picom.conf &
 fi
 
-if hash polybar >/dev/null 2>&1; then
-	pkill polybar
-	setsid -f polybar date &
-	setsid -f polybar power &
-	setsid -f polybar battery &
-	setsid -f polybar tags &
-	setsid -f polybar search &
-	#setsid -f polybar weather &
-	#sleep 1 && setsid -f polybar dummy &
-	sleep 1 && setsid -f polybar dummy && sleep 1 && polybar-msg -p $(xdotool search --name dummy getwindowpid) cmd toggle &
-fi
+pkill polybar
+setsid -f polybar date &
+setsid -f polybar power &
+setsid -f polybar battery &
+setsid -f polybar tags &
+setsid -f polybar search &
+#setsid -f polybar weather &
+#sleep 1 && setsid -f polybar dummy &
+sleep 1 && setsid -f polybar dummy && sleep 1 && polybar-msg -p $(xdotool search --name dummy getwindowpid) cmd toggle &
 
-if hash xbanish >/dev/null 2>&1; then
-	pkill xbanish
-	setsid -f xbanish -t 1 &
-fi
+pkill xbanish
+setsid -f xbanish -t 1 &
 
-if hash redshift >/dev/null 2>&1; then
-	pkill redshift
-	redshift -P -O 6500
-	setsid -f redshift &
-fi
+pkill redshift
+redshift -P -O 6500
+setsid -f redshift &
 
 ### quality of life ###
 xwallpaper --zoom ~/.config/2bwm/walls/berries.jpg &

@@ -2,7 +2,7 @@
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 20
-#set icons
+set icons
 set period 1
 set previewer '~/.config/lf/previewer'
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
@@ -19,7 +19,7 @@ cmd open ${{
 	image/svg+xml) display -- $f ;;
 	image/*) setsid -f nsxiv -ab $f 2>/dev/null ;;
 	audio/*) mpv --audio-display=no $f ;;
-	video/*|application/vnd.rn-realmedia) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+	video/*|application/vnd.rn-realmedia) setsid mpv --ao=pulse $f -quiet >/dev/null 2>&1 ;;
 	application/pdf|application/vnd.djvu|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
 	application/pgp-encrypted) $EDITOR $fx ;;
 	application/vnd.openxmlformats-officedocument.wordprocessingml.document|application/vnd.oasis.opendocument.text) setsid -f lowriter $fx >/dev/null 2>&1 ;;

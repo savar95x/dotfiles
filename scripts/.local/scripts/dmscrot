@@ -1,9 +1,11 @@
 #!/bin/sh
-selection="$(echo 'fullscreen\ncustom' | ${MYMENU:-dmenu} -p "selection")"
+scrots_dir=${XDG_PICTURES_DIR:-~/pix}/scrots
+mkdir -p $scrots_dir
+selection="$(echo "fullscreen\ncustom" | ${MYMENU:-dmenu} -p "selection")"
 [ "$selection" ] && name="$(echo untitled | ${MYMENU:-dmenu} -p 'name')" && name=${name%.png}
 [ "$name" ] && time=$(echo 1 | ${MYMENU:-dmenu} -p 'specify delay (in integral seconds)')
 [ "$time" ] && (
-  [ ! "${selection##custom}" ] && scrot -s -d $time "$HOME/pix/screenshots/$name.png" && notify-send -i $HOME/pix/screenshots/$name.png "dmscrot" "$name.png saved."
-  [ ! "${selection##fullscreen}" ] && scrot -d $time "$HOME/pix/screenshots/$name.png" && notify-send -i $HOME/pix/screenshots/$name.png "dmscrot" "$name.png saved."
+  [ ! "${selection##custom}" ] && scrot -s -d $time "$scrots_dir/$name.png" && notify-send -i $scrots_dir/$name.png "dmscrot" "$name.png saved."
+  [ ! "${selection##fullscreen}" ] && scrot -d $time "$scrots_dir/$name.png" && notify-send -i $scrots_dir/$name.png "dmscrot" "$name.png saved."
   )
 exit

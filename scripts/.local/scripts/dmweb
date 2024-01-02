@@ -1,7 +1,5 @@
 #!/bin/sh
-browser="firefox --new-window"
-#browser="$HOME/downloads/pulse/pulse-browser/pulse-browser-bin"
-selection="$(echo 'bookmarks\nsites\nurl\ngoogle\nyoutube\nspotify' | ${MYMENU:-dmenu} -p 'browser:')"
+selection="$(echo -e 'bookmarks\nsites\nurl\ngoogle\nyoutube\nspotify' | ${MYMENU:-dmenu} -p 'browse:')"
 
 if [ "$selection" =  "bookmarks" ]; then
 	url="$(sed '/^#/d' < ${XDG_DOCUMENTS_DIR:-$HOME/dox}/web/bookmarks | ${MYMENU:-dmenu} -l 5 -p 'bookmarks:' | cut -d'(' -f2- | sed 's/.$//' )"
@@ -20,4 +18,4 @@ elif [ "$selection" =  "spotify" ]; then
 	[ "$text" ] && url="https://open.spotify.com/search/$text"
 fi
 
-[ "$url" ] && $browser "$url"
+[ "$url" ] && ${BROWSER:-firefox} --new-window "$url"

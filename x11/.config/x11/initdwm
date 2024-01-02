@@ -1,4 +1,5 @@
 #!/bin/sh
 setsid -f $HOME/.config/dwm/autostart.sh &
 setsid -f $HOME/.config/dwm/audio_server.sh &
+export MYMENU="dmenu"
 exec dwm

@@ -1,4 +1,5 @@
 #!/bin/sh
 setsid -f $HOME/.config/2bwm/autostart.sh &
-setsid -f $HOME/.config/2bwm/audio_server.sh &
+setsid -f $HOME/.config/dwm/audio_server.sh &
+export MYMENU="rofi -dmenu"
 exec 2bwm

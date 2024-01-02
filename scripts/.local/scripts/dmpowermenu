@@ -1,16 +1,7 @@
 #!/bin/sh
-cmd=$(echo "lock\nreboot\nshutdown" | ${MYMENU:-dmenu} -p "menu")
+cmd=$(echo -e "lock\nreboot\nshutdown" | dmenu -p "menu")
 [ $cmd ] && (
-[ ! ${cmd##lock} ] && (
-PICTURE=/tmp/i3lock.png
-
-BLUR="10x5"
-
-scrot $PICTURE
-convert $PICTURE -blur $BLUR $PICTURE
-i3lock -i $PICTURE
-rm $PICTURE
-)
-[ ! ${cmd##reboot} ] && SUDO_ASKPASS=$HOME/.local/scripts/dmpass sudo -A reboot
-[ ! ${cmd##reboot} ] && SUDO_ASKPASS=$HOME/.local/scripts/dmpass sudo -A shutdown now
+[ ! ${cmd##lock} ] && xsecurelock #$HOME/.local/scripts/lock.sh
+[ ! ${cmd##reboot} ] && loginctl reboot
+[ ! ${cmd##shutdown} ] && loginctl poweroff
 )
