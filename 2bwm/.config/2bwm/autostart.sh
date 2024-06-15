@@ -10,16 +10,20 @@ setsid -f polybar power &
 setsid -f polybar battery &
 setsid -f polybar tags &
 setsid -f polybar search &
+setsid -f polybar volume &
 #setsid -f polybar weather &
 #sleep 1 && setsid -f polybar dummy &
 sleep 1 && setsid -f polybar dummy && sleep 1 && polybar-msg -p $(xdotool search --name dummy getwindowpid) cmd toggle &
 
-pkill xbanish
-setsid -f xbanish -t 1 &
+#pkill xbanish
+#setsid -f xbanish -t 1 &
 
 pkill redshift
 redshift -P -O 6500
 setsid -f redshift &
+
+pkill dunst
+setsid -f dunst &
 
 ### quality of life ###
 xwallpaper --zoom ~/.config/2bwm/walls/berries.jpg &

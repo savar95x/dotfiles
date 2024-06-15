@@ -1,0 +1,55 @@
+# Settings
+# Directories #
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory  = ~/.local/share/lyrics
+mpd_music_dir     = ~/mus
+
+lyrics_fetchers = genius
+
+# Window #
+song_window_title_format = "music"
+
+# Progress bar #
+progressbar_look = "▒▓░"
+progressbar_color = "black"
+progressbar_elapsed_color = "yellow"
+
+### Behaviour ###
+# execute_on_song_change = "sh ~/.config/ncmpcpp/mpd-notification"
+message_delay_time = 1
+playlist_disable_highlight_delay = 2
+autocenter_mode = "yes"
+centered_cursor = "yes"
+ignore_leading_the = "yes"
+allow_for_physical_item_deletion = "no"
+startup_screen = "playlist"
+fetch_lyrics_for_current_song_in_background = yes
+lines_scrolled = 1
+
+# VISUALIZER
+visualizer_in_stereo = "yes"
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_fps = 60
+visualizer_output_name = "Visualizer"
+visualizer_type = "ellipse"
+#visualizer_type = "spectrum"
+#visualizer_type = "wave"
+visualizer_spectrum_smooth_look = no
+#visualizer_look = "▐"
+#visualizer_look = "▗"
+#visualizer_look = "▉▉"
+#visualizer_look = "▗"
+#visualizer_look = "◾▍"
+#visualizer_look = "▮▍"
+#visualizer_look = "▍▍"
+#visualizer_look = "││"
+visualizer_look = "▮▮"
+#visualizer_look = "▋▋"
+#visualizer_look = "●┃"
+#visualizer_look = "+|"
+#visualizer_look = "▄▍"
+#visualizer_look = "●●"
+#visualizer_look = "●▗"
+#visualizer_look = ""
+#visualizer_color = "white"
+visualizer_color = "red,magenta,blue,cyan,green"

@@ -1,7 +1,10 @@
 #!/bin/sh
-selection="$(echo -e 'bookmarks\nsites\nurl\ngoogle\nyoutube\nspotify' | ${MYMENU:-dmenu} -p 'browse:')"
+selection="$(echo 'browser\nbookmarks\nsites\nurl\ngoogle\nyoutube\nspotify' | ${MYMENU:-dmenu} -p 'browse:')"
 
-if [ "$selection" =  "bookmarks" ]; then
+if [ "$selection" =  "browser" ]; then
+	browser="$(echo 'vimb\nbrave\nfirefox\nlibrewolf' | ${MYMENU:-dmenu} -p 'select browser:')"
+	[ "$browser" ] && ($browser || notify-send 'dmweb' 'sorry, the selected browser is not in $PATH') &>/dev/null
+elif [ "$selection" =  "bookmarks" ]; then
 	url="$(sed '/^#/d' < ${XDG_DOCUMENTS_DIR:-$HOME/dox}/web/bookmarks | ${MYMENU:-dmenu} -l 5 -p 'bookmarks:' | cut -d'(' -f2- | sed 's/.$//' )"
 elif [ "$selection" =  "sites" ]; then
 	url="$(sed '/^#/d' < ${XDG_DOCUMENTS_DIR:-$HOME/dox}/web/sites | ${MYMENU:-dmenu} -p 'sites:')"
@@ -9,13 +12,14 @@ elif [ "$selection" =  "url" ]; then
 	url="$(${MYMENU:-dmenu} -p 'url:' <&-)"
 elif [ "$selection" =  "google" ]; then
 	text="$(${MYMENU:-dmenu} -p 'query:' <&-)"
-	[ "$text" ] && url="https://www.google.com/search?q=$text"
+	[ "$text" ] && url="$text" #https://www.google.com/search?q=
 elif [ "$selection" =  "youtube" ]; then
 	text="$(${MYMENU:-dmenu} -p 'query:' <&-)"
-	[ "$text" ] && url="https://www.youtube.com/results?search_query=$text"
+	[ "$text" ] && urlalt="https://www.youtube.com/results?search_query=$text"
 elif [ "$selection" =  "spotify" ]; then
 	text="$(${MYMENU:-dmenu} -p 'query:' <&-)"
-	[ "$text" ] && url="https://open.spotify.com/search/$text"
+	[ "$text" ] && urlalt="https://open.spotify.com/search/$text"
 fi
 
-[ "$url" ] && ${BROWSER:-firefox} --new-window "$url"
+[ "$url" ] && ${BROWSER:-vimb} "$url" &>/dev/null
+[ "$urlalt" ] && ${BROWSERALT:-firefox --new-window} "$urlalt" &>/dev/null

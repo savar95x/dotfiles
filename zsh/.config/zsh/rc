@@ -1,14 +1,15 @@
 #!/usr/bin/zsh
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PS1="%{$fg[blue]%}%~"$'\n'"%B%{$fg[green]%}$ %{$reset_color%}%b"
+PS1="%{$fg[blue]%}%~"$'\n'"%B%{$fg[green]%}λ %{$reset_color%}%b"
+# PS1="%{$fg[blue]%}%~"$'\n'"%B%{$fg[green]%}λ%{$fg[black]%} | %{$reset_color%}%b"
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 #  , Α α, Β β, Γ γ, Δ δ, Ε ε, Ζ ζ, Η η, Θ θ, Ι ι, Κ κ, Λ λ, Μ μ, Ν ν, Ξ ξ, Ο ο, Π π, Ρ ρ, Σ σ/ς, Τ τ, Υ υ, Φ φ, Χ χ, Ψ ψ, Ω ω.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 
 # History in cache directory:
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=50000
+SAVEHIST=50000
 HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
 
 # Load aliases if existent.
@@ -53,4 +54,4 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # Load syntax highlighting; should be last.
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 
-tuxfetch
+myfetch # faster than tuxfetch

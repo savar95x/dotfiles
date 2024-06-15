@@ -1,30 +1,15 @@
 #!/bin/bash
-
-# File: lock.sh
-# Author: Abhishek Yadav
-# Upstream: https://github.com/b4skyx/unix-scripts
-
-# Pretty lockscreen implementation using i3lock-color
-# Bind this script to a keybind or run using xautolock to execute it on idle/sleep.
-
-# Note: Works only with the i3lock latest version. They changed some flags which broke backwards compatibility.
-
-#CLOCK_FONT="Sarasa UI HC"
-#FONT="Sarasa Mono K"
 CLOCK_FONT="Rubik"
 FONT="lexend"
-IMAGE="$HOME/.config/dwm/walls/finalizer-dark-blur.png" # or use -blur 5
+IMAGE="$HOME/.config/berry/walls/leaves-hard.jpg" # or use -blur 5
 
-quote="$(shuf -n 1 ~/dox/quotes)"
+quote="$(shuf -n 1 ~/dox/notes/quotes)"
 status=$(playerctl status || true)
 music_paused_on_lock=false
 #[ ! -e /tmp/blurred_wall.jpg ] && convert -scale 10% -blur 0x2.5 -resize 1000% /home/savar/.config/dwm/walls/gruvbox_astro.jpg /tmp/blurred_wall.jpg
 #scrot -o /tmp/blurred_screen.jpg && convert -scale 100% -blur 10x10 -resize 100% /tmp/blurred_screen.jpg /tmp/blurred_screen.jpg
 
 lock() {
-	# save brightness
-#	light="$(light -G)"
-#	light -S 1
         i3lock -n -c 00000066 -e --fill \
 		-i $IMAGE \
                 --ind-pos="w/2:h-24"\
@@ -37,7 +22,7 @@ lock() {
                 --time-color=bfddb2 --timeoutline-color=868686  --time-font="$CLOCK_FONT:style=Medium" --time-size=64 \
                 --date-pos="tx:ty+42"\
                 --date-color=b3cfa7 --date-font="$FONT:style=Bold" --date-size=24 \
-                --greeter-text="\"$quote\"" \
+                --greeter-text="$quote" \
                 --greeter-pos="w/2:h/2+18"\
                 --greeter-color=d39bb6 --greeter-font="$FONT" --greeter-size=24 \
                 --keylayout 2 --layout-pos="18:h-18" --layout-color=999f93 --layout-align=1\
@@ -59,11 +44,6 @@ fi
 # Pause dunst notifications
 dunstctl set-paused true
 
-# kill all rofi instances
-if pgrep -x rofi; then
-	killall rofi
-fi
-
 # lock the screen
 lock
 
@@ -72,8 +52,6 @@ if [ "$music_paused_on_lock" = true ]; then
 	playerctl play
 fi
 
-# Restor brightness 
-#light -S $light
 
 # Resume dunst notifications
 dunstctl set-paused false

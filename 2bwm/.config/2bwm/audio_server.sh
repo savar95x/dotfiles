@@ -9,4 +9,4 @@ sleep 1
 pgrep pipewire && pgrep pipewire-pulse && pgrep wireplumber && pgrep mpd || setsid -f mpd &
 sleep 1
 pgrep pipewire && pgrep pipewire-pulse && pgrep wireplumber && pgrep mpd && pgrep mpd_notify || setsid -f $HOME/.local/scripts/mpd_notify & # currently depends on mpc (for notify and cli), mpDris (for playerctl support), and playerctl (for global audio control)
-bluetoothctl power off
+#bluetoothctl power off

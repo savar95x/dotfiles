@@ -1,0 +1,52 @@
+#!/bin/sh
+bold='[1m'
+black='[30m'
+red='[31m'
+green='[32m'
+yellow='[33m'
+blue='[34m'
+magenta='[35m'
+cyan='[36m'
+white='[37m'
+grey='[90m'
+reset='[0m'
+
+lc="${reset}${cyan}"  # labels
+nc="${reset}${magenta}"   # user
+hn="${reset}${magenta}"     # hostname
+ic="${reset}${white}"           # info
+c0="${reset}${grey}"            # first color
+c1="${reset}${white}"           # second color
+c2="${reset}${yellow}"          # third color
+c11='[31m'; c12='[32m'
+c3='[33m'; c4='[34m'
+c5='[35m'; c6='[36m'
+c7='[37m'; c8='[38m'
+palette="[7m$c11 $c11 $c12 $c12 $c3 $c3 $c4 $c4 $c5 $c5 $c6 $c6 [m"
+RED='[0;31m'
+GREEN='[0;32m'
+YELLOW='[0;33m'
+BLUE='[0;34m'
+MAGENTA='[0;35m'
+CYAN='[0;36m'
+NC='[0m'
+palette="${RED} ${GREEN} ${YELLOW} ${BLUE} ${MAGENTA} ${CYAN} ${NC}"
+
+cat <<EOF
+
+${c0}   ${nc}            $(tput bold)${USER}$(tput sgr0)${white}@${reset}${hn}$(tput bold)$(cat /etc/hostname)${reset} 
+${c0}  ${nc}${reset}
+${c0}    ${white}           ${red}$(tput bold)wm    ${ic}${RAM}$(wmctrl -m | grep Name | cut -d' ' -f2)${reset}  
+${c0}   ${white}(\ /)    ${blue}   $(tput bold)kr    ${ic}$(uname -r)${reset}
+${c0}   ${white}( . .)    ${green}  $(tput bold)up    ${ic}$(uptime -p | cut -d' ' -f2-)${reset}
+${c0}   ${white}c(${red}"${white})(${red}"${white})${yellow}     $(tput bold)sh    ${ic}$(echo $SHELL | rev | cut -d'/' -f1 | rev)${reset}
+${c2}  ${reset}
+${c2}               ${palette}
+
+EOF
+#echo
+#(\ /)
+#( . .)
+#c(")(")
+#
+#$(tput bold)os        ${ic}$(cat /etc/os-release | grep NAME | head -n1 | cut -d'"' -f2)${reset}

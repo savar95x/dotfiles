@@ -140,7 +140,7 @@ case $ostype in
 		mem_full="idk"
 		mem_used="idk"
 esac
-memstat="2bwm"
+memstat="berry"
 if which expr > /dev/null 2>&1; then
 	mempercent="($(expr $(expr ${mem_used} \* 100 / ${mem_full} ))%)"
 fi

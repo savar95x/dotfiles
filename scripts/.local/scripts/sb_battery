@@ -4,6 +4,7 @@
 perc=$(cat /sys/class/power_supply/BAT0/capacity)
 state="$(cat /sys/class/power_supply/BAT0/status)"
 icon=""
+icon_polybar="󰻹"
 
 # make $perc two digit when single digit
 [ $(echo $perc | wc -m) = 2 ] && perc=0$perc 
@@ -19,21 +20,21 @@ icon=""
   elif [ $perc -lt 51 ] && [ $perc -gt 30 ]; then
     icon=""
     icon_polybar="󰛞"
-  elif [ $perc -lt 76 ] && [ $perc -gt 50 ]; then
+  elif [ $perc -lt 66 ] && [ $perc -gt 50 ]; then
     icon=""
     icon_polybar="󰛞"
-  elif [ $perc -lt 102 ] && [ $perc -gt 75 ]; then
+  elif [ $perc -lt 102 ] && [ $perc -gt 65 ]; then
     icon=""
     icon_polybar="󰣐"
   fi
-[ "${state##Charging}" ] || icon="" && icon_polybar="󰻹"
+  [ "${state##Charging}" ] || icon=""
 
 [ "$1" = "" ] && echo "Please give an argument\nUse --help for the available arguments"
 [ "$1" = "icon" ] && echo "$icon"
 [ "$1" = "icon_polybar" ] && echo "$icon_polybar"
 [ "$1" = "perc" ] && echo "$perc"
 [ "$1" = "notify_critical" ] && (
-    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && notify-send -u critical -t 30000 "Battery Level Critical  " "<i>Consider connecting to a power supply.</i>"
+    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && notify-send -u critical -t 30000 "Battery Level Critical  " "<i>$perc% / Consider connecting to a power supply.</i>"
     [ $perc -gt 95 ] && [ "$state" = "Charging" ] && notify-send -u normal -t 30000 "Battery Sufficiently Charged  " "Please disconnect the power supply."
 )
 [ "$1" = "notify" ] && notify-send "Battery Info $icon" "$perc% / $state"

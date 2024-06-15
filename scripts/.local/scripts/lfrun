@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+cleanup() {
+    exec 3>&-
+	rm "$FIFO_UEBERZUG"
+}
+
+CACHE_DIR=${XDG_CACHE_HOME:-$HOME/.cache}
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+	lf "$@"
+else
+	[ ! -d "$CACHE_DIR" ] && mkdir --parents "$CACHE_DIR/lf"
+	export FIFO_UEBERZUG="$CACHE_DIR/lf/ueberzug-$$"
+	mkfifo "$FIFO_UEBERZUG"
+	ueberzug layer -s <"$FIFO_UEBERZUG" -p json &
+	exec 3>"$FIFO_UEBERZUG"
+	trap cleanup EXIT
+	lf "$@" 3>&-
+fi

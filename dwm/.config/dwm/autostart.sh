@@ -18,23 +18,25 @@
 	#setsid -f dwmblocks &
 #fi
 #
-#if hash redshift >/dev/null 2>&1; then
-	#pkill redshift
-	#redshift -P -O 6500
-	#setsid -f redshift &
-#fi
+if hash redshift >/dev/null 2>&1; then
+	pkill redshift
+	redshift -P -O 6500
+	setsid -f redshift &
+fi
 pkill picom; setsid -f picom --config $HOME/.config/dwm/picom.conf &
+pkill dunst; setsid -f dunst &
 #pkill picom; setsid -f picom
-pkill xbanish; setsid -f xbanish -t 1 &
+#pkill xbanish; setsid -f xbanish -t 1 &
 pkill dwmblocks; setsid -f dwmblocks &
 #pkill redshift; setsid -f redshift &
 
 ### quality of life ###
-xwallpaper --zoom ~/.config/dwm/walls/finalizer.png
+xwallpaper --zoom ~/.config/dwm/walls/pexels-irina-iriser-1334116.jpg
 #xwallpaper --zoom ~/pix/walls/gruvbox/flower-1.jpg
 xset r rate 280 50
 ##xrdb -load $HOME/.config/x11/xresources
 setxkbmap -option caps:swapescape 
+xrdb -load $HOME/.config/x11/xresources
 
 # audio dameon
 #$HOME/.config/dwm/audio_server.sh &

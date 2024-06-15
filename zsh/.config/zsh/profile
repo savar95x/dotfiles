@@ -1,2 +1,3 @@
 [ -f ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/variables ] && . ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/variables
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && XINITRC="$HOME/.config/x11/initdwm" startx
+setsid -f $HOME/.config/dwm/audio_server.sh &
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && XINITRC="$HOME/.config/x11/initcwm" startx
