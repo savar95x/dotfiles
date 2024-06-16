@@ -4,10 +4,10 @@ My rice on [berry](https://berrywm.org) using gruvbox material. Simple, calm and
 Earlier, I had it made on [2bwm](), but berry is more versatile and more power efficient. For anyone who wants to use the 2bwm version, the [config]() and [repo]() are still there.  
 ### Preview
 #### berry
-<img src=.assets/pome/newroice1.png />
-<img src=.assets/pome/newroice2.png />
-<img src=.assets/pome/newroice3.png />
-<img src=.assets/pome/newroice4.png />
+<img src=.assets/pome2.0/show1.png />
+<img src=.assets/pome2.0/show2.png />
+<img src=.assets/pome2.0/show3.png />
+<img src=.assets/pome2.0/show4.png />
 
 #### 2bwm
 <img src=.assets/pome/new3.png />
