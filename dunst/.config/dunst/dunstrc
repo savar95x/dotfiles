@@ -206,7 +206,7 @@
     # icon_theme = "Adwaita, breeze"
 
     # Align icons left/right/top/off
-    icon_position = center
+    icon_position = left
 
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
@@ -317,7 +317,7 @@
     foreground = "#BDAE93"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
-    #default_icon = /path/to/icon
+    default_icon = "/dev/null"
 
 [urgency_normal]
     background = "#282828"
@@ -325,6 +325,7 @@
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
+    default_icon = "/dev/null"
 
 [urgency_critical]
     background = "#282828"
@@ -333,6 +334,7 @@
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
+    default_icon = "/dev/null"
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
