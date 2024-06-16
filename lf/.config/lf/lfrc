@@ -21,6 +21,7 @@ cmd open ${{
 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
 	image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
         text/*|text/lua|text/srt|application/json|inode/x-empty) nvim $fx;;
+	*/lua) nvim $fx;;
         text/csv) sc-im $fx;;
 	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
 	image/svg+xml) display -- $f ;;

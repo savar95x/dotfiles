@@ -9,7 +9,7 @@ opt.smartcase = true -- switch to case sensitive search when there's a capital l
 
 opt.number = true -- absolute numbering
 opt.relativenumber = true -- relative numbering
-opt.numberwidth = 4 -- left padding between text and numbering
+opt.numberwidth = 5 -- left padding between text and numbering
 
 opt.showmode = false  -- don't show active mode
 

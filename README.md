@@ -43,7 +43,7 @@ NOTE: The install script is still in works, I recommend the manual way, but ther
 ### Programs
 #### pacman (or any other)
 ```bash
-zsh lf startx sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd dunst ncmpcpp picom xbanish redshift polybar rofi brave-bin mpv
+zsh lf startx sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd dunst libnotify ncmpcpp picom xbanish redshift polybar rofi brave-bin mpv autocpu-freq
 ```
 #### make
 ```bash
@@ -69,10 +69,12 @@ make
 sudo make install
 ```
 
-- Backing up ~/.config and symlinking my dotfiles instead. Make sure you're in the `dotfiles` directory.  
+- Backing up ~/.config and symlinking my dotfiles instead.  
 ```bash
 #/bin/sh
 cd $HOME/.local/repos/savar95x
+git clone https://github.com/savar95x/dotfiles
+cd dotfiles
 backup() {
 	[ -d ~/.config] && mv ~/.config ~/.config.bak
 	[ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak

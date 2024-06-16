@@ -5,6 +5,11 @@ if hash picom >/dev/null 2>&1; then
 	pkill picom
 	setsid -f picom --config $HOME/.config/berry/picom.conf &
 fi
+# aesthetic but very resource hungry
+#if hash picom >/dev/null 2>&1; then
+	#pkill picom-ftlabs
+	#setsid -f $HOME/.local/bin/picom-ftlabs --config $HOME/.config/picom-ftlabs.conf &
+#fi
 
 pkill polybar
 $HOME/.config/berry/walls/snippets/$(ls $HOME/.config/berry/walls/snippets/ | shuf | head -n 1)
