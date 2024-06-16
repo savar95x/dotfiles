@@ -10,12 +10,7 @@ Earlier, I had it made on [2bwm](), but berry is more versatile and more power e
 <img src=.assets/pome/newroice4.png />
 
 #### 2bwm
-
 <img src=.assets/pome/new3.png />
-<img src=.assets/pome/new4.png />
-<img src=.assets/pome/new2.png />
-Don't mind the bar, this is an old screenshot
-<img src=.assets/pome/new1.png />
 <img src=.assets/pome/old.png />
 
 ps:
@@ -127,7 +122,9 @@ Raise an issue if something doesn't work.
 ### TODO
 - Write an install script.
 
+<!--
 ### Thanks
 - voldemort(pentest2k) from discord or [KT-Chovy](https://reddit.com/u/KT-Chovy) for bearing every small improvement I made with the rice
 - [Elkowar](https://github.com/elkowar/) for making me believe gruvbox can be aesthetic as well
 - [adi1090x](https://github.com/adi1090x/) for his rofi configs
+-->
