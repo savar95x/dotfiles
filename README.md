@@ -23,7 +23,7 @@ if you're looking for configs of my older rices (endless on dwm, dkwm), they'd b
 
 ### Default Keybindings
 
-These are the basic keybindings. Read through the ~~`config.h` in my `2bwm` repo~~ ~/.config/berry/sxhkdrc for more shortcuts.
+These are the basic keybindings. Read through the ~/.config/berry/sxhkdrc for more shortcuts.
 
 |        Keybind                    |                 Function                                     |
 | --------------------------------- | ------------------------------------------------------------ |
@@ -56,7 +56,7 @@ berry st
 Also, all the x11 depedencies, and the ones required for compiling st and 2bwm, that you'll have to figure out yourself from the error messages, as it is distro dependent
 
 ### Manual
-This will store everything in $HOME/.local/repos/savar95x
+This will store everything in $HOME/.local/repos/savar95x.  
 I use `stow` to manage dotfiles, so install it from your package manager.  
 
 - Making that directory
@@ -75,6 +75,8 @@ sudo make install
 
 - Backing up ~/.config and symlinking my dotfiles instead. Make sure you're in the `dotfiles` directory.  
 ```bash
+#/bin/sh
+cd $HOME/.local/repos/savar95x
 backup() {
 	[ -d ~/.config] && mv ~/.config ~/.config.bak
 	[ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak
@@ -104,6 +106,7 @@ symlinking() {
 	ln -s ~/.local/share/themes ~/.themes
 	ln -s ~/.local/share/icons ~/.icons
 }
+
 backup
 remove
 create
