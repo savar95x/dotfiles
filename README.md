@@ -1,16 +1,16 @@
 ## Pome.
 ### Details
-This repo contains all my important system configuration files, mainly as a backup but also for anyone who wants to steal my configs.
-It contains files corresponding to my rice which I call "pome" (now, 2.0), made on the ~~2 border window manager ([2bwm](https://github.com/venam/2bwm))~~ berry window manager ([berry](https://berrywm.org)). Simple, calm and comfy.
-~~My build of 2bwm (the one in the screenshots), can be found over [here](https://github.com/savar95x/2bwm).~~
-I have a custom build for berry, adjusted to my liking, which I will be pushing soon.
+My rice on [berry](https://berrywm.org) using gruvbox material. Simple, calm and comfy. I call it "pome". This is my daily driver.  
+Earlier, I had it made on [2bwm](), but berry is more versatile and more power efficient. For anyone who wants to use the 2bwm version, the [config]() and [repo]() are still there.  
 ### Preview
-#### berry (my current wm)
+#### berry
 <img src=.assets/pome/newroice1.png />
 <img src=.assets/pome/newroice2.png />
 <img src=.assets/pome/newroice3.png />
 <img src=.assets/pome/newroice4.png />
-#### 2bwm (old, but the configs are there if you prefer)
+
+#### 2bwm
+
 <img src=.assets/pome/new3.png />
 <img src=.assets/pome/new4.png />
 <img src=.assets/pome/new2.png />
@@ -18,10 +18,8 @@ Don't mind the bar, this is an old screenshot
 <img src=.assets/pome/new1.png />
 <img src=.assets/pome/old.png />
 
-<!--My rice on 2bwm using gruvbox. Simple, calm and comfy. I call it "pome".-->
-
 ps:
-if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in my [junkyard](https://github.com/savar95x/junkyard).
+if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
 ### Default Keybindings
 
@@ -33,45 +31,37 @@ These are the basic keybindings. Read through the ~~`config.h` in my `2bwm` repo
 | `MOD + Q`                         | Close window                                                 |
 | `MOD + {H,J,K,L}`                 | Move the window to {Left, Down, Up, Right}                   |
 | `MOD + Shift + {H,J,K,L}`         | Resize the window                                            |
-| ~~`MOD + X`~~`MOD + Shift + F`    | Monocle a window                                            |
+| `MOD + Shift + F`                 | Monocle a window                                            |
 | `MOD + F`                         | Fullscreen a window                                          |
 | `MOD + P`                         | Open app launcher                                            |
 | `MOD + S`                         | List out the useful scripts in ~/.local/scipts/ in rofi      |
 | `MOD + Shift + BackSpace`         | Open powermenu                                               |
 | `MOD + R`                         | Open lf (terminal file manager)                              |
-| ~~`MOD + A`~~                         | ~~Makes the active window unkillable~~                           |
-| ~~`MOD + F`~~                         | ~~Makes the active window focused~~                              |
 
 Note: `MOD` is the windows key
 
 ## Installation
 
-NOTE: This highly experimental, proceed at your own risk
-
-You could just copy paste the .config and .local directories manually, but I recommend, and personally use, gnu stow.<br>
-If you choose to use gnu stow, clone the repo at a neat place, for example, ~/.local/repos/
+NOTE: The install script is still in works, I recommend the manual way, but there's no guarantee it'll work. You'll have to figure out stuff for yourself (for now).  
 
 ### Programs
+#### pacman (or any other)
 ```bash
-startx xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd ncmpcpp picom xbanish redshift polybar rofi firefox mpv gotop
+zsh lf startx sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd dunst ncmpcpp picom xbanish redshift polybar rofi brave-bin mpv
+```
+#### make
+```bash
+berry st
 ```
 Also, all the x11 depedencies, and the ones required for compiling st and 2bwm, that you'll have to figure out yourself from the error messages, as it is distro dependent
 
 ### Manual
 This will store everything in $HOME/.local/repos/savar95x
+I use `stow` to manage dotfiles, so install it from your package manager.  
 
-- Making that direcotory
+- Making that directory
 ```bash
 mkdir -p $HOME/.local/repos/savar95x
-```
-
-- Installing 2bwm
-```bash
-cd $HOME/.local/repos/savar95x
-git clone https://github.com/savar95x/2bwm.git
-cd 2bwm/
-make
-sudo make install
 ```
 
 - Installing st
@@ -83,30 +73,53 @@ make
 sudo make install
 ```
 
-- Backing up ~/.config and symlinking my dotfiles instead
+- Backing up ~/.config and symlinking my dotfiles instead. Make sure you're in the `dotfiles` directory.  
 ```bash
-cd $HOME/.local/repos/savar95x
-git clone https://github.com/savar95x/dotfiles.git
-cd dotfiles/
-mv $HOME/.config $HOME/.config.bak # backing up
-stow -t $HOME */ # symlink the configs to $HOME/.config/
+backup() {
+	[ -d ~/.config] && mv ~/.config ~/.config.bak
+	[ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak
+	[ -d ~/.local/scripts] && mv ~/.local/scripts ~/.local/scripts.bak
+}
+
+remove() {
+	[ -d ~/.config] && rm -rf ~/.config
+	[ -d ~/.local/bin] && rm -rf ~/.local/bin
+	[ -d ~/.local/scripts] && rm -rf ~/.local/scripts
+	[ -d ~/.local/run/x11] && rm -rf ~/.local/run/x11
+	[ -d ~/.local/run/pipewire] && rm -rf ~/.local/run/pipewire
+}
+
+create() {
+	mkdir -p ~/.config
+	mkdir -p ~/.local/run
+}
+
+stow_stuff() {
+	stow -t ~/ */
+}
+
+symlinking() {
+	ln -s ~/.config/zsh/rc ~/.zshrc
+	ln -s ~/.config/zsh/profile ~/.zprofile
+	ln -s ~/.local/share/themes ~/.themes
+	ln -s ~/.local/share/icons ~/.icons
+}
+backup
+remove
+create
+stow_stuff
+symlinking
 ```
 
-- Also, you should link the `~/.config/zsh/rc`, `~/.config/zsh/profile` and `~/.config/x11/init2bwm` to home as:
-```bash
-ln -s $HOME/.config/zsh/rc $HOME/.zshrc
-ln -s $HOME/.config/x11/init2bwm $HOME/.xinitrc
-ln -s $HOME/.config/zsh/profile $HOME/.zprofile
-```
-
-<br>Now your setup should more or less work, once you type startx (or startx2bwm) from the linux console. If it does not, please raise an issue.
+Make sure all your drivers specific to your hardware are installed.   
+Now your setup should more or less work, once you type startx (or startx2bwm) from the linux console, or just login to tty1. If it does not, please raise an issue.
 
 #### More Dependencies
 For my scripts to work properly, you'll be needing the following programs:
 ```bash
-ImageMagick xcolor simple-mtpfs xsecurelock xdotool
+ImageMagick xcolor simple-mtpfs xsecurelock xdotool scrot
 ```
-Raise an issue if something doesn't work.
+Raise an issue if something doesn't work.  
 
 ### TODO
 - Write an install script.
