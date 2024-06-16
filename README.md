@@ -8,6 +8,7 @@ Earlier, I had it made on [2bwm](), but berry is more versatile and more power e
 <img src=.assets/pome2.0/show2.png />
 <img src=.assets/pome2.0/show3.png />
 <img src=.assets/pome2.0/show4.png />
+<img src=.assets/pome2.0/show5.png />
 
 #### 2bwm
 <img src=.assets/pome/new3.png />
@@ -84,11 +85,15 @@ remove() {
 	[ -d ~/.local/scripts] && rm -rf ~/.local/scripts
 	[ -d ~/.local/run/x11] && rm -rf ~/.local/run/x11
 	[ -d ~/.local/run/pipewire] && rm -rf ~/.local/run/pipewire
+	[ -d ~/.local/share/spotdl] && rm -rf ~/.local/share/spotdl
 }
 
 create() {
 	mkdir -p ~/.config
 	mkdir -p ~/.local/run
+	mkdir -p ~/.local/share
+	mkdir -p ~/.local/run/x11
+	mkdir -p ~/.local/run/pipewire
 }
 
 stow_stuff() {
