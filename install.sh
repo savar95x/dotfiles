@@ -17,11 +17,13 @@ remove() {
 	[ -d ~/.local/scripts] && rm -rf ~/.local/scripts
 	[ -d ~/.local/run/x11] && rm -rf ~/.local/run/x11
 	[ -d ~/.local/run/pipewire] && rm -rf ~/.local/run/pipewire
+	[ -d ~/.local/share/spotdl] && rm -rf ~/.local/share/spotdl
 }
 
 create() {
 	mkdir -p ~/.config
 	mkdir -p ~/.local/run
+	mkdir -p ~/.local/share
 }
 
 stow_stuff() {
