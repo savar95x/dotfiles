@@ -1,10 +1,16 @@
-
 ## Pome.
 ### Details
 This repo contains all my important system configuration files, mainly as a backup but also for anyone who wants to steal my configs.
-It contains files corresponding to my rice which I call "pome", made on the 2 border window manager ([2bwm](https://github.com/venam/2bwm)). Simple, calm and comfy.
-My build of 2bwm (the one in the screenshots), can be found over [here](https://github.com/savar95x/2bwm).
+It contains files corresponding to my rice which I call "pome" (now, 2.0), made on the ~~2 border window manager ([2bwm](https://github.com/venam/2bwm))~~ berry window manager ([berry](https://berrywm.org)). Simple, calm and comfy.
+~~My build of 2bwm (the one in the screenshots), can be found over [here](https://github.com/savar95x/2bwm).~~
+I have a custom build for berry, adjusted to my liking, which I will be pushing soon.
 ### Preview
+#### berry (my current wm)
+<img src=.assets/pome/newroice1.png />
+<img src=.assets/pome/newroice2.png />
+<img src=.assets/pome/newroice3.png />
+<img src=.assets/pome/newroice4.png />
+#### 2bwm (old, but the configs are there if you prefer)
 <img src=.assets/pome/new3.png />
 <img src=.assets/pome/new4.png />
 <img src=.assets/pome/new2.png />
@@ -19,22 +25,22 @@ if you're looking for configs of my older rices (endless on dwm, dkwm), they'd b
 
 ### Default Keybindings
 
-These are the basic keybindings. Read through the `config.h` in my `2bwm` repo for more shortcuts.
+These are the basic keybindings. Read through the ~~`config.h` in my `2bwm` repo~~ ~/.config/berry/sxhkdrc for more shortcuts.
 
-|        Keybind            |                 Function                                     |
-| ------------------------- | ------------------------------------------------------------ |
-| `MOD + Enter`             | Launch terminal (st)                                  |
-| `MOD + Q`                 | Close window                                                 |
-| `MOD + {H,J,K,L}`         | Move the window to {Left, Down, Up, Right}                   |
-| `MOD + Shift + {H,J,K,L}` | Resize the window                                            |
-| `MOD + X`                 | Maximize a window                                            |
-| `MOD + Shift + X`         | Fullscreen a window                                          |
-| `MOD + P`                 | Open app launcher                                            |
-| `MOD + S`                 | List out the useful scripts in ~/.local/scipts/ in rofi      |
-| `MOD + Shift + BackSpace` | Open powermenu                                               |
-| `MOD + R`                 | Open lf (terminal file manager)                              |
-| `MOD + A`                 | Makes the active window unkillable                           |
-| `MOD + F`                 | Makes the active window focused                              |
+|        Keybind                    |                 Function                                     |
+| --------------------------------- | ------------------------------------------------------------ |
+| `MOD + Enter`                     | Launch terminal (st)                                  |
+| `MOD + Q`                         | Close window                                                 |
+| `MOD + {H,J,K,L}`                 | Move the window to {Left, Down, Up, Right}                   |
+| `MOD + Shift + {H,J,K,L}`         | Resize the window                                            |
+| ~~`MOD + X`~~`MOD + Shift + F`    | Monocle a window                                            |
+| `MOD + F`                         | Fullscreen a window                                          |
+| `MOD + P`                         | Open app launcher                                            |
+| `MOD + S`                         | List out the useful scripts in ~/.local/scipts/ in rofi      |
+| `MOD + Shift + BackSpace`         | Open powermenu                                               |
+| `MOD + R`                         | Open lf (terminal file manager)                              |
+| ~~`MOD + A`~~                         | ~~Makes the active window unkillable~~                           |
+| ~~`MOD + F`~~                         | ~~Makes the active window focused~~                              |
 
 Note: `MOD` is the windows key
 
