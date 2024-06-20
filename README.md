@@ -40,27 +40,71 @@ Note: `MOD` is the windows key
 
 ## Installation
 
-NOTE: The install script is still in works, I recommend the manual way, but there's no guarantee it'll work. You'll have to figure out stuff for yourself (for now).  
+The installation instructions are currently in works.  
+I'm writing it with a fresh install of [void linux](https://voidlinux.org) in mind (even though my main device runs arch with these dots). But it is possible to follow along the intructions for any distro with slight adjustments (mainly for package names).  
 
-### Programs
-#### pacman (or any other)
+### Overview
+I manage my dotfiles using gnu `stow`. The way I use it is that my dotfiles (this git repo) are kept in a separate directory anywhere on the system, and then I use stow to symlink them to their original rightful paths (the the weird nesting).  
+
+### Instructions
+#### Internet
 ```bash
-zsh lf startx sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd dunst libnotify ncmpcpp picom xbanish redshift polybar rofi brave-bin mpv autocpu-freq
+wpa_supplicant -B -i *interface* -c ~/.local/repos/savar95x/dotfiles/etc/.config/etc/wpa_supplicant/wpa_supplicant-conf.conf
 ```
+use `ip link` to identify the interface  
+[guide](https://wiki.archwiki.org/title/wpa_supplicant)
+
+```bash
+wpa_cli
+```
+```bash
+> scan
+OK
+<3>CTRL-EVENT-SCAN-RESULTS
+> scan_results
+bssid / frequency / signal level / flags / ssid
+00:00:00:00:00:00 2462 -49 [WPA2-PSK-CCMP][ESS] MYSSID
+11:11:11:11:11:11 2437 -64 [WPA2-PSK-CCMP][ESS] ANOTHERSSID
+
+# save and quit
+> save_config
+OK
+> quit
+```
+
+#### cloning repo
+```bash
+mkdir -p ~/.local/repos/savar95x
+# This is where I recommend to store stuff, and where I personally keep my dots on my system.  
+cd ~/.local/repos/savar95x
+git clone https://github.com/savar95x/dotfiles
+```
+This clones the dotfiles to ~/.local/repos/savar95x.  
+
+#### package manager 
+This updates the packages after first install.  
+```bash
+xbps-install -Su
+```
+This installs all the needed packages.  
+```bash
+sudo xbps-install -S stow git make neovim iwd pkg-config libXft-devel gcc libXinerama-devel xorg-server xf86-input-libinput xauth zsh zsh-syntax-highlighting lf ueberzug xinit sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd dunst libnotify ncmpcpp picom xbanish redshift polybar rofi mpv 
+# autocpu-freq not in xbps repo
+```
+Installs the graphics drivers for intel. If you're using something else then [see this](https://docs.voidlinux.org/config/graphical-session/graphics-drivers/index.html).  
+```bash
+sudo xbps-install -S xf86-video-intel mesa-dri vulkan-loader mesa-vulkan-intel intel-video-accel
+```
+
+#### enabling services
+```bash
+ln -s /etc/sv/dbus /var/service/
+ln -s /etc/sv/iwd /var/service/
+# autocpu-freq
+```
+
 #### make
-```bash
-berry st
-```
-Also, all the x11 depedencies, and the ones required for compiling st and 2bwm, that you'll have to figure out yourself from the error messages, as it is distro dependent
-
-### Manual
-This will store everything in $HOME/.local/repos/savar95x.  
-I use `stow` to manage dotfiles, so install it from your package manager.  
-
-- Making that directory
-```bash
-mkdir -p $HOME/.local/repos/savar95x
-```
+`berry` and `st`.  
 
 - Installing st
 ```bash
@@ -71,7 +115,16 @@ make
 sudo make install
 ```
 
-- Backing up ~/.config and symlinking my dotfiles instead.  
+- Installing berry
+```bash
+cd $HOME/.local/repos/savar95x
+git clone https://github.com/savar95x/berry.git
+cd berry/
+make
+sudo make install
+```
+
+#### backing up ~/.config and symlinking my dotfiles instead.  
 ```bash
 #/bin/sh
 cd $HOME/.local/repos/savar95x
@@ -96,8 +149,18 @@ create() {
 	mkdir -p ~/.config
 	mkdir -p ~/.local/run
 	mkdir -p ~/.local/share
+	mkdir -p ~/.local/share/zsh
+	mkdir -p ~/.local/share/lyrics
+	mkdir -p ~/.local/share/cache/lf
+    mkdir -p ~/.local/share/themes
+    mkdir -p ~/.local/share/icons 
 	mkdir -p ~/.local/run/x11
 	mkdir -p ~/.local/run/pipewire
+    mkdir ~/mus
+    mkdir ~/dlds
+    mkdir ~/dox
+    mkdir ~/pix
+    mkdir ~/vids
 }
 
 stow_stuff() {
@@ -118,14 +181,18 @@ stow_stuff
 symlinking
 ```
 
-Make sure all your drivers specific to your hardware are installed.   
-Now your setup should more or less work, once you type startx (or startx2bwm) from the linux console, or just login to tty1. If it does not, please raise an issue.
+#### shell
+```bash
+chsh -s /usr/bin/zsh
+```
+[guide](https://wiki.archlinux.org/title/command-line_shell)
 
-#### More Dependencies
+#### more dependencies
 For my scripts to work properly, you'll be needing the following programs:
 ```bash
 ImageMagick xcolor simple-mtpfs xsecurelock xdotool scrot
 ```
+To start the WM, type `startx` from the command line, or just login to tty1.  
 Raise an issue if something doesn't work.  
 
 ### TODO
