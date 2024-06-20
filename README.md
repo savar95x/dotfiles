@@ -114,7 +114,7 @@ cd $HOME/.local/repos/savar95x
 git clone https://github.com/savar95x/berry.git
 cd berry/
 make
-sudo make install
+sudo cp .o/berry .o/berryc /usr/local/bin/
 ```
 
 #### backing up ~/.config and symlinking my dotfiles instead.  
