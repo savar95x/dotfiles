@@ -60,7 +60,7 @@ update_config=1
 save and exit and run
 ```bash
 wpa_passphrase MYSSID passphrase >> /etc/wpa_supplicant/wpa_supplicant-1.conf
-wpa_supplicant -B -i *interface* -c ~/.local/repos/savar95x/dotfiles/etc/.config/etc/wpa_supplicant/wpa_supplicant-conf.conf
+wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/wpa_supplicant-1.conf
 ```
 use `ip link` to identify the interface  
 [guide](https://wiki.archlinux.org/title/wpa_supplicant)
