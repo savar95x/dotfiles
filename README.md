@@ -127,9 +127,7 @@ sudo make install
 #### backing up ~/.config and symlinking my dotfiles instead.  
 ```bash
 #/bin/sh
-cd $HOME/.local/repos/savar95x
-git clone https://github.com/savar95x/dotfiles
-cd dotfiles
+cd $HOME/.local/repos/savar95x/dotfiles
 backup() {
 	[ -d ~/.config] && mv ~/.config ~/.config.bak
 	[ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak
