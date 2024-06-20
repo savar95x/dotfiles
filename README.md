@@ -48,29 +48,22 @@ I manage my dotfiles using gnu `stow`. The way I use it is that my dotfiles (thi
 
 ### Instructions
 #### Internet
+log in as root
 ```bash
+vi /etc/wpa_supplicant/wpa_supplicant-1.conf
+```
+add the following lines
+```bash
+ctrl_interface=/run/wpa_supplicant
+update_config=1
+```
+save and exit and run
+```bash
+wpa_passphrase MYSSID passphrase >> /etc/wpa_supplicant/wpa_supplicant-1.conf
 wpa_supplicant -B -i *interface* -c ~/.local/repos/savar95x/dotfiles/etc/.config/etc/wpa_supplicant/wpa_supplicant-conf.conf
 ```
 use `ip link` to identify the interface  
 [guide](https://wiki.archwiki.org/title/wpa_supplicant)
-
-```bash
-wpa_cli
-```
-```bash
-> scan
-OK
-<3>CTRL-EVENT-SCAN-RESULTS
-> scan_results
-bssid / frequency / signal level / flags / ssid
-00:00:00:00:00:00 2462 -49 [WPA2-PSK-CCMP][ESS] MYSSID
-11:11:11:11:11:11 2437 -64 [WPA2-PSK-CCMP][ESS] ANOTHERSSID
-
-# save and quit
-> save_config
-OK
-> quit
-```
 
 #### package manager 
 This updates the packages after first install.  
