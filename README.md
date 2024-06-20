@@ -63,7 +63,7 @@ wpa_passphrase MYSSID passphrase >> /etc/wpa_supplicant/wpa_supplicant-1.conf
 wpa_supplicant -B -i *interface* -c ~/.local/repos/savar95x/dotfiles/etc/.config/etc/wpa_supplicant/wpa_supplicant-conf.conf
 ```
 use `ip link` to identify the interface  
-[guide](https://wiki.archwiki.org/title/wpa_supplicant)
+[guide](https://wiki.archlinux.org/title/wpa_supplicant)
 
 #### package manager 
 This updates the packages after first install.  
