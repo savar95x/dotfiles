@@ -72,15 +72,6 @@ OK
 > quit
 ```
 
-#### cloning repo
-```bash
-mkdir -p ~/.local/repos/savar95x
-# This is where I recommend to store stuff, and where I personally keep my dots on my system.  
-cd ~/.local/repos/savar95x
-git clone https://github.com/savar95x/dotfiles
-```
-This clones the dotfiles to ~/.local/repos/savar95x.  
-
 #### package manager 
 This updates the packages after first install.  
 ```bash
@@ -102,6 +93,15 @@ ln -s /etc/sv/dbus /var/service/
 ln -s /etc/sv/iwd /var/service/
 # autocpu-freq
 ```
+
+#### cloning repo
+```bash
+mkdir -p ~/.local/repos/savar95x
+# This is where I recommend to store stuff, and where I personally keep my dots on my system.  
+cd ~/.local/repos/savar95x
+git clone https://github.com/savar95x/dotfiles
+```
+This clones the dotfiles to ~/.local/repos/savar95x.  
 
 #### make
 `berry` and `st`.  
