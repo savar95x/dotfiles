@@ -122,47 +122,47 @@ sudo cp .o/berry .o/berryc /usr/local/bin/
 #/bin/sh
 cd $HOME/.local/repos/savar95x/dotfiles
 backup() {
-	[ -d ~/.config] && mv ~/.config ~/.config.bak
-	[ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak
-	[ -d ~/.local/scripts] && mv ~/.local/scripts ~/.local/scripts.bak
+    [ -d ~/.config] && mv ~/.config ~/.config.bak
+        [ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak
+            [ -d ~/.local/scripts] && mv ~/.local/scripts ~/.local/scripts.bak
 }
 
 remove() {
-	[ -d ~/.config] && rm -rf ~/.config
-	[ -d ~/.local/bin] && rm -rf ~/.local/bin
-	[ -d ~/.local/scripts] && rm -rf ~/.local/scripts
-	[ -d ~/.local/run/x11] && rm -rf ~/.local/run/x11
-	[ -d ~/.local/run/pipewire] && rm -rf ~/.local/run/pipewire
-	[ -d ~/.local/share/spotdl] && rm -rf ~/.local/share/spotdl
+    [ -d ~/.config] && rm -rf ~/.config
+        [ -d ~/.local/bin] && rm -rf ~/.local/bin
+            [ -d ~/.local/scripts] && rm -rf ~/.local/scripts
+                [ -d ~/.local/run/x11] && rm -rf ~/.local/run/x11
+                    [ -d ~/.local/run/pipewire] && rm -rf ~/.local/run/pipewire
+                        [ -d ~/.local/share/spotdl] && rm -rf ~/.local/share/spotdl
 }
 
 create() {
-	mkdir -p ~/.config
-	mkdir -p ~/.local/run
-	mkdir -p ~/.local/share
-	mkdir -p ~/.local/share/zsh
-	mkdir -p ~/.local/share/lyrics
-	mkdir -p ~/.local/share/cache/lf
-    mkdir -p ~/.local/share/themes
-    mkdir -p ~/.local/share/icons 
-	mkdir -p ~/.local/run/x11
-	mkdir -p ~/.local/run/pipewire
-    mkdir ~/mus
-    mkdir ~/dlds
-    mkdir ~/dox
-    mkdir ~/pix
-    mkdir ~/vids
+    mkdir -p ~/.config
+        mkdir -p ~/.local/run
+        mkdir -p ~/.local/share
+        mkdir -p ~/.local/share/zsh
+        mkdir -p ~/.local/share/lyrics
+        mkdir -p ~/.local/share/cache/lf
+        mkdir -p ~/.local/share/themes
+        mkdir -p ~/.local/share/icons 
+        mkdir -p ~/.local/run/x11
+        mkdir -p ~/.local/run/pipewire
+        mkdir ~/mus
+        mkdir ~/dlds
+        mkdir ~/dox
+        mkdir ~/pix
+        mkdir ~/vids
 }
 
 stow_stuff() {
-	stow -t ~/ */
+    stow -t ~/ */
 }
 
 symlinking() {
-	ln -s ~/.config/zsh/rc ~/.zshrc
-	ln -s ~/.config/zsh/profile ~/.zprofile
-	ln -s ~/.local/share/themes ~/.themes
-	ln -s ~/.local/share/icons ~/.icons
+    ln -s ~/.config/zsh/rc ~/.zshrc
+        ln -s ~/.config/zsh/profile ~/.zprofile
+        ln -s ~/.local/share/themes ~/.themes
+        ln -s ~/.local/share/icons ~/.icons
 }
 
 backup
@@ -187,7 +187,10 @@ To start the WM, type `startx` from the command line, or just login to tty1.
 Raise an issue if something doesn't work.  
 
 ### TODO
-- Write an install script.
+[ ] Add fonts (via links and downloading).
+[ ] Add quality of life stuff like syncthing, downloader-cli, sof-firmware, spotdl (via links and downloading).
+[ ] Port configs to 1366x768 as well.
+[ ] Write an install script.
 
 <!--
 ### Thanks
