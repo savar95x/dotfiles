@@ -29,7 +29,7 @@ create() {
 }
 
 stow_stuff() {
-	stow -t ~/ */
+	stow -t ~/ */ && symlinks successful
 }
 
 symlinking() {
