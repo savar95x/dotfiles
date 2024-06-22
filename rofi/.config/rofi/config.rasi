@@ -5,7 +5,7 @@ configuration {
     display-drun:               "Apps";
     display-run:                "";
     display-filebrowser:        "";
-    display-window:             "";
+    display-window:             "Clients";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
 kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";

@@ -1,15 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 quicknote="$HOME/dox/notes/quicknote.md"
 winclass=$(xdotool search --class quicknote)
 if [ -z "$winclass" ]; then
 	# quicknote term does not exist
-	st -c quicknote -e nvim $quicknote && berryc window_center
+	st -c quicknote -T quicknote -e nvim $quicknote
 else
 	# quicknote term exists
-	if [ $(xprop -id "$(xdotool search --class quicknote)" | grep -i state | cut -d'"' -f35 | cut -d'\' -f1) == "true" ]; then
+	if [[ "$(xprop -id $(xdotool search --class quicknote) | grep -i state | cut -d'"' -f35 | cut -d'\' -f1)" == "true" ]]; then
 		# and is visible
-		xdo hide "$winclass"
+		xdotool windowunmap "$winclass"
+		#xdo hide "$winclass"
 	else
-		xdo show "$winclass" && berryc window_center
+		xdotool windowmap "$winclass" && berryc window_center
 	fi
 fi

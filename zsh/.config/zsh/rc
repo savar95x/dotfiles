@@ -1,6 +1,11 @@
 #!/usr/bin/zsh
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
+#case $TERM in
+    #rxvt|*term)
+        #PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
+    #;;
+#esac
 PS1="%{$fg[blue]%}%~"$'\n'"%B%{$fg[green]%}λ %{$reset_color%}%b"
 # PS1="%{$fg[blue]%}%~"$'\n'"%B%{$fg[green]%}λ%{$fg[black]%} | %{$reset_color%}%b"
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "

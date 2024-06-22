@@ -42,6 +42,7 @@ Note: `MOD` is the windows key
 
 The installation instructions are currently in works.  
 I'm writing it with a fresh install of [void linux](https://voidlinux.org) in mind (even though my main device runs arch with these dots). But it is possible to follow along the intructions for any distro with slight adjustments (mainly for package names).  
+Also, this rice was made on a 1920x1080 monitor, so for now you'll have to edit some configs (namely berry, rofi, poybar) to fit your setup.  
 
 ### Overview
 I manage my dotfiles using gnu `stow`. The way I use it is that my dotfiles (this git repo) are kept in a separate directory anywhere on the system, and then I use stow to symlink them to their original rightful paths (the the weird nesting).  
@@ -75,7 +76,7 @@ This installs all the needed packages.
 sudo xbps-install -S stow git make neovim iwd pkg-config libXft-devel gcc libXinerama-devel xorg-server xf86-input-libinput xauth zsh zsh-syntax-highlighting lf ueberzug xinit sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd dunst libnotify ncmpcpp picom xbanish redshift polybar rofi mpv pamixer pulsemixer
 # autocpu-freq not in xbps repo
 ```
-Installs the graphics drivers for intel. If you're using something else then [see this](https://docs.voidlinux.org/config/graphical-session/graphics-drivers/index.html).  
+Installs the graphics drivers for **Intel**. If you're using something else then [see this](https://docs.voidlinux.org/config/graphical-session/graphics-drivers/index.html).  
 ```bash
 sudo xbps-install -S xf86-video-intel mesa-dri vulkan-loader mesa-vulkan-intel intel-video-accel
 ```
@@ -123,35 +124,35 @@ sudo cp .o/berry .o/berryc /usr/local/bin/
 cd $HOME/.local/repos/savar95x/dotfiles
 backup() {
     [ -d ~/.config] && mv ~/.config ~/.config.bak
-        [ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak
-            [ -d ~/.local/scripts] && mv ~/.local/scripts ~/.local/scripts.bak
+    [ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak
+    [ -d ~/.local/scripts] && mv ~/.local/scripts ~/.local/scripts.bak
 }
 
 remove() {
     [ -d ~/.config] && rm -rf ~/.config
-        [ -d ~/.local/bin] && rm -rf ~/.local/bin
-            [ -d ~/.local/scripts] && rm -rf ~/.local/scripts
-                [ -d ~/.local/run/x11] && rm -rf ~/.local/run/x11
-                    [ -d ~/.local/run/pipewire] && rm -rf ~/.local/run/pipewire
-                        [ -d ~/.local/share/spotdl] && rm -rf ~/.local/share/spotdl
+    [ -d ~/.local/bin] && rm -rf ~/.local/bin
+    [ -d ~/.local/scripts] && rm -rf ~/.local/scripts
+    [ -d ~/.local/run/x11] && rm -rf ~/.local/run/x11
+    [ -d ~/.local/run/pipewire] && rm -rf ~/.local/run/pipewire
+    [ -d ~/.local/share/spotdl] && rm -rf ~/.local/share/spotdl
 }
 
 create() {
     mkdir -p ~/.config
-        mkdir -p ~/.local/run
-        mkdir -p ~/.local/share
-        mkdir -p ~/.local/share/zsh
-        mkdir -p ~/.local/share/lyrics
-        mkdir -p ~/.local/share/cache/lf
-        mkdir -p ~/.local/share/themes
-        mkdir -p ~/.local/share/icons 
-        mkdir -p ~/.local/run/x11
-        mkdir -p ~/.local/run/pipewire
-        mkdir ~/mus
-        mkdir ~/dlds
-        mkdir ~/dox
-        mkdir ~/pix
-        mkdir ~/vids
+    mkdir -p ~/.local/run
+    mkdir -p ~/.local/share
+    mkdir -p ~/.local/share/zsh
+    mkdir -p ~/.local/share/lyrics
+    mkdir -p ~/.local/share/cache/lf
+    mkdir -p ~/.local/share/themes
+    mkdir -p ~/.local/share/icons 
+    mkdir -p ~/.local/run/x11
+    mkdir -p ~/.local/run/pipewire
+    mkdir ~/mus
+    mkdir ~/dlds
+    mkdir ~/dox
+    mkdir ~/pix
+    mkdir ~/vids
 }
 
 stow_stuff() {
@@ -160,9 +161,9 @@ stow_stuff() {
 
 symlinking() {
     ln -s ~/.config/zsh/rc ~/.zshrc
-        ln -s ~/.config/zsh/profile ~/.zprofile
-        ln -s ~/.local/share/themes ~/.themes
-        ln -s ~/.local/share/icons ~/.icons
+    ln -s ~/.config/zsh/profile ~/.zprofile
+    ln -s ~/.local/share/themes ~/.themes
+    ln -s ~/.local/share/icons ~/.icons
 }
 
 backup
