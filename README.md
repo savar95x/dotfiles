@@ -191,6 +191,7 @@ Raise an issue if something doesn't work.
 - [ ] Fix some shortcuts (like in file manager) being username dependent.  
 - [ ] Add quality of life stuff like syncthing, downloader-cli, sof-firmware, spotdl (via links and downloading).
 - [ ] Port configs to 1366x768 as well.
+- [ ] Check out [larbs](larbs.xyz) to realise how he does it.
 - [ ] Write an install script.
 
 <!--
