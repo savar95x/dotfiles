@@ -7,7 +7,7 @@ set cursoractivefmt "\033[7m"
 set cursorparentfmt "\033[7m"
 set shellopts '-eu'
 set ifs "\n"
-set scrolloff 20
+set scrolloff 1
 set icons true
 set period 1
 set previewer ~/.config/lf/preview

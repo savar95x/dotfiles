@@ -12,7 +12,7 @@
     foreground:     #FBF1C7;
     selected:       #61AFEFFF;
     active:         #A3AE6DFF;
-    urgent:         #D67B7690;
+    urgent:         #D67B76FF;
     
     black:     #282828;
     brightgrey:     #535353;

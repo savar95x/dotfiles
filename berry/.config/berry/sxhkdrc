@@ -2,10 +2,10 @@
 
 # terminal emulator
 super + Return
-	st
+	st -T "~"
 
 super + grave
-	st -g 55x13 -e lfrun $HOME/dox/notes 
+	st -T "notes : lf" -g 55x13 -e lfrun $HOME/dox/notes 
 	#quicknote
 
 super + shift + BackSpace
@@ -13,14 +13,18 @@ super + shift + BackSpace
 
 # browser
 super + w
+	rofi -theme-str 'window \{width: 40%;\}' -show window
+
+super + b
 	dmweb
 
-super + shift + w
-	setsid -f mpv "$(xclip -out -selection clipboard)"
+super + shift + b
+	setsid -f mpv "$(rofi -p "play in mpv" -theme-str 'window\{width:40%;\} listview\{lines: 0;\}' -dmenu)"
+	#setsid -f mpv "$(xclip -out -selection clipboard)"
 
 # file manager
 super + r
-	st -g 55x13 -e lfrun
+	st -T lf -g 55x13 -e lfrun
 
 super + t
 	transmission-qt

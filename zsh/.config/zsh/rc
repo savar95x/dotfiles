@@ -56,6 +56,19 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+# title update
+autoload -Uz add-zsh-hook
+function term_title_precmd () {
+	print -Pn -- "]2;%~"
+}
+function term_title_preexec () {
+	print -Pn -- '\e]2;%~ : ' && print -n -- "${(q)1}\a"
+}
+if [[ "$TERM" == (st*|Eterm*|alacritty*|aterm*|foot*|gnome*|konsole*|kterm*|putty*|rxvt*|screen*|wezterm*|tmux*|xterm*) ]]; then
+	add-zsh-hook -Uz precmd term_title_precmd
+	add-zsh-hook -Uz preexec term_title_preexec
+fi
+
 # Load syntax highlighting; should be last.
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 
