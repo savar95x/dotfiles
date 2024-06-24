@@ -188,6 +188,7 @@ To start the WM, type `startx` from the command line, or just login to tty1.
 Raise an issue if something doesn't work.  
 
 ### TODO
+- [ ] improve zsh vi mode cursor
 - [ ] Add fonts, simp1e-cursor, gruvbox-material-gtk (via links and downloading).
 - [ ] Fix some shortcuts (like in file manager) being username dependent.  
 - [ ] Add quality of life stuff like syncthing, downloader-cli, sof-firmware, spotdl (via links and downloading).
