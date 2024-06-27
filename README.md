@@ -189,6 +189,7 @@ Raise an issue if something doesn't work.
 
 ### TODO
 - [ ] fix spotdl directory
+- [ ] better / more sensible keybindings
 - [ ] improve zsh vi mode cursor
 - [ ] Add fonts, simp1e-cursor, gruvbox-material-gtk (via links and downloading).
 - [ ] Fix some shortcuts (like in file manager) being username dependent.  
