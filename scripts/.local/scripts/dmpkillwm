@@ -1,3 +1,0 @@
-#!/bin/sh
-response=$(echo -e "no.\npkill $1" | ${MYMENU:-dmenu} -p "wanna kill $1?")
-[ "$response" = "pkill $1" ] && pkill "$1"

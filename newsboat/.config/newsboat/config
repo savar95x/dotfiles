@@ -63,3 +63,4 @@ highlight article ":.*\\(embedded flash\\)$" magenta default
 
 download-path "~/pods/%h/%n"
 player "mpv --no-video"
+run-on-startup select-tag

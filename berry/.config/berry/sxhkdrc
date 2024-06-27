@@ -12,13 +12,19 @@ super + shift + BackSpace
 	dmpowermenu
 
 # browser
+#super + d
+	#berryc toggle_decorations
+
 super + w
-	rofi -theme-str 'window \{width: 40%;\}' -show window
+	lines=$(wmctrl -l | wc -l); [ $lines -gt 5 ] && lines=5; rofi -show window -theme-str "window \{width: 40%;\} listview\{lines: $lines;\}"
 
 super + b
 	dmweb
 
 super + shift + b
+	koreader
+
+super + shift + w
 	setsid -f mpv "$(rofi -p "play in mpv" -theme-str 'window\{width:40%;\} listview\{lines: 0;\}' -dmenu)"
 	#setsid -f mpv "$(xclip -out -selection clipboard)"
 
@@ -36,7 +42,7 @@ super + m
 	st -e ncmpcpp
 
 super + shift + m
-	st -e pulsemixer
+	st -e pulsemixer --color 1
 
 super + i
 	st -g 130x32 -e gotop

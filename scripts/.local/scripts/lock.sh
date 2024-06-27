@@ -3,7 +3,8 @@ CLOCK_FONT="Rubik"
 FONT="lexend"
 IMAGE="$HOME/.config/berry/walls/leaves-hard.jpg" # or use -blur 5
 
-quote="$(shuf -n 1 ~/dox/notes/quotes)"
+#quote="$(shuf -n 1 ~/dox/notes/quotes)"
+quote="$(head -n 1 ~/dox/notes/quotes)"
 status=$(playerctl status || true)
 music_paused_on_lock=false
 #[ ! -e /tmp/blurred_wall.jpg ] && convert -scale 10% -blur 0x2.5 -resize 1000% /home/savar/.config/dwm/walls/gruvbox_astro.jpg /tmp/blurred_wall.jpg
