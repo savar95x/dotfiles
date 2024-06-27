@@ -25,7 +25,7 @@ super + shift + b
 	koreader
 
 super + shift + w
-	setsid -f mpv "$(rofi -p "play in mpv" -theme-str 'window\{width:40%;\} listview\{lines: 0;\}' -dmenu)"
+	watchvid
 	#setsid -f mpv "$(xclip -out -selection clipboard)"
 
 # file manager
