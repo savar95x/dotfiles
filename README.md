@@ -142,6 +142,7 @@ create() {
     mkdir -p ~/.local/run
     mkdir -p ~/.local/share
     mkdir -p ~/.local/share/zsh
+    mkdir -p ~/.local/share/spotdl
     mkdir -p ~/.local/share/lyrics
     mkdir -p ~/.local/share/cache/lf
     mkdir -p ~/.local/share/themes
