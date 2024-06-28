@@ -73,7 +73,7 @@ xbps-install -Su
 ```
 This installs all the needed packages.  
 ```bash
-sudo xbps-install -S stow git make neovim iwd bat pkg-config libXft-devel gcc libXinerama-devel xorg-server xf86-input-libinput xauth zsh zsh-syntax-highlighting lf ueberzug xinit sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd dunst libnotify ncmpcpp picom xbanish redshift polybar rofi mpv pamixer pulsemixer
+sudo xbps-install -S stow git make neovim iwd bat pkg-config libXft-devel gcc libXinerama-devel xorg-server xf86-input-libinput xauth xclip zsh zsh-syntax-highlighting lf ueberzugpp ffmpegthumbnailer xinit sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd mpc dunst libnotify ncmpcpp picom xbanish redshift polybar rofi mpv pamixer pulsemixer
 # autocpu-freq not in xbps repo
 ```
 Installs the graphics drivers for **Intel**. If you're using something else then [see this](https://docs.voidlinux.org/config/graphical-session/graphics-drivers/index.html).  
@@ -115,7 +115,7 @@ cd $HOME/.local/repos/savar95x
 git clone https://github.com/savar95x/berry.git
 cd berry/
 make
-sudo cp .o/berry .o/berryc /usr/local/bin/
+sudo make install
 ```
 
 #### backing up ~/.config and symlinking my dotfiles instead.  
@@ -188,14 +188,14 @@ To start the WM, type `startx` from the command line, or just login to tty1.
 Raise an issue if something doesn't work.  
 
 ### TODO
-- [ ] fix spotdl directory
+- [x] fix spotdl directory
 - [ ] better / more sensible keybindings
 - [ ] improve zsh vi mode cursor
 - [ ] Add fonts, simp1e-cursor, gruvbox-material-gtk (via links and downloading).
 - [ ] Fix some shortcuts (like in file manager) being username dependent.  
 - [ ] Add quality of life stuff like syncthing, downloader-cli, sof-firmware, spotdl (via links and downloading).
-- [ ] Port configs to 1366x768 as well.
-- [ ] Check out [larbs](larbs.xyz) to realise how he does it.
+- [ ] Port configs to 1366x768 as well. Maybe learn to use VM.
+- [ ] Check out [larbs](https://larbs.xyz) to realise how he does it.
 - [ ] Write an install script.
 
 <!--
