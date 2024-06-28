@@ -24,12 +24,13 @@ create() {
 	mkdir -p ~/.config
 	mkdir -p ~/.local/run
 	mkdir -p ~/.local/share
+	mkdir -p ~/.local/share/spotdl
 	mkdir -p ~/.local/run/x11
 	mkdir -p ~/.local/run/pipewire
 }
 
 stow_stuff() {
-	stow -t ~/ */ && symlinks successful
+	stow -t ~/ */ && echo symlinks successful
 }
 
 symlinking() {
