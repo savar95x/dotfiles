@@ -73,7 +73,7 @@ xbps-install -Su
 ```
 This installs all the needed packages.  
 ```bash
-sudo xbps-install -S stow git make neovim iwd pkg-config libXft-devel gcc libXinerama-devel xorg-server xf86-input-libinput xauth zsh zsh-syntax-highlighting lf ueberzug xinit sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd dunst libnotify ncmpcpp picom xbanish redshift polybar rofi mpv pamixer pulsemixer
+sudo xbps-install -S stow git make neovim iwd bat pkg-config libXft-devel gcc libXinerama-devel xorg-server xf86-input-libinput xauth zsh zsh-syntax-highlighting lf ueberzug xinit sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd dunst libnotify ncmpcpp picom xbanish redshift polybar rofi mpv pamixer pulsemixer
 # autocpu-freq not in xbps repo
 ```
 Installs the graphics drivers for **Intel**. If you're using something else then [see this](https://docs.voidlinux.org/config/graphical-session/graphics-drivers/index.html).  
