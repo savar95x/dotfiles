@@ -198,6 +198,7 @@ Raise an issue if something doesn't work.
 - [ ] Port configs to 1366x768 as well. Maybe learn to use VM.
 - [ ] Check out [larbs](https://larbs.xyz) to realise how he does it.
 - [ ] Write an install script.
+- [ ] rofi -show window with hidden windows for quicknote/lofi_music to work
 
 <!--
 ### Thanks
