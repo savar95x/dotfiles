@@ -39,6 +39,7 @@ function vi-yank-xclip {
 
 zle -N vi-yank-xclip
 bindkey -M vicmd 'y' vi-yank-xclip
+zle_highlight=( region:bg=#45403D ) # fg= )
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {

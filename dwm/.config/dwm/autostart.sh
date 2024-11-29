@@ -33,10 +33,9 @@ pkill dwmblocks; setsid -f dwmblocks &
 ### quality of life ###
 xwallpaper --zoom ~/.config/dwm/walls/pexels-irina-iriser-1334116.jpg
 #xwallpaper --zoom ~/pix/walls/gruvbox/flower-1.jpg
-xset r rate 280 50
-##xrdb -load $HOME/.config/x11/xresources
+xset r rate 215 40
 setxkbmap -option caps:swapescape 
-xrdb -load $HOME/.config/x11/xresources
+##xrdb -load $HOME/.config/x11/xresources
 
 # audio dameon
 #$HOME/.config/dwm/audio_server.sh &

@@ -37,7 +37,7 @@ alias giit="git commit -m '$1' && git push"
 
 # actions
 alias hss="hugo server --noHTTPCache -D"
-alias beep="mpv --no-video $HOME/vids/assests/beep.webm &>/dev/null"
+alias beep="mpv --no-video $HOME/vids/assets/beep.mp4 &>/dev/null"
 alias audio_server="setsid -f $HOME/.config/dwm/audio_server.sh"
 alias startxdwm="XINITRC='$HOME/.config/x11/initdwm' startx"
 alias startxberry="XINITRC='$HOME/.config/x11/initberry' startx"

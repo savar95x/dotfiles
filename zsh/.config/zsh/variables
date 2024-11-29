@@ -2,9 +2,10 @@
 ## default programs
 export TERMINAL="st"
 export EDITOR="nvim"
-#export VISUAL="$TERMINAL -e $EDITOR"
-export BROWSER="vimb"
-export BROWSERALT="brave --new-window"
+export VISUAL="$TERMINAL -e $EDITOR"
+export BROWSER="firefox"
+export BROWSERALT="brave"
+export MANPAGER='nvim +Man!'
 
 # xdg
 export XDG_CONFIG_HOME=$HOME/.config
@@ -96,7 +97,8 @@ ex=󰜎 :\
 *.js= :\
 *.json= :\
 *.lua= :\
-*.md= :\
+*.md= :\
+*.txt= :\
 *.php= :\
 *.pl= :\
 *.pro= :\

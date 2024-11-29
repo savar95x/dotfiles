@@ -1,0 +1,145 @@
+# wm independent hotkeys
+
+# terminal emulator
+super + Return
+	st -T "~"
+
+super + grave
+	st -T "notes : lf" -g 55x13 -e lfrun $HOME/dox/notes
+	#quicknote
+
+super + shift + BackSpace
+	dmpowermenu
+
+# browser
+#super + d
+	#berryc toggle_decorations
+
+super + b
+	lines=$(wmctrl -l | wc -l); [ $lines -gt 5 ] && lines=5; rofi -show window -theme-str "window \{width: 40%;\} listview\{lines: $lines;\}"
+
+super + w
+	dmweb
+
+super + shift + w
+	watchvid
+
+# file manager
+super + r
+	st -T lf -g 55x13 -e lfrun
+
+super + t
+	(pgrep transmission-da || transmission-daemon) ; st -T lf -g 75x16 -e tremc
+	#transmission-qt
+
+super + n
+	st -e newsboat
+
+super + m
+	st -g 67x12 -e ncmpcpp
+
+super + shift + m
+	st -e pulsemixer --color 1
+
+super + i
+	st -g 130x32 -e gotop
+
+super + s
+	dmlscripts
+
+# program launcher
+super + p
+	rofi -show drun
+
+{XF86MonBrightnessUp,XF86MonBrightnessDown}
+	xbacklight -{inc,dec} 2
+	#light -{A,U} 2
+
+{XF86AudioLowerVolume,XF86AudioRaiseVolume}
+	pamixer -{d,i} 1 --allow-boost --set-limit 98
+
+shift + {XF86AudioLowerVolume,XF86AudioRaiseVolume}
+	pamixer -{d,i} 1 --allow-boost --set-limit 140
+
+XF86AudioMute
+	pamixer -t
+
+#
+# berry hotkeys
+#
+
+super + q
+	berryc window_close
+
+super + d
+	berryc toggle_decorations
+
+super + shift + {r, ctrl + q, ctrl + r}
+	{$HOME/.config/berry/autostart, berryc quit, pkill sxhkd && setsid -f sxhkd -c ~/.config/berry/sxhkdrc}
+
+# swap the current node and the biggest window
+super + g
+	berryc window_center
+
+
+# set the window state
+super + {f,shift+f}
+	 berryc {fullscreen,window_monocle}
+
+# focus/swap
+super + Tab
+	berryc cycle_focus
+
+#super + ctrl + {h,j,k,l}
+#	berryc cardinal_focus {1,2,3,4}
+
+# move/resize window
+super + {_,shift + }{h,j,k,l}
+	berryc {window_move,window_resize} {-10 0,0 10,0 -10,10 0}
+
+# focus or send to the given desktop
+# assumes workspaces are 0,1,2,3,4
+super + {_,shift+} {1-5}
+	berryc {switch_workspace,send_to_workspace} {0-4}
+
+super + bracketleft
+	n="$(wmctrl -d | grep '*' | cut -c 1)"; ([ $n -gt 0 ] && berryc switch_workspace $(($n-1)))
+
+super + bracketright
+	n="$(wmctrl -d | grep '*' | cut -c 1)"; ([ $n -lt 4 ] && berryc switch_workspace $(($n+1)))
+
+super + shift + bracketleft
+	n="$(wmctrl -d | grep '*' | cut -c 1)"; ([ $n -gt 0 ] && (berryc send_to_workspace $(($n-1)) && berryc switch_workspace $(($n-1))))
+
+super + shift + bracketright
+	n="$(wmctrl -d | grep '*' | cut -c 1)"; ([ $n -lt 4 ] && (berryc send_to_workspace $(($n+1)) && berryc switch_workspace $(($n+1))))
+
+#super + bracketleft
+	#n="$(wmctrl -d | grep '*' | cut -c 1)"; ([ $n -eq 0 ] && berryc switch_workspace 4 || berryc switch_workspace $(($n-1)))
+#
+#super + bracketright
+	#n="$(wmctrl -d | grep '*' | cut -c 1)"; ([ $n -eq 4 ] && berryc switch_workspace 0 || berryc switch_workspace $(($n+1)))
+#
+#super + shift + bracketleft
+	#n="$(wmctrl -d | grep '*' | cut -c 1)"; ([ $n -eq 0 ] && (berryc send_to_workspace 4 && berryc switch_workspace 4) || (berryc send_to_workspace $(($n-1)) && berryc switch_workspace $(($n-1))))
+#
+#super + shift + bracketright
+	#n="$(wmctrl -d | grep '*' | cut -c 1)"; ([ $n -eq 4 ] && (berryc send_to_workspace 0 && berryc switch_workspace 0) || (berryc send_to_workspace $(($n+1)) && berryc switch_workspace $(($n+1))))
+#
+# snapping
+super + ctrl + {h,j,k,l}
+	berryc {snap_left,window_resize_absolute 1900 504 && berryc window_move_absolute 10 504,window_resize_absolute 1900 504 && berryc window_move_absolute 10 10,snap_right}
+
+super + ctrl + {y,u,b,n}
+	berryc window_resize_absolute 950 504 && berryc window_move_absolute {10 10, 960 10, 10 504, 960 504}
+
+super + shift + {y,u,b,n}
+	width=$(xprop -id "$(xdotool getactivewindow)" | grep "BERRY_WINDOW_STATUS" | head -n1 | cut -d'"' -f14 | tr -d -c 0-9) height=$(xprop -id "$(xdotool getactivewindow)" | grep "BERRY_WINDOW_STATUS" | head -n1 | cut -d'"' -f16 | tr -d -c 0-9) && berryc window_move_absolute {10 10,$(expr 1910 - $width) 10,10 $(expr 1005 - $height),$(expr 1910 - $width) $(expr 1005 - $height)}
+
+super + ctrl + g
+	berryc window_resize_absolute 1350 750 && berryc window_center
+	#berryc window_resize_absolute 1300 800 && berryc window_center
+
+# install a man page for berrywm
+# explore more of berryc options
+# xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'

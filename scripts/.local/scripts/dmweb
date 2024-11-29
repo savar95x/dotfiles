@@ -16,9 +16,9 @@ elif [ "$selection" =  "url" ]; then
 	fi
 elif [ "$selection" =  "google" ]; then
 	if [ "$MYMENU" = "rofi -dmenu" ];then
-		url="$(rofi -dmenu -theme-str 'listview {lines: 0;}' -p $selection:)"
+		url="https://www.google.com/search?q=$(rofi -dmenu -theme-str 'listview {lines: 0;}' -p $selection:)"
 	else
-		url="$(${MYMENU:-dmenu} -p $selection: <&-)"
+		url="https://www.google.com/search?q=$(${MYMENU:-dmenu} -p $selection: <&-)"
 	fi
 elif [ "$selection" =  "youtube" ] || [ "$selection" = "spotify" ]; then
 	if [ "$MYMENU" = "rofi -dmenu" ];then
@@ -34,7 +34,8 @@ fi
 #if [ "$MYMENU" = "dmenu" ] || [ -z "$MYMENU" ]; then
 	#notify-send yeas
 #fi
-# https://www.google.com/search?q=
+# 
 
-[ "$url" ] && ${BROWSER:-vimb} "$url" &>/dev/null
-[ "$urlalt" ] && ${BROWSERALT:-firefox --new-window} "$urlalt" &>/dev/null
+[ "$url" ] && ${BROWSER:-brave --new-window} "$url" &>/dev/null
+[ "$urlalt" ] && ${BROWSER:-brave --new-window} "$urlalt" &>/dev/null
+#[ "$urlalt" ] && ${BROWSERALT:-firefox --new-window} "$urlalt" &>/dev/null

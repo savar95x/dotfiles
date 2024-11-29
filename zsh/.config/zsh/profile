@@ -1,3 +1,4 @@
 [ -f ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/variables ] && . ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/variables
-setsid -f $HOME/.config/dwm/audio_server.sh &
+pgrep syncthing || setsid -f syncthing &>/dev/null
+pgrep pipewire || setsid -f $HOME/.config/dwm/audio_server.sh &>/dev/null
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && XINITRC="$HOME/.config/x11/initberry" startx

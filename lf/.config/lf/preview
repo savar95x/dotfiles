@@ -25,13 +25,9 @@ batorcat() {
 glowormdcat() {
 	file="$1"
 	shift
-	if command -v glow > /dev/null 2>&1; then
-		#glow "$file"
-	#else
-		bat --color=always --theme=base16 --style=plain --pager=never "$file" "$@"
-		#mdcat "$file"
-	fi
+	bat --color=always --theme=base16 --style=plain --pager=never "$file" "$@"
 }
+#		exiftool "$1"
 
 case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 	*.tgz|*.tar.gz) tar tzf "$1" ;;
@@ -55,8 +51,9 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 		ssconvert --export-type=Gnumeric_stf:stf_csv "$1" "fd://1" | batorcat --language=csv
 		;;
 	*.wav|*.mp3|*.flac|*.m4a|*.wma|*.ape|*.ac3|*.og[agx]|*.spx|*.opus|*.as[fx]|*.mka)
-		exiftool "$1"
-		#mpv --no-audio "$1"
+		[ ! -f "${CACHE}.jpg" ] && \
+			ffmpegthumbnailer -i "$1" -o "${CACHE}.jpg" -s 0 -q 5
+		image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
 		;;
 	*.pdf)
 		[ ! -f "${CACHE}.jpg" ] && pdftoppm -jpeg -f 1 -singlefile "$1" "$CACHE"

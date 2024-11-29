@@ -34,8 +34,8 @@ icon_polybar="󰻹"
 [ "$1" = "icon_polybar" ] && echo "$icon_polybar"
 [ "$1" = "perc" ] && echo "$perc"
 [ "$1" = "notify_critical" ] && (
-    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && notify-send -u critical -t 30000 "Battery Level Critical  " "<i>$perc% / Consider connecting to a power supply.</i>"
-    [ $perc -gt 95 ] && [ "$state" = "Charging" ] && notify-send -u normal -t 30000 "Battery Sufficiently Charged  " "Please disconnect the power supply."
+    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && dunstify --replace "93433" -u critical -t 30000 "Battery Level Critical  " "<i>$perc% / Consider connecting to a power supply.</i>"
+    [ $perc -gt 95 ] && [ "$state" = "Charging" ] && dunstify --replace "93433" -u normal -t 30000 "Battery Sufficiently Charged  " "Please disconnect the power supply."
 )
-[ "$1" = "notify" ] && notify-send "Battery Info $icon" "$perc% / $state"
+[ "$1" = "notify" ] && dunstify --replace "93433" "Battery Info $icon" "$perc% / $state"
 exit
