@@ -11,6 +11,7 @@ macOS inspired Openbox rice made with the gruvbox material colorscheme.
 Pome 2.0.  
 my daily driver before chastity.  
 [here](https://github.com/savar95x/berry)'s my build of berry.  
+([reddit post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/))  
 <img src=.assets/pome2.0/show1.png />
 <img src=.assets/pome2.0/show2.png />
 <img src=.assets/pome2.0/show3.png />
@@ -21,6 +22,7 @@ my daily driver before chastity.
 previous to previous rice.  
 2bwm is doesnt seem to be very power efficient so not recommended.  
 [here](https://github.com/savar95x/2bwm)'s my build of 2bwm.  
+([reddit post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/))  
 <img src=.assets/pome/new3.png />
 <img src=.assets/pome/old.png />
 
