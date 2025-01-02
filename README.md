@@ -91,107 +91,20 @@ sudo pacman -Ss "<string or words you want to query>" # archlinux
 - pulsemixer
 - yt-dlp
 
+## Themes and Icons
+Icon pack is Numix circle.  
+GTK theme is gruvbox material.  
+
 ## Copying
-#### cloning repo
+yet to write  
+but in short, use gnu stow  
 ```bash
-mkdir -p ~/.local/repos/savar95x
-# This is where I recommend to store stuff, and where I personally keep my dots on my system.  
-cd ~/.local/repos/savar95x
 git clone https://github.com/savar95x/dotfiles
+cd dotfiles
+stow -t ~/ */
 ```
-This clones the dotfiles to ~/.local/repos/savar95x.  
-
-#### make
-`berry` and `st`.  
-
-- Installing st
-```bash
-cd $HOME/.local/repos/savar95x
-git clone https://github.com/savar95x/st.git
-cd st/
-make
-sudo make install
-```
-
-- Installing berry
-```bash
-cd $HOME/.local/repos/savar95x
-git clone https://github.com/savar95x/berry.git
-cd berry/
-make
-sudo make install
-```
-
-#### backing up ~/.config and symlinking my dotfiles instead.  
-```bash
-#/bin/sh
-cd $HOME/.local/repos/savar95x/dotfiles
-backup() {
-    [ -d ~/.config] && mv ~/.config ~/.config.bak
-    [ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak
-    [ -d ~/.local/scripts] && mv ~/.local/scripts ~/.local/scripts.bak
-}
-
-remove() {
-    [ -d ~/.config] && rm -rf ~/.config
-    [ -d ~/.local/bin] && rm -rf ~/.local/bin
-    [ -d ~/.local/scripts] && rm -rf ~/.local/scripts
-    [ -d ~/.local/run/x11] && rm -rf ~/.local/run/x11
-    [ -d ~/.local/run/pipewire] && rm -rf ~/.local/run/pipewire
-    [ -d ~/.local/share/spotdl] && rm -rf ~/.local/share/spotdl
-}
-
-create() {
-    mkdir -p ~/.config
-    mkdir -p ~/.local/run
-    mkdir -p ~/.local/share
-    mkdir -p ~/.local/share/zsh
-    mkdir -p ~/.local/share/spotdl
-    mkdir -p ~/.local/share/lyrics
-    mkdir -p ~/.local/share/cache/lf
-    mkdir -p ~/.local/share/themes
-    mkdir -p ~/.local/share/icons 
-    mkdir -p ~/.local/run/x11
-    mkdir -p ~/.local/run/pipewire
-    mkdir ~/mus
-    mkdir ~/dlds
-    mkdir ~/dox
-    mkdir ~/pix
-    mkdir ~/vids
-}
-
-stow_stuff() {
-    stow -t ~/ */
-}
-
-symlinking() {
-    ln -s ~/.config/zsh/rc ~/.zshrc
-    ln -s ~/.config/zsh/profile ~/.zprofile
-    ln -s ~/.local/share/themes ~/.themes
-    ln -s ~/.local/share/icons ~/.icons
-}
-
-backup
-remove
-create
-stow_stuff
-symlinking
-```
-
-#### shell
-```bash
-chsh -s /usr/bin/zsh
-```
-[guide](https://wiki.archlinux.org/title/command-line_shell)
-
-#### more dependencies
-For my scripts to work properly, you'll be needing the following programs:
-```bash
-ImageMagick xcolor simple-mtpfs xsecurelock xdotool scrot
-```
-To start the WM, type `startx` from the command line, or just login to tty1.  
-Raise an issue if something doesn't work.  
-
+Clone this to a directory you usually clone stuff into like ~/.local/repos/, and stow will symlink the way it does.  
+Make sure there are no configs already in ~/.config that clash with the ones in the subdirectories.  
 
 # Keybindings
 
