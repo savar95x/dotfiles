@@ -1,13 +1,16 @@
 #!/bin/sh
 histfile="$HOME/.local/share/cache/mpv-vids.txt"
 mode="$(echo 'watch now\ndownload\nhistory' | rofi -dmenu -theme-str 'listview {lines: 3;}' -p 'watchvid')"
+app=scripts
+downicon=~/pix/assets/icons/download-solid.svg
+watchicon=~/pix/assets/icons/video-solid.svg
 
 download() {
-	echo $link >> $histfile && echo "dl-vid $link" >> ${HISTFILE:-/home/savar/.local/share/zsh/history} && notify-send "video" "trying to download" && ( yt-dlp --embed-chapters --embed-subs --write-auto-sub --format="bestvideo[height<=1080]+bestaudio" "$link" -o "/home/savar/vids/watch_later/%(title)s.%(ext)s" || notify-send "video" "failed to load video. recheck the url/internet." )
+	echo $link >> $histfile && echo "dl-vid \"$link\"" >> ${HISTFILE:-/home/savar/.local/share/zsh/history} && notify-send -r 15 -i $downicon -a $app "Video" "Downloading into\n~/vids/watch_later" && ( yt-dlp --embed-chapters --embed-subs --write-auto-sub --format="bestvideo[height<=1080]+bestaudio" "$link" -o "/home/savar/vids/watch_later/%(title)s.%(ext)s" || notify-send -r 15 -i $downicon -a $app "Video" "Failed to load video.\nRecheck the url/internet." )
 }
 
 watch() {
-	echo $link >> $histfile && echo "mpv $link" >> ${HISTFILE:-/home/savar/.local/share/zsh/history} && notify-send "video" "trying to play in mpv" && ( mpv "$link" || notify-send "video" "failed to load video. recheck the url/internet." )
+	echo $link >> $histfile && echo "mpv $link" >> ${HISTFILE:-/home/savar/.local/share/zsh/history} && notify-send -r 15 -i $watchicon -a $app "Video" "Playing in mpv" && ( mpv "$link" || notify-send -r 15 -i $watchicon -a $app "Video" "Failed to load video.\nRecheck the url/internet." )
 }
 
 if [ "$mode" = "watch now" ]; then

@@ -1,0 +1,3 @@
+#!/bin/sh
+export XAUTHORITY="$HOME/.local/run/x11/xauth"
+exec awesome

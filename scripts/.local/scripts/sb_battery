@@ -4,27 +4,33 @@
 perc=$(cat /sys/class/power_supply/BAT0/capacity)
 state="$(cat /sys/class/power_supply/BAT0/status)"
 icon=""
+name="bolt-solid.svg"
 icon_polybar="󰻹"
 
 # make $perc two digit when single digit
 [ $(echo $perc | wc -m) = 2 ] && perc=0$perc 
 
 # set icon according to battery level
-[ "${state##Discharging}" ] || 
+[ "${state##Discharging}" ] ||
   if [ $perc -lt 16 ] && [ $perc -gt -1 ]; then
     icon=""
+    name="battery-empty-solid.svg"
     icon_polybar="󱢠"
-  elif [ $perc -lt 31 ] && [ $perc -gt 15 ]; then
+  elif [ $perc -lt 35 ] && [ $perc -gt 15 ]; then
     icon=""
+    name="battery-quarter-solid.svg"
     icon_polybar="󰋔"
-  elif [ $perc -lt 51 ] && [ $perc -gt 30 ]; then
+  elif [ $perc -lt 59 ] && [ $perc -gt 34 ]; then
     icon=""
+    name="battery-half-solid.svg"
     icon_polybar="󰛞"
-  elif [ $perc -lt 66 ] && [ $perc -gt 50 ]; then
+  elif [ $perc -lt 84 ] && [ $perc -gt 58 ]; then
     icon=""
+    name="battery-three-quarters-solid.svg"
     icon_polybar="󰛞"
-  elif [ $perc -lt 102 ] && [ $perc -gt 65 ]; then
+  elif [ $perc -lt 102 ] && [ $perc -gt 83 ]; then
     icon=""
+    name="battery-full-solid.svg"
     icon_polybar="󰣐"
   fi
   [ "${state##Charging}" ] || icon=""
@@ -34,8 +40,8 @@ icon_polybar="󰻹"
 [ "$1" = "icon_polybar" ] && echo "$icon_polybar"
 [ "$1" = "perc" ] && echo "$perc"
 [ "$1" = "notify_critical" ] && (
-    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && dunstify --replace "93433" -u critical -t 30000 "Battery Level Critical  " "<i>$perc% / Consider connecting to a power supply.</i>"
-    [ $perc -gt 95 ] && [ "$state" = "Charging" ] && dunstify --replace "93433" -u normal -t 30000 "Battery Sufficiently Charged  " "Please disconnect the power supply."
+    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && dunstify --replace "93433" -i ~/pix/assets/icons/triangle-exclamation-solid.svg -a scripts -u critical -t 30000 "Battery Level Critical" "<i>$perc% / Consider connecting to a power supply.</i>"
+    [ $perc -gt 93 ] && [ "$state" = "Charging" ] && dunstify --replace "93433" -i ~/pix/assets/icons/$name -a scripts -u normal -t 30000 "Battery Sufficiently Charged " "Please disconnect the power supply."
 )
-[ "$1" = "notify" ] && dunstify --replace "93433" "Battery Info $icon" "$perc% / $state"
+[ "$1" = "notify" ] && dunstify --replace "93433" -a scripts -i ~/pix/assets/icons/$name "Battery" "$perc% / $state"
 exit

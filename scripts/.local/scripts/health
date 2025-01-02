@@ -1,0 +1,8 @@
+#!/bin/sh
+# meant to be run using cron
+# run crondbus atleast once after logging in
+if [ -r "$HOME/.dbus/Xdbus" ]; then
+  . "$HOME/.dbus/Xdbus"
+fi
+
+notify-send -r 14 -t 30000 -a "scripts" -i ~/pix/assets/heart-solid.svg "Health" "Mind your mental posture as well!"

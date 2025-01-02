@@ -1,7 +1,7 @@
 # dir
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory  = ~/.config/ncmpcpp/lyrics
-mpd_music_dir     = ~/Music
+mpd_music_dir     = ~/mus
 
 # behaviour
 external_editor                  = nvim
@@ -13,7 +13,8 @@ ignore_leading_the               = "yes"
 allow_for_physical_item_deletion = "no"
 lines_scrolled = "1"
 follow_now_playing_lyrics = "yes"
-lyrics_fetchers = genius
+#lyrics_fetchers = genius
+lyrics_fetchers = tags, genius, tekstowo, plyrics, justsomelyrics, jahlyrics, zeneszoveg, internet
 
 # visualizer
 visualizer_data_source = /tmp/mpd.fifo

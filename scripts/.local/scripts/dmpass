@@ -1,2 +1,0 @@
-#!/bin/bash
-${MYMENU:-dmenu -nf "#1C2021"} -password -p "$1" <&-

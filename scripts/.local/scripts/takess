@@ -1,0 +1,11 @@
+#!/bin/sh
+# depends on maim and slop
+ 
+icon=${XDG_PICTURES_DIR:-~/pix}/assets/icons/camera-solid.svg
+dunstify -i $icon -a volume -r 13 "Screenshot" "Select a window or root"
+dir=${XDG_PICTURES_DIR:-~/pix}/scrots
+mkdir -p $dir
+name=$(date +%Y-%m-%d_%H-%M-%S).png
+maim -s $dir/$name
+[ -f $dir/$name ] && dunstify -r 13 -i $dir/$name "Screenshot" "Saved in\n~/pix/scrots" || dunstify -r 13 -i $icon -a volume "Screenshot" "Exiting without taking one"
+exit

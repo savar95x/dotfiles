@@ -1,0 +1,2 @@
+#!/bin/sh
+dunstify -i ~/pix/assets/icons/clock-solid.svg -a scripts -r "93434" "Date" "$(date '+%Y %b %d (%a)\n%H\:%M\:%S')"

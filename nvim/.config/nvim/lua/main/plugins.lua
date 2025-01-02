@@ -13,6 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"goolord/alpha-nvim", -- dashboard
+	--"nvim-treesitter/nvim-treesitter", -- treesitter
 	-- colorschemes
 	"mountain-theme/vim", -- mountain
 	"nanotech/jellybeans.vim", -- jellybeans
@@ -41,3 +42,4 @@ require("lazy").setup({
 require "main.plugins.misc"
 require "main.plugins.lualine"
 require "main.plugins.prism"
+--require "main.plugins.nvim-treesitter"

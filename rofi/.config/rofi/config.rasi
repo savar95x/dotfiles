@@ -11,7 +11,7 @@ configuration {
 kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
 kb-row-down: "Down,Control+j";
 kb-accept-entry: "Control+m,Return,KP_Enter";
-terminal: "mate-terminal";
+terminal: "st";
 kb-remove-to-eol: "Control+Shift+e";
 /*kb-mode-next: "Shift+Right,Control+Tab,Control+l";*/
 kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
@@ -67,14 +67,14 @@ window {
     fullscreen:                  false;
     width:                       500px;
     x-offset:                    0px;
-    y-offset:                    0px;
-//    y-offset:                    -75px;
+//    y-offset:                    0px;
+    y-offset:                    -40px;
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      10px solid;
+    border:                      7px solid;
     border-color:                @darkgrey;
     cursor:                      "default";
     /* Backgroud Colors */
@@ -318,3 +318,5 @@ error-message {
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
 }
+
+//@import                          "tokyo.rasi"

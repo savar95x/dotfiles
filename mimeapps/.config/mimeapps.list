@@ -1,20 +1,20 @@
 [Added Associations]
-inode/directory=org.kde.dolphin.desktop;
+inode/directory=nemo.desktop;
 x-scheme-handler/geo=wheelmap-geo-handler.desktop;
-x-scheme-handler/http=brave.desktop;
-x-scheme-handler/https=brave.desktop;
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
-x-scheme-handler/chrome=brave.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+application/pdf=sioyek.desktop;
+x-scheme-handler/chrome=firefox.desktop;
 text/html=nvim.desktop
-application/x-extension-htm=brave.desktop;
-application/x-extension-html=brave.desktop;
-application/x-extension-shtml=brave.desktop;
-application/xhtml+xml=brave.desktop;
-application/x-extension-xhtml=brave.desktop;
-application/x-extension-xht=brave.desktop;
+application/x-extension-htm=firefox.desktop;
+application/x-extension-html=firefox.desktop;
+application/x-extension-shtml=firefox.desktop;
+application/xhtml+xml=firefox.desktop;
+application/x-extension-xhtml=firefox.desktop;
+application/x-extension-xht=firefox.desktop;
 
 [Default Applications]
-application/pdf=zathura.desktop
+application/pdf=sioyek.desktop
 application/json=nvim.desktop
 application/x-php=nvim.desktop
 application/x-shellscript=nvim.desktop
@@ -28,6 +28,6 @@ text/plain=nvim.desktop
 text/xml=nvim.desktop
 video/mp4=mpv.desktop
 video/x-matroska=mpv.desktop
-inode/directory=org.kde.dolphin.desktop;
+inode/directory=nemo.desktop;
 x-scheme-handler/geo=wheelmap-geo-handler.desktop;
 x-scheme-handler/figma=figma-linux.desktop

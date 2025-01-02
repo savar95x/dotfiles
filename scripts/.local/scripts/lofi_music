@@ -1,3 +1,0 @@
-#!/bin/sh
-stream="https://www.youtube.com/watch?v=jfKfPfyJRdk"
-notify-send "lofi_music" "playing lofi music from lofi girl's stream using mpv" && exec mpv --no-video --title="mpv_lofi" "${LOFI_GIRL_STREAM:-$stream}" >/dev/null

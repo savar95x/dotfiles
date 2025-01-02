@@ -1,2 +1,0 @@
-#!/bin/sh
-pass=$(pass ls | ${MYMENU:-dmenu})

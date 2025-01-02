@@ -25,7 +25,7 @@ cmd open ${{
 	*/lua) nvim $fx;;
         text/csv) sc-im $fx;;
 	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
-	image/svg+xml) display -- $f ;;
+	#image/svg+xml) display -- $f ;;
 	image/*) setsid -f nsxiv -ab $f 2>/dev/null ;;
 	audio/*) mpv --audio-display=no $f ;;
 	video/*|application/vnd.rn-realmedia) setsid -f mpv --save-position-on-quit --ao=pulse $f -quiet >/dev/null 2>&1 ;;
