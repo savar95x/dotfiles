@@ -1,10 +1,14 @@
 
 # chasitity
-MacOS inspired Openbox rice made using the gruvbox material colorscheme.
+macOS inspired Openbox rice made using the gruvbox material colorscheme.  
 <img src=.assets/chastity/show1.png />
 <img src=.assets/chastity/show2.png />
-<img src=.assets/chastity/show3.png />
+<img src=.assets/chastity/show3.png />  
 All the important dots should be in openbox/ and scripts/.  
+Note that the gruvbox directory in openbox/theme/ should go into ~/.theme for obconf to detect it.  
+And yeah, use obconf to apply the theme to openbox.  
+The fonts I use are Schibsted Grotesk, Inter, and Fragment Mono.  
+I'll reorganise the directory structure soon to make it more accessible.  
 
 # Pome.
 This is my older rice (I should learn how to branch and use git properly).  

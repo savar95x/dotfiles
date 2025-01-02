@@ -1,0 +1,2 @@
+#!/bin/sh
+light -$1 $2 && dunstify -r 11 -a "volume" --hints=int:value:"$(printf '%.0f\n' $(light))"  -i ~/pix/assets/sun-solid.svg "Brightness" "$(printf '%.1f\n' $(light))"
