@@ -1,4 +1,14 @@
-## Pome.
+
+# chasitity
+MacOS inspired Openbox rice made using the gruvbox material colorscheme.
+<img src=.assets/chastity/show1.png />
+<img src=.assets/chastity/show2.png />
+<img src=.assets/chastity/show3.png />
+All the important dots should be in openbox/ and scripts/.  
+
+# Pome.
+This is my older rice (I should learn how to branch and use git properly).  
+Dots for this exist as well in this repo itself (specifically in the berry/ directory).  
 ### Details
 My rice on [berry](https://berrywm.org) using gruvbox material. Simple, calm and comfy. I call it "pome". This is my daily driver.  
 Earlier, I had it made on [2bwm](), but berry is more versatile and more power efficient. For anyone who wants to use the 2bwm version, the [config]() and [repo]() are still there.  
