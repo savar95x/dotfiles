@@ -1,3 +1,0 @@
-#!/bin/sh
-openbox --restart
-exec ~/.config/openbox/autostart

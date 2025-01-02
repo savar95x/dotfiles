@@ -1,7 +1,0 @@
-#!/bin/sh
-if [ "$1" = "t" ]; then
-	pamixer -t
-elif [ "$1" = "i" ] || [ "$1" = "d" ]; then
-	pamixer -$1 $2 --allow-boost --set-limit $3
-fi
-dunstify -r 11 -a "volume" --hints=int:value:"$(pamixer --get-volume)"  -i ~/pix/assets/headphones-solid.svg "Volume" "$(pamixer --get-volume-human)"

@@ -1,4 +1,0 @@
-#!/bin/sh
-setsid -f $HOME/.config/2bwm/autostart.sh &
-export MYMENU="rofi -dmenu"
-exec 2bwm
