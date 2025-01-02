@@ -1,0 +1,4 @@
+#!/bin/sh
+setsid -f $HOME/.config/dwm/autostart.sh &
+export MYMENU="dmenu"
+exec dwm

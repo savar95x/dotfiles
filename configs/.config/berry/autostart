@@ -1,0 +1,28 @@
+#!/bin/sh
+berrydir=$HOME/.config/berry
+
+# automatic night light
+pkill redshift
+redshift -P -O 6500
+setsid -f redshift &
+
+# notification daemon
+pkill dunst
+setsid -f dunst &
+
+# keybindings
+pkill sxhkd
+setsid -f sxhkd -c $berrydir/sxhkdrc $berrydir/rices/$(cat $berrydir/activerice)/sxhkdrc &
+#setsid -f sxhkd -c ~/.config/berry/sxhkdrc ~/.config/berry/rices/$(cat ~/.config/berry/activerice)/sxhkdrc &
+
+### quality of life # rice agnostic ###
+xset r rate 215 40
+xsetroot -cursor_name left_ptr
+xrdb -load $HOME/.config/x11/xresources
+setxkbmap -option caps:swapescape 
+
+# resize button
+berryc resize_mask mod4
+berryc resize_button 3
+
+exec $berrydir/rices/$(cat $berrydir/activerice)/init

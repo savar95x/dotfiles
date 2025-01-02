@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# restarting compositor
+pkill picom
+setsid -f picom --config $HOME/.config/berry/rices/chastity/picom.conf &
+
+# restarting bar
+pkill polybar
+pkill eww
+#setsid -f eww open bar
+setsid -f polybar -c $HOME/.config/polybar/chastity.ini fullbar &
+#setsid -f polybar weather &
+#sleep 1 && setsid -f polybar dummy &
+#sleep 1 && setsid -f polybar dummy && sleep 1 && polybar-msg -p $(xdotool search --name dummy getwindowpid) cmd toggle &
+
+# berry aesthetic
+berryc inner_unfocus_color 2E2E2E
+berryc text_unfocus_color ADA688
+berryc border_width 1
+berryc focus_color 303030
+berryc unfocus_color 303030
+berryc edge_gap 10 70 10 10
+# this probably requires making the colorscheme more matte like or cozy
+#xwallpaper --zoom "$HOME/.config/berry/rices/chastity/walls/whatever2.png"
+xwallpaper --zoom ~/.config/berry/rices/pome/walls/leaves-hard.jpg &
+berryc inner_border_width 0
+berryc title_height 50 
+berryc inner_unfocus_color 303030 
+berryc text_focus_color ADA688
+#berryc inner_focus_color 817c65
+berryc inner_focus_color 6A7660
+berryc text_focus_color 000000

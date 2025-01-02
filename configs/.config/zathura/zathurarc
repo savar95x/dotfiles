@@ -1,0 +1,50 @@
+# Settings
+set statusbar-home-tilde true
+set window-title-home-tilde true
+set selection-clipboard clipboard
+#set font "Iosevka 9"
+set adjust-open width
+map <C-Tab> toggle_statusbar
+set guioptions ""
+
+# Gruvbox
+set notification-error-bg       "#202020" # bg
+set notification-error-fg       "#EA6962" # bright:red
+set notification-warning-bg     "#202020" # bg
+set notification-warning-fg     "#D8A657" # bright:yellow
+set notification-bg             "#202020" # bg
+set notification-fg             "#A9B665" # bright:green
+
+set completion-bg               "#504945" # bg2
+set completion-fg               "#ebdbb2" # fg
+set completion-group-bg         "#3c3836" # bg1
+set completion-group-fg         "#928374" # gray
+set completion-highlight-bg     "#89B482" # bright:blue
+set completion-highlight-fg     "#504945" # bg2
+
+# Define the color in index mode
+set index-bg                    "#504945" # bg2
+set index-fg                    "#ebdbb2" # fg
+set index-active-bg             "#89B482" # bright:blue
+set index-active-fg             "#504945" # bg2
+
+set inputbar-bg                 "#202020" # bg
+set inputbar-fg                 "#ebdbb2" # fg
+
+set statusbar-bg                "#504945" # bg2
+set statusbar-fg                "#ebdbb2" # fg
+
+set highlight-color             "#D8A657" # bright:yellow
+set highlight-active-color      "#e78a4e" # bright:orange
+
+set default-bg                  "#202020" # bg
+set default-fg                  "#ebdbb2" # fg
+set render-loading              true
+set render-loading-bg           "#202020" # bg
+set render-loading-fg           "#ebdbb2" # fg
+
+# Recolor book content's color
+set recolor-lightcolor          "#202020" # bg
+set recolor-darkcolor           "#ebdbb2" # fg
+set recolor                     "true" # Uses the dark mode by default
+# set recolor-keephue             true      # keep original color

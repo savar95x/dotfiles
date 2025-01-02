@@ -1,0 +1,16 @@
+# vim:ft=conf
+
+ln      36   # LINK
+or      31;01   # ORPHAN
+tw      34      # STICKY_OTHER_WRITABLE
+ow      34      # OTHER_WRITABLE
+st      34   # STICKY
+di      34   # DIR
+pi      33      # FIFO
+so      01;35   # SOCK
+bd      33;01   # BLK
+cd      33;01   # CHR
+su      01;32   # SETUID
+sg      01;32   # SETGID
+ex      32   # EXEC
+fi      00      # FILE

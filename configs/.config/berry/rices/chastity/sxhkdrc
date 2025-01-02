@@ -1,0 +1,13 @@
+# snapping
+super + ctrl + {h,j,k,l}
+	berryc {window_resize_absolute 945 1000 && berryc window_move_absolute 10 10,window_resize_absolute 1900 500 && berryc window_move_absolute 10 500,window_resize_absolute 1900 504 && berryc window_move_absolute 10 10,window_resize_absolute 945 1000 && berryc window_move_absolute 965 10}
+
+super + ctrl + {y,u,b,n}
+	berryc window_resize_absolute 950 504 && berryc window_move_absolute {10 10, 960 10, 10 504, 960 504}
+
+super + shift + {y,u,b,n}
+	width=$(xprop -id "$(xdotool getactivewindow)" | grep "BERRY_WINDOW_STATUS" | head -n1 | cut -d'"' -f14 | tr -d -c 0-9) height=$(xprop -id "$(xdotool getactivewindow)" | grep "BERRY_WINDOW_STATUS" | head -n1 | cut -d'"' -f16 | tr -d -c 0-9) && berryc window_move_absolute {10 10,$(expr 1910 - $width) 10,10 $(expr 1005 - $height),$(expr 1910 - $width) $(expr 1005 - $height)}
+
+super + ctrl + g
+	berryc window_resize_absolute 1350 750 && berryc window_center
+	#berryc window_resize_absolute 1300 800 && berryc window_center

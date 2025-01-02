@@ -1,0 +1,83 @@
+#!/usr/bin/zsh
+# Enable colors and change prompt:
+autoload -U colors && colors	# Load colors
+#case $TERM in
+    #rxvt|*term)
+        #PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
+    #;;
+#esac
+PS1="%{$fg[blue]%}%~"$'\n'"%B%{$fg[green]%}λ %{$reset_color%}%b"
+# PS1="%{$fg[blue]%}%~"$'\n'"%B%{$fg[green]%}λ%{$fg[black]%} | %{$reset_color%}%b"
+#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+#  , Α α, Β β, Γ γ, Δ δ, Ε ε, Ζ ζ, Η η, Θ θ, Ι ι, Κ κ, Λ λ, Μ μ, Ν ν, Ξ ξ, Ο ο, Π π, Ρ ρ, Σ σ/ς, Τ τ, Υ υ, Φ φ, Χ χ, Ψ ψ, Ω ω.
+stty stop undef		# Disable ctrl-s to freeze terminal.
+
+# History in cache directory:
+HISTSIZE=50000
+SAVEHIST=50000
+HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
+
+# Load aliases if existent.
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases"
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit -d $HOME/.local/share/zsh/zcompdump
+_comp_options+=(globdots)		# Include hidden files.
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Yank to the system clipboard
+function vi-yank-xclip {
+    zle vi-yank
+   echo "$CUTBUFFER" | xclip -r -sel clipboard
+}
+
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
+zle_highlight=( region:bg=#45403D ) # fg= )
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select () {
+    case $KEYMAP in
+        vicmd) echo -ne '\e[1 q';;      # block
+        viins|main) echo -ne '\e[5 q';; # beam
+    esac
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# title update
+autoload -Uz add-zsh-hook
+function term_title_precmd () {
+	print -Pn -- "]2;%~"
+}
+function term_title_preexec () {
+	print -Pn -- '\e]2;%~ : ' && print -n -- "${(q)1}\a"
+}
+if [[ "$TERM" == (st*|Eterm*|alacritty*|aterm*|foot*|gnome*|konsole*|kterm*|putty*|rxvt*|screen*|wezterm*|tmux*|xterm*) ]]; then
+	add-zsh-hook -Uz precmd term_title_precmd
+	add-zsh-hook -Uz preexec term_title_preexec
+fi
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+bindkey -M vicmd '^[[P' vi-delete-char
+bindkey -M vicmd '^e' edit-command-line
+bindkey -M visual '^[[P' vi-delete
+
+# Load syntax highlighting; should be last.
+. /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
+
+myfetch # faster than tuxfetch

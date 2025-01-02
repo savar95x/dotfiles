@@ -204,18 +204,14 @@ To start the WM, type `startx` from the command line, or just login to tty1.
 Raise an issue if something doesn't work.  
 
 ### TODO
-- [x] fix spotdl directory
-- [ ] better / more sensible keybindings
-- [ ] improve zsh vi mode cursor
+- [ ] Improve install instructions
 - [ ] Add fonts, simp1e-cursor, gruvbox-material-gtk (via links and downloading).
 - [ ] Fix some shortcuts (like in file manager) being username dependent.  
 - [ ] Add quality of life stuff like syncthing, downloader-cli, sof-firmware, spotdl (via links and downloading).
-- [ ] Port configs to 1366x768 as well. Maybe learn to use VM.
-- [ ] Check out [larbs](https://larbs.xyz) to realise how he does it.
-- [ ] Write an install script.
 - [ ] rofi -show window with hidden windows for quicknote/lofi_music to work
 
 <!--
+- [ ] Check out [larbs](https://larbs.xyz) to realise how he does it.
 ### Thanks
 - voldemort(pentest2k) from discord or [KT-Chovy](https://reddit.com/u/KT-Chovy) for bearing every small improvement I made with the rice
 - [Elkowar](https://github.com/elkowar/) for making me believe gruvbox can be aesthetic as well
