@@ -1,6 +1,7 @@
 
 # chasitity
-macOS inspired Openbox rice made using the gruvbox material colorscheme.  
+macOS inspired Openbox rice made with the gruvbox material colorscheme.  
+[reddit post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/)  
 <img src=.assets/chastity/show1.png />
 <img src=.assets/chastity/show2.png />
 <img src=.assets/chastity/show3.png />  
