@@ -55,6 +55,8 @@ sudo pacman -Ss "<string or words you want to query>" # archlinux
 - zsh and zsh-syntax-highlighting
 - neovim
 - lf
+- ueberzug(pp)
+- bat
 - xorg-server
 - xorg-xinit
 - xset
