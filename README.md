@@ -28,7 +28,7 @@ ps:
 if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
 # Installation
-***STILL IN WORKS, PROCEED AT YOUR OWN RISK***
+***STILL IN WORKS, PROCEED AT YOUR OWN RISK***  
 This assumes you already have a working distribution (like Ubuntu or a fresh (or old) Arch install).  
 Although I've not checked if the configs have any clashes with distros that come with desktop environments (like Ubuntu or Manjaro), they should still work more or less.  
 
@@ -77,6 +77,7 @@ sudo pacman -Ss "<string or words you want to query>" # archlinux
 - autocpu-freq ([here](https://github.com/AdnanHodzic/auto-cpufreq))
 ### For Scripts to work
 - xclip
+- maim, slop
 - dunst and libnotify
 - imagemagick
 - xcolor
@@ -86,6 +87,7 @@ sudo pacman -Ss "<string or words you want to query>" # archlinux
 - light
 - pamixer
 - pulsemixer
+- yt-dlp
 
 ## Copying
 #### cloning repo
@@ -195,14 +197,15 @@ Read through ~/.config/openbox/rc.xml for more shortcuts.
 
 |        Keybind                    |                 Function                                     |
 | --------------------------------- | ------------------------------------------------------------ |
-| `MOD + Enter`                     | Launch terminal (st)                                  |
+| `MOD + Enter`                     | Launch terminal (st)                                         |
 | `MOD + Q`                         | Close window                                                 |
 | `MOD + {H,J,K,L}`                 | Move the window to {Left, Down, Up, Right}                   |
 | `MOD + Shift + {H,J,K,L}`         | Resize the window                                            |
-| `MOD + Shift + F`                 | Monocle a window                                            |
+| `MOD + Shift + F`                 | Monocle a window                                             |
 | `MOD + F`                         | Fullscreen a window                                          |
 | `MOD + P`                         | Open app launcher                                            |
 | `MOD + S`                         | List out the useful scripts in ~/.local/scipts/ in rofi      |
+| `MOD + Shift + S`                 | Take Screenshot (using maim and slop)                        |
 | `MOD + R`                         | Open lf (terminal file manager)                              |
 
 Note: `MOD` is the windows key
