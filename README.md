@@ -28,6 +28,7 @@ ps:
 if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
 # Installation
+***STILL IN WORKS, PROCEED AT YOUR OWN RISK***
 This assumes you already have a working distribution (like Ubuntu or a fresh (or old) Arch install).  
 Although I've not checked if the configs have any clashes with distros that come with desktop environments (like Ubuntu or Manjaro), they should still work more or less.  
 
