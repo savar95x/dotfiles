@@ -58,7 +58,7 @@ pacman -Ss "<string you want to query>" # archlinux
 | --- | --- |
 | terminal | st ([my build](https://github.com/savar95/st)) |
 | shell | zsh, zsh-syntax-highlighting |
-| editor | neovim (sometimes zed as well) |
+| editor | neovim |
 | file manager | lf, bat, ueberzug (for image previews) |
 | window manager | openbox, obconf, lxappearance, xorg-server, xorg-xinit |
 | app launcher | rofi |
@@ -81,15 +81,19 @@ I also use
 - sof-firmware (audio drivers for newer pcs, ignore if working audio)
 ### For Scripts and Quality of Life
 ```bash
-paru -S xorg-xset xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow
+paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow
 ```
 
 ### More Software I use
-autocpu-freq (for battery efficiency)  
-yt-dlp (to download youtube videos/playlists)  
+[autocpu-freq](https://github.com/AdnanHodzic/auto-cpufreq) (for battery efficiency, highly recommended)  
+[yt-dlp](https://github.com/yt-dlp/yt-dlp) (to download youtube videos/playlists)  
+[spotdl](https://github.com/spotDL/spotify-downloader) (to download music)  
 hugo (to manage website)  
 syncthing (for file syncing with phone)  
-cronie (as the cron daemon for periodic health notifications)
+cronie (as the cron daemon for periodic health notifications)  
+zed (for markdown previews and playing around)  
+
+These are good software but not necessary for my rice to work.  
 
 ## Copying/Symlinking Directories
 Backup conflicting configs and use gnu stow
@@ -102,8 +106,7 @@ for conf in $(ls configs/.config); do
 done
 stow -t ~/ */
 ```
-Clone this to a directory you usually clone stuff into like ~/.local/repos/, and stow will symlink the way it does.
-Make sure there are no configs already in ~/.config that clash with the ones in the subdirectories.  
+Clone this to a directory you usually clone stuff into like ~/.local/repos/, and stow will symlink the way it does.  
 Also, do this  
 ```bash
 ln -s ~/.config/zsh/rc ~/.zshrc
