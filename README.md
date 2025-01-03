@@ -81,7 +81,7 @@ I also use
 - sof-firmware (audio drivers for newer pcs, ignore if working audio)
 ### For Scripts and Quality of Life
 ```bash
-paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow
+paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer
 ```
 
 ### More Software I use
