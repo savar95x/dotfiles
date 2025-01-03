@@ -5,6 +5,13 @@
 # st, 2bwm, dmenu
 #
 # custom to my liking, forced symlinking
+
+autocpu() {
+	git clone https://github.com/AdnanHodzic/auto-cpufreq
+	cd auto-cpufreq
+	sudo ./auto-cpufreq-installer
+}
+
 backup() {
 	[ -d ~/.config] && mv ~/.config ~/.config.bak
 	[ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak
