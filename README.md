@@ -72,13 +72,17 @@ pacman -Ss "<string you want to query>" # archlinux
 
 Command  
 ```bash
-paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap
+paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap
 ```
 Make sure to build st and nsxiv from the above given links  
-
-I also use  
-- pipewire, wireplumber, bluez and bluez-utils (audio server, if you have working audio already ignore this)
-- sof-firmware (audio drivers for newer pcs, ignore if working audio)
+### Drivers and Audio
+*Ignore this if you use user-friendly distros, or have a working install already*  
+```bash
+paru -S xf86-input-libinput xf86-video-intel mesa-dri vulkan-loader mesa-vulkan-intel intel-video-accel
+```
+```bash
+paru -S pipewire wireplumber bluez bluez-utils sof-firmware
+```
 ### For Scripts and Quality of Life
 ```bash
 paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer
@@ -88,6 +92,7 @@ paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagema
 [autocpu-freq](https://github.com/AdnanHodzic/auto-cpufreq) (for battery efficiency, highly recommended)  
 [yt-dlp](https://github.com/yt-dlp/yt-dlp) (to download youtube videos/playlists)  
 [spotdl](https://github.com/spotDL/spotify-downloader) (to download music)  
+[gotop](https://github.com/xxxserxxx/gotop) (sysinfo, binary from releases recommended)  
 hugo (to manage website)  
 syncthing (for file syncing with phone)  
 cronie (as the cron daemon for periodic health notifications)  
