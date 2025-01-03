@@ -1,6 +1,7 @@
 
 # chasitity
-macOS inspired Openbox rice made with the gruvbox material colorscheme.
+macOS inspired Openbox rice made with the gruvbox material colorscheme.  
+This is my daily driver.  
 ([reddit post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/))
 <img src=.assets/chastity/show1.png />
 <img src=.assets/chastity/show2.png />
@@ -88,7 +89,7 @@ autocpu-freq (for battery efficiency)
 yt-dlp (to download youtube videos/playlists)  
 hugo (to manage website)  
 syncthing (for file syncing with phone)  
-
+cronie (as the cron daemon for periodic health notifications)
 
 ## Copying/Symlinking Directories
 Backup conflicting configs and use gnu stow
