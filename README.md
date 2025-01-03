@@ -1,7 +1,7 @@
 
 # chasitity
-macOS inspired Openbox rice made with the gruvbox material colorscheme.  
-This is my daily driver.  
+macOS inspired openbox rice made with the gruvbox material colorscheme.  
+this is my daily driver.  
 ([reddit post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/))
 <img src=.assets/chastity/show1.png />
 <img src=.assets/chastity/show2.png />
@@ -9,10 +9,10 @@ This is my daily driver.
 
 # Pome.
 ## berry
-Pome 2.0.
-my daily driver before chastity.
-[here](https://github.com/savar95x/berry)'s my build of berry.
-([reddit post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/))
+Pome 2.0.  
+my daily driver before chastity.  
+[here](https://github.com/savar95x/berry)'s my build of berry.  
+([reddit post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/))  
 <img src=.assets/pome2.0/show1.png />
 <!--img src=.assets/pome2.0/show2.png />
 <img src=.assets/pome2.0/show3.png />
@@ -20,10 +20,10 @@ my daily driver before chastity.
 <img src=.assets/pome2.0/show5.png /-->
 
 ## 2bwm
-previous to previous rice.
-2bwm is doesnt seem to be very power efficient so not recommended.
-[here](https://github.com/savar95x/2bwm)'s my build of 2bwm.
-([reddit post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/))
+previous to previous rice.  
+2bwm is doesnt seem to be very power efficient so not recommended.  
+[here](https://github.com/savar95x/2bwm)'s my build of 2bwm.  
+([reddit post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/))  
 <img src=.assets/pome/new3.png />
 <!--img src=.assets/pome/old.png /-->
 
@@ -62,6 +62,7 @@ pacman -Ss "<string you want to query>" # archlinux
 | file manager | lf, bat, ueberzug (for image previews) |
 | window manager | openbox, obconf, lxappearance, xorg-server, xorg-xinit |
 | app launcher | rofi |
+| bar and dock | polybar and plank |
 | browser | firefox |
 | image viewer | nsxiv ([here](https://github.com/nsxiv/nsxiv)) |
 | document reader | sioyek |
@@ -72,7 +73,7 @@ pacman -Ss "<string you want to query>" # archlinux
 
 Command  
 ```bash
-paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap
+paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank
 ```
 Make sure to build st and nsxiv from the above given links  
 ### Drivers and Audio
