@@ -24,13 +24,13 @@ previous to previous rice.
 [here](https://github.com/savar95x/2bwm)'s my build of 2bwm.
 ([reddit post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/))
 <img src=.assets/pome/new3.png />
-<img src=.assets/pome/old.png />
+<!--img src=.assets/pome/old.png /-->
 
 ps:
 if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
-# Installation
-***STILL IN WORKS, PROCEED AT YOUR OWN RISK***  
+# Installation Guide
+***STILL IN WORKS***  
 This assumes you already have a working distribution (like Ubuntu or a fresh (or old) Arch install).  
 Although I've not checked if the configs have any clashes with distros that come with desktop environments (like Ubuntu or Manjaro), they should still work more or less.  
 
@@ -121,10 +121,11 @@ Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go in
 The fonts I use are *[Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk)*, *[Inter](https://fonts.google.com/specimen/Inter)*, and *[Fragment Mono](https://uncut.wtf/monospace/fragment-mono/)*. Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
 Once copied, you can set these using lxappearance.  
 
-## Default Shell and Launching
+## Default Shell
 ```bash
 chsh -s /usr/bin/zsh
 ```
+# Launching
 To launch openbox, if you do not use a display manager (/a login manager) it should launch itself when you login from tty1 with zsh as the default shell.  
 If it doesn't, something might be wrong, check if you linked .zprofile.  
 You can try doing this though  
