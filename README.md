@@ -32,25 +32,15 @@ if you're looking for configs of my older rices (endless on dwm, dkwm), they'd b
 
 # Installation Guide
 ***STILL IN WORKS***  
+
 This assumes you already have a working distribution (like Ubuntu or a fresh (or old) Arch install).  
-Although I've not checked if the configs have any clashes with distros that come with desktop environments (like Ubuntu or Manjaro), they should still work more or less.  
+Although I've not checked if the configs have any clashes with user-friendly distributions like Ubuntu, they should still work more or less.  
 
 ## Software I use
-Install them from your repo with appropriate package names *before* copying my configs.
-(use the link given to install for software where link is present)
+I've given package names for archlinux/pacman, but you'll have to help yourself for other distributions.  
 ```bash
-sudo apt install # ubuntu
-```
-```bash
-sudo pacman -S # archlinux
-```
-```bash
-sudo xbps-install -S # voidlinux
-```
-Most of the package names should be straight forward, but some of them will have slightly different names across different package managers.
-To search for packages from the command line itself, use
-```bash
-pacman -Ss "<string you want to query>" # archlinux
+# to search software
+pacman -Ss "<string you want to query>"
 ```
 
 ### Main Software
@@ -71,11 +61,11 @@ pacman -Ss "<string you want to query>" # archlinux
 | torrent | transmission, tremc |
 | font management | gucharmap |
 
-Command  
+Install with this command, replace `paru` with the AUR helper of your choice.  
 ```bash
 paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank
 ```
-Don't forget to build st and nsxiv from the above given links.  
+Don't forget to build *st* and *nsxiv* from the above given links.  
 ### Drivers and Audio
 *Ignore this if you use user-friendly distros, or have a working install already*  
 ```bash
