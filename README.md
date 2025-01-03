@@ -79,7 +79,7 @@ I also use
 - sof-firmware (audio drivers for newer pcs, ignore if working audio)
 ### For Scripts and Quality of Life
 ```bash
-paru -S xorg-xset xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer
+paru -S xorg-xset xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow
 ```
 
 ### More Software I use
@@ -99,12 +99,10 @@ Yet to write but in short, backup conflicting configs and use gnu stow
 ```bash
 git clone https://github.com/savar95x/dotfiles
 cd dotfiles
-
 mkdir -p ~/.configs.bak
 for conf in $(ls configs/.config); do
     [ -f ~/.config/$conf ] && mv ~/.config/$conf ~/.config.bak/$conf
 done
-
 stow -t ~/ */
 ```
 Clone this to a directory you usually clone stuff into like ~/.local/repos/, and stow will symlink the way it does.
@@ -119,7 +117,23 @@ mkdir -p ~/.local/share/icons
 ln -s ~/.local/share/icons ~/.icons
 mkdir -p ~/.local/share/fonts
 ```
-The fonts I use are *Schibsted Grotesk*, *Inter*, and *Fragment Mono*. Make sure their files (.ttf or .otf) are (somewhere) in ~/.local/share/fonts
+The fonts I use are *Schibsted Grotesk*, *Inter*, and *Fragment Mono*. Make sure their files (.ttf or .otf) are (somewhere) in ~/.local/share/fonts  
+Change default shell to zsh  
+```bash
+chsh -s /usr/bin/zsh
+```
+
+To launch openbox, if you do not use a display manager (/a login manager) it should launch itself when you login from tty1 with zsh as the default shell.  
+If it doesn't, something might be wrong, check if you linked .zprofile.  
+You can try doing this though  
+```bash
+[ -f ~/.xinitrc ] && mv ~/.xinitrc ~/.config.bak/
+ln -s ~/.config/x11/initopenbox ~/.xinitrc
+```
+Then run  
+```bash
+startx
+```
 
 # Keybindings
 
