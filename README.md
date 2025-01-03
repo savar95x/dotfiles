@@ -39,7 +39,7 @@ Although I've not checked if the configs have any clashes with distros that come
 Install them from your repo with appropriate package names *before* copying my configs.
 (use the link given to install for software where link is present)
 ```bash
-sudo apt install # archlinux
+sudo apt install # ubuntu
 ```
 ```bash
 sudo pacman -S # archlinux
@@ -75,14 +75,14 @@ Command
 ```bash
 paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank
 ```
-Make sure to build st and nsxiv from the above given links  
+Don't forget to build st and nsxiv from the above given links.  
 ### Drivers and Audio
 *Ignore this if you use user-friendly distros, or have a working install already*  
 ```bash
-paru -S xf86-input-libinput xf86-video-intel mesa-dri vulkan-loader mesa-vulkan-intel intel-video-accel
+sudo pacman -S xf86-input-libinput xf86-video-intel mesa vulkan-intel intel-media-driver
 ```
 ```bash
-paru -S pipewire wireplumber bluez bluez-utils sof-firmware
+sudo pacman -S pipewire wireplumber bluez bluez-utils sof-firmware
 ```
 ### For Scripts and Quality of Life
 ```bash
@@ -90,14 +90,14 @@ paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagema
 ```
 
 ### More Software I use
-[autocpu-freq](https://github.com/AdnanHodzic/auto-cpufreq) (for battery efficiency, highly recommended)  
-[yt-dlp](https://github.com/yt-dlp/yt-dlp) (to download youtube videos/playlists)  
-[spotdl](https://github.com/spotDL/spotify-downloader) (to download music)  
-[gotop](https://github.com/xxxserxxx/gotop) (sysinfo, binary from releases recommended)  
-hugo (to manage website)  
-syncthing (for file syncing with phone)  
-cronie (as the cron daemon for periodic health notifications)  
-zed (for markdown previews and playing around)  
+- [autocpu-freq](https://github.com/AdnanHodzic/auto-cpufreq) (for battery efficiency, highly recommended)  
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) (to download youtube videos/playlists)  
+- [spotdl](https://github.com/spotDL/spotify-downloader) (to download music)  
+- [gotop](https://github.com/xxxserxxx/gotop) (sysinfo, binary from releases recommended)  
+- hugo (to manage website)  
+- syncthing (for file syncing with phone)  
+- cronie (as the cron daemon for periodic health notifications)  
+- zed (for markdown previews and playing around)  
 
 These are good software but not necessary for my rice to work.  
 
@@ -125,13 +125,15 @@ mkdir -p ~/.local/share/fonts
 ```
 
 ## Theme, Icons and Fonts
-Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
-GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into ~/.theme/  
-Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go into ~/.icons/  
+- Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
+- GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into ~/.theme/  
+- Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go into ~/.icons/  
+
 Once copied, you can set these using lxappearance.  
 
-The fonts I use are *[Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk)*, *[Inter](https://fonts.google.com/specimen/Inter)*, and *[Fragment Mono](https://uncut.wtf/monospace/fragment-mono/)*. Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
-Run this once after copying  
+- The fonts I use are *[Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk)*, *[Inter](https://fonts.google.com/specimen/Inter)*, and *[Fragment Mono](https://uncut.wtf/monospace/fragment-mono/)*. Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
+
+Run this once after extracting fonts  
 ```bash
 fc-cache -fv
 ```
@@ -141,6 +143,8 @@ fc-cache -fv
 chsh -s /usr/bin/zsh
 ```
 # Launching
+**NOTE**: If your system somehow manages audio, you might consider commenting the audio_server.sh command in ~/.zprofile  
+
 To launch openbox, if you do not use a display manager (/a login manager) it should launch itself when you login from tty1 with zsh as the default shell.  
 If it doesn't, something might be wrong, check if you linked .zprofile.  
 You can try doing this though  
