@@ -67,10 +67,11 @@ pacman -Ss "<string you want to query>" # archlinux
 | video player | mpv |
 | music | mpd, ncmpcpp |
 | torrent | transmission, tremc |
+| font management | gucharmap |
 
 Command  
 ```bash
-paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git
+paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap
 ```
 Make sure to build st and nsxiv from the above given links  
 
@@ -88,14 +89,9 @@ yt-dlp (to download youtube videos/playlists)
 hugo (to manage website)  
 syncthing (for file syncing with phone)  
 
-## Themes and Icons
-Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
-GTK theme is [Gruvbox Material](https://github.com/sainnhe/gruvbox-material). Clone this into ~/.theme/  
-Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go into ~/.icons/  
-Once copied, you can set these using lxappearance.  
 
 ## Copying/Symlinking Directories
-Yet to write but in short, backup conflicting configs and use gnu stow
+Backup conflicting configs and use gnu stow
 ```bash
 git clone https://github.com/savar95x/dotfiles
 cd dotfiles
@@ -117,12 +113,18 @@ mkdir -p ~/.local/share/icons
 ln -s ~/.local/share/icons ~/.icons
 mkdir -p ~/.local/share/fonts
 ```
-The fonts I use are *Schibsted Grotesk*, *Inter*, and *Fragment Mono*. Make sure their files (.ttf or .otf) are (somewhere) in ~/.local/share/fonts  
-Change default shell to zsh  
+
+## Theme, Icons and Fonts
+Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
+GTK theme is [Gruvbox Material](https://github.com/sainnhe/gruvbox-material). Clone this into ~/.theme/  
+Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go into ~/.icons/  
+The fonts I use are *[Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk)*, *[Inter](https://fonts.google.com/specimen/Inter)*, and *[Fragment Mono](https://uncut.wtf/monospace/fragment-mono/)*. Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
+Once copied, you can set these using lxappearance.  
+
+## Default Shell and Launching
 ```bash
 chsh -s /usr/bin/zsh
 ```
-
 To launch openbox, if you do not use a display manager (/a login manager) it should launch itself when you login from tty1 with zsh as the default shell.  
 If it doesn't, something might be wrong, check if you linked .zprofile.  
 You can try doing this though  
