@@ -1,28 +1,28 @@
 
 # chasitity
-macOS inspired Openbox rice made with the gruvbox material colorscheme.  
-([reddit post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/))  
+macOS inspired Openbox rice made with the gruvbox material colorscheme.
+([reddit post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/))
 <img src=.assets/chastity/show1.png />
 <img src=.assets/chastity/show2.png />
-<img src=.assets/chastity/show3.png />  
+<img src=.assets/chastity/show3.png />
 
 # Pome.
 ## berry
-Pome 2.0.  
-my daily driver before chastity.  
-[here](https://github.com/savar95x/berry)'s my build of berry.  
-([reddit post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/))  
+Pome 2.0.
+my daily driver before chastity.
+[here](https://github.com/savar95x/berry)'s my build of berry.
+([reddit post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/))
 <img src=.assets/pome2.0/show1.png />
-<img src=.assets/pome2.0/show2.png />
+<!--img src=.assets/pome2.0/show2.png />
 <img src=.assets/pome2.0/show3.png />
 <img src=.assets/pome2.0/show4.png />
-<img src=.assets/pome2.0/show5.png />
+<img src=.assets/pome2.0/show5.png /-->
 
 ## 2bwm
-previous to previous rice.  
-2bwm is doesnt seem to be very power efficient so not recommended.  
-[here](https://github.com/savar95x/2bwm)'s my build of 2bwm.  
-([reddit post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/))  
+previous to previous rice.
+2bwm is doesnt seem to be very power efficient so not recommended.
+[here](https://github.com/savar95x/2bwm)'s my build of 2bwm.
+([reddit post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/))
 <img src=.assets/pome/new3.png />
 <img src=.assets/pome/old.png />
 
@@ -35,8 +35,8 @@ This assumes you already have a working distribution (like Ubuntu or a fresh (or
 Although I've not checked if the configs have any clashes with distros that come with desktop environments (like Ubuntu or Manjaro), they should still work more or less.  
 
 ## Software I use
-Install them from your repo with appropriate package names *before* copying my configs.  
-(use the link given to install for software where link is present)  
+Install them from your repo with appropriate package names *before* copying my configs.
+(use the link given to install for software where link is present)
 ```bash
 sudo apt install # archlinux
 ```
@@ -46,92 +46,107 @@ sudo pacman -S # archlinux
 ```bash
 sudo xbps-install -S # voidlinux
 ```
-Most of the package names should be straight forward, but some of them will have slightly different names across different package managers.  
-To search for packages from the command line itself, use  
+Most of the package names should be straight forward, but some of them will have slightly different names across different package managers.
+To search for packages from the command line itself, use
 ```bash
-sudo pacman -Ss "<string or words you want to query>" # archlinux
+pacman -Ss "<string you want to query>" # archlinux
 ```
 
 ### Main Software
-- st ([here](https://github.com/savar95/st)'s my build)
-- zsh and zsh-syntax-highlighting
-- neovim
-- lf
-- ueberzug(pp)
-- bat
-- xorg-server
-- xorg-xinit
-- xset
-- xsetroot
-- rofi
-- openbox, obconf and lxappearance
-- sioyek
-- firefox
+| Type | Software/Packages |
+| --- | --- |
+| terminal | st ([my build](https://github.com/savar95/st)) |
+| shell | zsh, zsh-syntax-highlighting |
+| editor | neovim (sometimes zed as well) |
+| file manager | lf, bat, ueberzug (for image previews) |
+| window manager | openbox, obconf, lxappearance, xorg-server, xorg-xinit |
+| app launcher | rofi |
+| browser | firefox |
+| image viewer | nsxiv ([here](https://github.com/nsxiv/nsxiv)) |
+| document reader | sioyek |
+| video player | mpv |
+| music | mpd, ncmpcpp |
+| torrent | transmission, tremc |
+
+Command  
+```bash
+paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git
+```
+Make sure to build st and nsxiv from the above given links  
+
+I also use  
 - pipewire, wireplumber, bluez and bluez-utils (audio server, if you have working audio already ignore this)
 - sof-firmware (audio drivers for newer pcs, ignore if working audio)
-- mpv
-- mpd
-- ncmpcpp
-- transmission and tremc
-- nsxiv ([here](https://github.com/nsxiv/nsxiv))
-- syncthing (for file syncing with phone)
-- hugo (to manage website)
-- autocpu-freq ([here](https://github.com/AdnanHodzic/auto-cpufreq))
-### For Scripts to work
-- xclip
-- maim, slop
-- dunst and libnotify
-- imagemagick
-- xcolor
-- xdo
-- xdotool
-- wmctrl
-- light
-- pamixer
-- pulsemixer
-- yt-dlp
+### For Scripts and Quality of Life
+```bash
+paru -S xorg-xset xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer
+```
+
+### More Software I use
+autocpu-freq (for battery efficiency)  
+yt-dlp (to download youtube videos/playlists)  
+hugo (to manage website)  
+syncthing (for file syncing with phone)  
 
 ## Themes and Icons
-Icon pack is Numix circle.  
-GTK theme is gruvbox material.  
+Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
+GTK theme is [Gruvbox Material](https://github.com/sainnhe/gruvbox-material). Clone this into ~/.theme/  
+Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go into ~/.icons/  
+Once copied, you can set these using lxappearance.  
 
-## Copying
-yet to write  
-but in short, use gnu stow  
+## Copying/Symlinking Directories
+Yet to write but in short, backup conflicting configs and use gnu stow
 ```bash
 git clone https://github.com/savar95x/dotfiles
 cd dotfiles
+
+mkdir -p ~/.configs.bak
+for conf in $(ls configs/.config); do
+    [ -f ~/.config/$conf ] && mv ~/.config/$conf ~/.config.bak/$conf
+done
+
 stow -t ~/ */
 ```
-Clone this to a directory you usually clone stuff into like ~/.local/repos/, and stow will symlink the way it does.  
+Clone this to a directory you usually clone stuff into like ~/.local/repos/, and stow will symlink the way it does.
 Make sure there are no configs already in ~/.config that clash with the ones in the subdirectories.  
+Also, do this  
+```bash
+ln -s ~/.config/zsh/rc ~/.zshrc
+ln -s ~/.config/zsh/profile ~/.zprofile
+mkdir -p ~/.local/share/themes
+ln -s ~/.local/share/themes ~/.themes
+mkdir -p ~/.local/share/icons
+ln -s ~/.local/share/icons ~/.icons
+mkdir -p ~/.local/share/fonts
+```
+The fonts I use are *Schibsted Grotesk*, *Inter*, and *Fragment Mono*. Make sure their files (.ttf or .otf) are (somewhere) in ~/.local/share/fonts
 
 # Keybindings
 
 Read through ~/.config/openbox/rc.xml for more shortcuts.
 
-|        Keybind                    |                 Function                                     |
-| --------------------------------- | ------------------------------------------------------------ |
-| `MOD + Enter`                     | Launch terminal (st)                                         |
-| `MOD + Q`                         | Close window                                                 |
-| `MOD + {H,J,K,L}`                 | Move the window to {Left, Down, Up, Right}                   |
-| `MOD + Shift + {H,J,K,L}`         | Resize the window                                            |
-| `MOD + Shift + F`                 | Monocle a window                                             |
-| `MOD + F`                         | Fullscreen a window                                          |
-| `MOD + P`                         | Open app launcher                                            |
-| `MOD + S`                         | List out the useful scripts in ~/.local/scipts/ in rofi      |
-| `MOD + Shift + S`                 | Take Screenshot (using maim and slop)                        |
-| `MOD + R`                         | Open lf (terminal file manager)                              |
+| Keybind | Function |
+| --- | --- |
+| `MOD + Enter` | Launch terminal (st) |
+| `MOD + Q` | Close window |
+| `MOD + {H,J,K,L}` | Move the window to {Left, Down, Up, Right} |
+| `MOD + Shift + {H,J,K,L}` | Resize the window |
+| `MOD + Shift + F` | Monocle a window |
+| `MOD + F` | Fullscreen a window |
+| `MOD + P` | Open app launcher |
+| `MOD + S` | List out the useful scripts in ~/.local/scipts/ in rofi |
+| `MOD + Shift + S` | Take Screenshot (using maim and slop) |
+| `MOD + R` | Open lf (terminal file manager) |
 
 Note: `MOD` is the windows key
 
 <!--
 ## Installation
-I'm writing it with a fresh install of [void linux](https://voidlinux.org) in mind (even though my main device runs arch with these dots). But it is possible to follow along the intructions for any distro with slight adjustments (mainly for package names).  
-Also, this rice was made on a 1920x1080 monitor, so for now you'll have to edit some configs (namely berry, rofi, poybar) to fit your setup.  
+I'm writing it with a fresh install of [void linux](https://voidlinux.org) in mind (even though my main device runs arch with these dots). But it is possible to follow along the intructions for any distro with slight adjustments (mainly for package names).
+Also, this rice was made on a 1920x1080 monitor, so for now you'll have to edit some configs (namely berry, rofi, poybar) to fit your setup.
 
 ### Overview
-I manage my dotfiles using gnu `stow`. The way I use it is that my dotfiles (this git repo) are kept in a separate directory anywhere on the system, and then I use stow to symlink them to their original rightful paths (the the weird nesting).  
+I manage my dotfiles using gnu `stow`. The way I use it is that my dotfiles (this git repo) are kept in a separate directory anywhere on the system, and then I use stow to symlink them to their original rightful paths (the the weird nesting).
 
 ### Instructions
 #### Internet
@@ -149,20 +164,20 @@ save and exit and run
 wpa_passphrase MYSSID passphrase >> /etc/wpa_supplicant/wpa_supplicant-1.conf
 wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/wpa_supplicant-1.conf
 ```
-use `ip link` to identify the interface  
+use `ip link` to identify the interface
 [guide](https://wiki.archlinux.org/title/wpa_supplicant)
 
-#### package manager 
-This updates the packages after first install.  
+#### package manager
+This updates the packages after first install.
 ```bash
 xbps-install -Su
 ```
-This installs all the needed packages.  
+This installs all the needed packages.
 ```bash
 sudo xbps-install -S stow git make neovim iwd bat pkg-config libXft-devel gcc libXinerama-devel xorg-server xf86-input-libinput xauth xclip zsh zsh-syntax-highlighting lf ueberzugpp ffmpegthumbnailer xinit sxhkd wmctrl xdo xdotool xwallpaper xset xsetroot xrdb setkbmap pipewire wireplumber mpd mpc dunst libnotify ncmpcpp picom xbanish redshift polybar rofi mpv pamixer pulsemixer
 # autocpu-freq not in xbps repo
 ```
-Installs the graphics drivers for **Intel**. If you're using something else then [see this](https://docs.voidlinux.org/config/graphical-session/graphics-drivers/index.html).  
+Installs the graphics drivers for **Intel**. If you're using something else then [see this](https://docs.voidlinux.org/config/graphical-session/graphics-drivers/index.html).
 ```bash
 sudo xbps-install -S xf86-video-intel mesa-dri vulkan-loader mesa-vulkan-intel intel-video-accel
 ```
@@ -177,14 +192,14 @@ ln -s /etc/sv/iwd /var/service/
 #### cloning repo
 ```bash
 mkdir -p ~/.local/repos/savar95x
-# This is where I recommend to store stuff, and where I personally keep my dots on my system.  
+# This is where I recommend to store stuff, and where I personally keep my dots on my system.
 cd ~/.local/repos/savar95x
 git clone https://github.com/savar95x/dotfiles
 ```
-This clones the dotfiles to ~/.local/repos/savar95x.  
+This clones the dotfiles to ~/.local/repos/savar95x.
 
 #### make
-`berry` and `st`.  
+`berry` and `st`.
 
 - Installing st
 ```bash
@@ -204,7 +219,7 @@ make
 sudo make install
 ```
 
-#### backing up ~/.config and symlinking my dotfiles instead.  
+#### backing up ~/.config and symlinking my dotfiles instead.
 ```bash
 #/bin/sh
 cd $HOME/.local/repos/savar95x/dotfiles
@@ -232,7 +247,7 @@ create() {
     mkdir -p ~/.local/share/lyrics
     mkdir -p ~/.local/share/cache/lf
     mkdir -p ~/.local/share/themes
-    mkdir -p ~/.local/share/icons 
+    mkdir -p ~/.local/share/icons
     mkdir -p ~/.local/run/x11
     mkdir -p ~/.local/run/pipewire
     mkdir ~/mus
@@ -271,21 +286,21 @@ For my scripts to work properly, you'll be needing the following programs:
 ```bash
 ImageMagick xcolor simple-mtpfs xsecurelock xdotool scrot
 ```
-To start the WM, type `startx` from the command line, or just login to tty1.  
-Raise an issue if something doesn't work.  
+To start the WM, type `startx` from the command line, or just login to tty1.
+Raise an issue if something doesn't work.
 
 ### TODO
 - [ ] Improve install instructions
 - [ ] Add fonts, simp1e-cursor, gruvbox-material-gtk (via links and downloading).
-- [ ] Fix some shortcuts (like in file manager) being username dependent.  
+- [ ] Fix some shortcuts (like in file manager) being username dependent.
 - [ ] Add quality of life stuff like syncthing, downloader-cli, sof-firmware, spotdl (via links and downloading).
 - [ ] rofi -show window with hidden windows for quicknote/lofi_music to work
 
-All the important dots should be in openbox/ and scripts/.  
-Note that the gruvbox directory in openbox/theme/ should go into ~/.theme for obconf to detect it.  
-And yeah, use obconf to apply the theme to openbox.  
-The fonts I use are Schibsted Grotesk, Inter, and Fragment Mono.  
-I'll reorganise the directory structure soon to make it more accessible.  
+All the important dots should be in openbox/ and scripts/.
+Note that the gruvbox directory in openbox/theme/ should go into ~/.theme for obconf to detect it.
+And yeah, use obconf to apply the theme to openbox.
+The fonts I use are Schibsted Grotesk, Inter, and Fragment Mono.
+I'll reorganise the directory structure soon to make it more accessible.
 -->
 <!--
 - [ ] Check out [larbs](https://larbs.xyz) to realise how he does it.
