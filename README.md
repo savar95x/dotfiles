@@ -114,6 +114,16 @@ ln -s ~/.local/share/icons ~/.icons
 mkdir -p ~/.local/share/fonts
 ```
 
+## Setup Cronjob
+Install `cronie`, and enable it using  
+```bash
+sudo systemctl enable cronie
+```
+and add the following to `cronjob -e`  
+```bash
+* * * * * ~/.local/scripts/health
+```
+
 ## Theme, Icons and Fonts
 - Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
 - GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into ~/.theme/  
