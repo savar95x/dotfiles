@@ -1,9 +1,9 @@
 <div align=center><img width=70% src=.assets/chastity/show1.png><br><br>
 
-&ensp;[<kbd> <br> Screenshots <br> </kbd>](#Screenshots)&ensp;
-&ensp;[<kbd> <br> Installation <br> </kbd>](#Installation)&ensp;
-&ensp;[<kbd> <br> Dependencies <br> </kbd>](#Dependencies)&ensp;
-&ensp;[<kbd> <br> Keybindings <br> </kbd>](#Keybindings)&ensp;
+&ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
+&ensp;[<kbd> <br> Install <br> </kbd>](#Installation)&ensp;
+&ensp;[<kbd> <br> Depends <br> </kbd>](#Dependencies)&ensp;
+&ensp;[<kbd> <br> Keybinds <br> </kbd>](#Keybindings)&ensp;
 <br><br></div>
 
 # Chastity
