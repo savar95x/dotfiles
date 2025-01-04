@@ -51,10 +51,10 @@ git clone https://github.com/savar95x/dotfiles
 cd dotfiles
 ```
 
-## 2. Run `install.sh` while being in the dotfiles/ directory.
+## 2. Symlink Dotfiles
 This will backup conflicting configs and symlink my dots instead.  
 ```bash
-./install.sh
+./linkdots.sh
 ```
 
 ## 3. Install all the dependencies.  
@@ -87,7 +87,7 @@ cd auto-cpufreq
 ```
 ### yt-dlp
 ```bash
-curl -O https://github.com/yt-dlp/yt-dlp/releases/download/2024.12.23/yt-dlp
+curl -LO https://github.com/yt-dlp/yt-dlp/releases/download/2024.12.23/yt-dlp
 chmod +x ./yt-dlp
 mv yt-dlp ~/.local/bin/
 ```
@@ -99,7 +99,8 @@ python -m venv ~/.local/venv
 ```
 ### gotop
 ```bash
-curl -O https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_linux_amd64.tgz
+curl -LO https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_linux_amd64.tgz
+tar xvf gotop_3.0.0_linux_amd64.tgz
 chmod +x ./gotop
 mv gotop ~/.local/bin/
 ```

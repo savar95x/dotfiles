@@ -16,6 +16,7 @@ mkdir -p $backupdir
 echo "$backupdir created"
 for conf in $(ls configs/.config); do
     [ -f ~/.config/$conf ] && mv ~/.config/$conf $backupdir/$conf && echo "moved ~/.config/$conf into $backupdir/$conf"
+    [ -d ~/.config/$conf ] && mv ~/.config/$conf $backupdir/$conf && echo "moved ~/.config/$conf into $backupdir/$conf"
 done
 
 # symlink
