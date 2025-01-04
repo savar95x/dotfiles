@@ -1,6 +1,7 @@
-# chastity
+# Chastity
 macOS inspired openbox [rice](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
 This is my daily driver.  
+## Screenshots
 <!--![img](.assets/chastity/show1.png)-->
 <div align=center>
 <img width=49% src=.assets/chastity/show1.png />
@@ -9,9 +10,9 @@ This is my daily driver.
 <img width=49% src=.assets/chastity/show4.png />
 </div>
 
-# pome
+# Pome
 My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/) [post2](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/).  
-## berry
+## Berry
 [Build](https://github.com/savar95x/berry)  
 <div align=center>
 <img width=49% src=.assets/pome2.0/show1.png />
