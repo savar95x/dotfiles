@@ -1,22 +1,13 @@
-<div align = center><br><br>
-
-&ensp;[<kbd> <br> chastity <br> </kbd>](#Screenshots)&ensp;
-&ensp;[<kbd> <br> pome 2.0 <br> </kbd>](#Screenshots)&ensp;
-&ensp;[<kbd> <br> pome <br> </kbd>](#Screenshots)&ensp;
-
-<br><br></div>
-
-# Chastity
-<!--
+# chastity
 macOS inspired openbox rice made with the gruvbox material colorscheme.  
 this is my daily driver.  
--->
-<p align="center">
-  <img align="center" width="49%" src=.assets/chastity/show1.png />
-  <img align="center" width="49%" src=.assets/chastity/show2.png />
-  <img align="center" width="49%" src=.assets/chastity/show3.png />
-</p>
-([reddit post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/))
+&ensp;[<kbd> <br> reddit post <br> </kbd>](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/)&ensp;
+<img align="center" width="49%" src=.assets/chastity/show1.png />
+<img align="center" width="49%" src=.assets/chastity/show2.png />
+<img align="center" width="49%" src=.assets/chastity/show3.png />
+<img src=.assets/chastity/show1.png />
+<img src=.assets/chastity/show2.png />
+<img src=.assets/chastity/show3.png />
 
 # Pome.
 ## berry
