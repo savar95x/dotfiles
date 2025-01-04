@@ -108,7 +108,7 @@ sudo pacman -S hugo syncthing zed
 ```
 
 ## 5. Drivers and Audio  
-> []
+> [!NOTE]
 > *Ignore this if you use user-friendly distros, or have a working install already*  
 ```bash
 sudo pacman -S xf86-input-libinput xf86-video-intel mesa vulkan-intel intel-media-driver
