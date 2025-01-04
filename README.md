@@ -3,8 +3,9 @@ macOS inspired openbox rice made with the gruvbox material colorscheme. this is 
 
 <p align="center">
 <img align="center" width="99%" src=.assets/chastity/show1.png />
-<img align="center" width="49%" src=.assets/chastity/show2.png />
-<img align="center" width="49%" src=.assets/chastity/show3.png />
+<br>
+<img align="center" width="45%" src=.assets/chastity/show2.png />
+<img align="center" width="45%" src=.assets/chastity/show3.png />
 </p>
 
 &ensp;[<kbd> <br> reddit post <br> </kbd>](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/)&ensp;
