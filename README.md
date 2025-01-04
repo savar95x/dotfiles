@@ -27,7 +27,6 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 <img width=49% src=.assets/pome/old.png />
 </div>
 
-
 > My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
 # Installation Guide
