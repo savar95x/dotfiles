@@ -1,11 +1,11 @@
 # chastity
-macOS inspired openbox rice made with the gruvbox material colorscheme.  
-this is my daily driver.  
-&ensp;[<kbd> <br> reddit post <br> </kbd>](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/)&ensp;
+macOS inspired openbox rice made with the gruvbox material colorscheme. this is my daily driver.  
 
 <img align="center" width="49%" src=.assets/chastity/show2.png />
 <img align="center" width="49%" src=.assets/chastity/show3.png />
 <img align="center" width="99%" src=.assets/chastity/show1.png />
+
+&ensp;[<kbd> <br> reddit post <br> </kbd>](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/)&ensp;
 
 # Pome.
 ## berry
