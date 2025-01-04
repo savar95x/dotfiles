@@ -1,3 +1,11 @@
+<div align = center><img src="https://raw.githubusercontent.com/qxb3/gruvbox.hypr/ink/repo/logo.png"><br><br>
+
+&ensp;[<kbd> <br> Screenshots <br> </kbd>](#Screenshots)&ensp;
+&ensp;[<kbd> <br> Installation <br> </kbd>](#Installation)&ensp;
+&ensp;[<kbd> <br> Dependecies <br> </kbd>](#Dependecies)&ensp;
+&ensp;[<kbd> <br> Keybindings <br> </kbd>](#Keybindings)&ensp;
+<br><br></div>
+
 # Chastity
 macOS inspired openbox [rice](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
 ## Screenshots
@@ -12,7 +20,7 @@ macOS inspired openbox [rice](https://www.reddit.com/r/unixporn/comments/1hs2pm8
 # Pome
 My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/) [post2](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/).  
 ## Berry
-[Build](https://github.com/savar95x/berry)  
+[Build](https://github.com/savar95x/berry).  
 <div align=center>
 <img width=49% src=.assets/pome2.0/show1.png />
 <img width=49% src=.assets/pome2.0/show2.png />
@@ -57,7 +65,7 @@ paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit o
 ```
 For scripts to work without errors  
 ```bash
-paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer
+paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
 ```
 
 - Build st and nsxiv
