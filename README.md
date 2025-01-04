@@ -1,12 +1,12 @@
 # chastity
 macOS inspired openbox [rice](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
 This is my daily driver.  
-## screenshots
 <!--![img](.assets/chastity/show1.png)-->
 <div align=center>
 <img width=49% src=.assets/chastity/show1.png />
 <img width=49% src=.assets/chastity/show2.png />
 <img width=49% src=.assets/chastity/show3.png />
+<img width=49% src=.assets/chastity/show4.png />
 </div>
 
 # pome
