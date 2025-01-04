@@ -1,4 +1,4 @@
-<div align = center><img src="https://raw.githubusercontent.com/qxb3/gruvbox.hypr/ink/repo/logo.png"><br><br>
+<div align=center><img width=70% src=.assets/chastity/show1.png><br><br>
 
 &ensp;[<kbd> <br> Screenshots <br> </kbd>](#Screenshots)&ensp;
 &ensp;[<kbd> <br> Installation <br> </kbd>](#Installation)&ensp;
