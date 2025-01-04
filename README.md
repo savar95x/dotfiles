@@ -66,13 +66,54 @@ For scripts to work without errors
 paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
 ```
 
-- Build st and nsxiv
-- Install auto-cpufreq
-- Install yt-dlp, spotdl, gotop
-- hugo (to manage website)  
-- syncthing (for file syncing with phone)  
-- cronie (as the cron daemon for periodic health notifications)  
-- zed (for markdown previews and playing around)  
+## 4. Build and Binaries
+> [!IMPORTANT]
+> cd into a well organised directory like `~/.local/repos/` before running these commmands
+
+Terminal (st)  
+```bash
+git clone https://github.com/savar95x/st
+cd st
+./compilest
+```
+Image viewer (nsxiv)
+```bash
+git clone https://github.com/nsxiv/nsxiv
+cd nsxiv
+make
+sudo make install
+```
+
+> [!NOTE]
+> Skip the rest of the software if you want, they're just good but not required utilities
+
+auto-cpufreq (not necessary but a nice software for better battery efficiency)
+```bash
+git clone https://github.com/AdnanHodzic/auto-cpufreq
+cd auto-cpufreq
+./auto-cpufreq-installer
+```
+yt-dlp binary
+```bash
+curl -O https://github.com/yt-dlp/yt-dlp/releases/download/2024.12.23/yt-dlp
+chmod +x ./yt-dlp
+mv yt-dlp ~/.local/bin/
+```
+spotdl (in a virtual env)
+```bash
+python -m venv ~/.local/venv
+~/.local/venv/bin/python -m pip install --upgrade pip
+~/.local/venv/bin/pip install spotdl
+```
+gotop binary
+```bash
+curl -O https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_linux_amd64.tgz
+chmod +x ./gotop
+mv gotop ~/.local/bin/
+```
+```bash
+sudo pacman -S hugo syncthing zed
+```
 
 These are good software but not necessary for my rice to work.  
 
@@ -84,17 +125,45 @@ sudo pacman -S xf86-input-libinput xf86-video-intel mesa vulkan-intel intel-medi
 ```bash
 sudo pacman -S pipewire wireplumber bluez bluez-utils sof-firmware
 ```
-
-Also, do this  
+## 6. Shell
 ```bash
 ln -s ~/.config/zsh/rc ~/.zshrc
 ln -s ~/.config/zsh/profile ~/.zprofile
+chsh -s /usr/bin/zsh
+```
+
+## 5. Theme, Icons and Fonts
+```bash
 mkdir -p ~/.local/share/themes
 ln -s ~/.local/share/themes ~/.themes
 mkdir -p ~/.local/share/icons
 ln -s ~/.local/share/icons ~/.icons
 mkdir -p ~/.local/share/fonts
 ```
+- Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
+- GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into ~/.theme/  
+- Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go into ~/.icons/  
+
+Once copied, you can set these using lxappearance.  
+
+- The fonts I use are *[Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk)*, *[Inter](https://fonts.google.com/specimen/Inter)*, and *[Fragment Mono](https://uncut.wtf/monospace/fragment-mono/)*. Icons are from [nerd fonts symbols](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/NerdFontsSymbolsOnly.zip) and [fontawesome](https://fontawesome.com/download). Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
+
+Run this once after extracting fonts  
+```bash
+fc-cache -fv
+```
+
+## 6. Cronjob
+For health notifications.  
+Enable `cronie`.  
+```bash
+sudo systemctl enable cronie
+```
+Type `EDITOR=nvim cronjob -e` in the command-line and add the following line  
+```bash
+* * * * * ~/.local/scripts/health
+```
+For cron to be able send notifications, it needs the active session's dbus ID, which has been taken care of by producing `~/.dbus/Xdbus` while loging in ;)  
 
 # Dependencies
 ```bash
@@ -119,37 +188,9 @@ pacman -Ss "<string you want to query>"
 | torrent | transmission, tremc |
 | font management | gucharmap |
 
-
-## Setup Cronjob
-Install `cronie`, and enable it using  
-```bash
-sudo systemctl enable cronie
-```
-and add the following to `cronjob -e`  
-```bash
-* * * * * ~/.local/scripts/health
-```
-
-## Theme, Icons and Fonts
-- Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
-- GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into ~/.theme/  
-- Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go into ~/.icons/  
-
-Once copied, you can set these using lxappearance.  
-
-- The fonts I use are *[Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk)*, *[Inter](https://fonts.google.com/specimen/Inter)*, and *[Fragment Mono](https://uncut.wtf/monospace/fragment-mono/)*. Icons are from [nerd fonts symbols](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/NerdFontsSymbolsOnly.zip) and [fontawesome](https://fontawesome.com/download). Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
-
-Run this once after extracting fonts  
-```bash
-fc-cache -fv
-```
-
-## Default Shell
-```bash
-chsh -s /usr/bin/zsh
-```
 # Launching
-**NOTE**: If your system somehow manages audio, you might consider commenting the audio_server.sh command in ~/.zprofile  
+> [!CAUTION]
+> If your system somehow manages audio, you might consider commenting the `audio_server.sh` command in `~/.zprofile`  
 
 To launch openbox, if you do not use a display manager (/a login manager) it should launch itself when you login from tty1 with zsh as the default shell.  
 If it doesn't, something might be wrong, check if you linked .zprofile.  
