@@ -10,21 +10,21 @@ This is my daily driver.
 </div>
 
 # pome
-My daily driver before chastity.  
-([reddit post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/))  
-## berry
-[here](https://github.com/savar95x/berry)'s my build of berry.  
+My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/) [post2](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/).  
+## [berry](https://github.com/savar95x/berry)
+<div align=center>
 <img width=49% src=.assets/pome2.0/show1.png />
 <img width=49% src=.assets/pome2.0/show2.png />
+</div>
 <!--img src=.assets/pome2.0/show3.png />
 <img src=.assets/pome2.0/show4.png />
 <img src=.assets/pome2.0/show5.png /-->
-## 2bwm
-[here](https://github.com/savar95x/2bwm)'s my build of 2bwm.  
+## [2bwm](https://github.com/savar95x/2bwm)
 2bwm is doesnt seem to be very power efficient so not recommended.  
-([reddit post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/))  
+<div align=center>
 <img width=49% src=.assets/pome/new3.png />
 <img width=49% src=.assets/pome/old.png />
+</div>
 
 My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
