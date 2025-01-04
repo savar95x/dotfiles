@@ -59,53 +59,45 @@ This will backup conflicting configs and symlink my dots instead.
 
 ## 3. Install all the dependencies.  
 ```bash
-paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank
+paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug rofi firefox nsxiv sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank
 ```
-For scripts to work without errors  
+For scripts to work without errors, and more quality of life stuff.  
 ```bash
 paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
 ```
 
 ## 4. Build and Binaries
 > [!IMPORTANT]
-> cd into a well organised directory like `~/.local/repos/` before running these commmands
+> `cd` into a well organised directory like `~/.local/repos/` before running these commmands
 
-Terminal (st)  
+### Terminal (st)  
 ```bash
 git clone https://github.com/savar95x/st
 cd st
 ./compilest
 ```
-Image viewer (nsxiv)
-```bash
-git clone https://github.com/nsxiv/nsxiv
-cd nsxiv
-make
-sudo make install
-```
-
 > [!NOTE]
 > Skip the rest of the software if you want, they're just good but not required utilities
 
-auto-cpufreq (not necessary but a nice software for better battery efficiency)
+### auto-cpufreq
 ```bash
 git clone https://github.com/AdnanHodzic/auto-cpufreq
 cd auto-cpufreq
 ./auto-cpufreq-installer
 ```
-yt-dlp binary
+### yt-dlp
 ```bash
 curl -O https://github.com/yt-dlp/yt-dlp/releases/download/2024.12.23/yt-dlp
 chmod +x ./yt-dlp
 mv yt-dlp ~/.local/bin/
 ```
-spotdl (in a virtual env)
+### spotdl (in a virtual env)
 ```bash
 python -m venv ~/.local/venv
 ~/.local/venv/bin/python -m pip install --upgrade pip
 ~/.local/venv/bin/pip install spotdl
 ```
-gotop binary
+### gotop
 ```bash
 curl -O https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_linux_amd64.tgz
 chmod +x ./gotop
@@ -115,24 +107,23 @@ mv gotop ~/.local/bin/
 sudo pacman -S hugo syncthing zed
 ```
 
-These are good software but not necessary for my rice to work.  
-
-Drivers and Audio  
-*Ignore this if you use user-friendly distros, or have a working install already*  
+## 5. Drivers and Audio  
+> []
+> *Ignore this if you use user-friendly distros, or have a working install already*  
 ```bash
 sudo pacman -S xf86-input-libinput xf86-video-intel mesa vulkan-intel intel-media-driver
 ```
 ```bash
 sudo pacman -S pipewire wireplumber bluez bluez-utils sof-firmware
 ```
-## 6. Shell
+## 6. Changing Default Shell to zsh
 ```bash
 ln -s ~/.config/zsh/rc ~/.zshrc
 ln -s ~/.config/zsh/profile ~/.zprofile
 chsh -s /usr/bin/zsh
 ```
 
-## 5. Theme, Icons and Fonts
+## 7. Theme, Icons and Fonts
 ```bash
 mkdir -p ~/.local/share/themes
 ln -s ~/.local/share/themes ~/.themes
@@ -140,20 +131,20 @@ mkdir -p ~/.local/share/icons
 ln -s ~/.local/share/icons ~/.icons
 mkdir -p ~/.local/share/fonts
 ```
-- Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
-- GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into ~/.theme/  
-- Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go into ~/.icons/  
+Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
+GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into ~/.theme/  
+Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go into ~/.icons/  
 
 Once copied, you can set these using lxappearance.  
 
-- The fonts I use are *[Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk)*, *[Inter](https://fonts.google.com/specimen/Inter)*, and *[Fragment Mono](https://uncut.wtf/monospace/fragment-mono/)*. Icons are from [nerd fonts symbols](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/NerdFontsSymbolsOnly.zip) and [fontawesome](https://fontawesome.com/download). Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
+The fonts I use are [Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk), [Inter](https://fonts.google.com/specimen/Inter), and [Fragment Mono](https://uncut.wtf/monospace/fragment-mono/). Icons are from [nerd fonts symbols](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/NerdFontsSymbolsOnly.zip) and [fontawesome](https://fontawesome.com/download). Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
 
 Run this once after extracting fonts  
 ```bash
 fc-cache -fv
 ```
 
-## 6. Cronjob
+## 8. Health Notifications using Cronjob
 For health notifications.  
 Enable `cronie`.  
 ```bash
@@ -166,33 +157,32 @@ Type `EDITOR=nvim cronjob -e` in the command-line and add the following line
 For cron to be able send notifications, it needs the active session's dbus ID, which has been taken care of by producing `~/.dbus/Xdbus` while loging in ;)  
 
 # Dependencies
+| Type | Software/Packages |
+| --- | --- |
+| terminal | [st](https://github.com/savar95/st) |
+| shell | zsh zsh-syntax-highlighting |
+| editor | neovim |
+| file manager | lf bat ueberzug |
+| window manager | openbox obconf lxappearance xorg-server xorg-xinit |
+| app launcher | rofi |
+| bar, dock | polybar plank |
+| browser | firefox |
+| image viewer | nsxiv |
+| document reader | sioyek |
+| video player | mpv |
+| music | mpd ncmpcpp |
+| torrent | transmission tremc |
+| font management | gucharmap |
 ```bash
 # to search software
 pacman -Ss "<string you want to query>"
 ```
-### Main Software
-| Type | Software/Packages |
-| --- | --- |
-| terminal | st ([my build](https://github.com/savar95/st)) |
-| shell | zsh, zsh-syntax-highlighting |
-| editor | neovim |
-| file manager | lf, bat, ueberzug (for image previews) |
-| window manager | openbox, obconf, lxappearance, xorg-server, xorg-xinit |
-| app launcher | rofi |
-| bar and dock | polybar and plank |
-| browser | firefox |
-| image viewer | nsxiv ([here](https://github.com/nsxiv/nsxiv)) |
-| document reader | sioyek |
-| video player | mpv |
-| music | mpd, ncmpcpp |
-| torrent | transmission, tremc |
-| font management | gucharmap |
 
 # Launching
 > [!CAUTION]
 > If your system somehow manages audio, you might consider commenting the `audio_server.sh` command in `~/.zprofile`  
 
-To launch openbox, if you do not use a display manager (/a login manager) it should launch itself when you login from tty1 with zsh as the default shell.  
+If you do not use a display manager, openbox should launch itself when you login from tty1 with zsh as the default shell.  
 If it doesn't, something might be wrong, check if you linked .zprofile.  
 You can try doing this though  
 ```bash
@@ -205,9 +195,7 @@ startx
 ```
 
 # Keybindings
-
-Read through ~/.config/openbox/rc.xml for more shortcuts.
-
+Read through ~/.config/openbox/rc.xml for more shortcuts.  
 | Keybind | Function |
 | --- | --- |
 | `MOD` + `Enter` | Launch terminal (st) |
