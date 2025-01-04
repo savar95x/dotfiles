@@ -42,7 +42,8 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 > My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
 # Installation
-1. Clone the repo into `~/.local/repos/`. Change this directory to your liking, but make sure it is somewhere organised.  
+## 1. Clone the repo
+Clone the repo into `~/.local/repos/`. Change this directory to your liking, but make sure it is somewhere organised.  
 ```bash
 mkdir -p ~/.local/repos
 cd ~/.local/repos
@@ -50,12 +51,13 @@ git clone https://github.com/savar95x/dotfiles
 cd dotfiles
 ```
 
-2. Run `install.sh` while being in the dotfiles/ directory. This will backup conflicting configs and symlink my dots instead.  
+## 2. Run `install.sh` while being in the dotfiles/ directory.
+This will backup conflicting configs and symlink my dots instead.  
 ```bash
 ./install.sh
 ```
 
-3. Install all the dependencies.  
+## 3. Install all the dependencies.  
 ```bash
 paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug rofi firefox sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank
 ```
