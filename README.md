@@ -34,10 +34,25 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 > My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
 # Installation Guide
+***IN WORKS***
 > [!NOTE]
 > Plan is to clone this repo at a safe place, and symlink all of my files using `stow` after backing up conflicting configs.  
 
-## Software I use
+Clone repo into `~/.local/repos/`. Change this if you want to.  
+```bash
+mkdir -p ~/.local/repos
+cd ~/.local/repos
+git clone https://github.com/savar95x/dotfiles
+cd dotfiles
+```
+
+This will backup conflicting configs. Make sure you're in `dotfiles/` and have `stow` installed on your system.  
+```bash
+stow -t ~/ */ && echo symlink successful
+```
+
+
+# Software I use
 I've given package names for archlinux/pacman, but you'll have to help yourself for other distributions.  
 ```bash
 # to search software
@@ -164,16 +179,16 @@ Read through ~/.config/openbox/rc.xml for more shortcuts.
 
 | Keybind | Function |
 | --- | --- |
-| `MOD + Enter` | Launch terminal (st) |
-| `MOD + Q` | Close window |
-| `MOD + {H,J,K,L}` | Move the window to {Left, Down, Up, Right} |
-| `MOD + Shift + {H,J,K,L}` | Resize the window |
-| `MOD + Shift + F` | Monocle a window |
-| `MOD + F` | Fullscreen a window |
-| `MOD + P` | Open app launcher |
-| `MOD + S` | List out the useful scripts in ~/.local/scipts/ in rofi |
-| `MOD + Shift + S` | Take Screenshot (using maim and slop) |
-| `MOD + R` | Open lf (terminal file manager) |
+| `MOD` + `Enter` | Launch terminal (st) |
+| `MOD` + `Q` | Close window |
+| `MOD` + `{H,J,K,L}` | Move the window to {Left, Down, Up, Right} |
+| `MOD` + `Shift + {H,J,K,L}` | Resize the window |
+| `MOD` + `Shift + F` | Monocle a window |
+| `MOD` + `F` | Fullscreen a window |
+| `MOD` + `P` | Open app launcher |
+| `MOD` + `S` | List out the useful scripts in ~/.local/scipts/ in rofi |
+| `MOD` + `Shift + S` | Take Screenshot (using maim and slop) |
+| `MOD` + `R` | Open lf (terminal file manager) |
 
 Note: `MOD` is the windows key
 
