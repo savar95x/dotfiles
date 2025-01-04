@@ -19,6 +19,7 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 <!--img src=.assets/pome2.0/show3.png />
 <img src=.assets/pome2.0/show4.png />
 <img src=.assets/pome2.0/show5.png /-->
+
 ## [2bwm](https://github.com/savar95x/2bwm)
 2bwm is doesnt seem to be very power efficient so not recommended.  
 <div align=center>
@@ -26,7 +27,7 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 <img width=49% src=.assets/pome/old.png />
 </div>
 
-My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
+> My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
 # Installation Guide
 ***STILL IN WORKS***  
