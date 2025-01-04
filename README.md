@@ -1,9 +1,8 @@
 # Chastity
 macOS inspired openbox [rice](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
-This is my daily driver.  
 ## Screenshots
-<!--![img](.assets/chastity/show1.png)-->
 <div align=center>
+<!--![img](.assets/chastity/show1.png)-->
 <img width=49% src=.assets/chastity/show1.png />
 <img width=49% src=.assets/chastity/show2.png />
 <img width=49% src=.assets/chastity/show3.png />
@@ -17,18 +16,17 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 <div align=center>
 <img width=49% src=.assets/pome2.0/show1.png />
 <img width=49% src=.assets/pome2.0/show2.png />
-</div>
 <!--img src=.assets/pome2.0/show3.png />
 <img src=.assets/pome2.0/show4.png />
 <img src=.assets/pome2.0/show5.png /-->
+</div>
 
 ## 2bwm
-2bwm is doesnt seem to be very power efficient so not recommended. [Build](https://github.com/savar95x/2bwm).  
+[Build](https://github.com/savar95x/2bwm). 2bwm is doesnt seem to be very power efficient so not recommended.  
 <div align=center>
 <img width=49% src=.assets/pome/new3.png />
 <img width=49% src=.assets/pome/old.png />
 </div>
-
 
 <br>
 
@@ -36,10 +34,8 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 > My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
 # Installation Guide
-***STILL IN WORKS***  
-
-This assumes you already have a working distribution (like Ubuntu or a fresh (or old) Arch install).  
-Although I've not checked if the configs have any clashes with user-friendly distributions like Ubuntu, they should still work more or less.  
+> [!NOTE]
+> Plan is to clone this repo at a safe place, and symlink all of my files using `stow` after backing up conflicting configs.  
 
 ## Software I use
 I've given package names for archlinux/pacman, but you'll have to help yourself for other distributions.  
