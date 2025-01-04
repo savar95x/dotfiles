@@ -1,7 +1,7 @@
 <div align = center><img src="https://raw.githubusercontent.com/qxb3/gruvbox.hypr/ink/repo/logo.png"><br><br>
 
 &ensp;[<kbd> <br> Screenshots <br> </kbd>](#Screenshots)&ensp;
-&ensp;[<kbd> <br> Installation <br> </kbd>](#Installation Guide)&ensp;
+&ensp;[<kbd> <br> Installation <br> </kbd>](#Installation)&ensp;
 &ensp;[<kbd> <br> Dependencies <br> </kbd>](#Dependencies)&ensp;
 &ensp;[<kbd> <br> Keybindings <br> </kbd>](#Keybindings)&ensp;
 <br><br></div>
@@ -41,7 +41,7 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 > [!NOTE]
 > My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
-# Installation Guide
+# Installation
 ***IN WORKS***
 > [!NOTE]
 > Plan is to clone this repo at a safe place, and symlink all of my files using `stow` after backing up conflicting configs.  
