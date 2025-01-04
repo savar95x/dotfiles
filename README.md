@@ -1,33 +1,32 @@
 # chastity
-macOS inspired openbox rice made with the gruvbox material colorscheme.  
-this is my daily driver.  
-([reddit post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/))
-<img src=.assets/chastity/show1.png />
-<img src=.assets/chastity/show2.png />
-<img src=.assets/chastity/show3.png />
+macOS inspired openbox [rice](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
+This is my daily driver.  
+## screenshots
+<!--![img](.assets/chastity/show1.png)-->
+<div>
+<img width=49% src=.assets/chastity/show1.png />
+<img width=49% src=.assets/chastity/show2.png />
+<img width=49% src=.assets/chastity/show3.png />
+</div>
 
-# Pome.
-## berry
-Pome 2.0.  
-my daily driver before chastity.  
-[here](https://github.com/savar95x/berry)'s my build of berry.  
+# pome
+My daily driver before chastity.  
 ([reddit post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/))  
-<img src=.assets/pome2.0/show1.png />
-<!--img src=.assets/pome2.0/show2.png />
-<img src=.assets/pome2.0/show3.png />
+## berry
+[here](https://github.com/savar95x/berry)'s my build of berry.  
+<img width=49% src=.assets/pome2.0/show1.png />
+<img width=49% src=.assets/pome2.0/show2.png />
+<!--img src=.assets/pome2.0/show3.png />
 <img src=.assets/pome2.0/show4.png />
 <img src=.assets/pome2.0/show5.png /-->
-
 ## 2bwm
-previous to previous rice.  
-2bwm is doesnt seem to be very power efficient so not recommended.  
 [here](https://github.com/savar95x/2bwm)'s my build of 2bwm.  
+2bwm is doesnt seem to be very power efficient so not recommended.  
 ([reddit post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/))  
-<img src=.assets/pome/new3.png />
-<!--img src=.assets/pome/old.png /-->
+<img width=49% src=.assets/pome/new3.png />
+<img width=49% src=.assets/pome/old.png />
 
-ps:
-if you're looking for configs of my older rices (endless on dwm, dkwm), they'd be available in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
+My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
 # Installation Guide
 ***STILL IN WORKS***  
