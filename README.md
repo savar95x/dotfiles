@@ -241,12 +241,12 @@ Read through ~/.config/openbox/rc.xml for more shortcuts.
 | `MOD` + `Enter` | Launch terminal (st) |
 | `MOD` + `Q` | Close window |
 | `MOD` + `{H,J,K,L}` | Move the window to {Left, Down, Up, Right} |
-| `MOD` + `Shift + {H,J,K,L}` | Resize the window |
-| `MOD` + `Shift + F` | Monocle a window |
+| `MOD` + `Shift` + `{H,J,K,L}` | Resize the window |
+| `MOD` + `Shift` + `F` | Monocle a window |
 | `MOD` + `F` | Fullscreen a window |
 | `MOD` + `P` | Open app launcher |
 | `MOD` + `S` | List out the useful scripts in ~/.local/scipts/ in rofi |
-| `MOD` + `Shift + S` | Take Screenshot (using maim and slop) |
+| `MOD` + `Shift` + `S` | Take Screenshot (using maim and slop) |
 | `MOD` + `R` | Open lf (terminal file manager) |
 
 Note: `MOD` is the windows key
