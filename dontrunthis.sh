@@ -6,38 +6,68 @@
 #
 # custom to my liking, forced symlinking
 
-autocpu() {
+dir=~/.local/repos/savar95x
+
+dependencies() {
+	paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug rofi firefox nsxiv sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank xorg-xset xorg-xrdb xorg-xetroot xorg-setxkbmap xclip maim slop redshift dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
+}
+
+buildst() {
+	cd $dir
+	# st
+	git clone https://github.com/savar95x/st
+	cd st
+	./compilest
+	cd ..
+}
+buildcpufrq() {
+	# auto-cpufreq
+	cd $dir
 	git clone https://github.com/AdnanHodzic/auto-cpufreq
 	cd auto-cpufreq
 	sudo ./auto-cpufreq-installer
+	cd ..
 }
-
-backup() {
-	[ -d ~/.config] && mv ~/.config ~/.config.bak
-	[ -d ~/.local/bin] && mv ~/.local/bin ~/.local/bin.bak
-	[ -d ~/.local/scripts] && mv ~/.local/scripts ~/.local/scripts.bak
+installytdlp() {
+	# yt-dlp bin
+	curl -LO "https://github.com/yt-dlp/yt-dlp/releases/download/2024.12.23/yt-dlp"
+	chmod +x ./yt-dlp
+	mv yt-dlp ~/.local/bin/
 }
-
-remove() {
-	[ -d ~/.config] && rm -rf ~/.config
-	[ -d ~/.local/bin] && rm -rf ~/.local/bin
-	[ -d ~/.local/scripts] && rm -rf ~/.local/scripts
-	[ -d ~/.local/run/x11] && rm -rf ~/.local/run/x11
-	[ -d ~/.local/run/pipewire] && rm -rf ~/.local/run/pipewire
-	[ -d ~/.local/share/spotdl] && rm -rf ~/.local/share/spotdl
+installgotop() {
+	# gotop bin
+	curl -LO https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_linux_amd64.tgz
+	tar xvf gotop_3.0.0_linux_amd64.tgz
+	chmod +x ./gotop
+	mv gotop ~/.local/bin/
+	rm gotop_3.0.0_linux_amd64.tgz
+}
+installspotdl() {
+	# spotdl in a venv
+	mkdir -p ~/.local/venv
+	python -m venv ~/.local/venv
+	~/.local/venv/bin/python -m pip install --upgrade pip
+	~/.local/venv/bin/pip install spotdl
 }
 
 create() {
-	mkdir -p ~/.config
-	mkdir -p ~/.local/run
+	mkdir -p ~/.local/bin
+	mkdir -p ~/.local/scripts
 	mkdir -p ~/.local/share
 	mkdir -p ~/.local/share/spotdl
+	mkdir -p ~/.local/share/music/lyrics
+	mkdir -p ~/.local/share/music/playlists
+	mkdir -p ~/.local/share/icons
+	mkdir -p ~/.local/share/font
+	mkdir -p ~/.local/share/themes
+	mkdir -p ~/.local/run
 	mkdir -p ~/.local/run/x11
 	mkdir -p ~/.local/run/pipewire
 }
 
-stow_stuff() {
-	stow -t ~/ */ && echo symlinks successful
+linkandback() {
+	cd $dir/dotfiles
+	./install.sh
 }
 
 symlinking() {
@@ -47,4 +77,4 @@ symlinking() {
 	ln -s ~/.local/share/icons ~/.icons
 }
 
-stow_stuff
+echo still in works
