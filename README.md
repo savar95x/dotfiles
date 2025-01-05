@@ -1,4 +1,4 @@
-<div align=center><kbd><img width=78% src=.assets/chastity/show1.png></kbd>
+<div align=center><kbd width=78%><img src=.assets/chastity/show1.png></kbd>
 <br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
@@ -151,10 +151,13 @@ fc-cache -fv
 ### 8. Notification Icons
 <div>
 <img width=20px src=.assets/icons/clock-solid.svg />  
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
 <img width=20px src=.assets/icons/camera-solid.svg />  
+&nbsp;&nbsp;
 <img width=20px src=.assets/icons/bolt-solid.svg />  
+&nbsp;&nbsp;
 <img width=20px src=.assets/icons/headphones-solid.svg />  
+&nbsp;&nbsp;
 <img width=20px src=.assets/icons/sun-solid.svg />  
 </div>
 <br>
