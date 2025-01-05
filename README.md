@@ -147,8 +147,13 @@ fc-cache -fv
 ```
 
 ### 8. Notification Icons
-<img width=10% src=.assets/icons/date-solid.svg />  
-<img width=10% src=.assets/icons/sun-solid.svg />  
+<div>
+<img width=5% src=.assets/icons/time-solid.svg />  
+<img width=5% src=.assets/icons/camera-solid.svg />  
+<img width=5% src=.assets/icons/bolt-solid.svg />  
+<img width=5% src=.assets/icons/headphones-solid.svg />  
+<img width=5% src=.assets/icons/sun-solid.svg />  
+</div>
 
 `cd` into the `dotfiles/` directory.  
 ```bash
