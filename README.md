@@ -157,10 +157,16 @@ mkdir -p ~/.local/share/fonts
 <br>
 
 Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
-GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into ~/.theme/  
 Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go into ~/.icons/  
+GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into ~/.theme/  
 
-Once copied, you can set these using lxappearance.  
+Once copied, you can set these using `lxappearance`.  
+
+Openbox theme is mine. `cd` into `dotfiles/`.  
+```bash
+cp -r .assets/chastity/gruvopenbox ~/.themes/gruvbox
+```
+Set it using `obconf`.  
 
 The fonts I use are [Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk), [Inter](https://fonts.google.com/specimen/Inter), and [Fragment Mono](https://uncut.wtf/monospace/fragment-mono/). Polybar icons are from [nerd fonts symbols](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/NerdFontsSymbolsOnly.zip) and [font awesome](https://fontawesome.com/download). Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
 
