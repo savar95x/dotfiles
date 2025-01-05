@@ -458,6 +458,11 @@
         <command>st -e ~/.local/bin/lfrun ~/dox/notes</command>
       </action>
     </keybind>
+    <keybind key="W-S-grave">
+      <action name="Execute">
+        <command>st -e ~/.local/bin/lfrun ~/dox/hobbies/diary</command>
+      </action>
+    </keybind>
     <keybind key="W-r">
       <action name="Execute">
         <command>st -e ~/.local/bin/lfrun</command>
