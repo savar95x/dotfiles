@@ -165,7 +165,7 @@ This directory has been hardcoded for now, I am yet to update the scripts to use
 You can of course change them yourself if you'd like.  
 
 ### 9. Health Notifications (using cronjob)
-<img width=30% src=.assets/chastity/health.png />  
+<img width=30% src=.assets/chastity/healthnotif.png />  
 
 Enable `cronie`.  
 ```bash
