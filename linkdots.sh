@@ -7,7 +7,7 @@ echo "This script will backup conflicting files in ~/.config/ to $backupdir, and
 echo "Continue? (y/N)"
 read ans
 if [ $ans != y ] && [ $ans != Y ]; then
-    echo "Exiting without doing anything" && exit
+	echo "Exiting without doing anything" && exit
 fi
 
 # backup
@@ -15,8 +15,8 @@ fi
 mkdir -p $backupdir
 echo "$backupdir created"
 for conf in $(ls configs/.config); do
-    [ -f ~/.config/$conf ] && mv ~/.config/$conf $backupdir/$conf && echo "moved ~/.config/$conf into $backupdir/$conf"
-    [ -d ~/.config/$conf ] && mv ~/.config/$conf $backupdir/$conf && echo "moved ~/.config/$conf into $backupdir/$conf"
+	([ -f ~/.config/$conf ] || [ -d ~/.config/$conf ]) &&
+		mv ~/.config/$conf $backupdir/$conf && echo "moved ~/.config/$conf into $backupdir/$conf"
 done
 
 # symlink
