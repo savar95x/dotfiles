@@ -43,7 +43,7 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 
 # Installation
 I am working on a script, but till it's done, you'll have to follow the steps manually. Create an issue if you encounter a problem.  
-## 1. Clone the repo
+### 1. Clone the Repo
 Clone the repo into `~/.local/repos/`. Change this directory to your liking, but make sure it is somewhere organised.  
 ```bash
 mkdir -p ~/.local/repos
@@ -52,23 +52,23 @@ git clone https://github.com/savar95x/dotfiles
 cd dotfiles
 ```
 
-## 2. Symlink Dotfiles
+### 2. Symlink Dotfiles
 This will backup conflicting configs and symlink my dots instead.  
 ```bash
 ./linkdots.sh
 ```
 
-## 3. Install all the dependencies.  
+### 3. Install all the dependencies.  
 This command is for arch and pacman. You'll have to search the corresponding names for your package manager yourself.  
 ```bash
 paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug redshift rofi firefox nsxiv sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank xorg-xset xorg-xrdb xorg-xetroot xorg-setxkbmap xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
 ```
 
-## 4. Build and Binaries
+### 4. Build and Binaries
 > [!IMPORTANT]
 > `cd` into a well organised directory like `~/.local/repos/` before running these commmands
 
-### Terminal (st)  
+- Terminal (st)  
 ```bash
 git clone https://github.com/savar95x/st
 cd st
@@ -78,26 +78,26 @@ cd ..
 > [!NOTE]
 > Skip the rest of the software if you want, they're just good but not required utilities
 
-### auto-cpufreq
+- auto-cpufreq
 ```bash
 git clone https://github.com/AdnanHodzic/auto-cpufreq
 cd auto-cpufreq
 ./auto-cpufreq-installer
 cd ..
 ```
-### yt-dlp
+- yt-dlp
 ```bash
 curl -LO https://github.com/yt-dlp/yt-dlp/releases/download/2024.12.23/yt-dlp
 chmod +x ./yt-dlp
 mv yt-dlp ~/.local/bin/
 ```
-### spotdl (in a virtual env)
+- spotdl (in a virtual env)
 ```bash
 python -m venv ~/.local/venv
 ~/.local/venv/bin/python -m pip install --upgrade pip
 ~/.local/venv/bin/pip install spotdl
 ```
-### gotop
+- gotop
 ```bash
 curl -LO https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_linux_amd64.tgz
 tar xvf gotop_3.0.0_linux_amd64.tgz
@@ -109,7 +109,7 @@ rm gotop_3.0.0_linux_amd64.tgz
 sudo pacman -S hugo syncthing zed
 ```
 
-## 5. Drivers and Audio  
+### 5. Drivers and Audio  
 > [!NOTE]
 > *Ignore this if you use user-friendly distros, or have a working install already*  
 ```bash
@@ -118,14 +118,14 @@ sudo pacman -S xf86-input-libinput xf86-video-intel mesa vulkan-intel intel-medi
 ```bash
 sudo pacman -S pipewire wireplumber bluez bluez-utils sof-firmware
 ```
-## 6. Changing Default Shell to zsh
+### 6. Changing Default Shell to zsh
 ```bash
 ln -s ~/.config/zsh/rc ~/.zshrc
 ln -s ~/.config/zsh/profile ~/.zprofile
 chsh -s /usr/bin/zsh
 ```
 
-## 7. Theme, Icons and Fonts
+### 7. Theme, Icons and Fonts
 ```bash
 mkdir -p ~/.local/share/themes
 ln -s ~/.local/share/themes ~/.themes
@@ -146,7 +146,10 @@ Run this once after extracting fonts
 fc-cache -fv
 ```
 
-## 8. Notification icons
+### 8. Notification Icons
+<img width=10% src=.assets/icons/date-solid.svg />  
+<img width=10% src=.assets/icons/sun-solid.svg />  
+
 `cd` into the `dotfiles/` directory.  
 ```bash
 mkdir -p ~/pix/assets
@@ -155,7 +158,7 @@ cp -r .assets/icons ~/pix/assets/icons
 This directory has been hardcoded for now, I am yet to update the scripts to use `$XDG_PICTURES_DIR` instead of `~/pix`.  
 You can of course change them yourself if you'd like.  
 
-## 9. Health Notifications using Cronjob
+### 9. Health Notifications (using cronjob)
 <img width=30% src=.assets/chastity/health.png />  
 
 Enable `cronie`.  
