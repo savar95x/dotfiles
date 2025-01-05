@@ -42,6 +42,7 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 > My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
 # Installation
+I am working on a script, but till it's done, you'll have to follow the steps manually. Create an issue if you encounter a problem.  
 ## 1. Clone the repo
 Clone the repo into `~/.local/repos/`. Change this directory to your liking, but make sure it is somewhere organised.  
 ```bash
@@ -58,12 +59,9 @@ This will backup conflicting configs and symlink my dots instead.
 ```
 
 ## 3. Install all the dependencies.  
+This command is for arch and pacman. You'll have to search the corresponding names for your package manager yourself.  
 ```bash
-paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug rofi firefox nsxiv sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank
-```
-For scripts to work without errors, and more quality of life stuff.  
-```bash
-paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
+paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug redshift rofi firefox nsxiv sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank xorg-xset xorg-xrdb xorg-xetroot xorg-setxkbmap xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
 ```
 
 ## 4. Build and Binaries
@@ -75,6 +73,7 @@ paru -S xorg-xset xorg-xrdb xorg-xetroot xclip maim slop dunst libnotify imagema
 git clone https://github.com/savar95x/st
 cd st
 ./compilest
+cd ..
 ```
 > [!NOTE]
 > Skip the rest of the software if you want, they're just good but not required utilities
@@ -84,6 +83,7 @@ cd st
 git clone https://github.com/AdnanHodzic/auto-cpufreq
 cd auto-cpufreq
 ./auto-cpufreq-installer
+cd ..
 ```
 ### yt-dlp
 ```bash
@@ -103,6 +103,7 @@ curl -LO https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_li
 tar xvf gotop_3.0.0_linux_amd64.tgz
 chmod +x ./gotop
 mv gotop ~/.local/bin/
+rm gotop_3.0.0_linux_amd64.tgz
 ```
 ```bash
 sudo pacman -S hugo syncthing zed
@@ -138,22 +139,31 @@ Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). This should also go in
 
 Once copied, you can set these using lxappearance.  
 
-The fonts I use are [Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk), [Inter](https://fonts.google.com/specimen/Inter), and [Fragment Mono](https://uncut.wtf/monospace/fragment-mono/). Icons are from [nerd fonts symbols](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/NerdFontsSymbolsOnly.zip) and [fontawesome](https://fontawesome.com/download). Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
+The fonts I use are [Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk), [Inter](https://fonts.google.com/specimen/Inter), and [Fragment Mono](https://uncut.wtf/monospace/fragment-mono/). Polybar icons are from [nerd fonts symbols](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/NerdFontsSymbolsOnly.zip) and [font awesome](https://fontawesome.com/download). Make sure their files (.ttf or .otf) are extracted (somewhere) in ~/.local/share/fonts/  
 
 Run this once after extracting fonts  
 ```bash
 fc-cache -fv
 ```
 
-## 8. Health Notifications using Cronjob
-For health notifications.  
+## 8. Notification icons
+`cd` into the `dotfiles/` directory.  
+```bash
+mkdir -p ~/pix/assets
+cp -r .assets/icons ~/pix/assets/icons
+```
+This directory has been hardcoded for now, I am yet to update the scripts to use `$XDG_PICTURES_DIR` instead of `~/pix`.  
+You can of course change them yourself if you'd like.  
+
+## 9. Health Notifications using Cronjob
+<img align=center width=50% src=.assets/chastity/health.png />
 Enable `cronie`.  
 ```bash
 sudo systemctl enable cronie
 ```
-Type `EDITOR=nvim cronjob -e` in the command-line and add the following line  
+Type `EDITOR=nvim crontab -e` in the command-line and add the following line  
 ```bash
-* * * * * ~/.local/scripts/health
+0,30 * * * * ~/.local/scripts/health
 ```
 For cron to be able send notifications, it needs the active session's dbus ID, which has been taken care of by producing `~/.dbus/Xdbus` while loging in ;)  
 
