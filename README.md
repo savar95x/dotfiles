@@ -1,4 +1,4 @@
-<div align=center><img width=70% src=.assets/chastity/show1.png><br><br>
+<div align=center><img width=80% src=.assets/chastity/show1.png><br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
 &ensp;[<kbd> <br> Install <br> </kbd>](#Installation)&ensp;
@@ -165,7 +165,7 @@ This directory has been hardcoded for now, I am yet to update the scripts to use
 You can of course change them yourself if you'd like.  
 
 ### 9. Health Notifications (using cronjob)
-<img height=90px src=.assets/chastity/healthnotif.png />  
+<img height=80px src=.assets/chastity/healthnotif.png />  
 
 Enable `cronie`.  
 ```bash
