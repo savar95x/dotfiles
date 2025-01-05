@@ -1,4 +1,5 @@
-<div align=center><kbd width=78%><img src=.assets/chastity/show1.png></kbd>
+<div align=center>
+<img width=75% src=.assets/chastity/show1.png>
 <br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
