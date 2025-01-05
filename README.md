@@ -9,8 +9,8 @@
 &ensp;[<kbd> <br> Keybinds <br> </kbd>](#Keybindings)&ensp;
 <br><br></div>
 
-# Chastity
-macOS inspired openbox [rice](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
+# About Chastity
+macOS inspired *openbox* rice. Reddit [Post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
 ## Screenshots
 <div align=center>
 <!--![img](.assets/chastity/show1.png)-->
@@ -20,10 +20,10 @@ macOS inspired openbox [rice](https://www.reddit.com/r/unixporn/comments/1hs2pm8
 <img width=49% src=.assets/chastity/show4.png />
 </div>
 
-# Pome
-My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/) [post2](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/).  
-## Berry
-[Build](https://github.com/savar95x/berry).  
+# Older Rices
+## Pome 2.0
+My daily driver before chastity. Reddit [post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/).  
+Berry [build](https://github.com/savar95x/berry).  
 <div align=center>
 <img width=49% src=.assets/pome2.0/show1.png />
 <img width=49% src=.assets/pome2.0/show2.png />
@@ -32,8 +32,8 @@ My daily driver before chastity. Reddit [post1](https://www.reddit.com/r/unixpor
 <img src=.assets/pome2.0/show5.png /-->
 </div>
 
-## 2bwm
-[Build](https://github.com/savar95x/2bwm). 2bwm is doesnt seem to be very power efficient so not recommended.  
+## Pome
+2bwm [build](https://github.com/savar95x/2bwm). 2bwm is doesnt seem to be very power efficient so not recommended. Reddit [post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/).  
 <div align=center>
 <img width=49% src=.assets/pome/new3.png />
 <img width=49% src=.assets/pome/old.png />
