@@ -156,7 +156,7 @@ This directory has been hardcoded for now, I am yet to update the scripts to use
 You can of course change them yourself if you'd like.  
 
 ## 9. Health Notifications using Cronjob
-<img align=center width=50% src=.assets/chastity/health.png />
+<img width=30% src=.assets/chastity/health.png />  
 Enable `cronie`.  
 ```bash
 sudo systemctl enable cronie
