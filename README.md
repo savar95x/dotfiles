@@ -1,4 +1,5 @@
-<div align=center><img width=80% src=.assets/chastity/show1.png><br><br>
+<div align=center><kbd><img width=78% src=.assets/chastity/show1.png></kbd>
+<br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
 &ensp;[<kbd> <br> Install <br> </kbd>](#Installation)&ensp;
@@ -105,13 +106,14 @@ chmod +x ./gotop
 mv gotop ~/.local/bin/
 rm gotop_3.0.0_linux_amd64.tgz
 ```
+- more
 ```bash
 sudo pacman -S hugo syncthing zed
 ```
 
 ### 5. Drivers and Audio  
 > [!NOTE]
-> *Ignore this if you use user-friendly distros, or have a working install already*  
+> Ignore this if you use user-friendly distros
 ```bash
 sudo pacman -S xf86-input-libinput xf86-video-intel mesa vulkan-intel intel-media-driver
 ```
@@ -149,6 +151,7 @@ fc-cache -fv
 ### 8. Notification Icons
 <div>
 <img width=20px src=.assets/icons/clock-solid.svg />  
+&nbsp;&nbsp;&nbsp;&nbsp;
 <img width=20px src=.assets/icons/camera-solid.svg />  
 <img width=20px src=.assets/icons/bolt-solid.svg />  
 <img width=20px src=.assets/icons/headphones-solid.svg />  
