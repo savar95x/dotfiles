@@ -166,7 +166,7 @@ Type `EDITOR=nvim crontab -e` in the command-line and add the following line
 ```bash
 0,30 * * * * ~/.local/scripts/health
 ```
-For cron to be able send notifications, it needs the active session's dbus ID, which has been taken care of by producing `~/.dbus/Xdbus` while loging in ;)  
+For cron to be able send notifications, it needs the active session's dbus ID, which has been taken care of by producing `~/.dbus/Xdbus` while logging into openbox ;)  
 
 # Dependencies
 | Type | Software/Packages |
