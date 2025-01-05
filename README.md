@@ -44,9 +44,37 @@ Berry [build](https://github.com/savar95x/berry).
 > [!NOTE]
 > My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
+# Dependencies
+| Type | Software/Packages |
+| --- | --- |
+| terminal | [st](https://github.com/savar95/st) |
+| shell | zsh zsh-syntax-highlighting |
+| editor | neovim |
+| file manager | lf bat ueberzug |
+| window manager | openbox obconf lxappearance xorg-server xorg-xinit |
+| app launcher | rofi |
+| bar, dock | polybar plank |
+| browser | firefox |
+| image viewer | nsxiv |
+| document reader | sioyek |
+| video player | mpv |
+| music | mpd ncmpcpp |
+| torrent | transmission tremc |
+| font management | gucharmap |
+```bash
+# to search software
+pacman -Ss "<string you want to query>"
+```
+
 # Installation
 I am working on a script, but till it's done, you'll have to follow the steps manually. Create an issue if you encounter a problem.  
-### 1. Clone the Repo
+### 1. Install all the dependencies.  
+This command is for arch and pacman. You'll have to search the corresponding names for your package manager yourself.  
+```bash
+paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug redshift rofi firefox nsxiv sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank xorg-xset xorg-xrdb xorg-xetroot xorg-setxkbmap xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
+```
+
+### 2. Clone the Repo
 Clone the repo into `~/.local/repos/`. Change this directory to your liking, but make sure it is somewhere organised.  
 ```bash
 mkdir -p ~/.local/repos
@@ -55,19 +83,13 @@ git clone https://github.com/savar95x/dotfiles
 cd dotfiles
 ```
 
-### 2. Symlink Dotfiles
+### 3. Symlink Dotfiles
 This will backup conflicting configs and symlink my dots instead.  
 ```bash
 ./linkdots.sh
 ```
 
-### 3. Install all the dependencies.  
-This command is for arch and pacman. You'll have to search the corresponding names for your package manager yourself.  
-```bash
-paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug redshift rofi firefox nsxiv sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank xorg-xset xorg-xrdb xorg-xetroot xorg-setxkbmap xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
-```
-
-### 4. Build and Binaries
+### 4. Build Binaries
 > [!IMPORTANT]
 > `cd` into a well organised directory like `~/.local/repos/` before running these commmands
 
@@ -122,14 +144,8 @@ sudo pacman -S xf86-input-libinput xf86-video-intel mesa vulkan-intel intel-medi
 ```bash
 sudo pacman -S pipewire wireplumber bluez bluez-utils sof-firmware
 ```
-### 6. Changing Default Shell to zsh
-```bash
-ln -s ~/.config/zsh/rc ~/.zshrc
-ln -s ~/.config/zsh/profile ~/.zprofile
-chsh -s /usr/bin/zsh
-```
 
-### 7. Theme, Icons and Fonts
+### 6. Theme, Icons and Fonts
 ```bash
 mkdir -p ~/.local/share/themes
 ln -s ~/.local/share/themes ~/.themes
@@ -153,7 +169,7 @@ Run this once after extracting fonts
 fc-cache -fv
 ```
 
-### 8. Notification Icons
+### 7. Notification Icons
 <div>
 <img width=20px src=.assets/icons/clock-solid.svg />  
 &nbsp;&nbsp;
@@ -175,7 +191,7 @@ cp -r .assets/icons ~/pix/assets/icons
 This directory has been hardcoded for now, I am yet to update the scripts to use `$XDG_PICTURES_DIR` instead of `~/pix`.  
 You can of course change them yourself if you'd like.  
 
-### 9. Health Notifications (using cronjob)
+### 8. Health Notifications (using cronjob)
 <img height=80px src=.assets/chastity/healthnotif.png />  
 
 Enable `cronie`.  
@@ -188,26 +204,11 @@ Type `EDITOR=nvim crontab -e` in the command-line and add the following line
 ```
 For cron to be able send notifications, it needs the active session's dbus ID, which has been taken care of by producing `~/.dbus/Xdbus` while logging into openbox ;)  
 
-# Dependencies
-| Type | Software/Packages |
-| --- | --- |
-| terminal | [st](https://github.com/savar95/st) |
-| shell | zsh zsh-syntax-highlighting |
-| editor | neovim |
-| file manager | lf bat ueberzug |
-| window manager | openbox obconf lxappearance xorg-server xorg-xinit |
-| app launcher | rofi |
-| bar, dock | polybar plank |
-| browser | firefox |
-| image viewer | nsxiv |
-| document reader | sioyek |
-| video player | mpv |
-| music | mpd ncmpcpp |
-| torrent | transmission tremc |
-| font management | gucharmap |
+### 9. Changing Default Shell to zsh
 ```bash
-# to search software
-pacman -Ss "<string you want to query>"
+ln -s ~/.config/zsh/rc ~/.zshrc
+ln -s ~/.config/zsh/profile ~/.zprofile
+chsh -s /usr/bin/zsh
 ```
 
 # Launching
