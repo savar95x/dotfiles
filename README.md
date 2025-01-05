@@ -137,7 +137,7 @@ mkdir -p ~/.local/share/icons
 ln -s ~/.local/share/icons ~/.icons
 mkdir -p ~/.local/share/fonts
 ```
-<img height=80px src=.assets/chastity/numix-simp1e.png />  
+<img height=50px src=.assets/chastity/numix-simp1e.png />  
 <br>
 
 Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
