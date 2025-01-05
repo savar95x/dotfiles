@@ -157,6 +157,7 @@ You can of course change them yourself if you'd like.
 
 ## 9. Health Notifications using Cronjob
 <img width=30% src=.assets/chastity/health.png />  
+
 Enable `cronie`.  
 ```bash
 sudo systemctl enable cronie
