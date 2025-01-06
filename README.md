@@ -105,7 +105,7 @@ cd ..
 > Skip the rest of the software if you want, they're just good but not required utilities
 
 <details>
-<summary><ul>auto-cpufreq</ul></summary>
+<summary>auto-cpufreq</summary>
 <br>
 
 ```bash
@@ -117,19 +117,34 @@ cd ..
 
 </details>
 
-- yt-dlp
+<details>
+<summary>yt-dlp</summary>
+<br>
+
 ```bash
 curl -LO https://github.com/yt-dlp/yt-dlp/releases/download/2024.12.23/yt-dlp
 chmod +x ./yt-dlp
 mv yt-dlp ~/.local/bin/
 ```
-- spotdl (in a virtual env)
+
+</details>
+
+<details>
+<summary>spotdl (in a virtual env)</summary>
+<br>
+
 ```bash
 python -m venv ~/.local/venv
 ~/.local/venv/bin/python -m pip install --upgrade pip
 ~/.local/venv/bin/pip install spotdl
 ```
-- gotop
+
+</details>
+
+<details>
+<summary>gotop</summary>
+<br>
+
 ```bash
 curl -LO https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_linux_amd64.tgz
 tar xvf gotop_3.0.0_linux_amd64.tgz
@@ -137,6 +152,9 @@ chmod +x ./gotop
 mv gotop ~/.local/bin/
 rm gotop_3.0.0_linux_amd64.tgz
 ```
+
+</details>
+
 - more
 ```bash
 sudo pacman -S hugo syncthing zed
