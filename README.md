@@ -62,17 +62,19 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 | music | mpd ncmpcpp |
 | torrent | transmission tremc |
 | font management | gucharmap |
-```bash
-# to search software
-pacman -Ss "<string you want to query>"
-```
 
 # Installation
 I am working on a script, but till it's done, you'll have to follow the steps manually. Create an issue if you encounter a problem.  
 ### 1. Install all the dependencies  
-This command is for arch. You'll have to search the corresponding names for your package manager yourself.  
+This command is for arch. You'll have to search the corresponding package names yourself for your package manager you use.  
 ```bash
 paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug redshift rofi firefox nsxiv sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank xorg-xset xorg-xrdb xorg-xetroot xorg-setxkbmap xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
+```
+Search for packages in your package manager.  
+```bash
+pacman -Ss "<string you want to query>"
+apt search "<string you want to query>"
+xbps-query -Rs "<string you want to query>"
 ```
 
 ### 2. Clone the Repo
