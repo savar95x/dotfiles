@@ -11,7 +11,7 @@
 <br><br></div>
 
 # About Chastity
-macOS inspired *openbox* rice. Reddit [Post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
+MacOS inspired Openbox  rice. Reddit [post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
 ## Screenshots
 <div align=center>
 <!--![img](.assets/chastity/show1.png)-->
@@ -207,7 +207,9 @@ sudo systemctl enable cronie
 ```
 Type `EDITOR=nvim crontab -e` in the command-line and add the following line  
 ```bash
-0,30 * * * * ~/.local/scripts/health
+# periodic notifications
+7 * * * * $HOME/.local/scripts/health
+0 */2 * * * $HOME/.local/scripts/quote
 ```
 For cron to be able send notifications, it needs the active session's dbus ID, which has been taken care of by producing `~/.dbus/Xdbus` while logging into openbox ;)  
 
