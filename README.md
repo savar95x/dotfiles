@@ -104,6 +104,12 @@ cd ..
 > [!NOTE]
 > Skip the rest of the software if you want, they're just good but not required utilities
 
+<details open>
+<summary>Want to ruin the surprise?</summary>
+<br>
+Well, you asked for it!
+</details>
+
 - auto-cpufreq
 ```bash
 git clone https://github.com/AdnanHodzic/auto-cpufreq
