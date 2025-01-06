@@ -5,7 +5,7 @@
 <br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
-&ensp;[<kbd> <br> Depends <br> </kbd>](#Dependencies)&ensp;
+&ensp;[<kbd> <br> Overview <br> </kbd>](#Overview)&ensp;
 &ensp;[<kbd> <br> Install <br> </kbd>](#Installation)&ensp;
 &ensp;[<kbd> <br> Keybinds <br> </kbd>](#Keybindings)&ensp;
 <br><br></div>
@@ -45,7 +45,8 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 > [!NOTE]
 > My older rices (endless on dwm, and dkwm) would be in my [junkyard](https://github.com/savar95x/junkyard) and [dwm](https://github.com/savar95x/dwm) repo.
 
-# Dependencies
+# Overview
+## Dependencies
 | Type | Software/Packages |
 | --- | --- |
 | terminal | [st](https://github.com/savar95/st) |
@@ -63,9 +64,15 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 | torrent | transmission tremc |
 | font management | gucharmap |
 
+## Dir structure and whereabouts
+[need to show this as a tree]
+- home dirs: code/ dlds/ dox/ mus/ pix/ vids/
+- my scripts: ~/.local/scripts/
+- user binaries: ~/.local/bin/
+
 # Installation
 I am working on a script, but till it's done, you'll have to follow the steps manually. Create an issue if you encounter a problem.  
-### 1. Install all the dependencies  
+### 1. Install the Dependencies  
 This command is for arch. You'll have to search the corresponding package names yourself for your package manager you use.  
 ```bash
 paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit openbox obconf lxappearance ueberzug redshift rofi firefox nsxiv sioyek mpv mpd ncmpcpp transimission tremc-git gucharmap polybar plank xorg-xset xorg-xrdb xorg-xetroot xorg-setxkbmap xclip maim slop dunst libnotify imagemagick xcolor xdo xdotool wmctrl light pamixer pulsemixer stow ffmpeg ffmpegthumbnailer cronie
@@ -92,7 +99,7 @@ This will backup conflicting configs and symlink my dots instead.
 ./linkdots.sh
 ```
 
-### 4. Build Binaries
+### 4. Build and install Binaries
 > [!IMPORTANT]
 > `cd` into a well organised directory like `~/.local/repos/` before running these commmands  
 > Build and install at least the **Terminal**, rest are optional  
@@ -171,7 +178,7 @@ sudo pacman -S hugo syncthing zed
 
 </details>
 
-### 5. Drivers and Audio  
+### 5. Drivers and Audio
 > [!NOTE]
 > Ignore this if you use user-friendly distros
 ```bash
@@ -233,7 +240,7 @@ cp -r .assets/icons ~/pix/assets/icons
 This directory has been hardcoded for now, I am yet to update the scripts to use `$XDG_PICTURES_DIR` instead of `~/pix`.  
 You can of course change them yourself if you'd like.  
 
-### 8. Health Notifications (using cronjob)
+### 8. Periodic Notifications (using cronjob)
 <img height=80px src=.assets/chastity/healthnotif.png />  
 
 Enable `cronie`.  
@@ -248,7 +255,7 @@ Type `crontab -e` in the command-line and add the following line
 ```
 For cron to be able send notifications, it needs the active session's dbus ID, which has been taken care of by producing `~/.dbus/Xdbus` while logging into openbox ;)  
 
-### 9. Changing Default Shell to zsh
+### 9. Change Default Shell to zsh
 ```bash
 ln -s ~/.config/zsh/rc ~/.zshrc
 ln -s ~/.config/zsh/profile ~/.zprofile
