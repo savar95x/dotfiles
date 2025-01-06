@@ -208,8 +208,8 @@ sudo systemctl enable cronie
 Type `EDITOR=nvim crontab -e` in the command-line and add the following line  
 ```bash
 # periodic notifications
-7 * * * * $HOME/.local/scripts/health
-0 */2 * * * $HOME/.local/scripts/quote
+30 * * * * ~/.local/scripts/health
+0 */2 * * * ~/.local/scripts/quote
 ```
 For cron to be able send notifications, it needs the active session's dbus ID, which has been taken care of by producing `~/.dbus/Xdbus` while logging into openbox ;)  
 
