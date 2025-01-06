@@ -94,9 +94,8 @@ This will backup conflicting configs and symlink my dots instead.
 > [!IMPORTANT]
 > `cd` into a well organised directory like `~/.local/repos/` before running these commmands
 
-<details>
+<details open>
 <summary><strong>Terminal (st)</strong></summary>
-<br>
 
 ```bash
 git clone https://github.com/savar95x/st
