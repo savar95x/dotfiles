@@ -94,13 +94,18 @@ This will backup conflicting configs and symlink my dots instead.
 > [!IMPORTANT]
 > `cd` into a well organised directory like `~/.local/repos/` before running these commmands
 
-- Terminal (st)  
+<details>
+<summary>**Terminal (st)**</summary>
+<br>
+
 ```bash
 git clone https://github.com/savar95x/st
 cd st
 ./compilest
 cd ..
 ```
+
+</details>
 > [!NOTE]
 > Skip the rest of the software if you want, they're just good but not required utilities
 
@@ -155,10 +160,15 @@ rm gotop_3.0.0_linux_amd64.tgz
 
 </details>
 
-- more
+<details>
+<summary>more</summary>
+<br>
+
 ```bash
 sudo pacman -S hugo syncthing zed
 ```
+
+</details>
 
 ### 5. Drivers and Audio  
 > [!NOTE]
