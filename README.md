@@ -92,11 +92,11 @@ This will backup conflicting configs and symlink my dots instead.
 
 ### 4. Build Binaries
 > [!IMPORTANT]
-> `cd` into a well organised directory like `~/.local/repos/` before running these commmands
-> Build and install at least the **Terminal**, rest are optional
+> `cd` into a well organised directory like `~/.local/repos/` before running these commmands  
+> Build and install at least the **Terminal**, rest are optional  
 
 <details open>
-<summary><strong>Terminal (st)</strong></summary>
+<summary><b>Terminal</b> (st)</summary>
 <br>
 
 ```bash
@@ -109,7 +109,7 @@ cd ..
 </details>
 
 <details>
-<summary>auto-cpufreq</summary>
+<summary><b>auto-cpufreq</b></summary>
 <br>
 
 ```bash
@@ -122,7 +122,7 @@ cd ..
 </details>
 
 <details>
-<summary>yt-dlp</summary>
+<summary><b>yt-dlp</b></summary>
 <br>
 
 ```bash
@@ -134,7 +134,7 @@ mv yt-dlp ~/.local/bin/
 </details>
 
 <details>
-<summary>spotdl (in a virtual env)</summary>
+<summary><b>spotdl</b> (in a virtual env)</summary>
 <br>
 
 ```bash
@@ -146,7 +146,7 @@ python -m venv ~/.local/venv
 </details>
 
 <details>
-<summary>gotop</summary>
+<summary><b>gotop</b></summary>
 <br>
 
 ```bash
