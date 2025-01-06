@@ -23,8 +23,7 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 
 # Older Rices
 ## Pome 2.0
-My daily driver before chastity. Reddit [post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/).  
-Berry [build](https://github.com/savar95x/berry).  
+My daily driver before chastity using the [BerryWM](https://github.com/savar95x/berry). Reddit [post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/).  
 <div align=center>
 <img width=49% src=.assets/pome2.0/show1.png />
 <img width=49% src=.assets/pome2.0/show2.png />
@@ -34,7 +33,8 @@ Berry [build](https://github.com/savar95x/berry).
 </div>
 
 ## Pome
-2bwm [build](https://github.com/savar95x/2bwm). 2bwm is doesnt seem to be very power efficient so not recommended. Reddit [post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/).  
+Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.reddit.com/r/unixporn/comments/16ipnru/2bwm_its_pome_again/).  
+2bwm is doesnt seem to be very power efficient so not recommended.  
 <div align=center>
 <img width=49% src=.assets/pome/new3.png />
 <img width=49% src=.assets/pome/old.png />
