@@ -11,7 +11,7 @@
 <br><br></div>
 
 # About Chastity
-MacOS inspired Openbox  rice. Reddit [post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
+MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
 ## Screenshots
 <div align=center>
 <!--![img](.assets/chastity/show1.png)-->
