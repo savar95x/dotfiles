@@ -72,9 +72,9 @@ paru -S zsh zsh-syntax-highlighting neovim lf bat xorg-server xauth xorg-xinit o
 ```
 Search for packages in your package manager.  
 ```bash
-> apt search "<string you want to query>"
-> xbps-query -Rs "<string you want to query>"
-> pacman -Ss "<string you want to query>"
+$ apt search "<string you want to query>"
+$ xbps-query -Rs "<string you want to query>"
+$ pacman -Ss "<string you want to query>"
 ```
 
 ### 2. Clone the Repo
