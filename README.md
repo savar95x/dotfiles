@@ -95,7 +95,7 @@ This will backup conflicting configs and symlink my dots instead.
 > `cd` into a well organised directory like `~/.local/repos/` before running these commmands
 
 <details>
-<summary>**Terminal (st)**</summary>
+<summary><strong>Terminal (st)</strong></summary>
 <br>
 
 ```bash
@@ -106,6 +106,7 @@ cd ..
 ```
 
 </details>
+
 > [!NOTE]
 > Skip the rest of the software if you want, they're just good but not required utilities
 
