@@ -93,9 +93,11 @@ This will backup conflicting configs and symlink my dots instead.
 ### 4. Build Binaries
 > [!IMPORTANT]
 > `cd` into a well organised directory like `~/.local/repos/` before running these commmands
+> Build and install at least the **Terminal**, rest are optional
 
 <details open>
 <summary><strong>Terminal (st)</strong></summary>
+<br>
 
 ```bash
 git clone https://github.com/savar95x/st
@@ -105,9 +107,6 @@ cd ..
 ```
 
 </details>
-
-> [!NOTE]
-> Skip the rest of the software if you want, they're just good but not required utilities
 
 <details>
 <summary>auto-cpufreq</summary>
