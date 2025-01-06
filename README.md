@@ -205,7 +205,7 @@ Enable `cronie`.
 ```bash
 sudo systemctl enable cronie
 ```
-Type `EDITOR=nvim crontab -e` in the command-line and add the following line  
+Type `crontab -e` in the command-line and add the following line  
 ```bash
 # periodic notifications
 30 * * * * ~/.local/scripts/health
