@@ -107,12 +107,14 @@ cd ..
 <details>
 <summary>auto-cpufreq</summary>
 <br>
+
 ```bash
 git clone https://github.com/AdnanHodzic/auto-cpufreq
 cd auto-cpufreq
 ./auto-cpufreq-installer
 cd ..
 ```
+
 </details>
 
 - yt-dlp
