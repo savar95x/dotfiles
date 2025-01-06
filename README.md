@@ -101,7 +101,6 @@ This will backup conflicting configs and symlink my dots instead.
 
 ### 4. Build and install Binaries
 > [!IMPORTANT]
-> `cd` into a well organised directory like `~/.local/repos/` before running these commmands  
 > Build and install at least the **Terminal**, rest are optional  
 
 <details open>
