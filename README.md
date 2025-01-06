@@ -105,7 +105,7 @@ cd ..
 > Skip the rest of the software if you want, they're just good but not required utilities
 
 <details>
-<summary>auto-cpufreq</summary>
+<summary><ul>auto-cpufreq</ul></summary>
 <br>
 
 ```bash
