@@ -104,19 +104,17 @@ cd ..
 > [!NOTE]
 > Skip the rest of the software if you want, they're just good but not required utilities
 
-<details open>
-<summary>Want to ruin the surprise?</summary>
+<details>
+<summary>auto-cpufreq</summary>
 <br>
-Well, you asked for it!
-</details>
-
-- auto-cpufreq
 ```bash
 git clone https://github.com/AdnanHodzic/auto-cpufreq
 cd auto-cpufreq
 ./auto-cpufreq-installer
 cd ..
 ```
+</details>
+
 - yt-dlp
 ```bash
 curl -LO https://github.com/yt-dlp/yt-dlp/releases/download/2024.12.23/yt-dlp
