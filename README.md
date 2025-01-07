@@ -1,6 +1,6 @@
 <div align=center>
 
-![showcase](.assets/chastity/temp6.png)
+<img height=50px src=.assets/chastity/temp5.png />
 ![showcase](.assets/chastity/show1.png)
 <br><br>
 
