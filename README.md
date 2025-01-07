@@ -70,6 +70,7 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 - my scripts: ~/.local/scripts/
 - user binaries: ~/.local/bin/
 ```bash
+$HOME
 ├── app
 │   ├── css
 │   │   ├── **/*.css
@@ -79,15 +80,12 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 │   ├── js
 │   │   ├── **/*.js
 │   └── partials/template
-├── dist (or build)
-├── node_modules
-├── bower_components (if using bower)
-├── test
-├── Gruntfile.js/gulpfile.js
-├── README.md
-├── package.json
-├── bower.json (if using bower)
-└── .gitignore
+├── code
+├── dlds
+├── dox
+├── mus
+├── pix
+└── vids
 ```
 
 # Installation
