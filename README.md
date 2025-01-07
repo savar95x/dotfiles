@@ -64,11 +64,7 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 | torrent | transmission tremc |
 | font management | gucharmap |
 
-## Dir structure and whereabouts
-[need to show this as a tree]
-- home dirs: code/ dlds/ dox/ mus/ pix/ vids/
-- my scripts: ~/.local/scripts/
-- user binaries: ~/.local/bin/
+## Dir Structure and Whereabouts
 ```bash
 $HOME
 ├── .config
@@ -77,7 +73,7 @@ $HOME
 │   │   ├── fonts
 │   │   ├── icons
 │   │   └── themes
-│   ├── scripts # user scripts
+│   ├── scripts # shell scripts
 │   └── bin # local binaries
 ├── .*
 ├── code
@@ -85,10 +81,10 @@ $HOME
 ├── dox
 ├── mus
 │   ├── **/*.mp3
-│   └── dlmus # script to download music using spotdl
+│   └── dlmus # download music script
 ├── pix
 │   └── assets
-│       └── icons # icons for scripts
+│       └── icons # icons for notifications
 └── vids
 ```
 
