@@ -1,6 +1,6 @@
 <div align=center>
 
-![showcase](.assets/chastity/dotfiles.png)
+![showcase](.assets/chastity/dotfiles1.png)
 <br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
