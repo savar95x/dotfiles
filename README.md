@@ -1,5 +1,5 @@
 <div align=center>
-<h1>Chastity</h1><br>
+<h1>~/dotfiles</h1><br>
 
 ![showcase](.assets/chastity/show1.png)
 <br><br>
