@@ -1,9 +1,6 @@
 <div align=center>
 
-<img height=80px src=.assets/chastity/temp6.png />
-<br>
-
-![showcase](.assets/chastity/show1.png)
+![showcase](.assets/chastity/dotfiles.png)
 <br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
@@ -11,7 +8,7 @@
 &ensp;[<kbd> <br> Install <br> </kbd>](#Installation)&ensp;
 <br><br></div>
 
-# About Chastity
+# Chastity
 MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
 ## Screenshots
 <div align=center>
@@ -24,7 +21,7 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 
 # Older Rices
 ## Pome 2.0
-My daily driver before chastity using the [BerryWM](https://github.com/savar95x/berry). Reddit [post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/).  
+My daily driver before chastity using [BerryWM](https://github.com/savar95x/berry). Reddit [post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/).  
 <div align=center>
 <img width=49% src=.assets/pome2.0/show1.png />
 <img width=49% src=.assets/pome2.0/show2.png />
