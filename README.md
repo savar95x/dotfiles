@@ -69,6 +69,15 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 - home dirs: code/ dlds/ dox/ mus/ pix/ vids/
 - my scripts: ~/.local/scripts/
 - user binaries: ~/.local/bin/
+```bash
+$HOME
+|-code
+|-dlds
+|-dox
+|-mus
+|-pix
+|-vids
+```
 
 # Installation
 I am working on a script, but till it's done, you'll have to follow the steps manually. Create an issue if you encounter a problem.  
