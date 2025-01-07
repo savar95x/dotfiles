@@ -71,11 +71,13 @@ $HOME
 ├── .local
 │   ├── share
 │   │   ├── fonts
-│   │   ├── icons
-│   │   └── themes
+│   │   ├── icons # ~/.icons is linked to here
+│   │   ├── themes # ~/.themes is linked to here
+│   │   └── music
+│   │       ├── playlists
+│   │       └── lyrics
 │   ├── scripts # shell scripts
 │   └── bin # local binaries
-├── .*
 ├── code
 ├── dlds
 ├── dox
@@ -83,6 +85,7 @@ $HOME
 │   ├── **/*.mp3
 │   └── dlmus # download music script
 ├── pix
+│   ├── scrots # screenshots
 │   └── assets
 │       └── icons # icons for notifications
 └── vids
