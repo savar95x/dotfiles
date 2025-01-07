@@ -1,6 +1,7 @@
 <div align=center>
 
-![showcase](.assets/chastity/temp5.png)
+![showcase](.assets/chastity/temp6.png)
+![showcase](.assets/chastity/show1.png)
 <br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
@@ -8,7 +9,7 @@
 &ensp;[<kbd> <br> Install <br> </kbd>](#Installation)&ensp;
 <br><br></div>
 
-# Chastity
+# About Chastity
 MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
 ## Screenshots
 <div align=center>
