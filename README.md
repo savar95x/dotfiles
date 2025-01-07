@@ -65,6 +65,7 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 | font management | gucharmap |
 
 ## Dir Structure and Whereabouts
+![](.assets/chastity/homedir.png)
 ```bash
 $HOME
 ├── .config
