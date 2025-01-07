@@ -79,8 +79,7 @@ $HOME
 │   │   └── themes
 │   ├── scripts # user scripts
 │   └── bin # local binaries
-•
-•
+├── .*
 ├── code
 ├── dlds
 ├── dox
