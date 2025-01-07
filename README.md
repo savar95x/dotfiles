@@ -88,6 +88,7 @@ $HOME
 │   └── assets
 │       └── icons # icons for notifications
 └── vids
+    └── watch_later # watchvid script downloads here using yt-dlp
 ```
 
 ## Keybindings
