@@ -70,25 +70,25 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 - my scripts: ~/.local/scripts/
 - user binaries: ~/.local/bin/
 
-$HOME
-├── .config
-├── .local
-│   ├── share
-│   │   ├── fonts
-│   │   ├── icons
-│   │   └── themes
-│   ├── scripts --> user scripts
-│   └── bin --> local binaries
-:
-:
-├── code
-├── dlds
-├── dox
-├── mus
-├── pix
-│   └── assets
-│       └── icons
-└── vids
+$HOME  
+├── .config  
+├── .local  
+│   ├── share  
+│   │   ├── fonts  
+│   │   ├── icons  
+│   │   └── themes  
+│   ├── scripts --> user scripts  
+│   └── bin --> local binaries  
+:  
+:  
+├── code  
+├── dlds  
+├── dox  
+├── mus  
+├── pix  
+│   └── assets  
+│       └── icons  
+└── vids  
 
 # Installation
 I am working on a script, but till it's done, you'll have to follow the steps manually. Create an issue if you encounter a problem.  
