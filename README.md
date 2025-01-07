@@ -1,13 +1,13 @@
 <div align=center>
+<!--
 <h1>Chastity</h1><br>
-
+-->
 ![showcase](.assets/chastity/temp1.png)
 <br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
 &ensp;[<kbd> <br> Overview <br> </kbd>](#Overview)&ensp;
 &ensp;[<kbd> <br> Install <br> </kbd>](#Installation)&ensp;
-&ensp;[<kbd> <br> Keybinds <br> </kbd>](#Keybindings)&ensp;
 <br><br></div>
 
 # About Chastity
@@ -91,6 +91,23 @@ $HOME
 │       └── icons # icons for notifications
 └── vids
 ```
+
+## Keybindings
+Read through ~/.config/openbox/rc.xml for more shortcuts.  
+| Keybind | Function |
+| --- | --- |
+| `MOD` + `Enter` | Launch terminal (st) |
+| `MOD` + `Q` | Close window |
+| `MOD` + `{H,J,K,L}` | Move the window to {Left, Down, Up, Right} |
+| `MOD` + `Shift` + `{H,J,K,L}` | Resize the window |
+| `MOD` + `Shift` + `F` | Monocle a window |
+| `MOD` + `F` | Fullscreen a window |
+| `MOD` + `P` | Open app launcher |
+| `MOD` + `S` | List out the useful scripts in ~/.local/scipts/ in rofi |
+| `MOD` + `Shift` + `S` | Take Screenshot (using maim and slop) |
+| `MOD` + `R` | Open lf (terminal file manager) |
+
+Note: `MOD` is the windows key
 
 # Installation
 I am working on a script, but till it's done, you'll have to follow the steps manually. Create an issue if you encounter a problem.  
@@ -299,22 +316,6 @@ Then run
 startx
 ```
 
-# Keybindings
-Read through ~/.config/openbox/rc.xml for more shortcuts.  
-| Keybind | Function |
-| --- | --- |
-| `MOD` + `Enter` | Launch terminal (st) |
-| `MOD` + `Q` | Close window |
-| `MOD` + `{H,J,K,L}` | Move the window to {Left, Down, Up, Right} |
-| `MOD` + `Shift` + `{H,J,K,L}` | Resize the window |
-| `MOD` + `Shift` + `F` | Monocle a window |
-| `MOD` + `F` | Fullscreen a window |
-| `MOD` + `P` | Open app launcher |
-| `MOD` + `S` | List out the useful scripts in ~/.local/scipts/ in rofi |
-| `MOD` + `Shift` + `S` | Take Screenshot (using maim and slop) |
-| `MOD` + `R` | Open lf (terminal file manager) |
-
-Note: `MOD` is the windows key
 
 
 <!--
