@@ -79,15 +79,17 @@ $HOME
 │   │   └── themes
 │   ├── scripts # user scripts
 │   └── bin # local binaries
-:
-:
+•
+•
 ├── code
 ├── dlds
 ├── dox
 ├── mus
+│   ├── **/*.mp3
+│   └── dlmus # script to download music using spotdl
 ├── pix
 │   └── assets
-│       └── icons
+│       └── icons # icons for scripts
 └── vids
 ```
 
