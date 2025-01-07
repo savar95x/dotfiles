@@ -9,7 +9,7 @@
 &ensp;[<kbd> <br> Install <br> </kbd>](#Installation)&ensp;
 <br><br></div>
 
-# About Chastity
+# Chastity
 MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
 ## Screenshots
 <div align=center>
