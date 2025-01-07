@@ -71,20 +71,23 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 - user binaries: ~/.local/bin/
 ```bash
 $HOME
-├── app
-│   ├── css
-│   │   ├── **/*.css
-│   ├── favicon.ico
-│   ├── images
-│   ├── index.html
-│   ├── js
-│   │   ├── **/*.js
-│   └── partials/template
+├── .config
+├── .local
+│   ├── share
+│   │   ├── fonts
+│   │   ├── icons
+│   │   └── themes
+│   ├── scripts --> user scripts
+│   └── bin --> local binaries
+:
+:
 ├── code
 ├── dlds
 ├── dox
 ├── mus
 ├── pix
+│   └── assets
+│       └── icons
 └── vids
 ```
 
