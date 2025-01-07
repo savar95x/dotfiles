@@ -80,6 +80,7 @@ $HOME
 ├── code
 ├── dlds
 ├── dox
+│   └── quotes # quote script fetches from here
 ├── mus
 │   ├── **/*.mp3
 │   └── dlmus # download music script
