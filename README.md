@@ -1,9 +1,7 @@
 <div align=center>
-<!--
 <h1>Chastity</h1><br>
--->
 
-![showcase](.assets/chastity/temp1.png)
+![showcase](.assets/chastity/show1.png)
 <br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
