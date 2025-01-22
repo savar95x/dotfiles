@@ -2,13 +2,15 @@
 
 <div align=center>
 <h1>~/dotfiles</h1>
+<img width=75% src=.assets/chastity/show1.png />
 </div>
 <br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
 &ensp;[<kbd> <br> Overview <br> </kbd>](#Overview)&ensp;
 &ensp;[<kbd> <br> Install <br> </kbd>](#Installation)&ensp;
-<br><br></div>
+<br><br>
+</div>
 
 # Chastity
 MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
