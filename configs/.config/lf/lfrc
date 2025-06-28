@@ -21,7 +21,7 @@ cmd open ${{
 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
 	#image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
 	image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f sioyek --new-window $fx >/dev/null 2>&1 ;;
-        text/*|text/lua|text/srt|application/json|inode/x-empty) nvim $fx;;
+        text/*|text/lua|text/srt|application/json|inode/x-empty) printf "\033]0;nvim $fx\007" > /dev/tty; nvim $fx;;
 	*/lua) nvim $fx;;
         text/csv) sc-im $fx;;
 	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
@@ -29,7 +29,8 @@ cmd open ${{
 	image/*) setsid -f nsxiv -ab $f 2>/dev/null ;;
 	audio/*) mpv --audio-display=no $f ;;
 	video/*|application/vnd.rn-realmedia) setsid -f mpv --save-position-on-quit --ao=pulse $f -quiet >/dev/null 2>&1 ;;
-	application/pdf|application/vnd.djvu|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+	#application/pdf|application/vnd.djvu|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+	application/pdf|application/vnd.djvu|application/epub*) setsid -f sioyek --new-window $fx >/dev/null 2>&1 ;;
 	application/pgp-encrypted) $EDITOR $fx ;;
 	application/vnd.openxmlformats-officedocument.wordprocessingml.document|application/vnd.oasis.opendocument.text) setsid -f lowriter $fx >/dev/null 2>&1 ;;
 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet|application/octet-stream|application/vnd.oasis.opendocument.spreadsheet|application/vnd.oasis.opendocument.spreadsheet-template) setsid -f localc $fx >/dev/null 2>&1 ;;
@@ -40,6 +41,11 @@ cmd open ${{
         *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
     esac
 }}
+
+cmd on-select &{{
+    printf "\033]0;lf $PWD\007" > /dev/tty
+}}
+on-select
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 cmd openwith ${{setsid -f $(echo $* | tr ' ' '\ ') "$fx"}}

@@ -13,7 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"goolord/alpha-nvim", -- dashboard
-	--"nvim-treesitter/nvim-treesitter", -- treesitter
+	"nvim-treesitter/nvim-treesitter", -- treesitter
 	-- colorschemes
 	"mountain-theme/vim", -- mountain
 	"nanotech/jellybeans.vim", -- jellybeans
@@ -22,6 +22,13 @@ require("lazy").setup({
 	"chriskempson/base16-vim", -- base16
 	"habamax/vim-habamax", -- habamax
 	"nvim-telescope/telescope.nvim",
+	--{
+		--"lukas-reineke/indent-blankline.nvim",
+		--main = "ibl",
+		-----@module "ibl"
+		-----@type ibl.config
+		--opts = {},
+	--},
 	{
 		"chadcat7/prism",
 		lazy = true,
@@ -42,4 +49,4 @@ require("lazy").setup({
 require "main.plugins.misc"
 require "main.plugins.lualine"
 require "main.plugins.prism"
---require "main.plugins.nvim-treesitter"
+require "main.plugins.nvim-treesitter"

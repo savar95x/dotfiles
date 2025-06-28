@@ -3,11 +3,11 @@ icon=""
 voln=$(pamixer --get-volume)
 state="$(pamixer --get-mute)"
 [ ! "${state##false}" ] && #icon=""
-	if [ $voln -lt 31 ] && [ $voln -gt -1 ]; then
+	if [ $voln -lt 45 ] && [ $voln -gt -1 ]; then
 		icon=""
-	elif [ $voln -lt 101 ] && [ $voln -gt 30 ]; then
+	elif [ $voln -lt 73 ] && [ $voln -gt 44 ]; then
 		icon=""
-	elif [ $voln -lt 141 ] && [ $voln -gt 100 ]; then
+	elif [ $voln -gt 72 ]; then
 		icon=""
 	fi
 
@@ -18,8 +18,8 @@ elif [ "$1" = "dec" ]; then
 elif [ "$1" = "toggle" ]; then
 	pamixer -t
 elif [ "$1" = "icon" ]; then
-	echo "$icon"
+	printf "%s" "$icon"
 elif [ "$1" = "notify" ]; then
-	notify-send "sb_audio" "volume $(pamixer --get-volume-human)"
+	notify-send -r 1 -i ~/pix/assets/icons/headphones-solid.svg -a scripts "volume" "$(pamixer --get-volume-human)"
 fi
 exit

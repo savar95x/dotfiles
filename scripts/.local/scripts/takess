@@ -7,5 +7,5 @@ dir=${XDG_PICTURES_DIR:-~/pix}/scrots
 mkdir -p $dir
 name=$(date +%Y-%m-%d_%H-%M-%S).png
 maim -s $dir/$name
-[ -f $dir/$name ] && dunstify -r 13 -i $dir/$name "Screenshot" "Saved in\n~/pix/scrots" || dunstify -r 13 -i $icon -a volume "Screenshot" "Exiting without taking one"
+[ -f $dir/$name ] && notify-send -r 13 -i $dir/$name "Screenshot" "Saved in\n~/pix/scrots" || notify-send -r 13 -i $icon -a volume "Screenshot" "Exiting without taking one"
 exit

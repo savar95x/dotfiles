@@ -19,6 +19,7 @@ HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
 
 # Load aliases if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/variables" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/variables"
 
 # Basic auto/tab complete:
 autoload -U compinit

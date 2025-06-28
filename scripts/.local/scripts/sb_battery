@@ -4,6 +4,8 @@
 perc=$(cat /sys/class/power_supply/BAT0/capacity)
 state="$(cat /sys/class/power_supply/BAT0/status)"
 icon=""
+icon=""
+
 name="bolt-solid.svg"
 icon_polybar="󰻹"
 
@@ -40,8 +42,8 @@ icon_polybar="󰻹"
 [ "$1" = "icon_polybar" ] && echo "$icon_polybar"
 [ "$1" = "perc" ] && echo "$perc"
 [ "$1" = "notify_critical" ] && (
-    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && dunstify --replace "93433" -i ~/pix/assets/icons/triangle-exclamation-solid.svg -a scripts -u critical -t 30000 "Battery Level Critical" "<i>$perc% / Consider connecting to a power supply.</i>"
-    [ $perc -gt 93 ] && [ "$state" = "Charging" ] && dunstify --replace "93433" -i ~/pix/assets/icons/$name -a scripts -u normal -t 30000 "Battery Sufficiently Charged " "Please disconnect the power supply."
+    [ $perc -lt 15 ] && [ "$state" = "Discharging" ] && notify-send -r 93433 -i ~/pix/assets/icons/triangle-exclamation-solid.svg -a scripts -u critical -t 30000 "Battery Level Critical" "<i>$perc% / Consider connecting to a power supply.</i>"
+    [ $perc -gt 93 ] && [ "$state" = "Charging" ] && notify-send -r 93433 -i ~/pix/assets/icons/$name -a scripts -u normal -t 30000 "Battery Sufficiently Charged " "Please disconnect the power supply."
 )
-[ "$1" = "notify" ] && dunstify --replace "93433" -a scripts -i ~/pix/assets/icons/$name "Battery" "$perc% / $state"
+[ "$1" = "notify" ] && notify-send -r 93433 -a scripts -i ~/pix/assets/icons/$name "Battery" "$perc% / $state"
 exit

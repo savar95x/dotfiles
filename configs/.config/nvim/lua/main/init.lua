@@ -41,7 +41,7 @@ opt.clipboard = "unnamedplus" -- global clipboard
 --}
 
 -- use 2 spaces instead of tabs for xml and yaml files
-vim.cmd("autocmd FileType xml,yaml setlocal ts=2 sts=2 sw=2 expandtab")
+-- vim.cmd("autocmd FileType xml,yaml setlocal ts=2 sts=2 sw=2 expandtab")
 
 -- treat rss as xml // tho not needed
 --vim.cmd("autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml")

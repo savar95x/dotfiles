@@ -23,7 +23,7 @@ export XDG_PUBLICSHARE_DIR="/dev/null"
 export XDG_TEMPLATES_DIR="/dev/null"
 export XDG_VIDEOS_DIR="$HOME/vids"
 
-export PATH="$PATH:$CARGO_HOME/bin:$HOME/.local/bin:$HOME/.local/scripts:$HOME/.local/share/languages/go/bin"
+export PATH="$PATH:$CARGO_HOME/bin:$HOME/.local/bin:$HOME/.local/scripts:$HOME/.local/share/languages/go/bin:$HOME/.local/share/languages/flutter/bin:$HOME/.local/scriptsdwm"
 
 # programs
 export PIPEWIRE_RUNTIME_DIR=$XDG_RUNTIME_DIR/pipewire

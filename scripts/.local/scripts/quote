@@ -1,7 +1,7 @@
 #!/bin/sh
 # run crondbus atleast once after logging in
-if [ -r "$HOME/.dbus/Xdbus" ]; then
-  . "$HOME/.dbus/Xdbus"
-fi
-
-notify-send -r 16 -t 15000 -i ~/pix/assets/icons/quote-left-solid.svg -a scripts "Quote" "$(sed '/^#/d' < ~/dox/quotes | tac | head -n 1  )"
+#if [ -r "$HOME/.dbus/Xdbus" ]; then
+  #. "$HOME/.dbus/Xdbus"
+#fi
+#
+#notify-send -r 16 -t 15000 -i ~/pix/assets/icons/quote-left-solid.svg -a scripts "Quote" "$(sed '/^#/d' < ~/dox/quotes | tac | head -n 1  )"

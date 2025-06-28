@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ "$(mpc current)" = "" ]; then
+	echo "Not Playing"
+else
+	title=$(mpc -f "%title%" current | cut -d'(' -f1)
+	title=$(printf '%s\n' "$title" | sed 's/[[:space:]]*$//')
+	artist=$(mpc -f "%artist%" current | cut -d'/' -f1)
+	#mpc -f "%title% - %artist%" current
+	echo "$title - $artist"
+fi

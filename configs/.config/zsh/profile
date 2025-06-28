@@ -1,4 +1,4 @@
 [ -f ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/variables ] && . ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/variables
 pgrep syncthing || setsid -f /usr/bin/syncthing serve --no-browser --logfile=default &>/dev/null
 pgrep pipewire || setsid -f $HOME/.config/dwm/audio_server.sh &>/dev/null
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && XINITRC="$HOME/.config/x11/initopenbox" startx
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && XINITRC="$HOME/.config/x11/initdwm" startx

@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ "$(iwctl station wlan0 show | grep State | cut -d' ' -f30)" = "connected" ]; then
+	echo " "
+else
+	echo "disconnected"
+fi
+case "$BLOCK_BUTTON" in
+	1) notify-send -r 121 "iwctl" "$(iwctl station wlan0 show | grep "Connected network" | cut -d' ' -f19)" ;;
+esac

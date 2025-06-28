@@ -71,8 +71,8 @@ check_mpc_data
 # Create a notification
 	function notify() {
 		if [ -n "$CHECK_DUNST" ]; then
-			dunstify --urgency "normal" --appname "ncmpcpp" \
-			--replace "$msgId" --icon "$TMP_COVER_PATH" "$current_title" "$current_artist"
+			notify-send --urgency "normal" -a "ncmpcpp" \
+			-r "$msgId" --icon "$TMP_COVER_PATH" "$current_title" "$current_artist"
 		else
 			notify-send --urgency "normal" --app-name "ncmpcpp" \
 			--icon "$TMP_COVER_PATH" "$current_title" "$current_artist"
