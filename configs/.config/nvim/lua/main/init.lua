@@ -8,7 +8,7 @@ opt.ignorecase = true -- case insensitive search
 opt.smartcase = true -- switch to case sensitive search when there's a capital letter in search string
 
 opt.number = true -- absolute numbering
-opt.relativenumber = true -- relative numbering
+opt.relativenumber = false -- relative numbering
 opt.numberwidth = 5 -- left padding between text and numbering
 
 --opt.list = true -- invisible chars

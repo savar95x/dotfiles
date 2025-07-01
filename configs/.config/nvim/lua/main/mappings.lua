@@ -7,6 +7,10 @@ map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
 map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
+-- tab navigation
+map("n", "<Tab>", "gt", { desc = "next tab" })
+map("n", "<S-Tab>", "gT", { desc = "prev tab" })
+
 -- insert mode cursor navigation
 map("i", "<C-e>", "<End>", { desc = "move end of line" })
 map("i", "<C-h>", "<Left>", { desc = "move left" })

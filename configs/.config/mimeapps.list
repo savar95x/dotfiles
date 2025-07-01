@@ -31,3 +31,5 @@ video/x-matroska=mpv.desktop
 inode/directory=nemo.desktop;
 x-scheme-handler/geo=wheelmap-geo-handler.desktop;
 x-scheme-handler/figma=figma-linux.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/http=firefox.desktop
