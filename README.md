@@ -224,7 +224,7 @@ sudo pacman -S hugo syncthing zed
 > [!NOTE]
 > Ignore this if you use user-friendly distros
 ```bash
-sudo pacman -S xf86-input-libinput xf86-video-intel mesa vulkan-intel intel-media-driver
+sudo pacman -S xf86-input-libinput mesa vulkan-intel intel-media-driver
 ```
 ```bash
 sudo pacman -S pipewire wireplumber bluez bluez-utils sof-firmware
