@@ -22,7 +22,7 @@
     "output": "{artists} - {title}.{output-ext}",
     "overwrite": "skip",
     "search_query": null,
-    "ffmpeg": "/home/savar/.local/share/spotdl/ffmpeg",
+    "ffmpeg": "/usr/bin/ffmpeg",
     "bitrate": null,
     "ffmpeg_args": null,
     "format": "mp3",
