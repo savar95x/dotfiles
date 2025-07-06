@@ -50,3 +50,5 @@ require "main.plugins.misc"
 require "main.plugins.lualine"
 require "main.plugins.prism"
 require "main.plugins.nvim-treesitter"
+
+require 'colorizer'.setup({ mode = 'foreground' })

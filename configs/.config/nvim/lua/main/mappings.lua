@@ -24,3 +24,6 @@ map("n", "<leader>l", ":set list!<CR>", { desc = "show invisibles like tabs and 
 -- copy into system clipboard
 map("v", "<leader>y", "\"+y", { desc = "copy to system keyboard" })
 map("v", "<leader>p", "\"+p", { desc = "paste from system keyboard" })
+
+-- toggle nvchad colorizer
+map("n", "<leader>c", ":ColorizerToggle<CR>", { desc = "toggle nvchad colorizer" })
