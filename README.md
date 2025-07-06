@@ -23,7 +23,15 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 <img width=49% src=.assets/chastity/show4.png />
 </div>
 
-# Older Rices
+# Other Rices
+## Sky
+My dwm build, and my current daily driver.  
+<div align=center>
+<img width=49% src=.assets/sky/1.png />
+<img width=49% src=.assets/sky/2.png />
+<img src=.assets/sky/3.png />
+</div>
+
 ## Pome 2.0
 My daily driver before chastity using [BerryWM](https://github.com/savar95x/berry). Reddit [post](https://www.reddit.com/r/unixporn/comments/1dh09dh/berry_pome_20/).  
 <div align=center>
