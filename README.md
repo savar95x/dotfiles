@@ -27,9 +27,9 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 ## Sky
 My dwm build, and my current daily driver.  
 <div align=center>
+<img src=.assets/sky/3.png />
 <img width=49% src=.assets/sky/1.png />
 <img width=49% src=.assets/sky/2.png />
-<img src=.assets/sky/3.png />
 </div>
 
 ## Pome 2.0
