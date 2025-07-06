@@ -25,7 +25,7 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 
 # Other Rices
 ## Sky
-My dwm build, and my current daily driver.  
+My [dwm build](https://github.com/savar95x/dwm), and my current daily driver.  
 <div align=center>
 <img src=.assets/sky/3.png />
 <img width=49% src=.assets/sky/1.png />
