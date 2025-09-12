@@ -332,7 +332,7 @@ If it doesn't, something might be wrong, check if you linked .zprofile.
 You can try doing this though  
 ```bash
 [ -f ~/.xinitrc ] && mv ~/.xinitrc ~/.config.bak/
-ln -s ~/.config/x11/initopenbox ~/.xinitrc
+ln -s ~/.config/x11/openbox ~/.xinitrc
 ```
 Then run  
 ```bash
