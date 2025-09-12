@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/savar/.gtkrc-2.0.mine"
-gtk-theme-name="Gruvbox-Material-Dark"
+gtk-theme-name="HighContrast"
 gtk-icon-theme-name="Numix"
 gtk-font-name="Inter 11"
 gtk-cursor-theme-name="Simp1e"

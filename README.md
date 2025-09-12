@@ -26,6 +26,15 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 # Other Rices
 ## Sky
 My [dwm build](https://github.com/savar95x/dwm), and my current daily driver.  
+A productive version of my Chastity rice.  
+<div align=center>
+<img src=.assets/dwm/1.png />
+<img width=49% src=.assets/dwm/2.png />
+<img width=49% src=.assets/dwm/3.png />
+</div>
+
+## Sky
+My [dwm build](https://github.com/savar95x/dwm), and my current daily driver.  
 <div align=center>
 <img src=.assets/sky/3.png />
 <img width=49% src=.assets/sky/1.png />

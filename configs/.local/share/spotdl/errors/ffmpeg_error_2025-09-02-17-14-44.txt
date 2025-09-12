@@ -1,0 +1,115 @@
+### return_code:
+234
+
+### arguments:
+['-nostdin', '-y', '-i', '/home/savar/.local/repos/savar95x/dotfiles/configs/.local/share/spotdl/temp/Psp-1X_au5w.mp4', '-movflags', '+faststart', '-v', 'debug', '-progress', '-', '-nostats', '-codec:a', 'libmp3lame', '-b:a', 'copy', '/home/savar/mus/Ikka, Sez on the Beat - Dogs & Snakes.mp3']
+
+### ffmpeg:
+/usr/bin/ffmpeg
+
+### version:
+7.1
+
+### build_year:
+2025
+
+### error:
+ffmpeg version n7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+built with gcc 15.1.1 (GCC) 20250425
+configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-frei0r --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libdvdnav --enable-libdvdread --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgsm --enable-libharfbuzz --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-libpulse --enable-librav1e --enable-librsvg --enable-librubberband --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpl --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-vapoursynth --enable-version3 --enable-vulkan
+libavutil      59. 39.100 / 59. 39.100
+libavcodec     61. 19.101 / 61. 19.101
+libavformat    61.  7.100 / 61.  7.100
+libavdevice    61.  3.100 / 61.  3.100
+libavfilter    10.  4.100 / 10.  4.100
+libswscale      8.  3.100 /  8.  3.100
+libswresample   5.  3.100 /  5.  3.100
+libpostproc    58.  3.100 / 58.  3.100
+Splitting the commandline.
+Reading option '-nostdin' ... matched as option 'stdin' (enable or disable interaction on standard input) with argument 0.
+Reading option '-y' ... matched as option 'y' (overwrite output files) with argument '1'.
+Reading option '-i' ... matched as input url with argument '/home/savar/.local/repos/savar95x/dotfiles/configs/.local/share/spotdl/temp/Psp-1X_au5w.mp4'.
+Reading option '-movflags' ... matched as AVOption 'movflags' with argument '+faststart'.
+Reading option '-v' ... matched as option 'v' (set logging level) with argument 'debug'.
+Reading option '-progress' ... matched as option 'progress' (write program-readable progress information) with argument '-'.
+Reading option '-nostats' ... matched as option 'stats' (print progress report during encoding) with argument 0.
+Reading option '-codec:a' ... matched as option 'codec' (alias for -c (select encoder/decoder)) with argument 'libmp3lame'.
+Reading option '-b:a' ... matched as option 'b' (video bitrate (please use -b:v)) with argument 'copy'.
+Reading option '/home/savar/mus/Ikka, Sez on the Beat - Dogs & Snakes.mp3' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option nostdin (enable or disable interaction on standard input) with argument 0.
+Applying option y (overwrite output files) with argument 1.
+Applying option v (set logging level) with argument debug.
+Applying option progress (write program-readable progress information) with argument -.
+[pipe @ 0x55bea4d82cc0] Setting default whitelist 'crypto,data'
+Applying option nostats (print progress report during encoding) with argument 0.
+Successfully parsed a group of options.
+Parsing a group of options: input url /home/savar/.local/repos/savar95x/dotfiles/configs/.local/share/spotdl/temp/Psp-1X_au5w.mp4.
+Successfully parsed a group of options.
+Opening an input file: /home/savar/.local/repos/savar95x/dotfiles/configs/.local/share/spotdl/temp/Psp-1X_au5w.mp4.
+[AVFormatContext @ 0x55bea4d8b280] Opening '/home/savar/.local/repos/savar95x/dotfiles/configs/.local/share/spotdl/temp/Psp-1X_au5w.mp4' for reading
+[file @ 0x55bea4d8b7c0] Setting default whitelist 'file,crypto,data'
+[aac @ 0x55bea4d8b280] Format aac probed with size=2048 and score=51
+id3v2 ver:3 flags:00 len:63
+[aac @ 0x55bea4d8b280] Before avformat_find_stream_info() pos: 73 bytes read:65696 seeks:4 nb_streams:1
+Transform tree:
+mdct_pfa_3xM_inv_float_c - type: mdct_float, len: 96, factors[2]: [3, any], flags: [unaligned, out_of_place, inv_only]
+fft16_ns_float_fma3 - type: fft_float, len: 16, factor: 2, flags: [aligned, inplace, out_of_place, preshuf]
+Transform tree:
+mdct_inv_float_avx2 - type: mdct_float, len: 120, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: 60, factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+fft4_fwd_asm_float_sse2 - type: fft_float, len: 4, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+mdct_inv_float_avx2 - type: mdct_float, len: 128, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+fft_sr_asm_float_avx2 - type: fft_float, len: 64, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+mdct_inv_float_avx2 - type: mdct_float, len: 480, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: 240, factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+fft16_asm_float_fma3 - type: fft_float, len: 16, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+mdct_inv_float_avx2 - type: mdct_float, len: 512, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+fft_sr_asm_float_avx2 - type: fft_float, len: 256, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+mdct_pfa_3xM_inv_float_c - type: mdct_float, len: 768, factors[2]: [3, any], flags: [unaligned, out_of_place, inv_only]
+fft_sr_ns_float_avx2 - type: fft_float, len: 128, factor: 2, flags: [aligned, inplace, out_of_place, preshuf]
+Transform tree:
+mdct_inv_float_avx2 - type: mdct_float, len: 960, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: 480, factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+mdct_inv_float_avx2 - type: mdct_float, len: 1024, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+fft_sr_asm_float_avx2 - type: fft_float, len: 512, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+mdct_fwd_float_c - type: mdct_float, len: 1024, factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only]
+fft_sr_ns_float_avx2 - type: fft_float, len: 512, factor: 2, flags: [aligned, inplace, out_of_place, preshuf]
+Transform tree:
+mdct_inv_float_avx2 - type: mdct_float, len: 64, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+mdct_inv_float_avx2 - type: mdct_float, len: 64, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+[aac @ 0x55bea4d8b280] All info found
+[aac @ 0x55bea4d8b280] Estimating duration from bitrate, this may be inaccurate
+[aac @ 0x55bea4d8b280] After avformat_find_stream_info() pos: 19453 bytes read:65696 seeks:4 frames:50
+Input #0, aac, from '/home/savar/.local/repos/savar95x/dotfiles/configs/.local/share/spotdl/temp/Psp-1X_au5w.mp4':
+Metadata:
+id3v2_priv.com.apple.streaming.transportStreamTimestamp: \x00\x00\x00\x00\x00\x00\x03\x92
+Duration: 00:02:51.07, bitrate: 133 kb/s
+Stream #0:0, 50, 1/28224000: Audio: aac (LC), 44100 Hz, stereo, fltp, 133 kb/s
+Successfully opened the file.
+Parsing a group of options: output url /home/savar/mus/Ikka, Sez on the Beat - Dogs & Snakes.mp3.
+Applying option codec:a (alias for -c (select encoder/decoder)) with argument libmp3lame.
+Applying option b:a (video bitrate (please use -b:v)) with argument copy.
+Successfully parsed a group of options.
+Opening an output file: /home/savar/mus/Ikka, Sez on the Beat - Dogs & Snakes.mp3.
+[out#0/mp3 @ 0x55bea4d8e0c0] No explicit maps, mapping streams automatically...
+[aost#0:0/libmp3lame @ 0x55bea4d8e400] Created audio stream from input stream 0:0
+[libmp3lame @ 0x55bea4d8bfc0] [Eval @ 0x7ffe33872960] Undefined constant or missing '(' in 'copy'
+[libmp3lame @ 0x55bea4d8bfc0] Unable to parse option value "copy"
+[libmp3lame @ 0x55bea4d8bfc0] Error setting option b to value copy.
+[aost#0:0/libmp3lame @ 0x55bea4d8e400] Error applying encoder options: Invalid argument
+Error opening output file /home/savar/mus/Ikka, Sez on the Beat - Dogs & Snakes.mp3.
+Error opening output files: Invalid argument
+[AVIOContext @ 0x55bea4d93a40] Statistics: 65696 bytes read, 4 seeks
+

@@ -1,0 +1,8 @@
+#!/bin/sh
+export XAUTHORITY="$HOME/.local/run/x11/xauth"
+setsid -f $HOME/.config/dwm/autostart.sh &
+export MYMENU="dmenu"
+#while :; do
+	#ssh-agent dwm
+#done
+exec dbus-launch dwm

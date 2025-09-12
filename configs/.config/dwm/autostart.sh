@@ -23,8 +23,10 @@ if hash redshift >/dev/null 2>&1; then
 	redshift -P -O 6500
 	setsid -f redshift &
 fi
+#pkill picom; setsid -f picom --config ~/.config/xmonad/assets/picom/pijulius.conf &
+#pkill picom; setsid -f ~/.config/xmonad/assets/picom-ftlabs --config ~/.config/xmonad/assets/picom/ftlabs.conf &
 pkill picom; setsid -f picom --config $HOME/.config/dwm/picom.conf &
-pkill dunst; setsid -f dunst &
+pkill dunst; setsid -f dbus-launch dunst &
 #pkill picom; setsid -f picom
 #pkill xbanish; setsid -f xbanish -t 1 &
 pkill dwmblocks; setsid -f sleep 1 && dwmblocks &
@@ -32,7 +34,7 @@ pkill dwmblocks; setsid -f sleep 1 && dwmblocks &
 #pkill redshift; setsid -f redshift &
 
 ### quality of life ###
-xwallpaper --zoom ~/.config/dwm/walls/wall.jpg
+xwallpaper --zoom ~/pix/walls/wall
 #xwallpaper --zoom ~/pix/walls/gruvbox/flower-1.jpg
 xset r rate 215 40
 setxkbmap -option caps:swapescape 

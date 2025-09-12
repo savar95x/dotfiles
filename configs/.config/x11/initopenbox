@@ -1,5 +1,0 @@
-#!/bin/sh
-export XAUTHORITY="$HOME/.local/run/x11/xauth"
-export MYMENU="rofi -dmenu"
-#exec dbus-launch --exit-with-session openbox
-exec dbus-launch openbox-session

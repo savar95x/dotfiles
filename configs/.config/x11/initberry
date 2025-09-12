@@ -1,4 +1,0 @@
-#!/bin/sh
-export XAUTHORITY="$HOME/.local/run/x11/xauth"
-export MYMENU="rofi -dmenu"
-exec berry

@@ -1,0 +1,6 @@
+#!/bin/sh
+export XAUTHORITY="$HOME/.local/run/x11/xauth"
+export MYMENU="rofi -dmenu"
+export XDG_SESSION_TYPE=x11
+#exec dbus-launch --exit-with-session xmonad
+exec xmonad
