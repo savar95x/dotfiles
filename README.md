@@ -29,9 +29,9 @@ My [dwm build](https://github.com/savar95x/dwm), and my current daily driver.
 A productive version of my Chastity rice.  
 <div align=center>
 <img src=.assets/dwm/1.png />
-<img width=33% src=.assets/dwm/2.png />
-<img width=33% src=.assets/dwm/3.png />
-<img width=33% src=.assets/dwm/4.png />
+<img width=30% src=.assets/dwm/2.png />
+<img width=30% src=.assets/dwm/3.png />
+<img width=30% src=.assets/dwm/4.png />
 </div>
 
 ## Sky
