@@ -357,3 +357,7 @@ startx
 - [Elkowar](https://github.com/elkowar/) for making me believe gruvbox can be aesthetic as well
 - [adi1090x](https://github.com/adi1090x/) for his rofi configs
 -->
+
+**todo for myself**  
+push transmission-daemon and redshift config from older laptop  
+also, backup the hugo precompile directory somehow  
