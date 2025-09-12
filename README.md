@@ -24,17 +24,19 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 </div>
 
 # Other Rices
-## Sky
+## dwm
 My [dwm build](https://github.com/savar95x/dwm), and my current daily driver.  
 A productive version of my Chastity rice.  
 <div align=center>
 <img src=.assets/dwm/1.png />
-<img width=49% src=.assets/dwm/2.png />
-<img width=49% src=.assets/dwm/3.png />
+<img width=33% src=.assets/dwm/2.png />
+<img width=33% src=.assets/dwm/3.png />
+<img width=33% src=.assets/dwm/4.png />
 </div>
 
 ## Sky
-My [dwm build](https://github.com/savar95x/dwm), and my current daily driver.  
+An older rice of mine with dwm.  
+Works mostly the same as the above one, just the aesthetics (mainly the dwmblocks) are different.  
 <div align=center>
 <img src=.assets/sky/3.png />
 <img width=49% src=.assets/sky/1.png />
