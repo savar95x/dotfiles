@@ -1,0 +1,33 @@
+# automatic night light
+pkill redshift
+redshift -P -O 6500
+setsid -f redshift &
+
+# notifications
+pkill dunst
+setsid -f dunst &
+
+# compositor
+pkill picom
+#setsid -f ~/.config/xmonad/assets/picom-pijulius --config ~/.config/xmonad/assets/picom/pijulius.conf &
+#setsid -f ~/.config/xmonad/assets/picom-ftlabs --config ~/.config/xmonad/assets/picom/ftlabs.conf &
+setsid -f picom --config ~/.config/xmonad/assets/picom/active.conf &
+
+# bar
+pkill polybar
+setsid -f polybar -c ~/.config/polybar/mac.ini &
+
+# dock
+kill -9 $(pgrep plank)
+#pkill plank
+setsid -f dbus-launch plank &
+
+# wallpaper
+xwallpaper --zoom ~/.config/openbox/assets/wall.jpg &
+
+### quality of life # rice agnostic ###
+xset r rate 215 40
+xsetroot -cursor_name left_ptr
+xrdb -load $HOME/.config/x11/xresources
+setxkbmap -option caps:swapescape 
+setsid -f $HOME/.local/scripts/crondbus

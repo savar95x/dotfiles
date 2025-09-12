@@ -25,7 +25,7 @@ if hash redshift >/dev/null 2>&1; then
 fi
 #pkill picom; setsid -f picom --config ~/.config/xmonad/assets/picom/pijulius.conf &
 #pkill picom; setsid -f ~/.config/xmonad/assets/picom-ftlabs --config ~/.config/xmonad/assets/picom/ftlabs.conf &
-pkill picom; setsid -f picom --config $HOME/.config/dwm/picom.conf &
+pkill picom; setsid -f picom --config $HOME/.config/dwm/assets/picom/active.conf &
 pkill dunst; setsid -f dbus-launch dunst &
 #pkill picom; setsid -f picom
 #pkill xbanish; setsid -f xbanish -t 1 &
