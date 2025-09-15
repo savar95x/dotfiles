@@ -2,9 +2,10 @@
 export XAUTHORITY="$HOME/.local/run/x11/xauth"
 setsid -f $HOME/.config/dwm/autostart.sh &
 export MYMENU="dmenu"
-#while :; do
-	#ssh-agent dwm
-#done
-
 export XDG_SESSION_TYPE=x11
-exec dwm
+
+while :; do
+	ssh-agent dwm
+done
+
+#exec dwm
