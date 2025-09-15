@@ -21,5 +21,8 @@ done
 
 # symlink
 stow -t ~/ */ && echo "symlink successful"
+#**for wallpaper**
+ln -s ~/pix/walls/wall ~/.config/dwm/walls/shivam-baraik-Nu8S-iMWAPw-unsplash-4.jpg
+
 echo "script ending ${green}successfully${clean}!"
 exit

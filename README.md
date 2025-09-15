@@ -261,8 +261,8 @@ mkdir -p ~/.local/share/fonts
 <br>
 
 Icon pack is [Numix circle](https://github.com/numixproject/numix-icon-theme-circle). Clone this into ~/.icons/  
-GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into ~/.theme/  
-Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). Extract and copy this into ~/.icons/ as well.  
+GTK theme is [Gruvbox Material](https://github.com/TheGreatMcPain/gruvbox-material-gtk). Clone this into \~/.theme/  
+Cursor is [Simp1e](https://www.gnome-look.org/p/1932768). Extract and copy this into \~/.icons/ as well.  
 
 Once copied, you can set these using `lxappearance`.  
 

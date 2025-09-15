@@ -1,8 +1,8 @@
 #!/bin/sh
 # depends on maim and slop
  
-scrot
-exit
+#scrot
+#exit
 
 icon=${XDG_PICTURES_DIR:-~/pix}/assets/icons/camera-solid.svg
 #dunstify -i $icon -a volume -r 13 "Screenshot" "Select a window or root"
