@@ -28,6 +28,11 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 My [dwm build](https://github.com/savar95x/dwm), and my current daily driver.  
 A productive version of my Chastity rice.  
 <div align=center>
+<img src=.assets/dwm/0_1.png />
+<img width=49% src=.assets/dwm/0_2.png />
+<img width=49% src=.assets/dwm/0_3.png />
+</div>
+<div align=center>
 <img src=.assets/dwm/1.png />
 <img width=30% src=.assets/dwm/2.png />
 <img width=30% src=.assets/dwm/3.png />
