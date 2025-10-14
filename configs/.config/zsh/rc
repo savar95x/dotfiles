@@ -90,5 +90,3 @@ bindkey -M visual '^[[P' vi-delete
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 
 myfetch # faster than tuxfetch
-
-export PATH=$PATH:/home/savar/.spicetify

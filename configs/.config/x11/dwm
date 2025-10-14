@@ -4,8 +4,8 @@ setsid -f $HOME/.config/dwm/autostart.sh &
 export MYMENU="dmenu"
 export XDG_SESSION_TYPE=x11
 
-while :; do
-	ssh-agent dwm
-done
+#while :; do
+#	ssh-agent dwm
+#done
 
-#exec dwm
+exec dwm

@@ -9,7 +9,7 @@ else
 	title=$(printf '%s\n' "$title" | sed 's/[[:space:]]*$//')
 	artist=$(mpc -f "%artist%" current | cut -d'/' -f1)
 	#mpc -f "%title% - %artist%" current
-	echo "^c$FG^^b$BG^  $title - $artist"
+	echo "^c$FG^^b$BG^  $title - $artist"
 fi
 case "$BLOCK_BUTTON" in
 	1) setsid -f st -e ncmpcpp & ;;

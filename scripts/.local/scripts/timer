@@ -2,7 +2,7 @@
 echo "Timer starting\n$(date '+%a %b %d') $(tput bold)$(date '+%H:%M:%S %P')$(tput sgr0) $(date '+%Z %Y')"
 echo "for $1"
 sleep $1 && while true; do
-sleep 1s
+sleep 10s
 sleep .2
-mpv --no-video /home/savar/vids/assets/beep.mp4 &>/dev/null;
+mpv --no-video ~/vids/beep.webm &>/dev/null;
 done

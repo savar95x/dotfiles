@@ -1,5 +1,5 @@
 #!/bin/sh
 DIR=~/.config/dwm/scripts
-source $DIR/vars.sh
+. $DIR/vars.sh
 
-echo ""
+echo " "

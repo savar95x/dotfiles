@@ -1,0 +1,2 @@
+#!/bin/sh
+pkill eww; eww daemon & sleep 1; eww open todo & eww open at-a-glance & eww open bar-waybar & eww open quote &
