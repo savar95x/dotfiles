@@ -1,0 +1,98 @@
+(defpoll todo-content :interval "3600s" '~/.config/eww/scripts/todo.sh')
+(defpoll battery-cycle-content :interval "3600s" '~/.config/eww/scripts/battery-cycle.sh')
+(defpoll quote-content :interval "3600s" '~/.config/eww/scripts/quote.sh')
+(defpoll timeslots-content :interval "3600s" '~/.config/eww/scripts/timeslots.sh')
+(defpoll time-content :interval "10s" '~/.config/eww/scripts/time.sh')
+(defpoll date-content :interval "3600s" '~/.config/eww/scripts/date.sh')
+(defpoll time-day :interval "3600s" '~/.config/eww/scripts/time-day.sh')
+(defpoll battery-perc :interval "60s" '~/.config/eww/scripts/bat-perc.sh')
+(defpoll battery-icon :interval "60s" '~/.config/eww/scripts/bat-icon.sh')
+(defpoll wifi-name :interval "30s" '~/.config/eww/scripts/wifi-name.sh')
+(defpoll wifi-icon :interval "30s" '~/.config/eww/scripts/wifi-icon.sh')
+
+(defwidget todo-widget []
+  (box
+      :orientation "v" :space-evenly false
+
+    (box
+      :space-evenly false
+      :spacing 10
+      (label :xalign 0 :class "heading-icon" :text "")
+      (label :xalign 0 :class "heading" :text "Todo")
+    )
+      ;(label :xalign 0 :class "heading" :markup "<span font_size=\"large\">Todo</span>")
+      (label :xalign 0 :text todo-content)
+      ))
+
+(defwidget timeslots-widget []
+  (box
+    :orientation "v" :space-evenly false
+    (label :xalign 0 :class "heading" :text "Time Slots")
+    (label :xalign 0 :class "text" :text timeslots-content)
+    ))
+
+(defwidget quote-widget []
+  (box
+    (box :space-evenly false :spacing 10
+         ;(label :xalign 0 :class "icon" :text "")
+         (label :xalign 0 :text quote-content)
+         ;(label :xalign 0 :class "icon" :text "")
+         )))
+
+(defwidget at-a-glance-widget []
+  (box
+    :orientation "v"
+    :halign "start"
+    :valign "start"
+    :space-evenly false
+    (label :xalign 0 :class "subheading" :text time-day)
+    (label :xalign 0  :class "heading" :text time-content)
+    (box
+      :orientation "h"
+      :halign "start"
+      :space-evenly false
+      :spacing 20
+      (label :xalign 0 :class "subsubheading" :text date-content)
+      ;(label :xalign 0 :class "subsubheading" :text battery-cycle-content)
+    )
+    (box
+      :orientation "h"
+      :halign "start"
+      :space-evenly false
+      :spacing 20
+    (box
+      :orientation "h"
+      :halign "start"
+      :space-evenly false
+      :spacing 10
+      (label :xalign 0 :class "icon" :text battery-icon)
+      (label :xalign 0 :class "text" :text battery-perc)
+    )
+    (box
+      :orientation "h"
+      :halign "start"
+      :space-evenly false
+      :spacing 10
+      (label :xalign 0 :class "icon" :text wifi-icon)
+      (label :xalign 0 :class "text" :text wifi-name)
+    )
+    )
+  )
+)
+
+(defwindow todo
+  :monitor 0 :stacking "bg"
+  :geometry (geometry :x "30px" :y "450" :width "500px" :anchor "top left")
+  (todo-widget))
+(defwindow quote
+  :monitor 0 :stacking "bg"
+  :geometry (geometry :x "30px" :y "-20px" :width "800px" :anchor "bottom left")
+  (quote-widget))
+(defwindow at-a-glance
+  :monitor 0 :stacking "bg"
+  :geometry (geometry :x "30px" :y "80px" :width "400px" :anchor "top left")
+  (at-a-glance-widget))
+(defwindow timeslots
+  :monitor 0 :stacking "bg"
+  :geometry (geometry :x "20px" :y "100px" :width "225px" :anchor "top right")
+  (timeslots-widget))

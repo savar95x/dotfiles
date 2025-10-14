@@ -1,0 +1,64 @@
+$clr-fg: rgba(220,198,160,0.85);
+$clr-fg-bold: rgba(220,198,160,0.95);
+$clr-fg-light: rgba(220,198,160,0.685);
+$font-family: "Geist";
+$font-family-icons: "font awesome 7 free";
+$size-1: 16;
+$size-2: 20;
+$size-3: 28;
+$size-10: 80;
+$weight-0: 500;
+$weight-1: 600;
+$weight-2: 700;
+$weight-3: 800;
+
+* {
+  background: none;
+  font-family: $font-family;
+  color: $clr-fg;
+}
+
+.todo {
+  .heading {
+    margin-bottom: 1rem;
+    font-size: $size-2;
+  }
+  .heading-icon {
+    font-family: $font-family-icons;
+    margin-bottom: 1rem;
+    font-size: $size-1;
+    font-weight: $weight-2;
+  }
+  font-size: $size-1;
+}
+
+.quote {
+  color: $clr-fg;
+  font-size: 18;
+  .icon {
+    margin-bottom: 1rem;
+    font-size: 12;
+    color: $clr-fg-light;
+  }
+}
+
+.at-a-glance {
+  .heading {
+    font-size: $size-10;
+    font-weight: $weight-3;
+  }
+  .subheading {
+    font-size: $size-3;
+    font-weight: $weight-2;
+  }
+  .subsubheading {
+    font-size: $size-2;
+    font-weight: $weight-1;
+  }
+  .text, .icon {
+    font-size: $size-1;
+    font-weight: $weight-0;
+    margin-top: 1.5rem;
+  }
+  .icon { font-family: $font-family-icons; }
+}
