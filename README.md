@@ -3,7 +3,7 @@
 <div align=center>
 <h1>~/dotfiles</h1>
 <img width=49% src=.assets/chastity/show1.png />
-<img width=49% src=.assets/dwm/1_3.png />
+<img width=49% src=.assets/dwm/1_1.png />
 </div>
 
 <br><br>
@@ -18,13 +18,13 @@
 My current [dwm build](https://github.com/savar95x/dwm) and my daily driver.  
 <div align=center>
 <img width=49% src=.assets/dwm/1_1.png />
-<img width=49% src=.assets/dwm/1_3.png />
+<img width=49% src=.assets/dwm/1_2.png />
 </div>
 
 ### Eww
 [Here](https://github.com/savar95x/dotfiles/tree/main/configs/.config/eww)'s the config.  
 <div align=center>
-<img width=49% src=.assets/dwm/1_2.png />
+<img width=49% src=.assets/dwm/1_3.png />
 </div>
 
 
