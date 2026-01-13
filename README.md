@@ -47,8 +47,8 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 <img width=30% src=.assets/dwm/1.png />
 </div>
 <div align=center>
-<img width=49% src=.assets/sky/1.png />
-<img width=49% src=.assets/sky/3.png />
+<img width=30% src=.assets/sky/1.png />
+<img width=30% src=.assets/sky/3.png />
 </div>
 
 ## Pome 2.0
