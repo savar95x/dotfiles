@@ -40,16 +40,12 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 
 # Other Rices
 
-## older rices
+## older dwm designs
 <div align=center>
 <img width=30% src=.assets/dwm/0_1.png />
 <img width=30% src=.assets/dwm/0_2.png />
 <img width=30% src=.assets/dwm/1.png />
 </div>
-
-## Sky
-An older rice of mine with dwm.  
-Works mostly the same as the above one, just the aesthetics (mainly the dwmblocks) are different.  
 <div align=center>
 <img width=49% src=.assets/sky/1.png />
 <img width=49% src=.assets/sky/3.png />
