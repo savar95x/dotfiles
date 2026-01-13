@@ -8,4 +8,6 @@ export XDG_SESSION_TYPE=x11
 #	ssh-agent dwm
 #done
 
-exec dwm
+exec dbus-run-session dwm
+#exec dbus-launch --exit-with-session dwm
+#exec dwm

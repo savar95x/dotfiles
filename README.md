@@ -2,8 +2,10 @@
 
 <div align=center>
 <h1>~/dotfiles</h1>
-<img src=.assets/chastity/show1.png />
+<img width=49% src=.assets/chastity/show1.png />
+<img width=49% src=.assets/dwm/1_3.png />
 </div>
+
 <br><br>
 
 &ensp;[<kbd> <br> Gallery <br> </kbd>](#Screenshots)&ensp;
@@ -12,9 +14,22 @@
 <br><br>
 </div>
 
-# Chastity
+# dwm
+My current [dwm build](https://github.com/savar95x/dwm) and my daily driver.  
+<div align=center>
+<img width=49% src=.assets/dwm/1_1.png />
+<img width=49% src=.assets/dwm/1_3.png />
+</div>
+
+### Eww
+[Here](https://github.com/savar95x/dotfiles/tree/main/configs/.config/eww)'s the config.  
+<div align=center>
+<img width=49% src=.assets/dwm/1_2.png />
+</div>
+
+
+## chastity
 MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/comments/1hs2pm8/openbox_chastity/).  
-## Screenshots
 <div align=center>
 <!--![img](.assets/chastity/show1.png)-->
 <img width=49% src=.assets/chastity/show1.png />
@@ -24,28 +39,22 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 </div>
 
 # Other Rices
-## dwm
-My [dwm build](https://github.com/savar95x/dwm), and my current daily driver.  
-A productive version of my Chastity rice.  
+
+## older rices
 <div align=center>
-<img src=.assets/dwm/0_1.png />
+<img width=49% src=.assets/dwm/0_1.png />
 <img width=49% src=.assets/dwm/0_2.png />
-<img width=49% src=.assets/dwm/0_3.png />
 </div>
 <div align=center>
-<img src=.assets/dwm/1.png />
-<img width=30% src=.assets/dwm/2.png />
-<img width=30% src=.assets/dwm/3.png />
-<img width=30% src=.assets/dwm/4.png />
+<img width=30% src=.assets/dwm/1.png />
 </div>
 
 ## Sky
 An older rice of mine with dwm.  
 Works mostly the same as the above one, just the aesthetics (mainly the dwmblocks) are different.  
 <div align=center>
-<img src=.assets/sky/3.png />
 <img width=49% src=.assets/sky/1.png />
-<img width=49% src=.assets/sky/2.png />
+<img width=49% src=.assets/sky/3.png />
 </div>
 
 ## Pome 2.0

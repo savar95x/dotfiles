@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Define the Options
+# Format: "Icon  Description"
+wifi="  WiFi"
+blue="  Bluetooth"
+audio="  Audio"
+music="  Music"
+power="  Power"
+
+# Send options to Rofi
+options="$wifi\n$blue\n$audio\n$music\n$power"
+
+selected=$(echo -e "$options" | rofi -dmenu -p "CONTROL" -theme ~/.config/rofi/control.rasi)
+
+# Handle Actions
+case $selected in
+    "$wifi")  nm-connection-editor & ;;
+    "$blue")  blueman-manager & ;;
+    "$audio") pavucontrol & ;;
+    "$music") st -c "music_player" -g 60x20 -e ncmpcpp & ;; # Spawns floating ncmpcpp
+    "$power") ~/.local/bin/rofi-power ;; # Triggers a power menu
+esac

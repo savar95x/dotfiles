@@ -48,4 +48,5 @@ opt.clipboard = "unnamedplus" -- global clipboard
 
 -- Colorscheme
 vim.g.gruvbox_material_transparent_background = true
+--vim.g.gruvbox_material_background = 'hard'
 vim.cmd("colorscheme gruvbox-material")

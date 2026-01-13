@@ -1,4 +1,5 @@
 #!/bin/sh
 while read p; do
-  ~/.local/venv/bin/spotdl "$p"
+  #~/.local/venv/bin/spotdl "$p"
+  spotdl "$p"
 done <~/dox/notes/archive/music.md

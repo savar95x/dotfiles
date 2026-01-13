@@ -1,6 +1,12 @@
 #!/bin/bash
 source ~/.config/dwm/scripts/vars.sh
-echo "^c$FG^$(sb_battery icon)"
+battery="$(sb_battery perc)"
+if [ $battery -gt 20 ]; then
+	echo "^c$FG^$(sb_battery icon)    ^c$INACTIVE^$battery^c$FG^"
+else
+	echo "^c$RED^    ^c$INACTIVE^$(sb_battery perc)^c$FG^"
+fi
+
 sb_battery notify_critical &
 
 case "$BLOCK_BUTTON" in

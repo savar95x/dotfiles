@@ -1,6 +1,6 @@
 #!/bin/zsh
 source ~/.config/dwm/scripts/vars.sh
-echo "^c$FG^^b$BG^$(date '+%d %b')  $(date '+%H:%M')"
+echo "^b$BG^^c$INACTIVE^$(date '+%a  %d  %b')    ^c$FG^$(date '+%H:%M')     "
 
 case "$BLOCK_BUTTON" in
 	1) dunstify -i ~/pix/assets/icons/clock-solid.svg -a scripts -r "93434" "Date" "$(date '+%d %b (%a) %Y\n%H\:%M\:%S')" ;;

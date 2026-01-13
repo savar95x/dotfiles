@@ -1,98 +1,147 @@
-(defpoll todo-content :interval "3600s" '~/.config/eww/scripts/todo.sh')
-(defpoll battery-cycle-content :interval "3600s" '~/.config/eww/scripts/battery-cycle.sh')
-(defpoll quote-content :interval "3600s" '~/.config/eww/scripts/quote.sh')
-(defpoll timeslots-content :interval "3600s" '~/.config/eww/scripts/timeslots.sh')
-(defpoll time-content :interval "10s" '~/.config/eww/scripts/time.sh')
-(defpoll date-content :interval "3600s" '~/.config/eww/scripts/date.sh')
-(defpoll time-day :interval "3600s" '~/.config/eww/scripts/time-day.sh')
-(defpoll battery-perc :interval "60s" '~/.config/eww/scripts/bat-perc.sh')
-(defpoll battery-icon :interval "60s" '~/.config/eww/scripts/bat-icon.sh')
-(defpoll wifi-name :interval "30s" '~/.config/eww/scripts/wifi-name.sh')
-(defpoll wifi-icon :interval "30s" '~/.config/eww/scripts/wifi-icon.sh')
+;; eww.yuck
 
-(defwidget todo-widget []
-  (box
-      :orientation "v" :space-evenly false
+;; --- Variables ---
+(defpoll volume :interval "1s" "pamixer --get-volume")
+(defpoll music-artist :interval "1s" "scripts/music.sh artist")
+(defpoll music-title :interval "1s" "scripts/music.sh title")
+(defpoll wifi-name :interval "30s" "scripts/wifi.sh")
+(defpoll bluetooth-name :interval "30s" "scripts/bluetooth.sh")
+(defpoll brightness :interval "1s" "light -G")
+;(defpoll notifications :interval "2s" "/home/savar/.config/eww/scripts/logger.sh get") ;; Polls the script above
+(defvar notifications "[{\"summary\":\"End\",\"body\":\"Frank Ocean\",\"appname\":\"ncmpcpp\",\"id\":93435},{\"summary\":\"Monks\",\"body\":\"Frank Ocean\",\"appname\":\"ncmpcpp\",\"id\":93435},{\"summary\":\"White\",\"body\":\"Frank Ocean/John Mayer\",\"appname\":\"ncmpcpp\",\"id\":93435}]")
+(defvar is_active_red true)
+(defvar is_active_focus false)
+(defvar is_active_music true)
+(defvar is_active_gray false)
+(defvar is_active_btn_square true)
 
-    (box
-      :space-evenly false
-      :spacing 10
-      (label :xalign 0 :class "heading-icon" :text "")
-      (label :xalign 0 :class "heading" :text "Todo")
-    )
-      ;(label :xalign 0 :class "heading" :markup "<span font_size=\"large\">Todo</span>")
-      (label :xalign 0 :text todo-content)
-      ))
+(deflisten foo :initial "whatever"
+  `tail -F /tmp/some_file`)
 
-(defwidget timeslots-widget []
-  (box
-    :orientation "v" :space-evenly false
-    (label :xalign 0 :class "heading" :text "Time Slots")
-    (label :xalign 0 :class "text" :text timeslots-content)
-    ))
+;; --- The Window ---
+(defwindow control_center
+  :monitor 0
+  :geometry (geometry :x "-5px" :y "55px" :width "350px" :height "0px" :anchor "top right")
+  :stacking "fg"
+  (control_layout))
 
-(defwidget quote-widget []
-  (box
-    (box :space-evenly false :spacing 10
-         ;(label :xalign 0 :class "icon" :text "")
-         (label :xalign 0 :text quote-content)
-         ;(label :xalign 0 :class "icon" :text "")
-         )))
+;; --- The Layout ---
+(defwidget control_layout []
+  (box :class "slate-container" :orientation "v" :space-evenly false :spacing 20
 
-(defwidget at-a-glance-widget []
-  (box
-    :orientation "v"
-    :halign "start"
-    :valign "start"
-    :space-evenly false
-    (label :xalign 0 :class "subheading" :text time-day)
-    (label :xalign 0  :class "heading" :text time-content)
-    (box
-      :orientation "h"
-      :halign "start"
-      :space-evenly false
-      :spacing 20
-      (label :xalign 0 :class "subsubheading" :text date-content)
-      ;(label :xalign 0 :class "subsubheading" :text battery-cycle-content)
-    )
-    (box
-      :orientation "h"
-      :halign "start"
-      :space-evenly false
-      :spacing 20
-    (box
-      :orientation "h"
-      :halign "start"
-      :space-evenly false
-      :spacing 10
-      (label :xalign 0 :class "icon" :text battery-icon)
-      (label :xalign 0 :class "text" :text battery-perc)
-    )
-    (box
-      :orientation "h"
-      :halign "start"
-      :space-evenly false
-      :spacing 10
-      (label :xalign 0 :class "icon" :text wifi-icon)
-      (label :xalign 0 :class "text" :text wifi-name)
-    )
-    )
+    ;; 1. HEADER (Profile & Toggles)
+    (box :class "control-section" :orientation "h" :spacing 15 :space-evenly false
+         ;; Toggles Grid
+         (box :orientation "v" :class "toggle-btn-wrapper" :valign "center" :spacing 8 :space-evenly false
+              (toggle_btn :classname "${wifi-name != 'Off' ? 'active' : ''}" :icon "" :label "Wifi" :label2 "${wifi-name}" :cmd "st -c 'floating' -g 80x20 -e iwctl & eww open control_center --toggle")
+              (toggle_btn :classname "${bluetooth-name != 'Off' ? 'active' : ''}" :icon "" :label "Bluetooth" :label2 "${bluetooth-name}" :cmd "st -c 'floating' -g 80x20 -e bluetoothctl & eww open control_center --toggle")
+                   (toggle_btn :classname "${is_active_focus ? 'active' : ''}" :icon "" :label "Share" :label2 "Oneplus 13s" :cmd "notify-send \"Test\" > /tmp/notify_debug.log 2>&1")
+              )
+         (box :orientation "v" :spacing 13 :space-evenly false
+              (box :orientation "v" :class "toggle-btn-wrapper" :spacing 0
+              (toggle_btn :classname "perform" :icon "" :label "Energy Mode" :label2 "${is_active_red ? 'Balanced' : 'Performance'}" :cmd "notify-send \"yea\"")
+                   )
+              (box :orientation "h" :spacing 15 :width 70
+                   (toggle_btn_square :icon "" :classname "${is_active_red ? 'active-square' : ''}" :label "Blue\\nLight Filter" :cmd "notify-send hi")
+                   (toggle_btn_square :icon "" :classname "${is_active_gray ? 'active-square' : ''}" :label "Screen\\nCapturing" :cmd "notify-send hi")
+                   )
+              )
+         )
+
+    ;; 2. SLIDERS (Vol / Bright)
+    (box :class "control-section" :orientation "v" :spacing 15
+         (slider_bar :label "Sound" :val volume :onchange "pamixer --set-volume {}")
+         (slider_bar :label "Display" :val brightness :onchange "light -S {}"))
+
+    ;; 3. MUSIC
+    (box :class "music-section" :orientation "h" :spacing 20 :space-evenly false
+         (box 
+           :class "rounded-image" 
+           :style "background-image: url('/tmp/ncmpcpp_cover-savar.jpg');"
+           )
+         (box :orientation "v" :spacing 0 :halign "start" :valign "center"
+              (label :halign "start" :class "music-title" :text "${music-title}")
+              (label :halign "start" :class "music-artist" :text "${music-artist}")
+              )
+         (box :orientation "h" :spacing 0 :halign "end" :hexpand true
+         (button :onclick "mpc toggle"
+                 (label :class "icon-alt play" :text "${is_active_music ? '' : ''}"))
+         (label :class "icon-alt forward" :text "")
+              )
+         )
+
+    ;; 4. NOTIFICATION HISTORY
+    ;(box :class "notif-section" :orientation "v" :space-evenly false
+         ;(box :orientation "h" :space-evenly true
+              ;(label :text "Notification History" :class "section-title" :halign "start")
+              ;)
+         ;
+         ;(scroll :hscroll false :vscroll true :height 250
+                 ;(box :orientation "v" :spacing 10 :space-evenly false
+                      ;(for entry in notifications
+                           ;(notif_card :app {entry.app} 
+                                       ;:summary {entry.summary} 
+                                       ;:body {entry.body}
+                                       ;:urgency {entry.urgency})))))
+  ))
+
+;; --- WIDGETS ---
+
+(defwidget toggle_btn2 [icon label cmd]
+  (button :class "btn-toggle" :onclick cmd
+          (overlay
+            (box :orientation "h" :space-evenly false :spacing 10 :class "content-btn-toggle"
+                 (box :class "icon" :width 54
+                      (label :text icon)
+                      )
+                 (label :halign "start" :text label)
+                 )
+            (box :orientation "h"
+                 :hexpand true
+                 :halign "end"
+                 (label :class "carrot" :text "›"))
+            )
+          )
   )
-)
 
-(defwindow todo
-  :monitor 0 :stacking "bg"
-  :geometry (geometry :x "30px" :y "450" :width "500px" :anchor "top left")
-  (todo-widget))
-(defwindow quote
-  :monitor 0 :stacking "bg"
-  :geometry (geometry :x "30px" :y "-20px" :width "800px" :anchor "bottom left")
-  (quote-widget))
-(defwindow at-a-glance
-  :monitor 0 :stacking "bg"
-  :geometry (geometry :x "30px" :y "80px" :width "400px" :anchor "top left")
-  (at-a-glance-widget))
-(defwindow timeslots
-  :monitor 0 :stacking "bg"
-  :geometry (geometry :x "20px" :y "100px" :width "225px" :anchor "top right")
-  (timeslots-widget))
+(defwidget toggle_btn [icon ?classname label ?label2 cmd]
+  (button :class "btn-toggle ${classname}" :onclick cmd
+          (overlay
+            (box :orientation "h" :space-evenly false :spacing 10 :class "content-btn-toggle"
+                 (box :class "icon" :width 48
+                      (label :text icon)
+                      )
+                 (box :orientation "${label2 != '' ? 'v' : 'h' }" :space-evenly false :spacing 1
+                      (label :halign "start" :text label)
+                      (label :halign "start" :visible {label2 != ""} :class "label2" :text label2)
+                      )
+                 )
+            (box :orientation "h"
+                 :hexpand true
+                 :halign "end"
+                 (label :class "carrot" :text "›"))
+            )
+          )
+  )
+
+(defwidget toggle_btn_square [icon ?classname label cmd]
+  (button :class "btn-toggle-square ${classname}" :onclick cmd
+          (box :space-evenly false :valign "center" :orientation "v" :spacing 10
+               (label :class "icon-alt" :text icon)
+               (label :class "label" :justify "center" :text label)
+               )
+          )
+  )
+
+(defwidget slider_bar [label val onchange]
+  (box :orientation "v" :space-evenly false :spacing 0 :class "slider-box"
+       (label :class "slider-label" :halign "start" :text label)
+       (scale :min 0 :max 100 :value {val == "" ? 0 : val} :onchange onchange :hexpand true)))
+
+(defwidget notif_card [app summary body urgency]
+  (box :class {urgency == 2 ? "notif-card critical" : "notif-card normal"} 
+       :orientation "v" :space-evenly false :spacing 5
+       (box :orientation "h" :space-evenly true
+            (label :class "notif-summary" :text summary :halign "start" :limit-width 30)
+            (label :class "notif-time" :text "Now" :halign "end"))
+       (label :class "notif-body" :text body :halign "start" :wrap true)))

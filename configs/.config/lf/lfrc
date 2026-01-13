@@ -23,6 +23,9 @@ cmd open ${{
 	image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f sioyek --new-window $fx >/dev/null 2>&1 ;;
         text/*|text/lua|text/srt|application/json|inode/x-empty) printf "\033]0;nvim $fx\007" > /dev/tty; nvim $fx;;
 	*/lua) nvim $fx;;
+	*/javascript) nvim $fx;;
+	text/x-diff) nvim $fx;;
+	text/x-patch) nvim $fx;;
         text/csv) sc-im $fx;;
 	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
 	#image/svg+xml) display -- $f ;;

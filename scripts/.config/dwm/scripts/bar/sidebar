@@ -1,0 +1,5 @@
+#!/bin/sh
+pgrep eww || eww daemon
+
+eww open --toggle at-a-glance &
+eww open --toggle todo &

@@ -1,4 +1,4 @@
 #!/bin/sh
 # This directory has all the scripts except the stdout ones. Those are supposed to be in ~/.local/bin/ directory
-script=$(ls --ignore="dmlscripts" --ignore="dmpass" --ignore="sb_*" $HOME/.local/scripts | ${MYMENU:-dmenu} -p "scripts:")
+script=$(ls --ignore="dmlscripts" --ignore="dmpass" --ignore="sb_*" --ignore="*.md" $HOME/.local/scripts | ${MYMENU:-dmenu} -p "scripts:")
 [ "$script" ] && $HOME/.local/scripts/$script

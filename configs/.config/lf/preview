@@ -81,7 +81,7 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 		image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
 		;;
 	*.ino) batorcat --language=cpp "$1" ;;
-	*.json) batorcat "$1" ;;
+	*.json|*.js|*.jsx|*.diff) batorcat "$1" ;;
 	*) file -ibL "$1" | grep -q text && batorcat "$1" || file -Lb "$1" ;;
 esac
 exit 0

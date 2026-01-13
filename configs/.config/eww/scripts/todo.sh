@@ -7,5 +7,5 @@ while read l; do
 	fi
 done < ~/dox/todo
 
-notify-send "Eww" "Todo Restarted"
-xdo lower -N Eww
+#notify-send "Eww" "Todo Restarted"
+#xdo lower -N Eww

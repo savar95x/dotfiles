@@ -2,11 +2,8 @@
 DIR=~/.config/dwm/scripts
 . $DIR/vars.sh
 
-echo ""
-
-val=$(vibrant-cli eDP-1 | grep eDP | cut -d' ' -f5)
+echo "^c$FG^^b$BG^"
 
 case "$BLOCK_BUTTON" in
-	1) vibrant-cli eDP-1 1 & ;;
-	3) vibrant-cli eDP-1 0 & ;;
+	1) $DIR/bar/control_center & ;;
 esac

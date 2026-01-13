@@ -1,64 +1,253 @@
-$clr-fg: rgba(220,198,160,0.85);
-$clr-fg-bold: rgba(220,198,160,0.95);
-$clr-fg-light: rgba(220,198,160,0.685);
-$font-family: "Geist";
-$font-family-icons: "font awesome 7 free";
-$size-1: 16;
-$size-2: 20;
-$size-3: 28;
-$size-10: 80;
-$weight-0: 500;
-$weight-1: 600;
-$weight-2: 700;
-$weight-3: 800;
+// eww.scss
 
-* {
+// Palette
+$bg: #111111;
+$bg2: #191919;
+$bg3: #212121;
+$grey: #353535;
+$grey2: #414141;
+$fg: #ebdbb2;
+$fg2: #D5C7A3;
+$dim: #605955;
+$accent: #a89984; // Beige
+$accent2: #D57B76;
+$red: #cc241d;
+
+.slate-container {
+  background-color: $bg;
+  border: 1px solid $bg2; // Thick industrial border
+  padding: 20px;
+}
+
+.perform .icon {
+  color: $fg;
+}
+
+.section-title {
+  color: $dim;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+// --- BUTTONS ---
+.toggle-btn-wrapper {
+  background-color: $bg3;
+  border-radius: 10px;
+  padding: 1.125rem;
+}
+.content-btn-toggle {
+  margin-right: 1.5rem;
+}
+.btn-toggle-square {
+  all: unset;
+  padding: 0.75rem;
+  background-color: $bg3;
+  border: 0px solid $bg3;
+  transition: 200ms;
+  font-weight: 500;
+  color: $fg;
+  border-radius: 10px;
+  font-family: "geist";
+  min-width: 76px;
+  min-height: 76px;
+}
+.btn-toggle-square .icon-alt {
+  font-size: 20px;
+  color: $accent;
+}
+.btn-toggle-square .label {
+  font-size: 0.875rem;
+  color: $accent;
+}
+.btn-toggle {
+  all: unset;
+  padding: 5px;
+  transition: 200ms;
+  font-weight: 500;
+  color: $fg;
+  font-family: "geist";
+}
+.btn-toggle overlay:first-child {
+  margin-right: 1rem;
+}
+.label2 {
+  font-size: 0.825rem;
+  color: $accent;
+}
+.btn-toggle:hover .carrot {
+  opacity: 1;
+}
+.icon {
+  font-size: 14px;
+  background: $grey;
+  border-radius: 50%;
+  padding: 0.75rem;
+  color: $accent;
+  margin-right: 10px;
+  font-family: "font awesome 7 free";
+}
+.icon label, .icon-alt {
+  font-family: "font awesome 7 free";
+}
+
+.active .icon {
+  background: $fg;
+  color: $bg;
+}
+
+.active-square {
+  background: $accent;
+}
+.active-square .icon-alt, .active-square .label {
+  color: $bg;
+}
+
+// --- SLIDERS ---
+.slider-box {
+  background-color: $bg3;
+  padding: 0.75rem;
+  border-radius: 10px;
+}
+.slider-label {
+    padding: 10px 0 0px 10px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+scale {
+  // This styles the overall container of the slider
+  
+  // The "trough" is the background track of the slider
+  trough {
+    all: unset; // Reset default GTK styles
+    background-color: #3e3e3e;
+    border-radius: 12px;
+    min-height: 8px; // Thickness of the track
+    min-width: 150px; // Width of the slider
+    padding-left: 20px;
+  }
+
+  // The "highlight" is the active/filled part of the bar (left of the knob)
+  highlight {
+    all: unset;
+    background-color: $accent; // Your accent color (e.g., Catppuccin Blue)
+    border-radius: 12px;
+    min-height: 24px;
+    margin-left: -20px;
+  }
+
+  // The "slider" is the knob/handle you drag
+  slider {
+    all: unset;
+    background-color: $fg;
+    border-radius: 50%;
+    min-height: 24px;
+    min-width: 24px;
+    margin-top: -4px; // Adjust to center the knob vertically on the track
+    margin-left: -16px;
+    margin-bottom: -4px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    transition: 100ms;
+  }
+
+  // Hover effects (optional)
+  slider:active {
+    background-color: $fg2;
+  }
+}
+
+// --- NOTIFICATIONS ---
+.notif-section {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.clear-btn {
+  color: $dim;
+  font-size: 10px;
+}
+.clear-btn:hover { color: $red; }
+
+.notif-card {
+  background-color: $bg3;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-left: 2px solid $dim; // Default indicator
+}
+
+.notif-card.critical {
+  border-left-color: $red; // Red indicator for urgent
+}
+.notif-card.normal {
+  border-left-color: $accent; // Beige indicator for normal
+}
+
+.carrot {
+  opacity: 0;
+  transition: 100ms;
+  font-size: 1.25rem;
+  color: $accent;
+  background-image: linear-gradient(to right, 
+  rgba(33, 33, 33, 0),
+  $bg3 1.5rem
+  );
+  padding-left: 2rem;
+}
+
+.notif-app { color: $dim; font-size: 10px; font-weight: bold; }
+.notif-time { color: $dim; font-size: 10px; font-weight: bold; }
+.notif-summary { color: $fg; font-size: 1rem; font-weight: bold; }
+.notif-body { color: $dim; font-size: 0.825rem; }
+.notif-card {
+  all: unset;
+  background: $bg2;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+image {
+  border-radius: 6px;
+}
+.rounded-image {
+  min-width: 96px;
+  min-height: 96px;
+  border-radius: 4px;
+  background-size: cover; 
+  background-position: center;
+}
+
+.music-section {
+  padding: 1.25rem;
+  background: $bg3;
+  border-radius: 0.5rem;
+}
+.forward {
+  color: $grey2;
+}
+.play, .forward {
+  font-family: "font awesome 7 free";
+  padding: 0.5rem;
+}
+.active-icon {
   background: none;
-  font-family: $font-family;
-  color: $clr-fg;
+  color: $fg;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+.music-title {
+  font-weight: 500;
+}
+.music-artist {
+  font-weight: 400;
+  color: $accent;
+  font-size: 0.825rem;
 }
 
-.todo {
-  .heading {
-    margin-bottom: 1rem;
-    font-size: $size-2;
-  }
-  .heading-icon {
-    font-family: $font-family-icons;
-    margin-bottom: 1rem;
-    font-size: $size-1;
-    font-weight: $weight-2;
-  }
-  font-size: $size-1;
-}
 
-.quote {
-  color: $clr-fg;
-  font-size: 18;
-  .icon {
-    margin-bottom: 1rem;
-    font-size: 12;
-    color: $clr-fg-light;
-  }
+.toggle-btn-wrapper, .btn-toggle-square, .music-section, .slider-box {
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.75);
 }
-
-.at-a-glance {
-  .heading {
-    font-size: $size-10;
-    font-weight: $weight-3;
-  }
-  .subheading {
-    font-size: $size-3;
-    font-weight: $weight-2;
-  }
-  .subsubheading {
-    font-size: $size-2;
-    font-weight: $weight-1;
-  }
-  .text, .icon {
-    font-size: $size-1;
-    font-weight: $weight-0;
-    margin-top: 1.5rem;
-  }
-  .icon { font-family: $font-family-icons; }
+button {
+  all: unset;
 }

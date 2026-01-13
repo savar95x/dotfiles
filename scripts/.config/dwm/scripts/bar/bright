@@ -1,2 +1,4 @@
 #!/bin/sh
-light -$1 $2 && dunstify -r 11 -a "volume" --hints=int:value:"$(printf '%.0f\n' $(light))"  -i ~/pix/assets/icons/sun-solid.svg "Brightness" "$(printf '%.1f\n' $(light))"
+if [ "$(grep "^ID" < /etc/os-release | cut -d '"' -f 2)" != "void" ]; then
+	light -$1 $2;
+fi && dunstify -r 11 -a "volume" --hints=int:value:"$(printf '%.0f\n' $(light))"  -i ~/pix/assets/icons/sun-solid.svg "Brightness" "$(printf '%.1f\n' $(light))"

@@ -1,0 +1,46 @@
+configuration {
+    font: "JetBrains Mono 12";
+    show-icons: false;
+}
+
+window {
+    width: 350px;
+    background-color: #1d2021; /* Dark Background */
+    border: 1px;
+    border-color: #a89984;     /* Beige Border */
+    padding: 20px;
+    location: northeast;       /* Top Right Corner */
+    anchor: northeast;
+    x-offset: -20px;
+    y-offset: 60px;
+}
+
+inputbar {
+    enabled: false;            /* Hides the search bar completely */
+}
+
+listview {
+    columns: 2;                /* 2-Column Grid */
+    lines: 3;
+    spacing: 15px;             /* Gaps between "Buttons" */
+    background-color: transparent;
+}
+
+element {
+    background-color: #282828; /* Button Color (Lighter Grey) */
+    text-color: #ebdbb2;
+    padding: 20px 10px;        /* Tall buttons */
+    border-radius: 0px;        /* Sharp Corners (Industrial) */
+}
+
+element selected {
+    background-color: #a89984; /* Active Button (Beige) */
+    text-color: #1d2021;       /* Dark Text */
+}
+
+element-text {
+    horizontal-align: 0.5;     /* Center text */
+    vertical-align: 0.5;
+    background-color: inherit;
+    text-color: inherit;
+}

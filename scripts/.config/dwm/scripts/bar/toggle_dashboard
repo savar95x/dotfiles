@@ -1,0 +1,6 @@
+#!/bin/bash
+if eww windows | grep -q "*control_center"; then
+    eww close control_center info_center
+else
+    eww open-many control_center info_center
+fi

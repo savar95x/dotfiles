@@ -1,43 +1,27 @@
--- launching lualine with the default options
+local custom_gruvbox = require('lualine.themes.gruvbox-material')
+
+-- Function to make a section transparent
+local function transparent_bg(section)
+  if section then
+    section.bg = '#151515' -- Forces it to use the terminal background
+  end
+end
+
+-- Apply transparency to the "Middle" and "Inactive" parts
+-- We keep 'a' (the mode indicator) colored so it pops
+for _, mode in pairs(custom_gruvbox) do
+  transparent_bg(mode.b)
+  transparent_bg(mode.c)
+  transparent_bg(mode.x)
+  transparent_bg(mode.y)
+  transparent_bg(mode.z)
+end
+
 require('lualine').setup {
-	options = {
-		icons_enabled = true,
-		theme = 'auto',
-		--component_separators = { left = '', right = ''},
-		--section_separators = { left = '', right = ''},
-		component_separators = { left = '', right = ''},
-		section_separators = { left = '', right = ''},
-		disabled_filetypes = {
-			statusline = {},
-			winbar = {},
-		},
-		ignore_focus = {},
-		always_divide_middle = true,
-		globalstatus = false,
-		refresh = {
-			statusline = 1000,
-			tabline = 1000,
-			winbar = 1000,
-		}
-	},
-	sections = {
-		lualine_a = {'mode'},
-		lualine_b = {'branch', 'diff', 'diagnostics'},
-		lualine_c = {'filename'},
-		lualine_x = {'encoding', 'fileformat', 'filetype'},
-		lualine_y = {'progress'},
-		lualine_z = {'location'}
-	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {'filename'},
-		lualine_x = {'location'},
-		lualine_y = {},
-		lualine_z = {}
-	},
-	tabline = {},
-	winbar = {},
-	inactive_winbar = {},
-	extensions = {}
+  options = {
+    theme = custom_gruvbox,
+    section_separators = '',   -- No arrows (Industrial look)
+    component_separators = '', -- Pipes (Industrial look)
+    globalstatus = false,      -- Set to true if you want one bar for all splits
+  },
 }

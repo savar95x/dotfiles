@@ -33,7 +33,8 @@
     origin = top-right
 
     # Offset from the origin
-    offset = (8, 48)
+    #offset = (8, 48)
+    offset = (5, 55)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -64,7 +65,7 @@
     progress_bar_corner_radius = 0
 
     # Corner radius for the icon image.
-    icon_corner_radius = 0
+    icon_corner_radius = 4
 
     # Show how many messages are currently hidden (because of
     # notification_limit).
@@ -95,7 +96,7 @@
     frame_width = 5
 
     # Defines color of the frame around the notification window.
-    frame_color = "#313131"
+    frame_color = "#282828"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -214,7 +215,7 @@
     min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 128
+    max_icon_size = 96
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -320,7 +321,7 @@
     default_icon = "/dev/null"
 
 [urgency_normal]
-    background = "#222222"
+    background = "#202020"
     foreground = "#BDAE93"
     highlight = "#BDAE93"
     timeout = 10

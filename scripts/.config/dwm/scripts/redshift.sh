@@ -2,7 +2,7 @@
 DIR=~/.config/dwm/scripts
 . $DIR/vars.sh
 
-echo ""
+echo "^c$FG^"
 
 val=$(vibrant-cli eDP-1 | grep eDP | cut -d' ' -f5)
 
