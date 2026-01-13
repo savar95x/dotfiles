@@ -24,7 +24,7 @@ My current dwm build and my daily driver. For readme and installation, [visit it
 ### Eww
 [Here](https://github.com/savar95x/dotfiles/tree/main/configs/.config/eww)'s the config.  
 <div align=center>
-<img width=49% src=.assets/dwm/1_3.png />
+<img width=30% src=.assets/dwm/1_3.png />
 </div>
 
 
@@ -42,10 +42,8 @@ MacOS inspired Openbox™ rice. Reddit [post](https://www.reddit.com/r/unixporn/
 
 ## older rices
 <div align=center>
-<img width=49% src=.assets/dwm/0_1.png />
-<img width=49% src=.assets/dwm/0_2.png />
-</div>
-<div align=center>
+<img width=30% src=.assets/dwm/0_1.png />
+<img width=30% src=.assets/dwm/0_2.png />
 <img width=30% src=.assets/dwm/1.png />
 </div>
 
