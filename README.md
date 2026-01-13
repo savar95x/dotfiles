@@ -15,7 +15,7 @@
 </div>
 
 # dwm
-My current [dwm build](https://github.com/savar95x/dwm) and my daily driver.  
+My current dwm build and my daily driver. For readme and installation, [visit it's repo](https://github.com/savar95x/dwm).  
 <div align=center>
 <img width=49% src=.assets/dwm/1_1.png />
 <img width=49% src=.assets/dwm/1_2.png />
