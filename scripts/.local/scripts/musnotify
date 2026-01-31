@@ -55,7 +55,9 @@ check_mpc_data
 	    -vf scale=300:-1 \
 	    "$TMP_COVER_PATH" > /dev/null 2>&1
 
-		rm "$TMP_SONG"
+		if [ -f "$TMP_SONG" ]; then
+			rm "$TMP_SONG"
+		fi
 	fi
 
 # Check if image is valid

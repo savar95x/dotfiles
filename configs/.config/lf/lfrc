@@ -1,5 +1,4 @@
 set ratios 1:2:3
-set cleaner ~/.config/lf/cleaner
 # settings
 set cursorpreviewfmt "\033[7m"
 #set cursorpreviewfmt ">"
@@ -10,8 +9,8 @@ set ifs "\n"
 set scrolloff 1
 set icons true
 set period 1
-set previewer ~/.config/lf/preview
 set cleaner ~/.config/lf/cleaner
+set previewer ~/.config/lf/scope
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
 set autoquit true
 

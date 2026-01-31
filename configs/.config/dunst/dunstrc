@@ -30,11 +30,11 @@
     height = (30, 300)
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = top-center
 
     # Offset from the origin
     #offset = (8, 48)
-    offset = (5, 55)
+    offset = (0, 60)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -65,7 +65,7 @@
     progress_bar_corner_radius = 0
 
     # Corner radius for the icon image.
-    icon_corner_radius = 4
+    icon_corner_radius = 0
 
     # Show how many messages are currently hidden (because of
     # notification_limit).
@@ -465,9 +465,11 @@
 appname = "volume"
 min_icon_size = 28
 max_icon_size = 28
+timeout = 1
 
 [scripts-notifs]
 appname = "scripts"
 min_icon_size = 28
 max_icon_size = 28
+timeout = 1
 #max_icon_size = 40

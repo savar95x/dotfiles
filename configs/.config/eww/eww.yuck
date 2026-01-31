@@ -1,19 +1,31 @@
 ;; eww.yuck
 
 ;; --- Variables ---
-(defpoll volume :interval "1s" "pamixer --get-volume")
-(defpoll music-artist :interval "1s" "scripts/music.sh artist")
-(defpoll music-title :interval "1s" "scripts/music.sh title")
-(defpoll wifi-name :interval "30s" "scripts/wifi.sh")
-(defpoll bluetooth-name :interval "30s" "scripts/bluetooth.sh")
-(defpoll brightness :interval "1s" "light -G")
-;(defpoll notifications :interval "2s" "/home/savar/.config/eww/scripts/logger.sh get") ;; Polls the script above
-(defvar notifications "[{\"summary\":\"End\",\"body\":\"Frank Ocean\",\"appname\":\"ncmpcpp\",\"id\":93435},{\"summary\":\"Monks\",\"body\":\"Frank Ocean\",\"appname\":\"ncmpcpp\",\"id\":93435},{\"summary\":\"White\",\"body\":\"Frank Ocean/John Mayer\",\"appname\":\"ncmpcpp\",\"id\":93435}]")
+;(defpoll notifications :interval "2s" "/home/savar/.config/eww/scripts/notif-logger.sh get") ;; Polls the script above
+;(defvar notifications "[{\"summary\":\"End\",\"body\":\"Frank Ocean\",\"appname\":\"ncmpcpp\",\"id\":93435},{\"summary\":\"Monks\",\"body\":\"Frank Ocean\",\"appname\":\"ncmpcpp\",\"id\":93435},{\"summary\":\"White\",\"body\":\"Frank Ocean/John Mayer\",\"appname\":\"ncmpcpp\",\"id\":93435}]")
+
+(deflisten volume :initial "0" "scripts/vol.sh")
+(deflisten brightness :initial "0" "scripts/bright.sh")
+(deflisten music-artist :initial "" "scripts/music.sh artist")
+(deflisten music-title :initial "Music" "scripts/music.sh title")
+(deflisten music_status :initial "stopped" "scripts/music.sh status")
+(deflisten wifi-name :initial "0" "scripts/wifi.sh")
+(deflisten bluetooth-name :initial "0" "scripts/bluetooth.sh")
+(deflisten music_art :initial
+  "
+  background-image: url('/home/savar/pix/assets/icons/heart-solid.svg');
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: 48px;
+  "
+  "scripts/music.sh art")
 (defvar is_active_red true)
+(defvar is_active_perf "true")
 (defvar is_active_focus false)
-(defvar is_active_music true)
 (defvar is_active_gray false)
 (defvar is_active_btn_square true)
+(defpoll recording :interval "1s" 
+  "if [ -f /tmp/ffmpeg_recording_pid ]; then echo 'REC'; else echo ''; fi")
 
 (deflisten foo :initial "whatever"
   `tail -F /tmp/some_file`)
@@ -33,17 +45,17 @@
     (box :class "control-section" :orientation "h" :spacing 15 :space-evenly false
          ;; Toggles Grid
          (box :orientation "v" :class "toggle-btn-wrapper" :valign "center" :spacing 8 :space-evenly false
-              (toggle_btn :classname "${wifi-name != 'Off' ? 'active' : ''}" :icon "" :label "Wifi" :label2 "${wifi-name}" :cmd "st -c 'floating' -g 80x20 -e iwctl & eww open control_center --toggle")
-              (toggle_btn :classname "${bluetooth-name != 'Off' ? 'active' : ''}" :icon "" :label "Bluetooth" :label2 "${bluetooth-name}" :cmd "st -c 'floating' -g 80x20 -e bluetoothctl & eww open control_center --toggle")
+              (toggle_btn :classname "${wifi-name != 'Off' ? 'active' : ''}" :icon "" :label "Wifi" :label2 "${wifi-name}" :cmd "st -c 'floating' -g 80x20 -e iwctl &")
+              (toggle_btn :classname "${bluetooth-name != 'Off' ? 'active' : ''}" :icon "" :label "Bluetooth" :label2 "${bluetooth-name}" :cmd "st -c 'floating' -g 80x20 -e bluetoothctl &")
                    (toggle_btn :classname "${is_active_focus ? 'active' : ''}" :icon "" :label "Share" :label2 "Oneplus 13s" :cmd "notify-send \"Test\" > /tmp/notify_debug.log 2>&1")
               )
          (box :orientation "v" :spacing 13 :space-evenly false
               (box :orientation "v" :class "toggle-btn-wrapper" :spacing 0
-              (toggle_btn :classname "perform" :icon "" :label "Energy Mode" :label2 "${is_active_red ? 'Balanced' : 'Performance'}" :cmd "notify-send \"yea\"")
+              (toggle_btn :classname "perform" :icon "" :label "Energy Mode" :label2 "${is_active_perf == "true" ? 'Balanced' : 'Performance'}" :cmd "scripts/energy.sh")
                    )
               (box :orientation "h" :spacing 15 :width 70
-                   (toggle_btn_square :icon "" :classname "${is_active_red ? 'active-square' : ''}" :label "Blue\\nLight Filter" :cmd "notify-send hi")
-                   (toggle_btn_square :icon "" :classname "${is_active_gray ? 'active-square' : ''}" :label "Screen\\nCapturing" :cmd "notify-send hi")
+                   (toggle_btn_square :icon "" :classname "${is_active_red ? 'active-square' : ''}" :label "Night Light" :cmd "scripts/red.sh")
+                   (toggle_btn_square :icon "" :classname "${recording == "REC" ? 'active-square' : ''}" :label "Capture" :cmd "scripts/record.sh")
                    )
               )
          )
@@ -55,19 +67,21 @@
 
     ;; 3. MUSIC
     (box :class "music-section" :orientation "h" :spacing 20 :space-evenly false
-         (box 
+         (button :onclick "st -c 'floating' -g 80x16 -e ncmpcpp &"
            :class "rounded-image" 
-           :style "background-image: url('/tmp/ncmpcpp_cover-savar.jpg');"
+           :style "${music_art}"
            )
          (box :orientation "v" :spacing 0 :halign "start" :valign "center"
-              (label :halign "start" :class "music-title" :text "${music-title}")
-              (label :halign "start" :class "music-artist" :text "${music-artist}")
+              (label :halign "start" :class "music-title" :limit-width 20 :text "${music-title}")
+              (label :halign "start" :class "music-artist" :limit-width 20 :visible {music-artist != '' ? true : false} :text "${music-artist}")
               )
          (box :orientation "h" :spacing 0 :halign "end" :hexpand true
-         (button :onclick "mpc toggle"
-                 (label :class "icon-alt play" :text "${is_active_music ? '' : ''}"))
-         (label :class "icon-alt forward" :text "")
+              (button :onclick "mpc toggle"
+                      (label :class "icon-alt play" :text "${music_status == 'playing' ? '' : ''}"))
+              (button :onclick "mpc next"
+                      (label :class "icon-alt ${music_status != 'stopped' ? 'play' : 'forward'}" :text ""))
               )
+
          )
 
     ;; 4. NOTIFICATION HISTORY
@@ -86,23 +100,6 @@
   ))
 
 ;; --- WIDGETS ---
-
-(defwidget toggle_btn2 [icon label cmd]
-  (button :class "btn-toggle" :onclick cmd
-          (overlay
-            (box :orientation "h" :space-evenly false :spacing 10 :class "content-btn-toggle"
-                 (box :class "icon" :width 54
-                      (label :text icon)
-                      )
-                 (label :halign "start" :text label)
-                 )
-            (box :orientation "h"
-                 :hexpand true
-                 :halign "end"
-                 (label :class "carrot" :text "›"))
-            )
-          )
-  )
 
 (defwidget toggle_btn [icon ?classname label ?label2 cmd]
   (button :class "btn-toggle ${classname}" :onclick cmd
@@ -136,6 +133,10 @@
 (defwidget slider_bar [label val onchange]
   (box :orientation "v" :space-evenly false :spacing 0 :class "slider-box"
        (label :class "slider-label" :halign "start" :text label)
+       (scale :min 0 :max 100 :value {val == "" ? 0 : val} :onchange onchange :hexpand true)))
+
+(defwidget slider_thin [label val onchange]
+  (box :orientation "v" :space-evenly false :spacing 0 :class "slider-thin-box"
        (scale :min 0 :max 100 :value {val == "" ? 0 : val} :onchange onchange :hexpand true)))
 
 (defwidget notif_card [app summary body urgency]

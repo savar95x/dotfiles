@@ -93,4 +93,5 @@ color1 = "white"
 color2 = "blue"
 
 
-execute_on_song_change = musnotify &
+#execute_on_player_state_change =  pkill -RTMIN+1 dwmblocks &
+#execute_on_song_change = musnotify &

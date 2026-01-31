@@ -7,13 +7,13 @@ fi
 pkill picom; setsid -f picom --config $HOME/.config/dwm/assets/picom/active.conf &
 pkill dunst; setsid -f dunst &
 pkill dwmblocks; setsid -f sleep 1 && dwmblocks &
-#pkill eww; eww daemon & eww open todo & eww open at-a-glance & sleep 1; eww open quote &
 
 ### quality of life ###
 xwallpaper --zoom "$(ls -1 ~/pix/walls/new/* | shuf -n 1)"
 xset r rate 215 40
 setxkbmap -option caps:swapescape 
 xrdb -load $HOME/.config/x11/xresources
+#pgrep mpd.sh || setsid -f $HOME/.config/dwm/scripts/bar/mpd.sh
 
 sleep 2 && xdo lower -n eww
 

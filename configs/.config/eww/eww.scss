@@ -1,17 +1,24 @@
 // eww.scss
 
 // Palette
-$bg: #111111;
+$bg: #151515;
 $bg2: #191919;
 $bg3: #212121;
-$grey: #353535;
-$grey2: #414141;
+$grey: #303030;
+$grey2: #454545;
 $fg: #ebdbb2;
 $fg2: #D5C7A3;
-$dim: #605955;
+$dim: #333333;
 $accent: #a89984; // Beige
-$accent2: #D57B76;
-$red: #cc241d;
+$red: #D57B76;
+$red-dark: #4B3239;
+$blue: #7DAEA3;
+$off-blue: #A1B5ED;
+$blue-dark: #313A38;
+$yellow: #CAA264;
+$yellow-dark: #3A2E1D;
+$active: $blue;
+$active-square: $accent;
 
 .slate-container {
   background-color: $bg;
@@ -20,7 +27,8 @@ $red: #cc241d;
 }
 
 .perform .icon {
-  color: $fg;
+  color: $red;
+  background-color: $red-dark;
 }
 
 .section-title {
@@ -92,68 +100,93 @@ $red: #cc241d;
 }
 
 .active .icon {
-  background: $fg;
+  background: $active;
   color: $bg;
 }
 
 .active-square {
-  background: $accent;
+//  background: $dim;
+  background: $yellow-dark;
 }
 .active-square .icon-alt, .active-square .label {
-  color: $bg;
+//  color: $fg;
+  color: $yellow;
 }
 
+.music-player {
+  margin-top: 20px;
+}
 // --- SLIDERS ---
+.slider-thin-box {
+  margin: 0px 0 0 0;
+  padding: 0px 0 0 0;
+  min-height: 0px;
+  margin: -10px 50px 0 50px;
+  slider { // the knob
+    all: unset;
+    background-color: $fg;
+    border-radius: 50%;
+    min-height: 0px;
+    min-width: 0px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    margin: 0px 0 0 0;
+    padding: 0px 0 0 0;
+    margin: -0px;
+  }
+  highlight, trough {
+    margin: 0px 0 0 0;
+    padding: 0px 0 0 0;
+    min-height: 2px;
+  }
+  highlight {
+  }
+}
+
 .slider-box {
   background-color: $bg3;
   padding: 0.75rem;
   border-radius: 10px;
+  font-family: "geist";
 }
 .slider-label {
-    padding: 10px 0 0px 10px;
-    font-size: 1rem;
+    padding: 10px 0 0px 12px;
+    font-size: 0.875rem;
     font-weight: 500;
 }
+
+
+.slider-box {
 scale {
-  // This styles the overall container of the slider
-  
-  // The "trough" is the background track of the slider
   trough {
-    all: unset; // Reset default GTK styles
-    background-color: #3e3e3e;
-    border-radius: 12px;
-    min-height: 8px; // Thickness of the track
+    all: unset;
+    background-color: $bg2;
+    border-radius: 13px;
     min-width: 150px; // Width of the slider
-    padding-left: 20px;
+    padding-left: 25px;
   }
 
-  // The "highlight" is the active/filled part of the bar (left of the knob)
   highlight {
     all: unset;
-    background-color: $accent; // Your accent color (e.g., Catppuccin Blue)
-    border-radius: 12px;
-    min-height: 24px;
-    margin-left: -20px;
+    background-color: $accent;
+    border-radius: 13px;
+    margin-left: -25px;
   }
 
-  // The "slider" is the knob/handle you drag
-  slider {
+  slider { // the knob
     all: unset;
     background-color: $fg;
     border-radius: 50%;
-    min-height: 24px;
-    min-width: 24px;
-    margin-top: -4px; // Adjust to center the knob vertically on the track
-    margin-left: -16px;
-    margin-bottom: -4px;
+    min-height: 26px;
+    min-width: 26px;
+    margin-left: -25px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     transition: 100ms;
   }
 
-  // Hover effects (optional)
   slider:active {
     background-color: $fg2;
   }
+}
 }
 
 // --- NOTIFICATIONS ---
@@ -176,7 +209,7 @@ scale {
 }
 
 .notif-card.critical {
-  border-left-color: $red; // Red indicator for urgent
+  border-left-color: $red;
 }
 .notif-card.normal {
   border-left-color: $accent; // Beige indicator for normal
@@ -212,14 +245,14 @@ image {
   min-width: 96px;
   min-height: 96px;
   border-radius: 4px;
-  background-size: cover; 
-  background-position: center;
+  background-color: $bg2;
 }
 
 .music-section {
-  padding: 1.25rem;
+  padding: 1.5rem;
   background: $bg3;
   border-radius: 0.5rem;
+  font-family: "geist";
 }
 .forward {
   color: $grey2;
@@ -227,6 +260,7 @@ image {
 .play, .forward {
   font-family: "font awesome 7 free";
   padding: 0.5rem;
+  font-size: 1rem;
 }
 .active-icon {
   background: none;
@@ -243,7 +277,6 @@ image {
   color: $accent;
   font-size: 0.825rem;
 }
-
 
 .toggle-btn-wrapper, .btn-toggle-square, .music-section, .slider-box {
   box-shadow: 0px 5px 10px rgba(0,0,0,0.75);

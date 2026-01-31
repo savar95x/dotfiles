@@ -1,0 +1,11 @@
+#!/bin/sh
+# Needs sudo privileges. You might need to configure doas/sudoers to run this without password
+# or just run it in a terminal when needed.
+sudo modprobe -r psmouse
+sleep 0.5
+sudo modprobe psmouse
+sleep 0.5
+sudo modprobe -r i2c_hid_acpi
+sleep 0.5
+sudo modprobe i2c_hid_acpi
+echo "Trackpad reset."

@@ -1,0 +1,2 @@
+options single-request-reopen
+nameserver 8.8.8.8

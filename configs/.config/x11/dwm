@@ -1,6 +1,7 @@
 #!/bin/sh
 export XAUTHORITY="$HOME/.local/run/x11/xauth"
 setsid -f $HOME/.config/dwm/autostart.sh &
+setsid -f eww daemon &
 export MYMENU="dmenu"
 export XDG_SESSION_TYPE=x11
 
