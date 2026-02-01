@@ -6,6 +6,8 @@ if hash redshift >/dev/null 2>&1; then
 fi
 pkill picom; setsid -f picom --config $HOME/.config/dwm/assets/picom/active.conf &
 pkill dunst; setsid -f dunst &
+pkill touchegg; setsid -f touchegg &
+pkill eww; setsid -f eww daemon &
 pkill dwmblocks; setsid -f sleep 1 && dwmblocks &
 
 ### quality of life ###
