@@ -78,7 +78,7 @@ Made using [2bWM](https://github.com/savar95x/2bwm). Reddit [post](https://www.r
 ## Dependencies
 | Type | Software/Packages |
 | --- | --- |
-| terminal | [st](https://github.com/savar95/st) |
+| terminal | [st](https://github.com/savar95x/st) |
 | shell | zsh zsh-syntax-highlighting |
 | editor | neovim |
 | file manager | lf bat ueberzug |

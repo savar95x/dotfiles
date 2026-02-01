@@ -1,6 +1,3 @@
-#!/bin/sh
-SCHEME=~/.config/dwm/scripts/colors/gruv.sh
-
 RED="#da9f8a"
 GREEN="#9fab62"
 YELLOW="#c8a267"
@@ -16,8 +13,3 @@ BGALT2="#555555"
 INACTIVE="#928374"
 BEIGE="#A89984"
 BRIGHT="#fbf1c7"
-
-UNDERLINE="^r-147,33,147,5^"
-BLCK="^r4,4,147,30^"
-
-source $SCHEME
