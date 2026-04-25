@@ -22,6 +22,7 @@ require("lazy").setup({
 	"chriskempson/base16-vim", -- base16
 	"habamax/vim-habamax", -- habamax
 	"nvim-telescope/telescope.nvim",
+	"vimwiki/vimwiki",
 	--{
 		--"lukas-reineke/indent-blankline.nvim",
 		--main = "ibl",
@@ -51,4 +52,4 @@ require "main.plugins.lualine"
 require "main.plugins.prism"
 require "main.plugins.nvim-treesitter"
 
-require 'colorizer'.setup({ mode = 'foreground' })
+--require 'colorizer'.setup( mode = 'foreground' )

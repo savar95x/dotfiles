@@ -13,5 +13,6 @@
   "telescope.nvim": { "branch": "master", "commit": "b4da76be54691e854d3e0e02c36b0245f945c2c7" },
   "vim": { "branch": "legacy", "commit": "99d4b7bf1a0a12f2d78f35a159384b1eb8aa9c15" },
   "vim-habamax": { "branch": "master", "commit": "58f4ecb36874b122c2717e1ff72d25832ed7b0bb" },
+  "vimwiki": { "branch": "dev", "commit": "72792615e739d0eb54a9c8f7e0a46a6e2407c9e8" },
   "yuck.vim": { "branch": "master", "commit": "9b5e0370f70cc30383e1dabd6c215475915fe5c3" }
 }
