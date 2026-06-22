@@ -20,11 +20,11 @@ cmd open ${{
 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
 	#image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
 	image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f sioyek --new-window $fx >/dev/null 2>&1 ;;
-        text/*|text/lua|text/srt|application/json|inode/x-empty) printf "\033]0;nvim $fx\007" > /dev/tty; nvim $fx;;
-	*/lua) nvim $fx;;
-	*/javascript) nvim $fx;;
-	text/x-diff) nvim $fx;;
-	text/x-patch) nvim $fx;;
+        text/*|text/lua|text/srt|application/json|inode/x-empty) printf "\033]0;nvim $fx\007" > /dev/tty; NVIM_TEST=1 NVIM_TEST=1 nvim $fx;;
+	*/lua) NVIM_TEST=1 NVIM_TEST=1 nvim $fx;;
+	*/javascript) NVIM_TEST=1 NVIM_TEST=1 nvim $fx;;
+	text/x-diff) NVIM_TEST=1 NVIM_TEST=1 nvim $fx;;
+	text/x-patch) NVIM_TEST=1 NVIM_TEST=1 nvim $fx;;
         text/csv) sc-im $fx;;
 	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
 	#image/svg+xml) display -- $f ;;

@@ -21,7 +21,7 @@ opt.undofile = true -- persistent undos and redos
 --opt.cursorline = true -- highlight the current row
 --opt.cursorcolumn = true -- highlight the current column
 
-opt.scrolloff = 1 -- top+bottom line padding while scrolling
+--opt.scrolloff = 1 -- top+bottom line padding while scrolling
 
 --autocmd BufWritePre *.pl %s/\s\+$//e  -- remove trailing spaces
 opt.clipboard = "unnamedplus" -- global clipboard
@@ -46,8 +46,13 @@ vim.cmd("autocmd FileType * setlocal ts=4 sts=4 sw=4 expandtab")
 
 -- treat rss as xml // tho not needed
 --vim.cmd("autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml")
+-- Disable bloated default providers
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
 
 -- Colorscheme
+vim.g.gruvbox_material_background = 'hard'
 vim.g.gruvbox_material_transparent_background = true
---vim.g.gruvbox_material_background = 'hard'
 vim.cmd("colorscheme gruvbox-material")

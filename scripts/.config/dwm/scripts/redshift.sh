@@ -4,9 +4,9 @@ DIR=~/.config/dwm/scripts
 
 echo "^c$FG^"
 
-val=$(vibrant-cli eDP-1 | grep eDP | cut -d' ' -f5)
+#val=$(vibrant-cli eDP-1 | grep eDP | cut -d' ' -f5)
 
 case "$BLOCK_BUTTON" in
-	1) vibrant-cli eDP-1 1 & ;;
-	3) vibrant-cli eDP-1 0 & ;;
+	1) vibrant-cli eDP-1 0.5 & ;;
+	3) vibrant-cli eDP-1 1 & ;;
 esac

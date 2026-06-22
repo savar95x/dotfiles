@@ -1,6 +1,7 @@
 #!/bin/sh
 # programs
-alias e="nvim"
+alias e="NVIM_TEST=1 NVIM_TEST=1 nvim"
+alias nvim="NVIM_TEST=1 NVIM_TEST=1 nvim"
 alias ls="ls --color=auto --group-directories-first"
 alias ll="ls -lAh"
 alias df="df -h"
@@ -36,6 +37,9 @@ alias shugo="cd $HOME/.local/repos/savar95x/savar95x.github.io-hugo && ls"
 alias hugocp="cp -rf $HOME/.local/repos/savar95x/savar95x.github.io-hugo/public/* $HOME/.local/repos/savar95x/savar95x.github.io/ && ssite"
 alias ssite="cd $HOME/.local/repos/savar95x/savar95x.github.io && ls"
 alias giit="git commit -m '$1' && git push"
+
+alias cpu-game="sudo auto-cpufreq --force=performance"
+alias cpu-auto="sudo auto-cpufreq --force=reset"
 
 # actions
 alias hss="hugo server --noHTTPCache -D"

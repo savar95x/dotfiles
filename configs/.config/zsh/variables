@@ -31,6 +31,10 @@ export PIPEWIRE_RUNTIME_DIR=$XDG_RUNTIME_DIR/pipewire
 export NOTESDIR=$HOME/dox/notes
 export TODO_PATH=$XDG_DATA_HOME/todo
 
+# fundamental
+#export LIBVA_DRIVER_NAME=iHD
+#export MOZ_X11_EGL=1
+
 # ~/ cleanup
 # languages
 LANGS_HOME=$HOME/.local/share/languages
@@ -53,13 +57,13 @@ export MBSYNCRC="$XDG_CONFIG_HOME/mbsync/config"
 export DICS="/usr/share/stardict/dic/"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export LESS=-R
-export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
-export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
-export LESS_TERMCAP_me="$(printf '%b' '[0m')"
-export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
-export LESS_TERMCAP_se="$(printf '%b' '[0m')"
-export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
-export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
+export LESS_TERMCAP_mb=$'\e[1;31m'
+export LESS_TERMCAP_md=$'\e[1;36m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;44;33m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;32m'
+export LESS_TERMCAP_ue=$'\e[0m'
 export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export MOZ_USE_XINPUT2="1" # Mozilla smooth scrolling/touchpads.

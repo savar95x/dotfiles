@@ -5,6 +5,7 @@
 ;(defvar notifications "[{\"summary\":\"End\",\"body\":\"Frank Ocean\",\"appname\":\"ncmpcpp\",\"id\":93435},{\"summary\":\"Monks\",\"body\":\"Frank Ocean\",\"appname\":\"ncmpcpp\",\"id\":93435},{\"summary\":\"White\",\"body\":\"Frank Ocean/John Mayer\",\"appname\":\"ncmpcpp\",\"id\":93435}]")
 
 (deflisten volume :initial "0" "scripts/vol.sh")
+(deflisten gray-value :initial "100" "scripts/gray-listen.sh")
 (deflisten brightness :initial "0" "scripts/bright.sh")
 (deflisten music-artist :initial "" "scripts/music.sh artist")
 (deflisten music-title :initial "Music" "scripts/music.sh title")
@@ -63,6 +64,7 @@
     ;; 2. SLIDERS (Vol / Bright)
     (box :class "control-section" :orientation "v" :spacing 15
          (slider_bar :label "Sound" :val volume :onchange "pamixer --set-volume {}")
+         (slider_bar :label "Grayscale" :val gray-value :onchange "scripts/gray-set.sh {}")
          (slider_bar :label "Display" :val brightness :onchange "light -S {}"))
 
     ;; 3. MUSIC

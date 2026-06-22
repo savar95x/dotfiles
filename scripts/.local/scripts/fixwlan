@@ -1,0 +1,4 @@
+#!/bin/sh
+sudo ip addr flush dev wlan0
+sleep 1
+sudo sv restart dhcpcd

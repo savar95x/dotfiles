@@ -1,6 +1,7 @@
 #!/bin/sh
 export XAUTHORITY="$HOME/.local/run/x11/xauth"
 setsid -f $HOME/.config/dwm/autostart.sh &
+#export MYMENU="dmenu"
 export MYMENU="dmenu"
 export XDG_SESSION_TYPE=x11
 
@@ -8,6 +9,7 @@ export XDG_SESSION_TYPE=x11
 #	ssh-agent dwm
 #done
 
+#ulimit -n 1048576
 exec dbus-run-session dwm
 #exec dbus-launch --exit-with-session dwm
 #exec dwm

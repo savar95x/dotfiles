@@ -25,7 +25,7 @@ HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit -d $HOME/.local/share/zsh/zcompdump
+compinit -C -d $HOME/.local/share/zsh/zcompdump
 _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode
@@ -92,5 +92,24 @@ bindkey -M visual '^[[P' vi-delete
 myfetch # faster than tuxfetch
 
 export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Lazy-load NVM wrapper function
+lazy_load_nvm() {
+    # Unset dummy functions to prevent infinite recursion
+    unset -f node nvm npm npx yarn pnpm 
+
+    # Explicitly check for NVM and load it, or throw a visible error
+    if [ -s "$NVM_DIR/nvm.sh" ]; then
+        \. "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+    else
+        echo "NVM Error: nvm.sh not found in $NVM_DIR" >&2
+        return 1
+    fi
+}
+
+# Create dummy functions for Node commands
+for cmd in node nvm npm npx yarn pnpm; do
+    # Dropped the 'command' prefix so shell functions like 'nvm' actually work
+    eval "$cmd() { lazy_load_nvm; $cmd \"\$@\"; }"
+done
