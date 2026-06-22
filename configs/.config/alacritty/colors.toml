@@ -1,0 +1,39 @@
+# colors.toml
+# Colors (Gruvbox dark)
+
+# Default colors
+[colors.primary]
+# hard contrast background = = '#1d2021'
+background = '#151515'
+# soft contrast background = = '#32302f'
+foreground = '#ebdbb2'
+
+# Normal colors
+[colors.normal]
+black   = "#867970"
+red     = "#d67b76"
+green   = "#a3ae6d"
+yellow  = "#cba364"
+blue    = "#82a9a0"
+magenta = "#cb8e9e"
+cyan    = "#8daf87"
+white   = "#d7c5a7"
+
+[colors.bright]
+black   = "#867970"
+red     = "#d67b76"
+green   = "#a3ae6d"
+yellow  = "#cba364"
+blue    = "#82a9a0"
+magenta = "#cb8e9e"
+cyan    = "#8daf87"
+white   = "#d7c5a7"
+
+	
+	
+	
+	
+	
+	
+	
+	
