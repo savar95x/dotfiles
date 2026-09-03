@@ -1,3 +1,7 @@
+**NOTE**: I use [mangowc](https://github.com/mangowm/mango) now as a daily driver, since I could not fix screen tearing on dwm, and I love the scrolling layout and even animations. Currently working to setup mangowc to be as similar as to my dwm build, contributing to the upstream mangowc source wherever necessary.  
+
+Visually, it looks the same as my dwm setup.
+
 <div align=center>
 
 <div align=center>
