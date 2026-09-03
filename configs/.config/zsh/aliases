@@ -20,6 +20,7 @@ alias hotspot="sudo setsid -f $HOME/.local/bin/initSoftAP wlan0 enp0s20f0u1c2"
 alias battery="sb_battery perc"
 alias lf="lfrun"
 alias scim="/usr/local/bin/sc-im"
+alias zig="$HOME/.local/share/languages/zig/zig"
 
 # directories
 alias sc="cd $HOME/.local/bin && ls"
@@ -37,6 +38,7 @@ alias shugo="cd $HOME/.local/repos/savar95x/savar95x.github.io-hugo && ls"
 alias hugocp="cp -rf $HOME/.local/repos/savar95x/savar95x.github.io-hugo/public/* $HOME/.local/repos/savar95x/savar95x.github.io/ && ssite"
 alias ssite="cd $HOME/.local/repos/savar95x/savar95x.github.io && ls"
 alias giit="git commit -m '$1' && git push"
+alias smango="cd $HOME/.local/repos/mangowc/mango && ls"
 
 alias cpu-game="sudo auto-cpufreq --force=performance"
 alias cpu-auto="sudo auto-cpufreq --force=reset"

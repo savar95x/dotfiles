@@ -13,6 +13,8 @@ set cleaner ~/.config/lf/cleaner
 set previewer ~/.config/lf/scope
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
 set autoquit true
+set sortby time
+set reverse
 
 # cmds/functions
 cmd open ${{
@@ -54,6 +56,7 @@ cmd openwith ${{setsid -f $(echo $* | tr ' ' '\ ') "$fx"}}
 cmd rmdir $rmdir "$fx"
 cmd touch $touch "$(echo $* | tr ' ' '\ ')"
 cmd setwal ${{xwallpaper --zoom "$fx"}}
+cmd setwal-wayland ${{ swaybg -i "$fx" -m fill & }}
 cmd runscript ${{"$fx"}}
 cmd mkexecutable ${{chmod +x "$fx"}}
 cmd mvtotrash ${{
@@ -81,6 +84,7 @@ map R rmdir
 map x mvtotrash
 
 map zw setwal
+map zW setwal-wayland
 map zx runscript
 map zX mkexecutable
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 ## default programs
-export TERMINAL="st"
+export TERMINAL="st" # overwritten in rc if session=wayland
 export EDITOR="nvim"
 export VISUAL="$TERMINAL -e $EDITOR"
 export BROWSER="firefox"
@@ -23,7 +23,7 @@ export XDG_PUBLICSHARE_DIR="/dev/null"
 export XDG_TEMPLATES_DIR="/dev/null"
 export XDG_VIDEOS_DIR="$HOME/vids"
 
-export PATH="$PATH:$CARGO_HOME/bin:$HOME/.local/bin:$HOME/.local/scripts:$HOME/.local/share/languages/go/bin:$HOME/.local/share/languages/flutter/bin:$HOME/.local/scriptsdwm"
+export PATH="$PATH:$CARGO_HOME/bin:$HOME/.local/bin:$HOME/.local/scripts:$HOME/.local/share/languages/go/bin:$HOME/.local/share/languages/flutter/bin:$HOME/.local/scriptsdwm:/usr/local/texlive/2026/bin/x86_64-linux"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
 
 # programs
@@ -42,6 +42,8 @@ export CARGO_HOME=$LANGS_HOME/rust/cargo
 export CARGO_TARGET_DIR=$CARGO_HOME/target
 export RUSTUP_HOME=$LANGS_HOME/rust/rustup
 export GOPATH=$LANGS_HOME/go
+ZIGPATH=$LANGS_HOME/zig/zig
+export PATH="$PATH:$ZIGPATH"
 #export XINITRC="$XDG_CONFIG_HOME/x11/initdk"
 export XAUTHORITY="$XDG_RUNTIME_DIR/x11/xauth"
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch-config"

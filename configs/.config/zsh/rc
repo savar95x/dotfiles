@@ -108,6 +108,9 @@ lazy_load_nvm() {
     fi
 }
 
+# overwrite TERMINAL if session is wayland
+[ "$XDG_SESSION_TYPE" = "wayland" ] && export TERMINAL="foot"
+
 # Create dummy functions for Node commands
 for cmd in node nvm npm npx yarn pnpm; do
     # Dropped the 'command' prefix so shell functions like 'nvm' actually work

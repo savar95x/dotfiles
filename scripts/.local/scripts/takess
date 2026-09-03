@@ -1,14 +1,21 @@
 #!/bin/sh
-# depends on maim and slop
- 
-#scrot
-#exit
+# depends on maim/slop (X11) and grim/slurp/mmsg/jq (Wayland - MangoWC)
 
 icon=${XDG_PICTURES_DIR:-~/pix}/assets/icons/camera-solid.svg
-#dunstify -i $icon -a volume -r 13 "Screenshot" "Select a window or root"
 dir=${XDG_PICTURES_DIR:-~/pix}/scrots
-mkdir -p $dir
+mkdir -p "$dir"
 name=$(date +%Y-%m-%d_%H-%M-%S).png
-maim -k -s $dir/$name
-[ -f $dir/$name ] && notify-send -r 13 -i $dir/$name "Screenshot" "Saved in\n~/pix/scrots" || notify-send -r 13 -i $icon -a volume "Screenshot" "Exiting without taking one"
+
+if [ -n "$WAYLAND_DISPLAY" ]; then
+    windows=$(mmsg get all-clients | jq -r '.clients[] | select(.is_visible) | "\(.x),\(.y) \(.width)x\(.height)"' 2>/dev/null)
+    
+    # Added -o flag to include whole monitors as selectable regions. 
+    # Right-click natively cancels slurp.
+    geom=$(echo "$windows" | slurp -o 2>/dev/null) && grim -g "$geom" "$dir/$name"
+else
+    # Fallback for X11
+    maim -k -s "$dir/$name"
+fi
+
+[ -f "$dir/$name" ] && notify-send -r 13 -i "$dir/$name" "Screenshot" "Saved in\n$dir" || notify-send -r 13 -i "$icon" -a volume "Screenshot" "Exiting without taking one"
 exit

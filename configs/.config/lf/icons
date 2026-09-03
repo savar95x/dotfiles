@@ -32,8 +32,8 @@ bd      b       # BLK
 cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
-ex             # EXEC
-fi             # FILE
+ex      󰜎       # EXEC
+fi             # FILE
 
 # disable some default filetype icons, let them choose icon by filename
 # ln             # LINK
@@ -62,7 +62,7 @@ fi             # FILE
 *.ejs               00;38;2;203;203;65
 *.css               00;38;2;86;61;124
 *.less              00;38;2;86;61;124
-*.md                00;38;2;81;154;186
+*.md                00;38;2;81;154;186
 *.mdx               00;38;2;81;154;186
 *.markdown          00;38;2;81;154;186
 *.rmd               00;38;2;81;154;186
@@ -257,52 +257,52 @@ fi             # FILE
 Vagrantfile                 00;38;2;21;99;255
 
 # archives or compressed (extensions from dircolors defaults)
-*.tar   
-*.tgz   
-*.arc   
-*.arj   
-*.taz   
-*.lha   
-*.lz4   
-*.lzh   
-*.lzma  
-*.tlz   
-*.txz   
-*.tzo   
-*.t7z   
-*.zip   
-*.z     
-*.dz    
-*.gz    
-*.lrz   
-*.lz    
-*.lzo   
-*.xz    
-*.zst   
-*.tzst  
-*.bz2   
-*.bz    
-*.tbz   
-*.tbz2  
-*.tz    
-*.deb   
-*.rpm   
-*.jar   
-*.war   
-*.ear   
-*.sar   
-*.rar   
-*.alz   
-*.ace   
-*.zoo   
-*.cpio  
-*.7z    
-*.rz    
-*.cab   
-*.wim   
-*.swm   
-*.dwm   
-*.esd   
+*.tar   
+*.tgz   
+*.arc   
+*.arj   
+*.taz   
+*.lha   
+*.lz4   
+*.lzh   
+*.lzma  
+*.tlz   
+*.txz   
+*.tzo   
+*.t7z   
+*.zip   
+*.z     
+*.dz    
+*.gz    
+*.lrz   
+*.lz    
+*.lzo   
+*.xz    
+*.zst   
+*.tzst  
+*.bz2   
+*.bz    
+*.tbz   
+*.tbz2  
+*.tz    
+*.deb   
+*.rpm   
+*.jar   
+*.war   
+*.ear   
+*.sar   
+*.rar   
+*.alz   
+*.ace   
+*.zoo   
+*.cpio  
+*.7z    
+*.rz    
+*.cab   
+*.wim   
+*.swm   
+*.dwm   
+*.esd   
 
 # image formats (extensions from dircolors defaults)
 *.jpg   

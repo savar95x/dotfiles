@@ -13,7 +13,8 @@ pkill dwmblocks; setsid -f sleep 1 && dwmblocks &
 ### quality of life ###
 xwallpaper --zoom "$(ls -1 ~/pix/walls/new/* | shuf -n 1)"
 xset r rate 215 40
-setxkbmap -option caps:swapescape 
+#setxkbmap -option caps:swapescape 
+setxkbmap -option caps:escape 
 xrdb -load $HOME/.config/x11/xresources
 #pgrep mpd.sh || setsid -f $HOME/.config/dwm/scripts/bar/mpd.sh
 

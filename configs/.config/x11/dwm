@@ -9,6 +9,8 @@ export XDG_SESSION_TYPE=x11
 #	ssh-agent dwm
 #done
 
+xrandr --output eDP-1 --scale 1.1x1.1
+xrandr --output HDMI-A-1 --scale 1.1x1.1
 #ulimit -n 1048576
 exec dbus-run-session dwm
 #exec dbus-launch --exit-with-session dwm
