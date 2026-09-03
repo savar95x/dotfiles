@@ -1,0 +1,76 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 50,
+    "spacing": 10,
+    "margin-bottom": 0,
+    
+    "modules-left": [
+        "mango/workspaces",
+        "mango/layout",
+        "mango/window"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "network",
+        "battery",
+        "custom/controlpanel",
+        "clock"
+    ],
+
+    // Workspaces - Fixed to hide empty tags
+    "mango/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true,
+        "all-outputs": false,
+        "hide-empty": true,
+        "on-click": "activate"
+    },
+
+    "mango/layout": {
+        "format": "{symbol}",
+    },
+
+    // Active Window
+    "mango/window": {
+        "format": "{title}",
+        "max-length": 50
+    },
+
+    // Wi-Fi
+    "network": {
+        "interface": "wlan0",
+        "interval": 60,
+        "format-wifi": "",
+        "format-disconnected": "󰤭",
+        "tooltip-format": "{essid}",
+        "on-click": "notify-send -i ~/pix/assets/icons/wifi-solid.svg -a scripts -r 12 'Network' '{essid}'"
+    },
+
+    // Battery
+    "battery": {
+        "states": {
+            "full": 85,
+            "critical": 14
+        },
+        "format": "{icon}   {capacity}%",
+        "format-charging": "   {capacity}%",
+        "format-plugged": "   {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "on-click": "~/.local/scripts/sb_battery notify"
+    },
+
+    // Control Panel
+    "custom/controlpanel": {
+        "format": "",
+        "on-click": "lxappearance",
+        "tooltip": false
+    },
+
+    // Date & Time Combined
+    "clock": {
+        "interval": 60,
+        "format": "{:%a %d %b  %H:%M }",
+        "on-click": "~/.local/scripts/datenotif"
+    }
+}

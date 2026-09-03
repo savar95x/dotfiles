@@ -1,0 +1,83 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* Cleaned up font stack: Rubik for text, Nerd Font fallback for icons */
+    font-family: 'Rubik', "Symbols Nerd Font", monospace;
+    font-size: 15px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #151515;
+    color: #ddc7a1;
+}
+
+/* DWM-style Workspaces */
+#workspaces button {
+    color: #606060;
+    background: transparent;
+    padding: 0 10px;
+    margin: 0;
+    border-radius: 0;
+}
+
+/* Hard-hides tags that have no windows */
+#workspaces button.empty {
+}
+
+/* Inverts the background for the selected tag like dwm */
+#workspaces button.active {
+    color: #ddc7a1; 
+    background-color: #151515;
+}
+
+#workspaces button:hover {
+    background-color: #3c3836;
+    color: #ddc7a1;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* Layout Mode Indicator */
+#custom-layout {
+    color: #ddc7a1;
+    padding: 0 12px;
+    background-color: #151515;
+    font-weight: bold;
+}
+
+/* Window Title */
+#window {
+    color: #ddc7a1;
+    padding: 0 12px;
+}
+
+/* Right Side Modules */
+#network,
+#battery,
+#custom-controlpanel,
+#clock {
+    color: #ddc7a1;
+    padding: 0 10px;
+    margin: 0;
+}
+
+#custom-controlpanel {
+    font-size: 16px;
+}
+
+/* Critical Battery Blinking */
+#battery.critical:not(.charging) {
+    color: #ff5c57;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        color: #ddc7a1;
+    }
+}
