@@ -1,5 +1,5 @@
 [ -f ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/variables ] && . ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/variables
 pgrep syncthing || setsid -f /usr/bin/syncthing serve --no-browser --logfile=default &>/dev/null
-pgrep pipewire || setsid -f $HOME/.config/dwm/audio_server.sh &>/dev/null
+#pgrep pipewire || setsid -f $HOME/.config/dwm/audio_server.sh &>/dev/null
 #[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && XINITRC="$HOME/.config/x11/dwm" startx
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s mango >/dev/null 2>&1 && mango
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s mango >/dev/null 2>&1 && dbus-run-session mango

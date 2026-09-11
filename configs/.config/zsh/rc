@@ -116,3 +116,6 @@ for cmd in node nvm npm npx yarn pnpm; do
     # Dropped the 'command' prefix so shell functions like 'nvm' actually work
     eval "$cmd() { lazy_load_nvm; $cmd \"\$@\"; }"
 done
+
+# opencode
+export PATH=/home/savar/.opencode/bin:$PATH

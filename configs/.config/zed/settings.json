@@ -32,8 +32,9 @@
     "dock": "left",
   },
   "terminal": {
+    "font_weight": 500.0,
     "font_family": "Fragment Mono",
-    "font_size": 13.0,
+    "font_size": 14.0,
     "blinking": "off",
   },
   "cursor_shape": "bar",
@@ -49,8 +50,8 @@
     "anthropic_retention": false,
   },
   "vim_mode": true,
-  "ui_font_size": 14,
-  "buffer_font_size": 13,
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
   "theme": {
     "mode": "dark",
     "light": "Gruvbox Light Hard",
