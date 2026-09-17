@@ -6,9 +6,9 @@
     "margin-bottom": 0,
     
     "modules-left": [
-        "mango/workspaces",
-        "mango/layout",
-        "mango/window"
+        "hyprland/workspaces",
+        "hyprland/layout",
+        "hyprland/window"
     ],
     "modules-center": [],
     "modules-right": [
@@ -53,26 +53,24 @@
             "full": 85,
             "critical": 14
         },
-        // Wrap {capacity}% in a span tag with your preferred dimmer color
-        "format": "{icon}   <span color='#928374'>{capacity}%</span>",
-        "format-charging": "   <span color='#928374'>{capacity}%</span>",
-        "format-plugged": "   <span color='#928374'>{capacity}%</span>",
+        "format": "{icon}   {capacity}%",
+        "format-charging": "   {capacity}%",
+        "format-plugged": "   {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "on-click": "~/.local/scripts/sb_battery notify"
     },
 
     // Control Panel
     "custom/controlpanel": {
-        "format": "",
-        "on-click": "~/.config/eww/scripts/control_center",
+        "format": "",
+        "on-click": "lxappearance",
         "tooltip": false
     },
 
     // Date & Time Combined
     "clock": {
         "interval": 60,
-        // Notice the "0:" added before the % in both blocks
-        "format": "<span color='#928374' size='medium' rise='0000'>{0:%a %d %b}</span>   <span weight='500'>{0:%H:%M }</span>",
+        "format": "{:%a %d %b  %H:%M }",
         "on-click": "~/.local/scripts/datenotif"
     }
 }

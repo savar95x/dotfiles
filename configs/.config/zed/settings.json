@@ -40,7 +40,7 @@
   "cursor_shape": "bar",
   "cursor_blink": false,
   "icon_theme": {
-    "mode": "dark",
+    "mode": "light",
     "light": "Zed (Default)",
     "dark": "Zed (Default)",
   },
@@ -53,7 +53,7 @@
   "ui_font_size": 15,
   "buffer_font_size": 15,
   "theme": {
-    "mode": "dark",
+    "mode": "light",
     "light": "Gruvbox Light Hard",
     "dark": "Gruvbox Dark Hard"
   },

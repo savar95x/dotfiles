@@ -2,8 +2,8 @@
     border: none;
     border-radius: 0;
     /* Cleaned up font stack: Rubik for text, Nerd Font fallback for icons */
-    font-family: 'Inter', "Symbols Nerd Font", monospace;
-    font-size: 14px;
+    font-family: 'Rubik', "Symbols Nerd Font", monospace;
+    font-size: 15px;
     min-height: 0;
 }
 

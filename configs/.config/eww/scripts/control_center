@@ -1,0 +1,5 @@
+#!/bin/bash
+#pgrep mpd.sh || setsid -f $HOME/.config/dwm/scripts/bar/mpd.sh
+[ "$XDG_SESSION_TYPE" = "wayland" ] &&
+    eww open control_center --toggle ||
+    eww-x11 open control_center_dwm --toggle
