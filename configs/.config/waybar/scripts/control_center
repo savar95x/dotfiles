@@ -1,3 +1,0 @@
-#!/bin/bash
-#pgrep mpd.sh || setsid -f $HOME/.config/dwm/scripts/bar/mpd.sh
-eww --config ~/.config/eww/ open control_center --toggle

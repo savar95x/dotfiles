@@ -20,6 +20,12 @@ $yellow-dark: #3A2E1D;
 $active: $blue;
 $active-square: $accent;
 
+
+.control_center {
+  border-radius: 8px;
+  background-color: transparent;
+}
+
 .slate-container {
   background-color: $bg;
   border: 1px solid $bg3; // Thick industrial border

@@ -38,9 +38,10 @@
   :stacking "fg"
   (control_layout))
 (defwindow control_center
-  :monitor "eDP-1"
+  :monitor 0
   :geometry (geometry :x "5px" :y "5px" :width "350px" :height "0px" :anchor "top right")
   :exclusive true
+  :namespace "control_center"   ; <-- Add your unique name here
   (control_layout))
 
 ;; --- The Layout ---
