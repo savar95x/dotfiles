@@ -72,7 +72,7 @@
     "clock": {
         "interval": 60,
         // Notice the "0:" added before the % in both blocks
-        "format": "<span color='#928374' size='medium' rise='0000'>{0:%a %d %b}</span>   <span weight='500'>{0:%H:%M }</span>",
+        "format": "<span color='#928374' size='medium' rise='0000'>{0:%a %d %b}</span>   <span weight='400'>{0:%H:%M }</span>",
         "on-click": "~/.local/scripts/datenotif"
     }
 }

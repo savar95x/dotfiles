@@ -1,0 +1,57 @@
+#
+# GLOBAL CONFIGURATION OPTIONS (For normal notifications)
+#
+max-history=10
+sort=-time
+on-button-left=invoke-default-action
+on-button-middle=none
+on-button-right=dismiss
+on-touch=dismiss
+on-notify=none
+
+font=sans-serif 10
+background-color=#285577FF
+text-color=#FFFFFFFF
+width=300
+height=100
+margin=10
+padding=10
+border-size=2
+border-color=#4C7899FF
+border-radius=2
+icons=1
+max-icon-size=48
+icon-location=left
+format=<b>%s</b>\n%b
+default-timeout=5000
+anchor=top-right
+layer=top
+
+# ==========================================
+# VOLUME HUD SPECIFIC SETTINGS (macOS Style)
+# ==========================================
+# ~/.config/mako/config
+
+[app-name="volume"]
+font=monospace 16
+background-color=#212121ee
+text-color=#ebdbb2
+padding=15,25,0,25
+width=200
+height=180
+outer-margin=200
+progress-color=#7DAEA3cc
+border-size=1
+border-color=#292929
+border-radius=3
+icons=1
+max-icon-size=48
+icon-path=""
+icon-location=top
+icon-border-radius=0
+format=%b
+text-alignment=center
+default-timeout=2000
+ignore-timeout=0
+anchor=bottom-center
+layer=overlay

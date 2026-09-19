@@ -11,7 +11,13 @@ if [ -n "$WAYLAND_DISPLAY" ]; then
     
     # Added -o flag to include whole monitors as selectable regions. 
     # Right-click natively cancels slurp.
-    geom=$(echo "$windows" | slurp -o 2>/dev/null) && grim -g "$geom" "$dir/$name"
+    if [ -n "$windows" ]; then
+        geom=$(echo "$windows" | slurp -o 2>/dev/null)
+    else
+        geom=$(slurp -o 2>/dev/null)
+    fi
+    
+    [ -n "$geom" ] && grim -g "$geom" "$dir/$name"
 else
     # Fallback for X11
     maim -k -s "$dir/$name"

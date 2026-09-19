@@ -1,0 +1,25 @@
+#!/bin/sh
+
+if [ "$1" = "t" ]; then
+    pamixer -t
+elif [ "$1" = "i" ] || [ "$1" = "d" ]; then
+    pamixer -$1 $2 --allow-boost --set-limit 140
+fi
+
+# Get the raw volume (0 to 140)
+RAW_VOL=$(pamixer --get-volume)
+
+# Convert the 140-scale volume to a standard 100% scale for Mako's progress bar
+BAR_PERCENT=$(( RAW_VOL * 100 / 140 ))
+
+mute=""
+if [ "$(pamixer --get-volume-human)" = "muted" ]; then
+    mute="/ Mute"
+fi
+
+# Send the notification using the scaled percentage
+notify-send -a "volume" \
+    -h string:x-canonical-private-synchronous:sys-volume \
+    -h int:value:"$BAR_PERCENT" \
+    -i ~/pix/assets/icons/headphones-solid.svg \
+    " "

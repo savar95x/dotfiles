@@ -13,144 +13,155 @@
 (deflisten wifi-name :initial "0" "scripts/wifi.sh")
 (deflisten bluetooth-name :initial "0" "scripts/bluetooth.sh")
 (deflisten music_art :initial
-  "
-  background-image: url('/home/savar/pix/assets/icons/heart-solid.svg');
-  background-position: center;
-  background-repeat: no-repeat; 
-  background-size: 48px;
-  "
-  "scripts/music.sh art")
+    "
+    background-image: url('/home/savar/pix/assets/icons/heart-solid.svg');
+                                                                       background-position: center;
+                                                                       background-repeat: no-repeat; 
+                                                                       background-size: 48px;
+                                                                       "
+    "scripts/music.sh art")
 (defvar is_active_red true)
 (defvar is_active_perf "true")
 (defvar is_active_focus false)
 (defvar is_active_gray false)
 (defvar is_active_btn_square true)
 (defpoll recording :interval "1s" 
-  "if [ -f /tmp/ffmpeg_recording_pid ]; then echo 'REC'; else echo ''; fi")
+    "if [ -f /tmp/ffmpeg_recording_pid ]; then echo 'REC'; else echo ''; fi")
 
 (deflisten foo :initial "whatever"
-  `tail -F /tmp/some_file`)
+    `tail -F /tmp/some_file`)
 
 ;; --- The Window ---
 (defwindow control_center_dwm
-  :monitor 0
-  :geometry (geometry :x "-5px" :y "55px" :width "350px" :height "0px" :anchor "top right")
-  :stacking "fg"
-  (control_layout))
+    :monitor 0
+    :geometry (geometry :x "-5px" :y "55px" :width "350px" :height "0px" :anchor "top right")
+    :stacking "fg"
+    (control_layout))
+
 (defwindow control_center
-  :monitor 0
-  :geometry (geometry :x "5px" :y "5px" :width "350px" :height "0px" :anchor "top right")
-  :exclusive true
-  :namespace "control_center"   ; <-- Add your unique name here
-  (control_layout))
+    :monitor 0
+    :geometry (geometry :x "5px"
+                        :y "5px"
+                        :width "100px"
+                        :height "0px"
+                        :anchor "top right")
+    :exclusive true
+    :namespace "control_center" ; wayland
+    :stacking "fg"
+    (control_layout))
+
+(defwindow closer
+    :monitor 0
+    :geometry (geometry :width "100%" :height "100%")
+    :stacking "fg"
+    :focusable false
+    :namespace "control_center_closer" ; wayland
+    (eventbox :onclick "eww close control_center closer"
+        (box :class "closer-box")))
 
 ;; --- The Layout ---
 (defwidget control_layout []
-  (box :class "slate-container" :orientation "v" :space-evenly false :spacing 20
+    (box :class "slate-container" :orientation "v" :space-evenly false :spacing 12
 
-    ;; 1. HEADER (Profile & Toggles)
-    (box :class "control-section" :orientation "h" :spacing 15 :space-evenly false
-         ;; Toggles Grid
-         (box :orientation "v" :class "toggle-btn-wrapper" :valign "center" :spacing 8 :space-evenly false
-              (toggle_btn :classname "${wifi-name != 'Off' ? 'active' : ''}" :icon "" :label "Wifi" :label2 "${wifi-name}" :cmd "st -c 'floating' -g 80x20 -e iwctl &")
-              (toggle_btn :classname "${bluetooth-name != 'Off' ? 'active' : ''}" :icon "" :label "Bluetooth" :label2 "${bluetooth-name}" :cmd "st -c 'floating' -g 80x20 -e bluetoothctl &")
-                   (toggle_btn :classname "${is_active_focus ? 'active' : ''}" :icon "" :label "Share" :label2 "Oneplus 13s" :cmd "notify-send \"Test\" > /tmp/notify_debug.log 2>&1")
-              )
-         (box :orientation "v" :spacing 13 :space-evenly false
-              (box :orientation "v" :class "toggle-btn-wrapper" :spacing 0
-              (toggle_btn :classname "perform" :icon "" :label "Energy Mode" :label2 "${is_active_perf == "true" ? 'Balanced' : 'Performance'}" :cmd "scripts/energy.sh")
-                   )
-              (box :orientation "h" :spacing 15 :width 70
-                   (toggle_btn_square :icon "" :classname "${is_active_red ? 'active-square' : ''}" :label "Night Light" :cmd "scripts/red.sh")
-                   (toggle_btn_square :icon "" :classname "${recording == "REC" ? 'active-square' : ''}" :label "Capture" :cmd "scripts/record.sh")
-                   )
-              )
-         )
+        ;; 1. HEADER (Profile & Toggles)
+        (box :class "control-section" :orientation "h" :spacing 12 :space-evenly false
+            ;; Toggles Grid
+            (box :orientation "v" :class "toggle-btn-wrapper" :valign "center" :spacing 0 :space-evenly false
+                (toggle_btn :classname "${wifi-name != 'Off' ? 'active' : ''}" :icon "" :label "Wifi" :label2 "${wifi-name}" :cmd "st -c 'floating' -g 80x20 -e iwctl &")
+                (toggle_btn :classname "${bluetooth-name != 'Off' ? 'active' : ''}" :icon "" :label "Bluetooth" :label2 "${bluetooth-name}" :cmd "st -c 'floating' -g 80x20 -e bluetoothctl &")
+                (toggle_btn :classname "${is_active_focus ? 'active' : ''}" :icon "" :label "Share" :label2 "Oneplus 13s" :cmd "notify-send \"Test\" > /tmp/notify_debug.log 2>&1")
+                )
+            (box :orientation "v" :spacing 12 :space-evenly false
+                (box :orientation "v" :class "toggle-btn-wrapper" :spacing 0
+                    (toggle_btn :classname "perform" :icon "" :label "Energy Mode" :label2 "${is_active_perf == "true" ? 'Balanced' : 'Performance'}" :cmd "scripts/energy.sh")
+                    )
+                (box :orientation "h" :spacing 12 :vexpand true
+                    (toggle_btn_square :icon "" :classname "${is_active_red ? 'active-square' : ''}" :label "Night Light" :cmd "scripts/red.sh")
+                    (toggle_btn_square :icon "" :classname "${recording == "REC" ? 'active-square' : ''}" :label "Capture" :cmd "scripts/record.sh")
+                    )
+                )
+            )
 
-    ;; 2. SLIDERS (Vol / Bright)
-    (box :class "control-section" :orientation "v" :spacing 15
-         (slider_bar :label "Sound" :val volume :onchange "pamixer --set-volume {}")
-         (slider_bar :label "Grayscale" :val gray-value :onchange "scripts/gray-set.sh {}")
-         (slider_bar :label "Display" :val brightness :onchange "light -S {}"))
+        ;; 2. SLIDERS (Vol / Bright)
+        (box :class "control-section sliders-section" :orientation "v"
+            (slider_bar :label "Sound" :val volume :onchange "pamixer --set-volume {} --allow-boost --set-limit 140")
+            ;(slider_bar :label "Grayscale" :val gray-value :onchange "scripts/gray-set.sh {}")
+            (slider_bar :classname "slider-display" :label "Display" :val brightness :onchange "light -S {}"))
 
-    ;; 3. MUSIC
-    (box :class "music-section" :orientation "h" :spacing 20 :space-evenly false
-         (button :onclick "st -c 'floating' -g 80x16 -e ncmpcpp &"
-           :class "rounded-image" 
-           :style "${music_art}"
-           )
-         (box :orientation "v" :spacing 0 :halign "start" :valign "center"
-              (label :halign "start" :class "music-title" :limit-width 20 :text "${music-title}")
-              (label :halign "start" :class "music-artist" :limit-width 20 :visible {music-artist != '' ? true : false} :text "${music-artist}")
-              )
-         (box :orientation "h" :spacing 0 :halign "end" :hexpand true
-              (button :onclick "mpc toggle"
-                      (label :class "icon-alt play" :text "${music_status == 'playing' ? '' : ''}"))
-              (button :onclick "mpc next"
-                      (label :class "icon-alt ${music_status != 'stopped' ? 'play' : 'forward'}" :text ""))
-              )
+        ;; 3. MUSIC
+        (box :class "music-section" :orientation "h" :space-evenly false
+            (button :onclick "st -c 'floating' -g 80x16 -e ncmpcpp &"
+                    :class "rounded-image" 
+                    :style "${music_art}"
+                )
+            (box :orientation "v" :spacing 0 :halign "start" :valign "center" :class "music-labels"
+                (label :halign "start" :class "music-title" :limit-width 20 :text "${music-title}")
+                (label :halign "start" :class "music-artist" :limit-width 20 :visible {music-artist != '' ? true : false} :text "${music-artist}")
+                )
+            (box :orientation "h" :spacing 0 :halign "end" :hexpand true
+                (button :onclick "mpc toggle"
+                    (label :class "icon-alt play" :text "${music_status == 'playing' ? '' : ''}"))
+                (button :onclick "mpc next"
+                    (label :class "icon-alt ${music_status != 'stopped' ? 'play' : 'forward'}" :text ""))
+                )
 
-         )
+            )
 
-    ;; 4. NOTIFICATION HISTORY
-    ;(box :class "notif-section" :orientation "v" :space-evenly false
-         ;(box :orientation "h" :space-evenly true
-              ;(label :text "Notification History" :class "section-title" :halign "start")
-              ;)
-         ;
-         ;(scroll :hscroll false :vscroll true :height 250
-                 ;(box :orientation "v" :spacing 10 :space-evenly false
-                      ;(for entry in notifications
-                           ;(notif_card :app {entry.app} 
-                                       ;:summary {entry.summary} 
-                                       ;:body {entry.body}
-                                       ;:urgency {entry.urgency})))))
-  ))
+        ;; 4. NOTIFICATION HISTORY
+        ;(box :class "notif-section" :orientation "v" :space-evenly false
+        ;(box :orientation "h" :space-evenly true
+        ;(label :text "Notification History" :class "section-title" :halign "start")
+        ;)
+        ;
+        ;(scroll :hscroll false :vscroll true :height 250
+        ;(box :orientation "v" :spacing 12 :space-evenly false
+        ;(for entry in notifications
+        ;(notif_card :app {entry.app} 
+        ;:summary {entry.summary} 
+        ;:body {entry.body}
+        ;:urgency {entry.urgency})))))
+        ))
 
 ;; --- WIDGETS ---
 
 (defwidget toggle_btn [icon ?classname label ?label2 cmd]
-  (button :class "btn-toggle ${classname}" :onclick cmd
-          (overlay
-            (box :orientation "h" :space-evenly false :spacing 10 :class "content-btn-toggle"
-                 (box :class "icon" :width 48
-                      (label :text icon)
-                      )
-                 (box :orientation "${label2 != '' ? 'v' : 'h' }" :space-evenly false :spacing 1
-                      (label :halign "start" :text label)
-                      (label :halign "start" :visible {label2 != ""} :class "label2" :text label2)
-                      )
-                 )
+    (button :class "btn-toggle ${classname}" :onclick cmd
+        (overlay
+            (box :orientation "h" :space-evenly false :spacing 0 :class "content-btn-toggle"
+                (box :class "icon"
+                    (label :text icon :halign "center" :valign "center")
+                    )
+                (box :orientation "${label2 != '' ? 'v' : 'h' }" :space-evenly false :spacing 0 :class "labels"  :valign "center"
+                    (label :halign "start" :text label :class "label1")
+                    (label :halign "start" :visible {label2 != ""} :class "label2" :text label2)
+                    )
+                )
             (box :orientation "h"
                  :hexpand true
                  :halign "end"
-                 (label :class "carrot" :text "›"))
+                (label :class "carrot" :text "›"))
             )
-          )
-  )
+        )
+    )
 
 (defwidget toggle_btn_square [icon ?classname label cmd]
-  (button :class "btn-toggle-square ${classname}" :onclick cmd
-          (box :space-evenly false :valign "center" :orientation "v" :spacing 10
-               (label :class "icon-alt" :text icon)
-               (label :class "label" :justify "center" :text label)
-               )
-          )
-  )
+    (button :class "btn-toggle-square ${classname}" :onclick cmd :vexpand true
+        (box :space-evenly false :valign "center" :orientation "v" :spacing 0
+            (label :class "icon-alt" :text icon)
+            (label :class "label" :justify "center" :text label)
+            )
+        )
+    )
 
-(defwidget slider_bar [label val onchange]
-  (box :orientation "v" :space-evenly false :spacing 0 :class "slider-box"
-       (label :class "slider-label" :halign "start" :text label)
-       (scale :min 0 :max 100 :value {val == "" ? 0 : val} :onchange onchange :hexpand true)))
-
-(defwidget slider_thin [label val onchange]
-  (box :orientation "v" :space-evenly false :spacing 0 :class "slider-thin-box"
-       (scale :min 0 :max 100 :value {val == "" ? 0 : val} :onchange onchange :hexpand true)))
+(defwidget slider_bar [label val onchange ?classname]
+    (box :orientation "v" :space-evenly false :spacing 0 :class "slider-box ${classname}"
+        (label :class "slider-label" :halign "start" :text label)
+        (scale :min 0 :max {label == "Sound" ? 141 : 101} :value {val == "" ? 0 : val} :onchange onchange :hexpand true)))
 
 (defwidget notif_card [app summary body urgency]
-  (box :class {urgency == 2 ? "notif-card critical" : "notif-card normal"} 
-       :orientation "v" :space-evenly false :spacing 5
-       (box :orientation "h" :space-evenly true
+    (box :class {urgency == 2 ? "notif-card critical" : "notif-card normal"} 
+         :orientation "v" :space-evenly false :spacing 5
+        (box :orientation "h" :space-evenly true
             (label :class "notif-summary" :text summary :halign "start" :limit-width 30)
             (label :class "notif-time" :text "Now" :halign "end"))
-       (label :class "notif-body" :text body :halign "start" :wrap true)))
+        (label :class "notif-body" :text body :halign "start" :wrap true)))

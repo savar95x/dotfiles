@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/savar/.zsh/completions:"* ]]; then export FPATH="/home/savar/.zsh/completions:$FPATH"; fi
 #!/usr/bin/zsh
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
@@ -119,3 +121,8 @@ done
 
 # opencode
 export PATH=/home/savar/.opencode/bin:$PATH
+
+. "/home/savar/.deno/env"
+# Initialize zsh completions (added by deno install script)
+autoload -Uz compinit
+compinit
