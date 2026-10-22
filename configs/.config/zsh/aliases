@@ -7,6 +7,7 @@ alias ll="ls -lAh"
 alias df="df -h"
 alias largest_files="sudo du -aBM / 2>/dev/null | sort -nr | head -n 10"
 alias sxiv="sxiv -ab"
+alias heroic="/opt/Heroic/heroic"
 alias todo="nvim $HOME/dox/notes/todo.txt"
 yt_vids=${XDG_VIDEO_DIR:-~/vids}/yt
 alias dl-vid="mkdir -p $yt_vids; yt-dlp --embed-chapters --embed-subs --write-auto-sub --format=\"bestvideo[height<=1080]+bestaudio\" \"$1\" -o \"$yt_vids/%(title)s.%(ext)s\""

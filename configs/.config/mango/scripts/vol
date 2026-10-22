@@ -18,8 +18,9 @@ if [ "$(pamixer --get-volume-human)" = "muted" ]; then
 fi
 
 # Send the notification using the scaled percentage
-notify-send -a "volume" \
-    -h string:x-canonical-private-synchronous:sys-volume \
+notify-send -a "osd" \
+    --replace-id=123 \
+    -h string:x-canonical-private-synchronous:sys-osd \
     -h int:value:"$BAR_PERCENT" \
     -i ~/pix/assets/icons/headphones-solid.svg \
     " "

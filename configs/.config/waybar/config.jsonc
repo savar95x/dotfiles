@@ -2,18 +2,22 @@
     "layer": "bottom",
     "position": "top",
     "height": 50,
-    "spacing": 10,
+    "spacing": 2,
     "margin-bottom": 0,
     
     "modules-left": [
         "mango/workspaces",
-        "mango/layout",
+        //"mango/layout",
+        "custom/mango-layout",
         "mango/window"
     ],
     "modules-center": [],
     "modules-right": [
-        "network",
+        "mpd",
+        "bluetooth",
+        "image#battery",
         "battery",
+        "network",
         "custom/controlpanel",
         "clock"
     ],
@@ -29,6 +33,16 @@
 
     "mango/layout": {
         "format": "{symbol}",
+        "format-T": "::",
+        "format-S": "-S-",
+        "format-M": "[M]"
+    },
+
+    "custom/mango-layout": {
+        "exec": "~/.config/waybar/scripts/mango-layout.sh",
+        "return-type": "json",
+        "format": "<span font='Inter 15px'>{}</span>",
+        "on-click": "mmsg dispatch switch_layout"
     },
 
     // Active Window
@@ -37,14 +51,34 @@
         "max-length": 50
     },
 
-    // Wi-Fi
-    "network": {
-        "interface": "wlan0",
-        "interval": 60,
-        "format-wifi": "",
-        "format-disconnected": "󰤭",
-        "tooltip-format": "{essid}",
-        "on-click": "notify-send -i ~/pix/assets/icons/wifi-solid.svg -a scripts -r 12 'Network' '{essid}'"
+    // MPD (Music)
+    "mpd": {
+        "format": "{stateIcon}   <span color='#928374'>{artist} - {title}</span>",
+        "format-disconnected": "",
+        "format-stopped": "",
+        "state-icons": {
+            "playing": "<span font='material symbols rounded 15px' rise='-2000'>music_note</span>",
+            "paused": "<span font='material symbols rounded 15px' rise='-2000'>pause</span>"
+        },
+        "max-length": 40,
+        "tooltip-format": "MPD (connected)",
+        "on-click": "mpc toggle"
+    },
+
+    // Bluetooth
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "",
+        "format-connected": "<span font='16px'></span>",
+        "format-connected-battery": "<span font='material symbols rounded 16px' rise='-2000'>bluetooth</span>   <span font='14px' color='#928374'>{device_battery_percentage}%</span>",
+        "tooltip-format-connected": "{device_alias}"
+    },
+
+    "image#battery": {
+        "exec": "~/.config/waybar/scripts/dynamic_battery_icon.sh",
+        "size": 22,
+        "interval": 10,
+        "on-click": "~/.local/scripts/sb_battery notify"
     },
 
     // Battery
@@ -53,17 +87,27 @@
             "full": 85,
             "critical": 14
         },
-        // Wrap {capacity}% in a span tag with your preferred dimmer color
-        "format": "{icon}   <span color='#928374'>{capacity}%</span>",
-        "format-charging": "   <span color='#928374'>{capacity}%</span>",
+        "format": "<span font='14px' color='#928374'>{capacity}%</span>",
+        "format-charging": "<span font='14px' color='#928374'>{capacity}%</span>",
         "format-plugged": "   <span color='#928374'>{capacity}%</span>",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": ["", "", "", "", ""],
         "on-click": "~/.local/scripts/sb_battery notify"
+    },
+
+    // Wi-Fi
+    "network": {
+        "interface": "wlan0",
+        "interval": 60,
+        "format-wifi": "<span font='16px'>{icon}</span>",
+        "format-disconnected": "",
+        "format-icons": ["", "", ""],
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "notify-send -i ~/pix/assets/icons/wifi-solid.svg -a scripts --replace-id=12 'Network' \"$(iwctl station wlan0 show | awk -F 'Connected network' '/Connected network/ {print $2}' | xargs)\""
     },
 
     // Control Panel
     "custom/controlpanel": {
-        "format": "",
+        "format": "<span font='17px'></span>",
         "on-click": "~/.config/eww/scripts/control_center",
         "tooltip": false
     },
@@ -71,8 +115,7 @@
     // Date & Time Combined
     "clock": {
         "interval": 60,
-        // Notice the "0:" added before the % in both blocks
-        "format": "<span color='#928374' size='medium' rise='0000'>{0:%a %d %b}</span>   <span weight='400'>{0:%H:%M }</span>",
+        "format": "<span color='#928374'>{0:%a %d %b}</span>   <span weight='400'>{0:%I:%M}</span>  <span font='12px'>{0:%p }</span>",
         "on-click": "~/.local/scripts/datenotif"
     }
 }

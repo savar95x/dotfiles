@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -18 18 18" width="18px">
+  <defs>
+    <clipPath id="battery-mask">
+      <path d="M3-4.5q-1 0-1.7-0.7T0.6-6.9v-4.2q0-1 0.7-1.7t1.7-0.7h10.2q1 0 1.7 0.7t0.7 1.7v4.2q0 1-0.7 1.7t-1.7 0.7H3Z M16.5-7.2v-3.6a0.5 0.5 0 0 1 0.5 0.5v2.6a0.5 0.5 0 0 1 -0.5 0.5Z"/>
+    </clipPath>
+  </defs>
+  
+  <!-- 1. Dark Empty Background -->
+  <rect x="0" y="-18" width="18" height="18" fill="#50494500" clip-path="url(#battery-mask)"/>
+  
+  <!-- 2. Dynamic Fill (Juice) -->
+  <rect x="1" y="-18" width="${ACTUAL_FILL_WIDTH}" height="18" fill="${COLOR}" clip-path="url(#battery-mask)"/>
+  
+  <!-- 3. Static Outline (Main Body - Hollow) with Integral Border -->
+  <path d="M3-4.5q-1 0-1.7-0.7T0.6-6.9v-4.2q0-1 0.7-1.7t1.7-0.7h10.2q1 0 1.7 0.7t0.7 1.7v4.2q0 1-0.7 1.7t-1.7 0.7H3Z" fill="none" stroke="#ddc7a1" stroke-width="1"/>
+  
+  <!-- 4. Static Solid Pill (Terminal) with Integral Border -->
+  <path d="M16.5-7.2v-3.6a0.5 0.5 0 0 1 0.5 0.5v2.6a0.5 0.5 0 0 1 -0.5 0.5Z" fill="#ddc7a1" stroke="#ddc7a1" stroke-width="1"/>
+</svg>

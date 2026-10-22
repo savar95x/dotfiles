@@ -53,11 +53,11 @@ $corner: 4px;
 .toggle-btn-wrapper {
   background-color: $bg3;
   border-radius: $corner;
-  padding: 12px; // 16 - 6
+  padding: 12px; // 6+12 = 18
 }
 .btn-toggle {
   all: unset;
-  padding: 6px; // 16 - 10
+  padding: 6px; // 6+12 = 18
   transition: 200ms;
   font-weight: 400;
   color: $fg;

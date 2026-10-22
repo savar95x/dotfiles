@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+  <defs>
+    <clipPath id="battery-mask">
+      <path d="M160-240q-50 0-85-35t-35-85v-240q0-50 35-85t85-35h540q50 0 85 35t35 85v240q0 50-35 85t-85 35H160Z M895-390v-180a22.5 22.5 0 0 1 22.5 22.5v135a22.5 22.5 0 0 1 -22.5 22.5Z"/>
+    </clipPath>
+  </defs>
+  
+  <!-- 1. Dark Empty Background -->
+  <rect x="0" y="-960" width="1000" height="1000" fill="#50494500" clip-path="url(#battery-mask)"/>
+  
+  <!-- 2. Dynamic Fill (Juice) -->
+  <rect x="0" y="-960" width="${ACTUAL_FILL_WIDTH}" height="1000" fill="${COLOR}" clip-path="url(#battery-mask)"/>
+  
+  <!-- 3. Static Outline (Main Body - Hollow) -->
+  <path d="M160-240q-50 0-85-35t-35-85v-240q0-50 35-85t85-35h540q50 0 85 35t35 85v240q0 50-35 85t-85 35H160Z" fill="none" stroke="#ddc7a1" stroke-width="40"/>
+  
+  <!-- 4. Static Solid Pill (Terminal - 25% slimmer) -->
+  <path d="M895-390v-180a22.5 22.5 0 0 1 22.5 22.5v135a22.5 22.5 0 0 1 -22.5 22.5Z" fill="#ddc7a1" stroke="#ddc7a1" stroke-width="40"/>
+</svg>

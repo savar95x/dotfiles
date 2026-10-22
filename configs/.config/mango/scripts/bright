@@ -4,26 +4,71 @@
 # check external monitor (HDMI-A-1), if exists, execute it's command
 # actually, change brightness of only the active monitor ()
 
-if [ "$1" = "t" ]; then
-    pamixer -t
-elif [ "$1" = "i" ] || [ "$1" = "d" ]; then
-    pamixer -$1 $2 --allow-boost --set-limit 140
+# 1. Check OS (Void Linux vs Arch Linux)
+OS=$(grep -E '^ID=' /etc/os-release | cut -d= -f2 | tr -d '"')
+
+# 2. Get active monitor
+# Note: Plug in your specific MangoWC IPC command here to get the focused output.
+ACTIVE_MON=$(mango-msg -t get_outputs 2>/dev/null | jq -r '.[] | select(.focused) | .name')
+if [ -z "$ACTIVE_MON" ]; then
+    ACTIVE_MON="eDP-1" 
 fi
 
-# Get the raw volume (0 to 140)
-RAW_VOL=$(pamixer --get-volume)
+ACTION="$1"
+VAL="$2"
+BAR_PERCENT=0
 
-# Convert the 140-scale volume to a standard 100% scale for Mako's progress bar
-BAR_PERCENT=$(( RAW_VOL * 100 / 140 ))
+# 3. Change brightness of ONLY the active monitor
+if [ "$ACTIVE_MON" = "HDMI-A-1" ]; then
+    # External Monitor (uses ddcutil via I2C for both Arch and Void)
+    if [ "$ACTION" = "i" ]; then
+        ddcutil setvcp 10 + "$VAL"
+    elif [ "$ACTION" = "d" ]; then
+        ddcutil setvcp 10 - "$VAL"
+    fi
+    
+    # Fetch current brightness for the external monitor (0 to 100 scale)
+    BAR_PERCENT=$(ddcutil getvcp 10 | grep -oP 'current value =\s*\K[0-9]+')
 
-mute=""
-if [ "$(pamixer --get-volume-human)" = "muted" ]; then
-    mute="/ Mute"
+else
+    # Internal Monitor
+    if [ "$OS" = "arch" ]; then
+        # Arch Linux: Manually set brightness using light
+        if [ "$ACTION" = "i" ]; then
+            light -A "$VAL"
+        elif [ "$ACTION" = "d" ]; then
+            light -U "$VAL"
+        elif [ "$ACTION" = "s" ]; then
+            light -S "$VAL"
+        fi
+        
+        # Get raw brightness (light -G returns a float, cut trims the decimal)
+        BAR_PERCENT=$(light -G | cut -d'.' -f1)
+
+    else
+        # Void Linux: OS handles internal monitor brightness natively.
+        # Skip setting the brightness, just fetch it for the notification.
+        
+        # Tiny delay to let Void's native ACPI handler update the brightness 
+        # before we read it, avoiding the notification lagging behind by one step.
+        sleep 0.05
+        
+        if command -v brightnessctl >/dev/null 2>&1; then
+            RAW_BRIGHT=$(brightnessctl get)
+            MAX_BRIGHT=$(brightnessctl max)
+            BAR_PERCENT=$(( RAW_BRIGHT * 100 / MAX_BRIGHT ))
+        else
+            # Fallback if brightnessctl isn't installed (reads directly from sysfs)
+            RAW_BRIGHT=$(cat /sys/class/backlight/*/brightness | head -n 1)
+            MAX_BRIGHT=$(cat /sys/class/backlight/*/max_brightness | head -n 1)
+            BAR_PERCENT=$(( RAW_BRIGHT * 100 / MAX_BRIGHT ))
+        fi
+    fi
 fi
 
 # Send the notification using the scaled percentage
-notify-send -a "volume" \
-    -h string:x-canonical-private-synchronous:sys-volume \
+notify-send -a "osd" \
+    -h string:x-canonical-private-synchronous:sys-osd \
     -h int:value:"$BAR_PERCENT" \
-    -i ~/pix/assets/icons/headphones-solid.svg \
+    -i ~/pix/assets/icons/sun-solid.svg \
     " "

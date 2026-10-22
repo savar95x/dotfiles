@@ -1,10 +1,11 @@
 * {
     border: none;
     border-radius: 0;
-    /* Cleaned up font stack: Rubik for text, Nerd Font fallback for icons */
-    font-family: 'Inter', "Symbols Nerd Font", monospace;
+    /* Added 'Material Symbols Rounded' to the font stack */
+    font-family: 'Inter', 'Material Symbols Rounded', "Symbols Nerd Font", monospace;
     font-size: 14px;
     min-height: 0;
+    font-feature-settings: "tnum"; /* Prevents layout shift when digits change */
 }
 
 window#waybar {
@@ -13,10 +14,17 @@ window#waybar {
 }
 
 /* DWM-style Workspaces */
+#workspaces {
+    /*
+    padding-right: 8px;
+     */
+    padding-left: 4px;
+}
+
 #workspaces button {
     color: #606060;
     background: transparent;
-    padding: 0 10px;
+    padding: 0 8px;
     margin: 0;
     border-radius: 0;
 }
@@ -39,11 +47,9 @@ window#waybar {
 }
 
 /* Layout Mode Indicator */
-#custom-layout {
+#custom-mango-layout {
     color: #ddc7a1;
-    padding: 0 12px;
-    background-color: #151515;
-    font-weight: bold;
+    padding: 0 10px;
 }
 
 /* Window Title */
@@ -53,6 +59,8 @@ window#waybar {
 }
 
 /* Right Side Modules */
+#mpd,
+#bluetooth,
 #network,
 #battery,
 #custom-controlpanel,
@@ -62,8 +70,21 @@ window#waybar {
     margin: 0;
 }
 
+/* Shifts 11px tall text down by 1px (from Y=19..29 to Y=20..30) to center inside the Y=19..31 battery */
+#battery,
+#clock,
+#mpd {
+    padding-top: 2px;
+}
+
+/* Tighter gap between the battery SVG and 60% without clipping the terminal pill */
+#battery {
+    padding-left: 8px;
+}
+
+/* Shifts the 12px-tall Control Panel icon up by 0.5px so its bottom doesn't hang below Y=30 */
 #custom-controlpanel {
-    font-size: 16px;
+    padding-bottom: 1px;
 }
 
 /* Critical Battery Blinking */
@@ -74,6 +95,10 @@ window#waybar {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#image.battery {
+    margin-left: 8px;
 }
 
 @keyframes blink {
